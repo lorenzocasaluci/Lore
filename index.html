@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Edoardo Dezi – Cambridge Qualified English Teacher & Educational Consultant</title>
-  <meta name="description" content="Learn English with Dr. Edoardo Dezi – Cambridge Qualified English Teacher, Educational Consultant, and language coach with 10+ years of experience." />
+  <title>Macelleria da Tommaso Turi – Martano (LE)</title>
+  <meta name="description" content="Macelleria artigianale a Martano. Carni fresche selezionate, salsicce, bombette e involtini senza conservanti. Tel: 335 694 0879" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -12,23 +12,23 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:    #0d1b2a;
-      --deep:    #1b2d45;
-      --accent:  #c8a96e;
-      --accent2: #e8c98a;
-      --light:   #f5f0e8;
-      --white:   #ffffff;
-      --text:    #2c3e50;
+      --red:     #b01a1a;
+      --red2:    #8b0000;
+      --green:   #2e7d32;
+      --cream:   #fdf8f2;
+      --dark:    #1a1a1a;
+      --charcoal:#2c2c2c;
       --muted:   #6b7280;
-      --border:  rgba(200,169,110,0.25);
+      --border:  rgba(176,26,26,0.15);
+      --gold:    #c9953a;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--white);
+      color: var(--charcoal);
+      background: var(--cream);
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -41,18 +41,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.1rem 6%;
-      background: rgba(13,27,42,0.96);
+      padding: 0.7rem 5%;
+      background: rgba(26,26,26,0.97);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px solid var(--red2);
     }
 
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: var(--accent);
-      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 56px;
+      width: auto;
     }
 
     .nav-links {
@@ -62,974 +66,959 @@
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.82);
+      color: #e5e0d8;
       text-decoration: none;
       font-size: 0.88rem;
       font-weight: 500;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover { color: var(--gold); }
 
     .nav-cta {
-      background: var(--accent);
-      color: var(--navy) !important;
-      padding: 0.5rem 1.2rem;
+      background: var(--red);
+      color: #fff !important;
+      padding: 0.45rem 1.1rem;
       border-radius: 4px;
-      font-weight: 600 !important;
       transition: background 0.2s !important;
     }
+    .nav-cta:hover { background: var(--red2) !important; color: #fff !important; }
 
-    .nav-cta:hover { background: var(--accent2) !important; color: var(--navy) !important; }
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: #e5e0d8;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
 
     /* ── HERO ── */
-    .hero {
+    #home {
       min-height: 100vh;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 55%, #243b55 100%);
       display: flex;
       align-items: center;
-      padding: 7rem 6% 5rem;
+      justify-content: center;
+      text-align: center;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(135deg, #1a0505 0%, #3a0a0a 40%, #1a1a0a 100%);
+      padding: 8rem 5% 5rem;
     }
 
-    .hero::before {
-      content: '';
+    .hero-pattern {
       position: absolute;
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.1);
-      top: -200px; right: -200px;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(176,26,26,0.04) 0, rgba(176,26,26,0.04) 1px, transparent 0, transparent 50%),
+        repeating-linear-gradient(-45deg, rgba(176,26,26,0.04) 0, rgba(176,26,26,0.04) 1px, transparent 0, transparent 50%);
+      background-size: 30px 30px;
     }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 450px; height: 450px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.07);
-      bottom: -100px; left: -100px;
-    }
-
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+    .hero-content {
       position: relative;
-      z-index: 1;
+      max-width: 780px;
     }
 
     .hero-badge {
       display: inline-block;
-      background: rgba(200,169,110,0.15);
-      border: 1px solid rgba(200,169,110,0.4);
-      color: var(--accent);
+      background: rgba(176,26,26,0.2);
+      border: 1px solid rgba(176,26,26,0.5);
+      color: #e5a0a0;
       font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 0.4rem 1rem;
-      border-radius: 2px;
-      margin-bottom: 1.4rem;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
     }
 
-    .hero h1 {
+    .hero-logo {
+      width: 180px;
+      height: auto;
+      margin: 0 auto 1.8rem;
+      display: block;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
+      background: white;
+      border-radius: 12px;
+      padding: 10px;
+    }
+
+    .hero-content h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 4vw, 3.4rem);
-      color: var(--white);
-      line-height: 1.2;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
       margin-bottom: 1.2rem;
     }
 
-    .hero h1 span { color: var(--accent); }
+    .hero-content h1 span { color: var(--gold); }
 
-    .hero-sub {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 2rem;
-      max-width: 480px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      border-radius: 4px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: all 0.22s;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--navy);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent2);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(200,169,110,0.35);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border: 1.5px solid rgba(255,255,255,0.4);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    /* Hero visual card */
-    .hero-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(200,169,110,0.2);
-      border-radius: 12px;
-      padding: 2.5rem;
-      backdrop-filter: blur(4px);
-    }
-
-    .hero-card-title {
-      font-family: 'Playfair Display', serif;
+    .hero-content p {
       font-size: 1.1rem;
-      color: var(--accent);
-      margin-bottom: 1.6rem;
+      color: #c8bfb0;
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
     }
 
-    .credential-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-
-    .credential-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.9rem;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.92rem;
-    }
-
-    .cred-icon {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: rgba(200,169,110,0.15);
-      border: 1px solid rgba(200,169,110,0.3);
+    .hero-stars {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      font-size: 1rem;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      color: var(--gold);
+      font-size: 1.3rem;
     }
 
-    .cred-text strong { display: block; color: var(--white); font-size: 0.9rem; }
-    .cred-text span { color: rgba(255,255,255,0.55); font-size: 0.82rem; }
-
-    /* ── STATS ── */
-    .stats {
-      background: var(--light);
-      padding: 3rem 6%;
+    .hero-stars span {
+      color: #c8bfb0;
+      font-size: 0.9rem;
+      font-weight: 500;
     }
 
-    .stats-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      text-align: center;
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1;
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.2s;
     }
+    .btn-primary:hover { background: var(--red2); transform: translateY(-2px); }
 
-    .stat-num span { color: var(--accent); }
-    .stat-label { font-size: 0.88rem; color: var(--muted); margin-top: 0.3rem; font-weight: 500; }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-    /* ── SECTION COMMONS ── */
-    section { padding: 6rem 6%; }
+    /* ── SECTIONS SHARED ── */
+    section { padding: 5rem 5%; }
 
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-
-    .section-tag {
+    .section-label {
       display: inline-block;
+      background: rgba(176,26,26,0.08);
+      color: var(--red);
       font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent);
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
       margin-bottom: 0.8rem;
     }
 
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      color: var(--navy);
-      line-height: 1.25;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.2;
       margin-bottom: 1rem;
     }
 
     .section-sub {
-      font-size: 1.02rem;
       color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 3rem;
+      font-size: 1.02rem;
+      max-width: 580px;
+      line-height: 1.75;
     }
 
-    /* ── ABOUT ── */
-    .about { background: var(--white); }
+    /* ── CHI SIAMO ── */
+    #chi-siamo {
+      background: #fff;
+    }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 4rem;
       align-items: center;
-    }
-
-    .about-visual {
-      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-placeholder {
       width: 100%;
-      aspect-ratio: 4/5;
-      background: linear-gradient(145deg, var(--navy) 0%, var(--deep) 100%);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .about-img-wrap svg {
-      width: 60%;
-      opacity: 0.18;
-    }
-
-    .about-img-initials {
-      position: absolute;
-      inset: 0;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #3a0a0a, #8b1a1a);
+      border-radius: 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      gap: 0.5rem;
     }
 
-    .initials-circle {
-      width: 130px; height: 130px;
+    .about-img-placeholder svg { opacity: 0.5; }
+
+    .about-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      background: var(--green);
+      color: #fff;
       border-radius: 50%;
-      border: 2px solid rgba(200,169,110,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--accent);
-      background: rgba(200,169,110,0.07);
-    }
-
-    .about-accent-badge {
-      position: absolute;
-      bottom: -1.2rem;
-      right: -1.2rem;
-      background: var(--accent);
-      color: var(--navy);
-      border-radius: 8px;
-      padding: 1rem 1.4rem;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(200,169,110,0.4);
-    }
-
-    .about-accent-badge strong { display: block; font-size: 1.8rem; font-family: 'Playfair Display', serif; }
-    .about-accent-badge small { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px; }
-
-    .about-text p { color: var(--text); margin-bottom: 1.1rem; font-size: 1rem; }
-
-    .about-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1.6rem;
-    }
-
-    .tag {
-      background: var(--light);
-      border: 1px solid var(--border);
-      color: var(--navy);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 0.35rem 0.9rem;
-      border-radius: 3px;
-      letter-spacing: 0.2px;
-    }
-
-    /* ── SERVICES ── */
-    .services { background: var(--light); }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
-    }
-
-    .service-card {
-      background: var(--white);
-      border: 1px solid rgba(0,0,0,0.07);
-      border-radius: 10px;
-      padding: 2rem 1.8rem;
-      transition: all 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0%; height: 3px;
-      background: var(--accent);
-      transition: width 0.35s;
-    }
-
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
-    .service-card:hover::after { width: 100%; }
-
-    .service-icon {
-      width: 52px; height: 52px;
-      border-radius: 10px;
-      background: rgba(200,169,110,0.1);
-      border: 1px solid rgba(200,169,110,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: var(--navy);
-      margin-bottom: 0.7rem;
-    }
-
-    .service-card p { font-size: 0.91rem; color: var(--muted); line-height: 1.65; }
-
-    .service-card ul {
-      margin-top: 1rem;
-      padding-left: 0;
-      list-style: none;
+      width: 100px;
+      height: 100px;
       display: flex;
       flex-direction: column;
-      gap: 0.45rem;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.3;
+      box-shadow: 0 4px 16px rgba(46,125,50,0.4);
     }
 
-    .service-card ul li {
-      font-size: 0.85rem;
-      color: var(--text);
-      padding-left: 1.1rem;
-      position: relative;
+    .about-badge strong { font-size: 1.5rem; display: block; }
+
+    .about-text .section-sub { max-width: 100%; margin-bottom: 1.5rem; }
+
+    .about-quote {
+      border-left: 3px solid var(--red);
+      padding-left: 1.2rem;
+      color: var(--charcoal);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-top: 1.5rem;
     }
 
-    .service-card ul li::before {
-      content: '›';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 700;
+    /* ── PRODOTTI ── */
+    #prodotti {
+      background: var(--cream);
     }
 
-    /* ── WHY ME ── */
-    .why { background: var(--navy); }
+    .prodotti-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
-    .why .section-title { color: var(--white); }
-    .why .section-sub { color: rgba(255,255,255,0.6); }
-    .why .section-tag { color: var(--accent); }
+    .prodotti-header .section-sub { margin: 0 auto; }
 
-    .why-grid {
+    .prodotti-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .why-item {
+    .prodotto-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .prodotto-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    }
+
+    .prodotto-icon {
+      background: linear-gradient(135deg, #3a0a0a, #8b1a1a);
+      height: 130px;
       display: flex;
-      gap: 1.2rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(200,169,110,0.15);
-      border-radius: 10px;
-      padding: 1.6rem;
-      transition: border-color 0.2s;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
     }
 
-    .why-item:hover { border-color: rgba(200,169,110,0.45); }
-
-    .why-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: rgba(200,169,110,0.3);
-      line-height: 1;
-      min-width: 2rem;
-      font-weight: 700;
+    .prodotto-body {
+      padding: 1.3rem 1.4rem 1.5rem;
     }
 
-    .why-body h4 {
+    .prodotto-body h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dark);
       margin-bottom: 0.4rem;
     }
 
-    .why-body p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-
-    /* ── PLATFORMS ── */
-    .platforms { background: var(--white); }
-
-    .platforms-flex {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
+    .prodotto-body p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
-    .platform-pill {
+    .prodotto-tag {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(46,125,50,0.1);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── GARANZIE ── */
+    #qualita {
+      background: linear-gradient(135deg, #1a0505 0%, #3a0a0a 100%);
+      color: #fff;
+    }
+
+    #qualita .section-title { color: #fff; }
+    #qualita .section-label { background: rgba(255,255,255,0.12); color: #e5a0a0; }
+
+    .qualita-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .qualita-header .section-sub { color: #c8bfb0; margin: 0 auto; }
+
+    .qualita-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .qualita-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: background 0.25s;
+    }
+
+    .qualita-card:hover { background: rgba(255,255,255,0.1); }
+
+    .qualita-icon {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .qualita-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .qualita-card p {
+      color: #c8bfb0;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* ── RECENSIONI ── */
+    #recensioni {
+      background: #fff;
+    }
+
+    .recensioni-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .rating-summary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem auto 3rem;
+      flex-wrap: wrap;
+    }
+
+    .rating-big {
+      text-align: center;
+    }
+
+    .rating-big .score {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .rating-big .stars { color: var(--gold); font-size: 1.4rem; margin: 0.3rem 0; }
+    .rating-big .count { color: var(--muted); font-size: 0.85rem; }
+
+    .rating-divider {
+      width: 1px;
+      height: 70px;
+      background: var(--border);
+    }
+
+    .rating-text {
+      max-width: 280px;
+    }
+
+    .rating-text p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .google-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    .recensioni-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .recensione-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.6rem;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.25s;
+    }
+
+    .recensione-card:hover { box-shadow: 0 4px 20px rgba(176,26,26,0.08); }
+
+    .recensione-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.8rem; }
+
+    .recensione-text {
+      color: var(--charcoal);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+
+    .recensione-author {
       display: flex;
       align-items: center;
       gap: 0.7rem;
-      border: 1.5px solid var(--border);
-      border-radius: 50px;
-      padding: 0.7rem 1.4rem;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--navy);
-      background: var(--light);
     }
 
-    .platform-dot {
-      width: 10px; height: 10px;
+    .author-avatar {
+      width: 38px; height: 38px;
       border-radius: 50%;
-      background: var(--accent);
-    }
-
-    /* ── TESTIMONIAL ── */
-    .testimonial { background: var(--light); }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.6rem;
-    }
-
-    .tcard {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 1.8rem;
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .tcard-stars {
-      color: var(--accent);
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      margin-bottom: 0.9rem;
-    }
-
-    .tcard p {
-      font-size: 0.92rem;
-      color: var(--text);
-      line-height: 1.7;
-      font-style: italic;
-      margin-bottom: 1.2rem;
-    }
-
-    .tcard-author {
+      background: linear-gradient(135deg, #3a0a0a, #8b1a1a);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
       font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--navy);
+      flex-shrink: 0;
     }
 
-    .tcard-author span { color: var(--muted); font-weight: 400; }
-
-    /* ── CTA ── */
-    .cta-section {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 100%);
-      padding: 6rem 6%;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .author-info strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--dark);
     }
 
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.08);
-      top: -200px; left: 50%;
-      transform: translateX(-50%);
+    .author-info span {
+      font-size: 0.78rem;
+      color: var(--muted);
     }
 
-    .cta-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.9rem, 3.5vw, 3rem);
-      color: var(--white);
-      max-width: 640px;
-      margin: 0 auto 1rem;
-      line-height: 1.25;
-      position: relative;
-      z-index: 1;
+    /* ── CONTATTI ── */
+    #contatti {
+      background: var(--cream);
     }
 
-    .cta-section h2 span { color: var(--accent); }
-
-    .cta-section p {
-      color: rgba(255,255,255,0.65);
-      max-width: 480px;
-      margin: 0 auto 2.2rem;
-      font-size: 1rem;
-      position: relative;
-      z-index: 1;
+    .contatti-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
     }
 
-    .cta-actions {
+    .info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .info-item {
       display: flex;
       gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #3a0a0a, #8b1a1a);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .info-detail strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .info-detail a {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .info-detail a:hover { text-decoration: underline; }
+
+    .info-detail p {
+      color: var(--charcoal);
+      font-size: 1rem;
+    }
+
+    .orari-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin-top: 0.3rem;
+    }
+
+    .orari-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .orari-table tr:last-child { border-bottom: none; }
+
+    .orari-table td {
+      padding: 0.45rem 0;
+      color: var(--charcoal);
+    }
+
+    .orari-table td:last-child {
+      text-align: right;
+      font-weight: 500;
+    }
+
+    .orari-table tr.oggi td { color: var(--red); font-weight: 600; }
+
+    .map-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 380px;
+      border: none;
+      display: block;
     }
 
     /* ── FOOTER ── */
     footer {
-      background: #090f18;
-      padding: 2.5rem 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      border-top: 1px solid rgba(200,169,110,0.1);
+      background: var(--dark);
+      color: #c8bfb0;
+      text-align: center;
+      padding: 2.5rem 5%;
+      font-size: 0.88rem;
     }
 
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      color: var(--accent);
-      text-decoration: none;
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    footer .footer-logo {
+      height: 60px;
+      margin: 0 auto 1rem;
+      display: block;
+      background: white;
+      border-radius: 8px;
+      padding: 6px;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 1.6rem;
-      list-style: none;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.45);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--accent); }
-
-    .footer-copy {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.3);
-    }
+    footer p { margin-top: 0.4rem; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-visual { display: none; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .testimonial-grid { grid-template-columns: 1fr 1fr; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 768px) {
       .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px; left: 0; right: 0;
+        background: rgba(26,26,26,0.98);
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-bottom: 2px solid var(--red2);
+      }
+
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-badge { bottom: -12px; right: -8px; width: 82px; height: 82px; font-size: 0.65rem; }
+      .about-badge strong { font-size: 1.2rem; }
+
+      .contatti-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .map-wrap iframe { height: 280px; }
+
+      .rating-divider { display: none; }
     }
 
-    @media (max-width: 580px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .testimonial-grid { grid-template-columns: 1fr; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-      footer { flex-direction: column; text-align: center; }
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">Dr. Edoardo Dezi</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why Me</a></li>
-      <li><a href="#contact" class="nav-cta">Book a Lesson</a></li>
+  <!-- ══ NAVIGATION ══ -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">
+      <img src="logo.svg" alt="Macelleria da Tommaso" onerror="this.style.display='none'"/>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#chi-siamo">Chi Siamo</a></li>
+      <li><a href="#prodotti">Prodotti</a></li>
+      <li><a href="#qualita">Qualità</a></li>
+      <li><a href="#recensioni">Recensioni</a></li>
+      <li><a href="#contatti" class="nav-cta">Contattaci</a></li>
     </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-badge">Cambridge Qualified · CELTA Certified</div>
-        <h1>
-          Unlock Your<br />
-          <span>English Potential</span><br />
-          with Expert Guidance
-        </h1>
-        <p class="hero-sub">
-          I'm Dr. Edoardo Dezi — English Teacher and Educational Consultant with over 10 years of experience helping students and professionals communicate with confidence.
+  <!-- ══ HERO ══ -->
+  <section id="home">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-badge">&#127822; Martano · Lecce · Puglia</div>
+      <img src="logo.svg" alt="Logo Macelleria da Tommaso" class="hero-logo" />
+      <h1>Sapori <span>Autentici</span>,<br/>Tradizione di Famiglia</h1>
+      <p>Carni fresche selezionate, preparati artigianali senza conservanti. Una realtà storica nel cuore del Salento.</p>
+      <div class="hero-stars">
+        ★★★★★
+        <span>4,9/5 · Google Reviews</span>
+      </div>
+      <div class="hero-btns">
+        <a href="tel:3356940879" class="btn-primary">&#128222; Chiama Ora</a>
+        <a href="#prodotti" class="btn-outline">Scopri i Prodotti</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CHI SIAMO ══ -->
+  <section id="chi-siamo">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:0.5rem">La nostra macelleria</span>
+        </div>
+        <div class="about-badge">
+          <strong>4,9</strong>
+          ★ Google
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">Chi Siamo</div>
+        <h2 class="section-title">Una Realtà Storica nel Cuore del Salento</h2>
+        <p class="section-sub">
+          Da generazioni siamo il punto di riferimento per chi cerca qualità, genuinità e sapori autentici a Martano e in tutto il Salento. Selezioniamo con cura solo le migliori carni provenienti da allevamenti controllati, garantendo freschezza e rispetto delle tradizioni artigianali.
         </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Book a Free Trial →</a>
-          <a href="#services" class="btn btn-outline">Explore Services</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="hero-card-title">Qualifications & Experience</div>
-        <ul class="credential-list">
-          <li>
-            <div class="cred-icon">🎓</div>
-            <div class="cred-text">
-              <strong>Cambridge Qualified Teacher</strong>
-              <span>CELTA / Cambridge ESOL Certified</span>
-            </div>
-          </li>
-          <li>
-            <div class="cred-icon">🏛️</div>
-            <div class="cred-text">
-              <strong>University Degree</strong>
-              <span>Università G. d'Annunzio – Chieti</span>
-            </div>
-          </li>
-          <li>
-            <div class="cred-icon">📚</div>
-            <div class="cred-text">
-              <strong>Academic Researcher</strong>
-              <span>Published on Academia.edu</span>
-            </div>
-          </li>
-          <li>
-            <div class="cred-icon">🌍</div>
-            <div class="cred-text">
-              <strong>Native-level English</strong>
-              <span>Bilingual Italian/English speaker</span>
-            </div>
-          </li>
-          <li>
-            <div class="cred-icon">⭐</div>
-            <div class="cred-text">
-              <strong>Top-Rated on Preply</strong>
-              <span>Hundreds of satisfied students globally</span>
-            </div>
-          </li>
-        </ul>
+        <blockquote class="about-quote">
+          "Nei nostri preparati non usiamo mai conservanti, coloranti o additivi, ma solo ingredienti naturali e tanta passione. Ogni giorno lavoriamo con dedizione per offrire prodotti sani e gustosi, portando sulle vostre tavole il sapore vero della carne di una volta."
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stats-inner">
-      <div>
-        <div class="stat-num">10<span>+</span></div>
-        <div class="stat-label">Years Teaching</div>
-      </div>
-      <div>
-        <div class="stat-num">500<span>+</span></div>
-        <div class="stat-label">Students Taught</div>
-      </div>
-      <div>
-        <div class="stat-num">3</div>
-        <div class="stat-label">Platforms Active</div>
-      </div>
-      <div>
-        <div class="stat-num">100<span>%</span></div>
-        <div class="stat-label">Personalised Lessons</div>
-      </div>
+  <!-- ══ PRODOTTI ══ -->
+  <section id="prodotti">
+    <div class="prodotti-header">
+      <div class="section-label">I Nostri Prodotti</div>
+      <h2 class="section-title">Specialità Artigianali</h2>
+      <p class="section-sub">Ogni preparato è realizzato a mano ogni giorno, con ingredienti freschi e naturali, senza conservanti né additivi.</p>
     </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="about-img-wrap">
-            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="90" stroke="white" stroke-width="1"/>
-              <circle cx="100" cy="75" r="30" stroke="white" stroke-width="1"/>
-              <path d="M 30 170 Q 100 110 170 170" stroke="white" stroke-width="1" fill="none"/>
-            </svg>
-            <div class="about-img-initials">
-              <div class="initials-circle">ED</div>
-            </div>
-          </div>
-          <div class="about-accent-badge">
-            <strong>Dr.</strong>
-            <small>Edoardo Dezi</small>
-          </div>
+    <div class="prodotti-grid">
+      <div class="prodotto-card">
+        <div class="prodotto-icon">🥩</div>
+        <div class="prodotto-body">
+          <h3>Carni Fresche</h3>
+          <p>Carni di alta qualità provenienti da allevamenti selezionati e controllati. Fresche ogni giorno, tagliate su misura.</p>
+          <span class="prodotto-tag">✓ Filiera Controllata</span>
         </div>
-
-        <div class="about-text">
-          <span class="section-tag">About Me</span>
-          <h2 class="section-title">A Passionate Educator<br />Rooted in Language</h2>
-          <p>
-            I am Dr. Edoardo Dezi — a Cambridge Qualified English Teacher and Educational Consultant based in Italy. With a deep passion for language and communication, I have been helping learners of all levels achieve their goals for over a decade.
-          </p>
-          <p>
-            I hold a university degree from the <em>Università degli Studi 'Gabriele d'Annunzio' di Chieti</em> and am an active academic researcher. My bilingual background gives me a unique insight into how Italian speakers learn English — allowing me to anticipate challenges and tailor lessons accordingly.
-          </p>
-          <p>
-            Whether you are a student preparing for an exam, a professional looking to sharpen your business English, or someone who simply wants to feel more confident speaking — I design every lesson around <strong>your</strong> specific needs.
-          </p>
-          <div class="about-tags">
-            <span class="tag">Cambridge Certified</span>
-            <span class="tag">Business English</span>
-            <span class="tag">Exam Preparation</span>
-            <span class="tag">Conversational English</span>
-            <span class="tag">Educational Consulting</span>
-            <span class="tag">Academic Writing</span>
-          </div>
+      </div>
+      <div class="prodotto-card">
+        <div class="prodotto-icon">🌿</div>
+        <div class="prodotto-body">
+          <h3>Salsicce</h3>
+          <p>Salsicce dolci e piccanti preparate artigianalmente con spezie naturali e carne fresca macinata al momento.</p>
+          <span class="prodotto-tag">✓ Senza Conservanti</span>
+        </div>
+      </div>
+      <div class="prodotto-card">
+        <div class="prodotto-icon">🍖</div>
+        <div class="prodotto-body">
+          <h3>Bombette</h3>
+          <p>Le celebri bombette pugliesi, ripiene di formaggio e spezie aromatiche, una delizia della tradizione salentina.</p>
+          <span class="prodotto-tag">✓ Ricetta Tradizionale</span>
+        </div>
+      </div>
+      <div class="prodotto-card">
+        <div class="prodotto-icon">🫕</div>
+        <div class="prodotto-body">
+          <h3>Involtini</h3>
+          <p>Involtini di carne farciti con ingredienti scelti, pronti da cuocere in padella o sulla brace.</p>
+          <span class="prodotto-tag">✓ Pronti da Cuocere</span>
+        </div>
+      </div>
+      <div class="prodotto-card">
+        <div class="prodotto-icon">🥓</div>
+        <div class="prodotto-body">
+          <h3>Preparati Speciali</h3>
+          <p>Un'ampia selezione di preparati artigianali: polpette, spiedini, burger e molto altro per ogni occasione.</p>
+          <span class="prodotto-tag">✓ Fatto a Mano</span>
+        </div>
+      </div>
+      <div class="prodotto-card">
+        <div class="prodotto-icon">🛒</div>
+        <div class="prodotto-body">
+          <h3>Su Ordinazione</h3>
+          <p>Realizziamo preparazioni personalizzate per eventi, grigliate e feste. Contattaci per un preventivo.</p>
+          <span class="prodotto-tag">✓ Servizio Personalizzato</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="section-inner">
-      <span class="section-tag">What I Offer</span>
-      <h2 class="section-title">Tailored English Learning<br />for Every Goal</h2>
-      <p class="section-sub">From beginners to advanced professionals, I offer personalised lessons and consulting designed to get results.</p>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-icon">💬</div>
-          <h3>Conversational English</h3>
-          <p>Build fluency and confidence in everyday spoken English through structured but natural conversations.</p>
-          <ul>
-            <li>Daily communication skills</li>
-            <li>Pronunciation & accent reduction</li>
-            <li>Vocabulary expansion</li>
-            <li>Cultural context & idioms</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🏢</div>
-          <h3>Business English</h3>
-          <p>Master the language of the professional world — from emails and meetings to presentations and negotiations.</p>
-          <ul>
-            <li>Corporate communication</li>
-            <li>Email & report writing</li>
-            <li>Interview preparation</li>
-            <li>Presentation skills</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">📝</div>
-          <h3>Exam Preparation</h3>
-          <p>Targeted coaching for Cambridge, IELTS, TOEFL and other English certifications.</p>
-          <ul>
-            <li>Cambridge B2 / C1 / C2</li>
-            <li>IELTS & TOEFL strategies</li>
-            <li>Mock tests & feedback</li>
-            <li>Timed practice sessions</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">📖</div>
-          <h3>Academic English</h3>
-          <p>Expert support for students writing essays, theses, and research papers in English.</p>
-          <ul>
-            <li>Essay & thesis writing</li>
-            <li>Academic vocabulary</li>
-            <li>Citation & style guides</li>
-            <li>Proofreading & editing</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🧒</div>
-          <h3>English for Young Learners</h3>
-          <p>Engaging, fun and effective lessons designed specifically for children and teenagers.</p>
-          <ul>
-            <li>Ages 6–17</li>
-            <li>School curriculum support</li>
-            <li>Interactive activities</li>
-            <li>Progress tracking for parents</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🎯</div>
-          <h3>Educational Consulting</h3>
-          <p>Strategic guidance for students and families navigating international education pathways.</p>
-          <ul>
-            <li>Study abroad guidance</li>
-            <li>University application support</li>
-            <li>Learning roadmap design</li>
-            <li>Language assessment</li>
-          </ul>
-        </div>
-
+  <!-- ══ QUALITÀ ══ -->
+  <section id="qualita">
+    <div class="qualita-header">
+      <div class="section-label">Le Nostre Garanzie</div>
+      <h2 class="section-title">Perché Sceglierci</h2>
+      <p class="section-sub">Qualità, genuinità e tradizione artigianale sono i valori che ci guidano ogni giorno da generazioni.</p>
+    </div>
+    <div class="qualita-grid">
+      <div class="qualita-card">
+        <span class="qualita-icon">🚫</span>
+        <h3>Zero Conservanti</h3>
+        <p>Nessun conservante, colorante o additivo. Solo ingredienti naturali e freschi, come una volta.</p>
+      </div>
+      <div class="qualita-card">
+        <span class="qualita-icon">🌾</span>
+        <h3>Filiera Controllata</h3>
+        <p>Selezioniamo esclusivamente carni da allevamenti controllati, con piena tracciabilità della provenienza.</p>
+      </div>
+      <div class="qualita-card">
+        <span class="qualita-icon">👨‍🍳</span>
+        <h3>Artigianalità</h3>
+        <p>Ogni preparato è lavorato a mano con cura e dedizione, seguendo le ricette della tradizione salentina.</p>
+      </div>
+      <div class="qualita-card">
+        <span class="qualita-icon">📅</span>
+        <h3>Freschezza Quotidiana</h3>
+        <p>I nostri prodotti sono preparati ogni giorno. Freschezza garantita dal mattino fino alla sera.</p>
+      </div>
+      <div class="qualita-card">
+        <span class="qualita-icon">⭐</span>
+        <h3>4,9 su Google</h3>
+        <p>Oltre 4.900 recensioni confermano la nostra qualità. La fiducia dei clienti è la nostra ricompensa.</p>
+      </div>
+      <div class="qualita-card">
+        <span class="qualita-icon">🏆</span>
+        <h3>Tradizione di Famiglia</h3>
+        <p>Una realtà storica nata dalla passione per la buona carne, tramandata di generazione in generazione.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHY ME -->
-  <section class="why" id="why">
-    <div class="section-inner">
-      <span class="section-tag">Why Choose Me</span>
-      <h2 class="section-title" style="color:white;">More Than a Lesson —<br />A Partnership in Progress</h2>
-      <p class="section-sub">I combine academic rigour with a warm, student-first approach. Here's what sets my teaching apart.</p>
-
-      <div class="why-grid">
-        <div class="why-item">
-          <div class="why-num">01</div>
-          <div class="why-body">
-            <h4>Cambridge Qualified</h4>
-            <p>Fully certified by Cambridge ESOL — one of the world's most respected English language authorities — ensuring you receive internationally recognised teaching standards.</p>
+  <!-- ══ RECENSIONI ══ -->
+  <section id="recensioni">
+    <div class="recensioni-header">
+      <div class="section-label">Recensioni</div>
+      <h2 class="section-title">Cosa Dicono i Clienti</h2>
+    </div>
+    <div class="rating-summary">
+      <div class="rating-big">
+        <div class="score">4,9</div>
+        <div class="stars">★★★★★</div>
+        <div class="count">su 5 · Google</div>
+        <div class="google-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Google Reviews
+        </div>
+      </div>
+      <div class="rating-divider"></div>
+      <div class="rating-text">
+        <p>Più di <strong>4.900 recensioni</strong> di clienti soddisfatti confermano la qualità dei nostri prodotti e il calore del nostro servizio.</p>
+      </div>
+    </div>
+    <div class="recensioni-grid">
+      <div class="recensione-card">
+        <div class="recensione-stars">★★★★★</div>
+        <p class="recensione-text">"Da buon gustaio della carne vi consiglio vivamente di assaggiare la carne e le loro lavorazioni – salsicce dolci e piccanti, bombette, involtini... Una vera delizia!"</p>
+        <div class="recensione-author">
+          <div class="author-avatar">DB</div>
+          <div class="author-info">
+            <strong>Donato Bianco</strong>
+            <span>Recensione Google · 3 anni fa</span>
           </div>
         </div>
-        <div class="why-item">
-          <div class="why-num">02</div>
-          <div class="why-body">
-            <h4>100% Personalised</h4>
-            <p>No cookie-cutter curricula. Every lesson is built around your goals, level, learning style, and schedule. You drive the direction — I map the route.</p>
+      </div>
+      <div class="recensione-card">
+        <div class="recensione-stars">★★★★★</div>
+        <p class="recensione-text">"Tutti i preparati senza ombra di conservanti. Questa è già una garanzia! A parte tutto il resto impeccabile."</p>
+        <div class="recensione-author">
+          <div class="author-avatar">PD</div>
+          <div class="author-info">
+            <strong>Pasqualina Dimitri</strong>
+            <span>Recensione Google · 11 mesi fa</span>
           </div>
         </div>
-        <div class="why-item">
-          <div class="why-num">03</div>
-          <div class="why-body">
-            <h4>Bilingual Advantage</h4>
-            <p>As a bilingual Italian/English speaker, I understand the unique challenges Italian learners face. I can bridge concepts naturally, making explanations faster and clearer.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">04</div>
-          <div class="why-body">
-            <h4>Academic Depth</h4>
-            <p>Backed by a university degree and active research in linguistics and language education — my teaching is grounded in the latest evidence-based methodologies.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">05</div>
-          <div class="why-body">
-            <h4>Flexible & Online</h4>
-            <p>All lessons are delivered online, giving you full flexibility to learn from anywhere in the world, at times that suit your busy life.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-num">06</div>
-          <div class="why-body">
-            <h4>Proven Track Record</h4>
-            <p>Over 500 students taught across multiple platforms with consistently top-rated reviews. Students return — and they refer friends.</p>
+      </div>
+      <div class="recensione-card">
+        <div class="recensione-stars">★★★★☆</div>
+        <p class="recensione-text">"Carni di ottima qualità, servizio buono! Consiglio a tutti di passare da Tommaso per trovare prodotti freschi e genuini."</p>
+        <div class="recensione-author">
+          <div class="author-avatar">LV</div>
+          <div class="author-info">
+            <strong>Luigi Vitto</strong>
+            <span>Recensione Google · 1 anno fa</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PLATFORMS -->
-  <section class="platforms">
-    <div class="section-inner" style="text-align:center;">
-      <span class="section-tag">Find Me On</span>
-      <h2 class="section-title" style="margin-bottom:0.5rem;">Available Across Top Platforms</h2>
-      <p class="section-sub" style="margin: 0.5rem auto 2.5rem;">Book a session directly through your preferred learning platform.</p>
-      <div class="platforms-flex">
-        <div class="platform-pill"><span class="platform-dot"></span> Preply</div>
-        <div class="platform-pill"><span class="platform-dot"></span> GoStudent</div>
-        <div class="platform-pill"><span class="platform-dot"></span> MisterGO</div>
-        <div class="platform-pill"><span class="platform-dot"></span> Direct Booking</div>
+  <!-- ══ CONTATTI ══ -->
+  <section id="contatti">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-label">Dove Siamo</div>
+      <h2 class="section-title">Vieni a Trovarci</h2>
+    </div>
+    <div class="contatti-grid">
+      <div class="info-block">
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-detail">
+            <strong>Indirizzo</strong>
+            <p>Via Alessandro Manzoni, 14<br/>73025 Martano (LE)</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-detail">
+            <strong>Telefono</strong>
+            <a href="tel:3356940879">335 694 0879</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🕐</div>
+          <div class="info-detail">
+            <strong>Orari di Apertura</strong>
+            <table class="orari-table">
+              <tr><td>Lunedì – Venerdì</td><td>08:00 – 13:00 / 16:00 – 20:00</td></tr>
+              <tr><td>Sabato</td><td>08:00 – 13:00 / 16:00 – 20:00</td></tr>
+              <tr><td>Domenica</td><td>08:00 – 13:00</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">⭐</div>
+          <div class="info-detail">
+            <strong>Valutazione Google</strong>
+            <p style="color:var(--gold);font-weight:600;font-size:1.05rem;">★★★★★ 4,9 / 5</p>
+            <p style="font-size:0.85rem;color:var(--muted);">Basato su oltre 4.900 recensioni</p>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d18.2945!3d40.2075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMacelleria+da+Tommaso+Turi%2C+Via+Alessandro+Manzoni+14%2C+Martano+LE!5e0!3m2!1sit!2sit!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mappa Macelleria da Tommaso Turi">
+        </iframe>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonial">
-    <div class="section-inner">
-      <span class="section-tag">Student Reviews</span>
-      <h2 class="section-title">What My Students Say</h2>
-      <p class="section-sub">Real feedback from students I have had the pleasure of teaching.</p>
-
-      <div class="testimonial-grid">
-        <div class="tcard">
-          <div class="tcard-stars">★★★★★</div>
-          <p>"Dr. Dezi is an exceptional teacher. His lessons are always well-structured and he adapts perfectly to my level. My confidence in speaking English has improved dramatically in just a few months."</p>
-          <div class="tcard-author">Marco T. <span>— Business Professional, Milan</span></div>
-        </div>
-        <div class="tcard">
-          <div class="tcard-stars">★★★★★</div>
-          <p>"I passed my Cambridge C1 exam on the first attempt thanks to Edoardo's targeted preparation. He knew exactly which areas to focus on and always kept me motivated throughout the process."</p>
-          <div class="tcard-author">Sofia R. <span>— University Student, Rome</span></div>
-        </div>
-        <div class="tcard">
-          <div class="tcard-stars">★★★★★</div>
-          <p>"As a parent, I appreciate how patient and engaging he is with my daughter. She actually looks forward to her English lessons now — something I never thought possible!"</p>
-          <div class="tcard-author">Lucia M. <span>— Parent, Naples</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
-    <h2>Ready to <span>Transform</span><br />Your English?</h2>
-    <p>Book a free 25-minute trial lesson and see firsthand how a personalised approach can accelerate your progress.</p>
-    <div class="cta-actions">
-      <a href="https://www.edoardodezi.com" class="btn btn-primary" target="_blank" rel="noopener">Book a Free Trial Lesson →</a>
-      <a href="mailto:info@edoardodezi.com" class="btn btn-outline">Send a Message</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
+  <!-- ══ FOOTER ══ -->
   <footer>
-    <a href="#" class="footer-logo">Dr. Edoardo Dezi</a>
-    <ul class="footer-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why Me</a></li>
-      <li><a href="https://www.edoardodezi.com" target="_blank" rel="noopener">Official Site</a></li>
-    </ul>
-    <span class="footer-copy">&copy; 2026 Dr. Edoardo Dezi. All rights reserved.</span>
+    <img src="logo.svg" alt="Macelleria da Tommaso" class="footer-logo" onerror="this.style.display='none'"/>
+    <p><strong style="color:#e5e0d8;">Macelleria da Tommaso Turi</strong></p>
+    <p>Via Alessandro Manzoni, 14 · 73025 Martano (LE) · <a href="tel:3356940879">335 694 0879</a></p>
+    <p style="margin-top:1.2rem;font-size:0.78rem;opacity:0.5;">&copy; 2025 Macelleria da Tommaso Turi · Tutti i diritti riservati</p>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      nav.style.padding = window.scrollY > 50 ? '0.5rem 5%' : '0.7rem 5%';
+    });
+  </script>
 </body>
 </html>
