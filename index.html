@@ -835,6 +835,53 @@
       transform: translateY(-1px);
     }
 
+    /* ── COUNTER ── */
+    #counter {
+      background: var(--black);
+      padding: 80px 5%;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .counter-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .counter-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+
+    .counter-value {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .counter-suffix {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .counter-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 640px) {
+      .counter-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
     /* footer minimal */
     footer {
       background: #0a0a0a;
@@ -1063,6 +1110,36 @@
   </section>
 
 
+  <!-- COUNTER -->
+  <section id="counter">
+    <div class="counter-grid">
+
+      <div class="counter-item reveal">
+        <div style="display:flex;align-items:baseline;gap:0.1em;">
+          <span class="counter-value" data-target="20">0</span>
+          <span class="counter-suffix">+</span>
+        </div>
+        <span class="counter-label">Anni di esperienza</span>
+      </div>
+
+      <div class="counter-item reveal">
+        <div style="display:flex;align-items:baseline;gap:0.1em;">
+          <span class="counter-value" data-target="500">0</span>
+          <span class="counter-suffix">+</span>
+        </div>
+        <span class="counter-label">Clienti seguiti</span>
+      </div>
+
+      <div class="counter-item reveal">
+        <div style="display:flex;align-items:baseline;gap:0.1em;">
+          <span class="counter-value" data-target="4">0</span>
+        </div>
+        <span class="counter-label">Modalità di allenamento</span>
+      </div>
+
+    </div>
+  </section>
+
   <!-- METODO -->
   <section id="metodo">
     <div class="section-inner">
@@ -1258,6 +1335,39 @@
   </a>
 
   <script>
+    /* ── COUNTER ANIMATION ── */
+    (function () {
+      function animateCounter(el) {
+        var target = parseInt(el.dataset.target, 10);
+        var duration = 1400;
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          /* ease-out cubic */
+          var ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(step);
+      }
+
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      document.querySelectorAll('.counter-value').forEach(function (el) {
+        counterObserver.observe(el);
+      });
+    })();
+
+    /* ── SCROLL ANIMATIONS ── */
     (function () {
       const io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
