@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Davide Cacciola – Personal Trainer Roma | 20 anni di esperienza</title>
-  <meta name="description" content="Personal trainer a Roma con 20 anni di esperienza. Laurea in Scienze Motorie, Master in Posturologia. Programmi su misura, valutazione iniziale gratuita." />
+  <title>Personal Trainer Roma | Davide Cacciola | Allenamento Su Misura</title>
+  <meta name="description" content="Personal trainer a Roma con 20 anni di esperienza. Allenamento personalizzato in palestra, a domicilio e online. Valutazione gratuita. 3282214522." />
+  <meta name="keywords" content="personal trainer Roma, personal trainer a domicilio Roma, allenamento personalizzato Roma, personal trainer online Roma, Davide Cacciola" />
+  <meta property="og:title" content="Personal Trainer Roma | Davide Cacciola | Allenamento Su Misura" />
+  <meta property="og:description" content="Personal trainer a Roma con 20 anni di esperienza. Allenamento personalizzato in palestra, a domicilio e online. Valutazione gratuita." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -599,15 +604,15 @@
     }
 
     /* ── CTA FINALE ── */
-    #contatti {
+    #cta-finale {
       background: var(--black);
-      padding: 100px 5%;
+      padding: 80px 5% 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    #contatti::before {
+    #cta-finale::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -638,7 +643,7 @@
       margin-bottom: 1.6rem;
     }
 
-    #contatti h2 {
+    #cta-finale h2 {
       font-size: clamp(2rem, 4.5vw, 3.2rem);
       font-weight: 900;
       color: var(--white);
@@ -647,7 +652,7 @@
       margin-bottom: 1rem;
     }
 
-    #contatti p {
+    #cta-finale p {
       font-size: 1.1rem;
       color: rgba(255,255,255,0.55);
       margin-bottom: 2.2rem;
@@ -679,6 +684,150 @@
       letter-spacing: 0.04em;
     }
 
+    /* ── CONTATTI ── */
+    #contatti {
+      background: var(--black);
+      padding: 80px 5% 100px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    #contatti h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    #contatti .section-intro {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.95rem;
+      margin-bottom: 3rem;
+    }
+
+    .contatti-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contatti-info { display: flex; flex-direction: column; gap: 1.8rem; }
+
+    .info-block strong {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.5rem;
+    }
+    .info-block a {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+    }
+    .info-block a:hover { color: var(--orange); }
+
+    .orari-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .orari-table tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .orari-table tr:last-child { border-bottom: none; }
+    .orari-table td {
+      padding: 0.55rem 0;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .orari-table td:first-child { font-weight: 600; color: rgba(255,255,255,0.85); }
+    .orari-table td:last-child { text-align: right; color: var(--orange); font-weight: 600; }
+
+    /* form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-field label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .form-field input,
+    .form-field textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      resize: none;
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: rgba(255,255,255,0.2); }
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--orange);
+      background: rgba(255,107,0,0.04);
+    }
+    .form-field textarea { min-height: 110px; }
+
+    .form-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
+    .form-privacy input[type="checkbox"] {
+      margin-top: 2px;
+      accent-color: var(--orange);
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+    }
+
+    .btn-form-submit {
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-form-submit:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+    }
+
     /* footer minimal */
     footer {
       background: #0a0a0a;
@@ -696,6 +845,8 @@
       .reviews-grid { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
       .steps::before { display: none; }
+      .contatti-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -716,6 +867,8 @@
       .reviews-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr; gap: 2rem; }
       .hero-stats { gap: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .btn-form-submit { width: 100%; }
     }
   </style>
 </head>
@@ -960,18 +1113,95 @@
   </section>
 
   <!-- CTA FINALE -->
-  <section id="contatti">
+  <section id="cta-finale">
     <div class="cta-inner">
       <span class="cta-badge">Valutazione gratuita</span>
       <h2>Pronto a iniziare?</h2>
       <p>La valutazione è gratuita e senza impegno.</p>
-      <a href="tel:+39" class="btn-cta-final">Prenota ora — è gratis</a>
+      <a href="#contatti" class="btn-cta-final">Prenota ora — è gratis</a>
       <p class="cta-reassurance">Nessun vincolo. Nessun costo nascosto. Solo risultati.</p>
     </div>
   </section>
 
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <div class="section-inner">
+      <p class="section-label" style="color:var(--orange);">Contatti</p>
+      <h2>Scrivimi o chiamami</h2>
+      <p class="section-intro">Per informazioni, prezzi o per prenotare la tua valutazione gratuita per il tuo allenamento personalizzato Roma.</p>
+
+      <div class="contatti-layout">
+
+        <!-- Info -->
+        <div class="contatti-info">
+          <div class="info-block">
+            <strong>Telefono</strong>
+            <a href="tel:+393282214522">328 221 4522</a>
+          </div>
+
+          <div class="info-block">
+            <strong>Orari di disponibilità</strong>
+            <table class="orari-table">
+              <tr>
+                <td>Lunedì – Venerdì</td>
+                <td>7:00 – 21:30</td>
+              </tr>
+              <tr>
+                <td>Sabato</td>
+                <td>9:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Domenica</td>
+                <td>Chiuso</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="info-block">
+            <strong>Zone servite</strong>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-top:0.2rem;">
+              Personal trainer a domicilio Roma su tutto il territorio. Palestra, online e videocall ovunque.
+            </p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="contact-form" name="contatti" netlify>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Mario Rossi" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="mario@email.com" required />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="telefono">Numero di telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+39 333 000 0000" />
+          </div>
+
+          <div class="form-field">
+            <label for="messaggio">Messaggio</label>
+            <textarea id="messaggio" name="messaggio" placeholder="Raccontami il tuo obiettivo..."></textarea>
+          </div>
+
+          <label class="form-privacy">
+            <input type="checkbox" name="privacy" required />
+            Ho letto e accetto la <a href="#" style="color:var(--orange);text-decoration:none;">Privacy Policy</a>. Acconsento al trattamento dei dati personali ai sensi del GDPR.
+          </label>
+
+          <button type="submit" class="btn-form-submit">Invia richiesta</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
   <footer>
-    © 2025 Davide Cacciola – Personal Trainer Roma &nbsp;·&nbsp; P.IVA XXXXXXXXXX
+    © 2025 Davide Cacciola – Personal trainer a Roma &nbsp;·&nbsp; Allenamento personalizzato Roma &nbsp;·&nbsp; P.IVA XXXXXXXXXX
   </footer>
 
 </body>
