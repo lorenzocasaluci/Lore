@@ -278,9 +278,19 @@
 
     .chisono-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 340px 1fr 1fr;
+      gap: 3.5rem;
       align-items: start;
+    }
+
+    .chisono-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      border: 2px solid var(--orange);
+      display: block;
     }
 
     .chisono-text p {
@@ -841,7 +851,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .chisono-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .chisono-layout { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .chisono-photo { aspect-ratio: 4/3; }
       .reviews-grid { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
       .steps::before { display: none; }
@@ -867,6 +878,8 @@
       .reviews-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr; gap: 2rem; }
       .hero-stats { gap: 1.5rem; }
+      .chisono-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .chisono-photo { aspect-ratio: 4/3; }
       .form-row { grid-template-columns: 1fr; }
       .btn-form-submit { width: 100%; }
     }
@@ -896,7 +909,7 @@
       <h1>Smetti di allenarti a caso.<br><em>Inizia a trasformarti davvero.</em></h1>
 
       <p class="hero-sub">
-        Personal trainer a Roma con 20 anni di esperienza. Programma su misura, risultati misurabili, valutazione iniziale gratuita.
+        Personal trainer a Roma con 20 anni di esperienza. Programma personalizzato, risultati misurabili, valutazione gratuita.
       </p>
 
       <div class="hero-actions">
@@ -928,6 +941,7 @@
       <h2>Non sono il classico personal trainer a Roma.</h2>
 
       <div class="chisono-layout">
+        <img src="davide.jpg" alt="Davide Cacciola personal trainer Roma" class="chisono-photo" />
         <div class="chisono-text">
           <p>
             Mi chiamo <strong>Davide Cacciola</strong>. 20 anni di esperienza, <strong>Laurea in Scienze Motorie</strong>, <strong>Master in Posturologia alla Sapienza</strong>.
