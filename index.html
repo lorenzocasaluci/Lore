@@ -185,7 +185,7 @@
       font-weight: 400;
       max-width: 600px;
       margin-bottom: 2.4rem;
-      line-height: 1.65;
+      line-height: 1.8;
     }
 
     .hero-actions {
@@ -213,23 +213,7 @@
       box-shadow: 0 8px 24px rgba(255,107,0,0.3);
     }
 
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: rgba(255,255,255,0.7);
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .btn-ghost:hover { color: var(--white); }
-    .btn-ghost::after {
-      content: '↓';
-      font-size: 0.85rem;
-    }
-
-    .hero-stats {
+.hero-stats {
       margin-top: 4rem;
       display: flex;
       gap: 2.5rem;
@@ -302,7 +286,7 @@
     .chisono-text p {
       font-size: 1.05rem;
       color: #444;
-      line-height: 1.75;
+      line-height: 1.8;
       margin-bottom: 1.2rem;
     }
     .chisono-text p:last-child { margin-bottom: 0; }
@@ -416,7 +400,7 @@
     .service-card p {
       font-size: 0.85rem;
       color: rgba(255,255,255,0.45);
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     .service-card-arrow {
@@ -451,7 +435,7 @@
     .metodo-intro {
       font-size: 1.05rem;
       color: #555;
-      line-height: 1.75;
+      line-height: 1.8;
       max-width: 620px;
       margin-bottom: 3.5rem;
     }
@@ -520,7 +504,7 @@
     .step p {
       font-size: 0.82rem;
       color: var(--gray-mid);
-      line-height: 1.55;
+      line-height: 1.8;
     }
 
     /* ── TESTIMONIANZE ── */
@@ -576,7 +560,7 @@
     .review-text {
       font-size: 0.97rem;
       color: #333;
-      line-height: 1.65;
+      line-height: 1.8;
       font-style: italic;
       flex: 1;
     }
@@ -874,7 +858,7 @@
     .urgenza-text {
       font-size: clamp(1rem, 2vw, 1.15rem);
       color: rgba(255,255,255,0.75);
-      line-height: 1.75;
+      line-height: 1.8;
     }
     .urgenza-text strong { color: var(--white); font-weight: 700; }
 
@@ -964,7 +948,7 @@
     .faq-answer {
       font-size: 0.97rem;
       color: #555;
-      line-height: 1.75;
+      line-height: 1.8;
       padding-bottom: 1.4rem;
     }
     .faq-answer strong { color: var(--black); font-weight: 700; }
@@ -1060,21 +1044,30 @@
       .form-row { grid-template-columns: 1fr; }
       .btn-form-submit { width: 100%; }
     }
-    /* ── SECTION SEPARATORS ── */
-    #chi-sono, #servizi, #counter, #metodo,
-    #testimonianze, #faq, #urgenza, #cta-finale {
+    /* ── SECTION TRANSITIONS ── */
+    #hero, #chi-sono, #servizi, #counter, #metodo,
+    #testimonianze, #faq, #urgenza, #cta-finale, #contatti {
       position: relative;
     }
-    #chi-sono::after, #servizi::after, #counter::after,
-    #metodo::after, #testimonianze::after, #faq::after {
+    /* dark → light: fade bottom edge of dark section to white */
+    #hero::after, #servizi::after, #counter::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.04));
+      pointer-events: none;
+    }
+    /* light → dark: subtle orange divider line centered */
+    #chi-sono::after, #metodo::after, #testimonianze::after, #faq::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
+      width: 60px;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,107,0,0.55), transparent);
+      background: linear-gradient(to right, transparent, rgba(255,107,0,0.4), transparent);
     }
 
     /* ── WHATSAPP BUTTON ── */
@@ -1185,7 +1178,6 @@
 
       <div class="hero-actions">
         <a href="#contatti" class="btn-primary">Voglio trasformarmi — prenota gratis</a>
-        <a href="#chi-sono" class="btn-ghost">Scopri di più</a>
       </div>
 
     </div>
