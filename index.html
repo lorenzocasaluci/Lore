@@ -861,6 +861,97 @@
       transform: translateY(-1px);
     }
 
+    /* ── FAQ ── */
+    #faq {
+      background: var(--gray-light);
+      padding: 100px 5%;
+    }
+
+    #faq h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 0.6rem;
+    }
+
+    #faq .section-intro {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      max-width: 520px;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.4rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .faq-trigger:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--black);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.3s;
+    }
+    .faq-icon svg { transition: transform 0.3s; }
+
+    .faq-item.open .faq-icon { background: var(--orange); }
+    .faq-item.open .faq-icon svg { transform: rotate(45deg); }
+
+    .faq-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s ease;
+    }
+    .faq-item.open .faq-body { grid-template-rows: 1fr; }
+
+    .faq-body-inner {
+      overflow: hidden;
+    }
+
+    .faq-answer {
+      font-size: 0.97rem;
+      color: #555;
+      line-height: 1.75;
+      padding-bottom: 1.4rem;
+    }
+    .faq-answer strong { color: var(--black); font-weight: 700; }
+
     /* ── COUNTER ── */
     #counter {
       background: var(--black);
@@ -1267,6 +1358,99 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="section-inner">
+      <p class="section-label reveal">FAQ</p>
+      <h2 class="reveal">Domande frequenti</h2>
+      <p class="section-intro reveal">Tutto quello che vuoi sapere prima di iniziare.</p>
+
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Quanto costa una sessione con un personal trainer a Roma?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Il costo di una sessione con un <strong>personal trainer a Roma</strong> varia in base alla modalità scelta: palestra, domicilio, online o videocall. Con Davide Cacciola il prezzo è definito dopo la <strong>valutazione gratuita iniziale</strong>, perché ogni percorso è costruito su misura. Contattami per un preventivo personalizzato senza impegno.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">In quali zone di Roma lavori?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Come <strong>personal trainer a domicilio Roma</strong> raggiungo le zone di <strong>Garbatella, Monteverde, Battistini, Tuscolana</strong> e le aree limitrofe. Per le sessioni in palestra opero in strutture selezionate in diversi quartieri. Per chi è fuori Roma o preferisce la comodità di casa, sono disponibile anche in modalità <strong>online e videocall</strong>, senza limitazioni geografiche.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Il personal training online funziona davvero?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Sì, il <strong>personal trainer online</strong> funziona quando c'è un metodo serio dietro. Con me ottieni un <strong>programma personalizzato</strong> basato sulla tua valutazione iniziale, un piano alimentare elaborato con un nutrizionista e <strong>supporto continuo via WhatsApp</strong>. Il programma viene aggiornato periodicamente sulla base dei tuoi progressi reali, misurati con dati oggettivi.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Cosa include la valutazione gratuita?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">La <strong>valutazione gratuita</strong> dura circa un'ora e include: analisi della composizione corporea con <strong>bioimpedenziometro Akern BIA 101</strong> (massa grassa, massa muscolare, idratazione), <strong>esame posturale completo</strong>, raccolta della storia clinica e sportiva, definizione degli obiettivi. Solo dopo questa fase costruisco il tuo programma su misura. Zero impegno, zero costi nascosti.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Posso allenarmi a domicilio senza attrezzatura?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Assolutamente sì. Come <strong>personal trainer a domicilio Roma</strong> porto con me tutto il necessario per la sessione. Possiamo lavorare efficacemente anche con il solo peso corporeo, con elastici o con piccoli attrezzi. L'allenamento funzionale a corpo libero, se strutturato correttamente, produce <strong>risultati concreti e misurabili</strong> — lo dimostrano i risultati dei miei clienti.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CTA FINALE -->
   <section id="cta-finale">
     <div class="cta-inner">
@@ -1367,6 +1551,26 @@
   </a>
 
   <script>
+    /* ── FAQ ACCORDION ── */
+    (function () {
+      document.querySelectorAll('.faq-trigger').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.faq-item');
+          var isOpen = item.classList.contains('open');
+          /* close all */
+          document.querySelectorAll('.faq-item').forEach(function (el) {
+            el.classList.remove('open');
+            el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+          /* open clicked if was closed */
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
     /* ── COUNTER ANIMATION ── */
     (function () {
       function animateCounter(el) {
