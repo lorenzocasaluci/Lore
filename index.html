@@ -32,7 +32,8 @@
       font-family: 'Inter', sans-serif;
       color: var(--black);
       background: var(--white);
-      line-height: 1.7;
+      line-height: 1.8;
+      font-weight: 300;
       overflow-x: hidden;
     }
 
@@ -186,18 +187,19 @@
       display: inline-block;
       background: var(--orange);
       color: var(--white);
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.9rem 2rem;
-      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.88rem;
+      padding: 0.85rem 2rem;
+      border-radius: 3px;
       text-decoration: none;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
     }
     .btn-primary:hover {
       background: var(--orange-dark);
       transform: scale(1.03) translateY(-1px);
-      box-shadow: 0 8px 24px rgba(255,107,0,0.38);
+      box-shadow: 0 8px 24px rgba(255,107,0,0.3);
     }
 
     .btn-ghost {
@@ -241,7 +243,7 @@
     /* ── CHI SONO ── */
     #chi-sono {
       background: var(--white);
-      padding: 100px 5%;
+      padding: 140px 5%;
     }
 
     .section-inner {
@@ -250,23 +252,13 @@
     }
 
     .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--orange);
       margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      max-width: 40px;
-      height: 2px;
-      background: var(--orange);
-      border-radius: 2px;
+      display: block;
     }
 
     #chi-sono h2 {
@@ -349,7 +341,7 @@
     /* ── SERVIZI ── */
     #servizi {
       background: var(--black);
-      padding: 100px 5%;
+      padding: 140px 5%;
     }
 
     #servizi .section-label { color: var(--orange); }
@@ -432,7 +424,7 @@
     /* ── METODO ── */
     #metodo {
       background: var(--gray-light);
-      padding: 100px 5%;
+      padding: 140px 5%;
     }
 
     #metodo h2 {
@@ -523,7 +515,7 @@
     /* ── TESTIMONIANZE ── */
     #testimonianze {
       background: var(--white);
-      padding: 100px 5%;
+      padding: 140px 5%;
     }
 
     #testimonianze h2 {
@@ -616,7 +608,7 @@
     /* ── CTA FINALE ── */
     #cta-finale {
       background: var(--black);
-      padding: 80px 5% 60px;
+      padding: 140px 5%;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -672,19 +664,20 @@
       display: inline-block;
       background: var(--orange);
       color: var(--white);
-      font-size: 1.1rem;
-      font-weight: 800;
-      padding: 1rem 2.4rem;
-      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 1rem 2.6rem;
+      border-radius: 3px;
       text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 24px rgba(255,107,0,0.35);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(255,107,0,0.25);
     }
     .btn-cta-final:hover {
       background: var(--orange-dark);
       transform: scale(1.03) translateY(-2px);
-      box-shadow: 0 10px 36px rgba(255,107,0,0.5);
+      box-shadow: 0 10px 32px rgba(255,107,0,0.38);
     }
 
     .cta-reassurance {
@@ -697,8 +690,7 @@
     /* ── CONTATTI ── */
     #contatti {
       background: var(--black);
-      padding: 80px 5% 100px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 140px 5%;
     }
 
     #contatti h2 {
@@ -823,28 +815,29 @@
       background: var(--orange);
       color: var(--white);
       font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 0.88rem;
+      font-weight: 500;
       padding: 0.85rem 2rem;
       border: none;
-      border-radius: 6px;
+      border-radius: 3px;
       cursor: pointer;
-      letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
       align-self: flex-start;
     }
     .btn-form-submit:hover {
       background: var(--orange-dark);
       transform: scale(1.03) translateY(-1px);
-      box-shadow: 0 8px 24px rgba(255,107,0,0.38);
+      box-shadow: 0 8px 24px rgba(255,107,0,0.3);
     }
 
     /* ── URGENZA ── */
     #urgenza {
       background: #0d0d0d;
-      padding: 70px 5%;
-      border-top: 3px solid var(--orange);
-      border-bottom: 3px solid var(--orange);
+      padding: 100px 5%;
+      border-top: 1px solid rgba(255,107,0,0.4);
+      border-bottom: 1px solid rgba(255,107,0,0.4);
     }
 
     .urgenza-inner {
@@ -879,7 +872,7 @@
     /* ── FAQ ── */
     #faq {
       background: var(--gray-light);
-      padding: 100px 5%;
+      padding: 140px 5%;
     }
 
     #faq h2 {
@@ -970,8 +963,7 @@
     /* ── COUNTER ── */
     #counter {
       background: var(--black);
-      padding: 80px 5%;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 140px 5%;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
@@ -1133,18 +1125,14 @@
     .reveal-group > *:nth-child(4) { transition-delay: 0.45s; }
 
     /* hero items animate on load */
-    #hero .hero-badge,
     #hero h1,
     #hero .hero-sub,
-    #hero .hero-actions,
-    #hero .hero-stats {
+    #hero .hero-actions {
       animation: heroFadeUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
-    #hero .hero-badge   { animation-delay: 0.2s; }
-    #hero h1            { animation-delay: 0.45s; }
-    #hero .hero-sub     { animation-delay: 0.7s; }
-    #hero .hero-actions { animation-delay: 0.9s; }
-    #hero .hero-stats   { animation-delay: 1.1s; }
+    #hero h1            { animation-delay: 0.3s; }
+    #hero .hero-sub     { animation-delay: 0.6s; }
+    #hero .hero-actions { animation-delay: 0.85s; }
 
     @keyframes heroFadeUp {
       from { opacity: 0; transform: translateY(32px); }
@@ -1177,8 +1165,6 @@
   <section id="hero">
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-inner">
-      <div class="hero-badge">Personal Trainer Roma</div>
-
       <h1>Hai provato tutto. Ma il tuo corpo non cambia.<br><em>Adesso cambia tutto.</em></h1>
 
       <p class="hero-sub">
@@ -1190,20 +1176,6 @@
         <a href="#chi-sono" class="btn-ghost">Scopri di più</a>
       </div>
 
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <strong>20+</strong>
-          <span>Anni di esperienza</span>
-        </div>
-        <div class="hero-stat">
-          <strong>500+</strong>
-          <span>Clienti seguiti</span>
-        </div>
-        <div class="hero-stat">
-          <strong>4</strong>
-          <span>Modalità di allenamento</span>
-        </div>
-      </div>
     </div>
   </section>
 
