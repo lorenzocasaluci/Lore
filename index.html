@@ -215,12 +215,13 @@
       padding: 0.9rem 2rem;
       border-radius: 6px;
       text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
       letter-spacing: 0.01em;
     }
     .btn-primary:hover {
       background: var(--orange-dark);
-      transform: translateY(-1px);
+      transform: scale(1.03) translateY(-1px);
+      box-shadow: 0 8px 24px rgba(255,107,0,0.38);
     }
 
     .btn-ghost {
@@ -706,8 +707,8 @@
     }
     .btn-cta-final:hover {
       background: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(255,107,0,0.45);
+      transform: scale(1.03) translateY(-2px);
+      box-shadow: 0 10px 36px rgba(255,107,0,0.5);
     }
 
     .cta-reassurance {
@@ -858,7 +859,8 @@
     }
     .btn-form-submit:hover {
       background: var(--orange-dark);
-      transform: translateY(-1px);
+      transform: scale(1.03) translateY(-1px);
+      box-shadow: 0 8px 24px rgba(255,107,0,0.38);
     }
 
     /* ── URGENZA ── */
@@ -1081,6 +1083,23 @@
       .form-row { grid-template-columns: 1fr; }
       .btn-form-submit { width: 100%; }
     }
+    /* ── SECTION SEPARATORS ── */
+    #chi-sono, #servizi, #counter, #metodo,
+    #testimonianze, #faq, #urgenza, #cta-finale {
+      position: relative;
+    }
+    #chi-sono::after, #servizi::after, #counter::after,
+    #metodo::after, #testimonianze::after, #faq::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,107,0,0.55), transparent);
+    }
+
     /* ── WHATSAPP BUTTON ── */
     .wa-btn {
       position: fixed;
