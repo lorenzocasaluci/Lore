@@ -36,36 +36,10 @@
       overflow-x: hidden;
     }
 
-    /* ── TOPBAR ── */
-    .topbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 101;
-      background: var(--orange);
-      color: var(--white);
-      font-size: 13px;
-      font-weight: 600;
-      text-align: center;
-      padding: 0.45rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      letter-spacing: 0.01em;
-    }
-    .topbar a {
-      color: var(--white);
-      font-weight: 800;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.5);
-      transition: border-color 0.2s;
-    }
-    .topbar a:hover { border-color: var(--white); }
-
     /* ── NAV ── */
     nav {
       position: fixed;
-      top: 36px; left: 0; right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -134,7 +108,7 @@
       background: var(--black);
       display: flex;
       align-items: center;
-      padding: 156px 5% 80px;
+      padding: 120px 5% 80px;
       position: relative;
       overflow: hidden;
     }
@@ -1069,7 +1043,7 @@
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 104px; left: 0; right: 0;
+        top: 68px; left: 0; right: 0;
         background: var(--black);
         padding: 1.5rem 5%;
         border-bottom: 1px solid rgba(255,107,0,0.2);
@@ -1171,12 +1145,6 @@
   </style>
 </head>
 <body>
-
-  <!-- TOPBAR -->
-  <div class="topbar">
-    Valutazione fisica gratuita — Prenota ora &nbsp;·&nbsp;
-    <a href="tel:+393282214522">328 221 4522</a>
-  </div>
 
   <!-- NAV -->
   <nav>
