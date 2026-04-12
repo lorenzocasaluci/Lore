@@ -1049,30 +1049,10 @@
       .form-row { grid-template-columns: 1fr; }
       .btn-form-submit { width: 100%; }
     }
-    /* ── SECTION TRANSITIONS ── */
+    /* ── SECTION POSITIONING ── */
     #hero, #chi-sono, #servizi, #counter, #metodo,
     #testimonianze, #faq, #urgenza, #cta-finale, #contatti {
       position: relative;
-    }
-    /* dark → light: fade bottom edge of dark section to white */
-    #hero::after, #servizi::after, #counter::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 80px;
-      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.04));
-      pointer-events: none;
-    }
-    /* light → dark: subtle orange divider line centered */
-    #chi-sono::after, #metodo::after, #testimonianze::after, #faq::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,107,0,0.4), transparent);
     }
 
     /* ── WHATSAPP BUTTON ── */
@@ -1178,11 +1158,11 @@
       <h1>Stai lavorando duro. Ma il tuo corpo non cambia.<br><em>È ora di cambiare metodo.</em></h1>
 
       <p class="hero-sub">
-        Davide Cacciola — personal trainer a Roma con metodo scientifico e 20 anni di esperienza. Valutazione gratuita, zero impegno.
+        Davide Cacciola, personal trainer a Roma con metodo scientifico e 20 anni di esperienza. Valutazione gratuita, zero impegno.
       </p>
 
       <div class="hero-actions">
-        <a href="#contatti" class="btn-primary">Voglio trasformarmi — prenota gratis</a>
+        <a href="#contatti" class="btn-primary">Voglio trasformarmi. Prenota gratis</a>
       </div>
 
     </div>
@@ -1198,13 +1178,13 @@
         <img src="IMG_1886.png" alt="Davide Cacciola personal trainer Roma" class="chisono-photo" />
         <div class="chisono-text">
           <p>
-            Hai provato palestre, diete, programmi online. Hai fatto sacrifici. Ma i risultati non arrivano — o arrivano e poi scompaiono. Non è colpa tua. È che nessuno ha mai costruito un percorso davvero su di te.
+            Hai provato palestre, diete, programmi online. Hai fatto sacrifici. Ma i risultati non arrivano, o arrivano e poi scompaiono. Non è colpa tua. È che nessuno ha mai costruito un percorso davvero su di te.
           </p>
           <p>
             Mi chiamo <strong>Davide Cacciola</strong>, personal trainer a Roma da oltre 20 anni. Lavoro con <strong>Laurea in Scienze Motorie</strong>, <strong>Master in Posturologia alla Sapienza</strong> e strumenti professionali come il <strong>bioimpedenziometro Akern BIA 101</strong>.
           </p>
           <p>
-            Non vendo schede standard. Costruisco trasformazioni reali — basate sui tuoi dati, il tuo corpo, il tuo ritmo.
+            Non vendo schede standard. Costruisco trasformazioni reali, basate sui tuoi dati, il tuo corpo, il tuo ritmo.
           </p>
           <a href="#contatti" class="btn-primary" style="margin-top:0.8rem; display:inline-block;">Prenota la valutazione gratuita</a>
         </div>
@@ -1463,7 +1443,7 @@
           </button>
           <div class="faq-body" role="region">
             <div class="faq-body-inner">
-              <p class="faq-answer">Assolutamente sì. Come <strong>personal trainer a domicilio Roma</strong> porto con me tutto il necessario per la sessione. Possiamo lavorare efficacemente anche con il solo peso corporeo, con elastici o con piccoli attrezzi. L'allenamento funzionale a corpo libero, se strutturato correttamente, produce <strong>risultati concreti e misurabili</strong> — lo dimostrano i risultati dei miei clienti.</p>
+              <p class="faq-answer">Assolutamente sì. Come <strong>personal trainer a domicilio Roma</strong> porto con me tutto il necessario per la sessione. Possiamo lavorare efficacemente anche con il solo peso corporeo, con elastici o con piccoli attrezzi. L'allenamento funzionale a corpo libero, se strutturato correttamente, produce <strong>risultati concreti e misurabili</strong>. Lo dimostrano i risultati dei miei clienti.</p>
             </div>
           </div>
         </div>
@@ -1477,7 +1457,7 @@
     <div class="urgenza-inner reveal">
       <p class="urgenza-tag">Posti limitati</p>
       <p class="urgenza-text">Davide segue un <strong>numero limitato di clienti</strong> per garantire la massima qualità. Ogni mese i posti disponibili sono limitati. <strong>Prenota subito la tua valutazione gratuita</strong> prima che si riempiano.</p>
-      <a href="#contatti" class="btn-primary">Prenota ora — è gratis</a>
+      <a href="#contatti" class="btn-primary">Prenota ora, è gratis</a>
     </div>
   </section>
 
@@ -1487,7 +1467,7 @@
       <span class="cta-badge reveal">Valutazione gratuita</span>
       <h2 class="reveal">Pronto a iniziare il tuo percorso con un personal trainer a Roma?</h2>
       <p class="reveal">Valutazione fisica gratuita, un'ora, zero impegno.</p>
-      <a href="#contatti" class="btn-cta-final">Prenota ora — è gratis</a>
+      <a href="#contatti" class="btn-cta-final">Prenota ora, è gratis</a>
       <p class="cta-reassurance">Nessun vincolo. Nessun costo nascosto. Solo risultati.</p>
     </div>
   </section>
