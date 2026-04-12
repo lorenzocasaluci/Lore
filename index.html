@@ -883,6 +883,51 @@
       .form-row { grid-template-columns: 1fr; }
       .btn-form-submit { width: 100%; }
     }
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* stagger delays for grid children */
+    .reveal-group > * {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal-group > *.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-group > *:nth-child(2) { transition-delay: 0.1s; }
+    .reveal-group > *:nth-child(3) { transition-delay: 0.2s; }
+    .reveal-group > *:nth-child(4) { transition-delay: 0.3s; }
+
+    /* hero items animate on load, not scroll */
+    #hero .hero-badge,
+    #hero h1,
+    #hero .hero-sub,
+    #hero .hero-actions,
+    #hero .hero-stats {
+      animation: heroFadeUp 0.7s ease both;
+    }
+    #hero h1          { animation-delay: 0.1s; }
+    #hero .hero-sub   { animation-delay: 0.22s; }
+    #hero .hero-actions { animation-delay: 0.34s; }
+    #hero .hero-stats { animation-delay: 0.46s; }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-group > * { transition: none; opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -937,10 +982,10 @@
   <!-- CHI SONO -->
   <section id="chi-sono">
     <div class="section-inner">
-      <p class="section-label">Chi sono</p>
-      <h2>Non sono il classico personal trainer a Roma.</h2>
+      <p class="section-label reveal">Chi sono</p>
+      <h2 class="reveal">Non sono il classico personal trainer a Roma.</h2>
 
-      <div class="chisono-layout">
+      <div class="chisono-layout reveal">
         <img src="IMG_1886.png" alt="Davide Cacciola personal trainer Roma" class="chisono-photo" />
         <div class="chisono-text">
           <p>
@@ -992,11 +1037,11 @@
   <!-- SERVIZI -->
   <section id="servizi">
     <div class="section-inner">
-      <p class="section-label">Servizi</p>
-      <h2>Personal training a Roma su misura per te.</h2>
-      <p class="section-intro">Scegli la modalità più adatta al tuo stile di vita. Stessa qualità, stesso metodo.</p>
+      <p class="section-label reveal">Servizi</p>
+      <h2 class="reveal">Personal training a Roma su misura per te.</h2>
+      <p class="section-intro reveal">Scegli la modalità più adatta al tuo stile di vita. Stessa qualità, stesso metodo.</p>
 
-      <div class="services-grid">
+      <div class="services-grid reveal-group">
 
         <div class="service-card">
           <div class="service-card-icon">🏋️</div>
@@ -1034,13 +1079,13 @@
   <!-- METODO -->
   <section id="metodo">
     <div class="section-inner">
-      <p class="section-label">Il metodo</p>
-      <h2>Il metodo che fa la differenza.</h2>
-      <p class="metodo-intro">
+      <p class="section-label reveal">Il metodo</p>
+      <h2 class="reveal">Il metodo che fa la differenza.</h2>
+      <p class="metodo-intro reveal">
         Niente pacchetti standard. Valutazione gratuita di un'ora con analisi Akern BIA 101 ed esame posturale. Solo dopo costruisco il programma su misura adattandolo nel tempo con dati oggettivi.
       </p>
 
-      <div class="steps">
+      <div class="steps reveal-group">
         <div class="step">
           <div class="step-num">1</div>
           <h3>Valutazione gratuita</h3>
@@ -1068,11 +1113,11 @@
   <!-- TESTIMONIANZE -->
   <section id="testimonianze">
     <div class="section-inner">
-      <p class="section-label">Testimonianze</p>
-      <h2>Risultati reali, persone reali.</h2>
-      <p class="section-intro">Cosa dicono le persone che hanno scelto di allenarsi con Davide.</p>
+      <p class="section-label reveal">Testimonianze</p>
+      <h2 class="reveal">Risultati reali, persone reali.</h2>
+      <p class="section-intro reveal">Cosa dicono le persone che hanno scelto di allenarsi con Davide.</p>
 
-      <div class="reviews-grid">
+      <div class="reviews-grid reveal-group">
 
         <div class="review-card">
           <div class="stars">★★★★★</div>
@@ -1129,9 +1174,9 @@
   <!-- CTA FINALE -->
   <section id="cta-finale">
     <div class="cta-inner">
-      <span class="cta-badge">Valutazione gratuita</span>
-      <h2>Pronto a iniziare il tuo percorso con un personal trainer a Roma?</h2>
-      <p>Valutazione fisica gratuita, un'ora, zero impegno.</p>
+      <span class="cta-badge reveal">Valutazione gratuita</span>
+      <h2 class="reveal">Pronto a iniziare il tuo percorso con un personal trainer a Roma?</h2>
+      <p class="reveal">Valutazione fisica gratuita, un'ora, zero impegno.</p>
       <a href="#contatti" class="btn-cta-final">Prenota ora — è gratis</a>
       <p class="cta-reassurance">Nessun vincolo. Nessun costo nascosto. Solo risultati.</p>
     </div>
@@ -1140,11 +1185,11 @@
   <!-- CONTATTI -->
   <section id="contatti">
     <div class="section-inner">
-      <p class="section-label" style="color:var(--orange);">Contatti</p>
-      <h2>Contatta il tuo personal trainer a Roma</h2>
-      <p class="section-intro">Per informazioni, prezzi o per prenotare la tua valutazione gratuita per il tuo allenamento personalizzato Roma.</p>
+      <p class="section-label reveal" style="color:var(--orange);">Contatti</p>
+      <h2 class="reveal">Contatta il tuo personal trainer a Roma</h2>
+      <p class="section-intro reveal">Per informazioni, prezzi o per prenotare la tua valutazione gratuita per il tuo allenamento personalizzato Roma.</p>
 
-      <div class="contatti-layout">
+      <div class="contatti-layout reveal">
 
         <!-- Info -->
         <div class="contatti-info">
@@ -1218,5 +1263,27 @@
     © 2025 Davide Cacciola – Personal trainer a Roma &nbsp;·&nbsp; Allenamento personalizzato Roma &nbsp;·&nbsp; P.IVA XXXXXXXXXX
   </footer>
 
+  <script>
+    (function () {
+      const io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      /* single reveal elements */
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        io.observe(el);
+      });
+
+      /* staggered children inside reveal-group */
+      document.querySelectorAll('.reveal-group > *').forEach(function (el) {
+        io.observe(el);
+      });
+    })();
+  </script>
 </body>
 </html>
