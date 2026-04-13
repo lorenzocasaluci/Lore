@@ -15,21 +15,38 @@
       padding: 0;
     }
 
-    /* ── PAGE LOAD FADE-IN ── */
-    @keyframes pageLoad {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+    /* ── HERO ENTRANCE ── */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0);    }
     }
 
-    body {
-      animation: pageLoad 1.5s ease forwards;
+    @keyframes heroBounceIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0)    scale(1);    }
+    }
+
+    .hero h1 {
+      animation: heroFadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation-delay: 0.15s;
+    }
+
+    .hero .hero-sub {
+      animation: heroFadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation-delay: 0.35s;
+    }
+
+    .hero .btn-primary {
+      animation: heroBounceIn 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      animation-delay: 0.6s;
     }
 
     /* ── SCROLL REVEAL ── */
     .js-enabled .reveal {
       opacity: 0;
       transform: translateY(26px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       transition-delay: var(--delay, 0s);
     }
 
@@ -71,6 +88,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0);
+      transition: box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    nav.scrolled {
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     }
 
     .nav-brand {
@@ -1405,6 +1428,12 @@
   </footer>
 
   <script>
+    // ── Navbar sticky shadow ──
+    const navEl = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      navEl.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
     // ── Hamburger ──
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
