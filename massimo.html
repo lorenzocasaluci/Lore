@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Massimo Faraci – Personal Trainer e Osteopata Roma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --white:   #ffffff;
+      --text:    #222222;
+      --accent:  #00BFA5;
+      --accent-light: #e0f7f4;
+      --gray:    #666666;
+      --gray-light: #f5f5f5;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid #eeeeee;
+      padding: 0 1.5rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .nav-brand .name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+
+    .nav-brand .subtitle {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--gray);
+      letter-spacing: 0.2px;
+    }
+
+    /* hamburger */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px;
+      height: 18px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* mobile menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid #eeeeee;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 1rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--accent);
+    }
+
+    /* desktop links */
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links .cta-nav {
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.55rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links .cta-nav:hover {
+      opacity: 0.88;
+      color: var(--white);
+    }
+
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links  { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--white);
+      padding: 5rem 1.5rem 4.5rem;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+
+    .hero h1 .accent-line {
+      display: block;
+      color: var(--accent);
+    }
+
+    .hero .hero-sub {
+      margin-top: 1.5rem;
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      color: var(--gray);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      margin-top: 2.4rem;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+      box-shadow: 0 4px 18px rgba(0, 191, 165, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 191, 165, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      opacity: 0.9;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: #eeeeee;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ── CHI SONO ── */
+    .chi-sono {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .chi-sono h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .chi-sono p {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    .chi-sono p strong {
+      color: var(--text);
+    }
+
+    /* ── COUNTER ── */
+    .counter {
+      background: var(--accent-light);
+      padding: 4rem 1.5rem;
+    }
+
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .counter-item {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 191, 165, 0.1);
+    }
+
+    .counter-item .number {
+      display: block;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .counter-item .label {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 540px) {
+      .counter-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+      }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.82rem;
+      color: #aaaaaa;
+      border-top: 1px solid #eeeeee;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-brand">
+      <span class="name">Massimo Faraci</span>
+      <span class="subtitle">Personal Trainer e Osteopata Roma</span>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links">
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#counter">Risultati</a>
+      <a href="#prenota" class="cta-nav">Prenota ora</a>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#chi-sono" onclick="closeMenu()">Chi sono</a>
+    <a href="#counter" onclick="closeMenu()">Risultati</a>
+    <a href="#prenota" onclick="closeMenu()">Prenota la prova gratuita</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>
+      Il tuo corpo non mente. Il tuo metodo sì.
+      <span class="accent-line">Cambia metodo. Cambia risultati.</span>
+    </h1>
+    <p class="hero-sub">
+      Massimo Faraci, personal trainer e osteopata a Roma con oltre 15 anni di esperienza.
+      Valutazione gratuita, zero impegno.
+    </p>
+    <a href="#prenota" class="btn-primary" id="prenota">Prenota la prova gratuita</a>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CHI SONO -->
+  <section class="chi-sono" id="chi-sono">
+    <span class="section-label">Chi sono</span>
+    <h2>Non sono il classico personal trainer a Roma.</h2>
+    <p>
+      Mi chiamo <strong>Massimo Faraci</strong>. Laureato in Scienze Motorie, osteopata diplomato
+      e docente certificato dal 2018. Ho aiutato <strong>oltre 117 persone</strong> a raggiungere
+      i loro obiettivi.<br /><br />
+      Niente programmi generici. Solo <strong>metodo scientifico</strong> e risultati misurabili.
+    </p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- COUNTER -->
+  <section class="counter" id="counter">
+    <div class="counter-grid">
+      <div class="counter-item">
+        <span class="number">15+</span>
+        <span class="label">Anni di esperienza</span>
+      </div>
+      <div class="counter-item">
+        <span class="number">117+</span>
+        <span class="label">Clienti seguiti</span>
+      </div>
+      <div class="counter-item">
+        <span class="number">100%</span>
+        <span class="label">Personalizzato</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Massimo Faraci · Personal Trainer &amp; Osteopata Roma
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    }
+  </script>
+
+</body>
+</html>
