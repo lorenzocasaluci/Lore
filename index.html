@@ -3,33 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Macelleria da Tommaso Turi – Martano (LE)</title>
-  <meta name="description" content="Macelleria artigianale a Martano. Carni fresche selezionate, salsicce, bombette e involtini senza conservanti. Tel: 335 694 0879" />
+  <title>Personal Trainer Roma Davide Cacciola Allenamento Personalizzato</title>
+  <meta name="description" content="Personal trainer a Roma con 20 anni di esperienza. Allenamento personalizzato in palestra, a domicilio, online e videocall. Valutazione gratuita. 3282214522." />
+  <meta name="keywords" content="personal trainer Roma, personal trainer a domicilio Roma, allenamento personalizzato Roma, personal trainer online Roma, Davide Cacciola" />
+  <meta property="og:title" content="Personal Trainer Roma | Davide Cacciola | Allenamento Su Misura" />
+  <meta property="og:description" content="Personal trainer a Roma con 20 anni di esperienza. Allenamento personalizzato in palestra, a domicilio e online. Valutazione gratuita." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --red:     #b01a1a;
-      --red2:    #8b0000;
-      --green:   #2e7d32;
-      --cream:   #fdf8f2;
-      --dark:    #1a1a1a;
-      --charcoal:#2c2c2c;
-      --muted:   #6b7280;
-      --border:  rgba(176,26,26,0.15);
-      --gold:    #c9953a;
+      --black:  #111111;
+      --white:  #ffffff;
+      --orange: #FF6B00;
+      --orange-dark: #d95a00;
+      --gray-light: #f5f5f5;
+      --gray-mid: #888888;
+      --border: rgba(255,107,0,0.2);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
-      color: var(--charcoal);
-      background: var(--cream);
-      line-height: 1.7;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.8;
+      font-weight: 300;
       overflow-x: hidden;
     }
 
@@ -41,22 +45,33 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.7rem 5%;
-      background: rgba(26,26,26,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid var(--red2);
+      padding: 0 5%;
+      height: 68px;
+      background: var(--black);
+      border-bottom: 2px solid var(--orange);
     }
 
     .nav-logo {
       display: flex;
-      align-items: center;
-      gap: 0.6rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
       text-decoration: none;
+      letter-spacing: -0.01em;
     }
-
-    .nav-logo img {
-      height: 56px;
-      width: auto;
+    .nav-logo-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .nav-logo-name span { color: var(--orange); }
+    .nav-logo-sub {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      line-height: 1;
     }
 
     .nav-links {
@@ -66,959 +81,1685 @@
     }
 
     .nav-links a {
-      color: #e5e0d8;
+      color: rgba(255,255,255,0.75);
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-weight: 500;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       transition: color 0.2s;
     }
-
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--orange); }
 
     .nav-cta {
-      background: var(--red);
-      color: #fff !important;
-      padding: 0.45rem 1.1rem;
+      background: var(--orange);
+      color: var(--white) !important;
+      padding: 0.5rem 1.2rem;
       border-radius: 4px;
+      font-weight: 700 !important;
+      letter-spacing: 0.03em !important;
       transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--red2) !important; color: #fff !important; }
+    .nav-cta:hover { background: var(--orange-dark) !important; }
 
-    /* hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
-      padding: 4px;
+      background: none;
+      border: none;
+      padding: 0;
     }
     .hamburger span {
       display: block;
-      width: 24px; height: 2px;
-      background: #e5e0d8;
-      border-radius: 2px;
-      transition: 0.3s;
+      width: 22px; height: 2px;
+      background: var(--white);
+      border-radius: 0;
+      transition: transform 0.3s, opacity 0.3s;
     }
 
     /* ── HERO ── */
-    #home {
+    #hero {
       min-height: 100vh;
+      background: var(--black);
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      padding: 120px 5% 80px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #1a0505 0%, #3a0a0a 40%, #1a1a0a 100%);
-      padding: 8rem 5% 5rem;
     }
 
-    .hero-pattern {
+    .hero-bg {
       position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(45deg, rgba(176,26,26,0.04) 0, rgba(176,26,26,0.04) 1px, transparent 0, transparent 50%),
-        repeating-linear-gradient(-45deg, rgba(176,26,26,0.04) 0, rgba(176,26,26,0.04) 1px, transparent 0, transparent 50%);
-      background-size: 30px 30px;
+      top: -30%;
+      left: 0; right: 0;
+      height: 160%;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(255,107,0,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,107,0,0.06) 0%, transparent 60%);
+      pointer-events: none;
+      will-change: transform;
     }
 
-    .hero-content {
+    .hero-inner {
+      max-width: 820px;
       position: relative;
-      max-width: 780px;
+      z-index: 1;
     }
 
     .hero-badge {
-      display: inline-block;
-      background: rgba(176,26,26,0.2);
-      border: 1px solid rgba(176,26,26,0.5);
-      color: #e5a0a0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,107,0,0.12);
+      border: 1px solid var(--border);
+      color: var(--orange);
       font-size: 0.78rem;
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 0.35rem 1rem;
-      border-radius: 20px;
-      margin-bottom: 1.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.8rem;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
     }
 
-    .hero-logo {
-      width: 180px;
-      height: auto;
-      margin: 0 auto 1.8rem;
-      display: block;
-      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
-      background: white;
-      border-radius: 12px;
-      padding: 10px;
+    #hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 1.4rem;
+    }
+    #hero h1 em {
+      font-style: normal;
+      color: var(--orange);
     }
 
-    .hero-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: rgba(255,255,255,0.65);
+      font-weight: 400;
+      max-width: 600px;
+      margin-bottom: 2.4rem;
+      line-height: 1.8;
     }
 
-    .hero-content h1 span { color: var(--gold); }
-
-    .hero-content p {
-      font-size: 1.1rem;
-      color: #c8bfb0;
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
-      font-weight: 300;
-    }
-
-    .hero-stars {
+    .hero-actions {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 2.5rem;
-      color: var(--gold);
-      font-size: 1.3rem;
-    }
-
-    .hero-stars span {
-      color: #c8bfb0;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
+      gap: 1.2rem;
       flex-wrap: wrap;
     }
 
     .btn-primary {
-      background: var(--red);
-      color: #fff;
-      padding: 0.9rem 2.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn-primary:hover { background: var(--red2); transform: translateY(-2px); }
-
-    .btn-outline {
-      border: 2px solid rgba(255,255,255,0.4);
-      color: #fff;
-      padding: 0.9rem 2.2rem;
-      border-radius: 6px;
-      text-decoration: none;
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
       font-weight: 500;
       font-size: 0.95rem;
-      transition: border-color 0.2s, transform 0.2s;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
     }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: scale(1.03) translateY(-1px);
+      box-shadow: 0 8px 24px rgba(255,107,0,0.3);
+    }
 
-    /* ── SECTIONS SHARED ── */
-    section { padding: 5rem 5%; }
+.hero-stats {
+      margin-top: 4rem;
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat strong {
+      display: block;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .hero-stat span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── CHI SONO ── */
+    #chi-sono {
+      background: var(--white);
+      padding: 140px 5%;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
     .section-label {
-      display: inline-block;
-      background: rgba(176,26,26,0.08);
-      color: var(--red);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      padding: 0.3rem 0.9rem;
-      border-radius: 20px;
-      margin-bottom: 0.8rem;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      font-size: 1.02rem;
-      max-width: 580px;
-      line-height: 1.75;
-    }
-
-    /* ── CHI SIAMO ── */
-    #chi-siamo {
-      background: #fff;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .about-img-wrap {
-      position: relative;
-    }
-
-    .about-img-placeholder {
-      width: 100%;
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, #3a0a0a, #8b1a1a);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.9rem;
-      gap: 0.5rem;
-    }
-
-    .about-img-placeholder svg { opacity: 0.5; }
-
-    .about-badge {
-      position: absolute;
-      bottom: -18px;
-      right: -18px;
-      background: var(--green);
-      color: #fff;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-align: center;
-      line-height: 1.3;
-      box-shadow: 0 4px 16px rgba(46,125,50,0.4);
-    }
-
-    .about-badge strong { font-size: 1.5rem; display: block; }
-
-    .about-text .section-sub { max-width: 100%; margin-bottom: 1.5rem; }
-
-    .about-quote {
-      border-left: 3px solid var(--red);
-      padding-left: 1.2rem;
-      color: var(--charcoal);
-      font-style: italic;
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-top: 1.5rem;
-    }
-
-    /* ── PRODOTTI ── */
-    #prodotti {
-      background: var(--cream);
-    }
-
-    .prodotti-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .prodotti-header .section-sub { margin: 0 auto; }
-
-    .prodotti-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .prodotto-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      transition: transform 0.25s, box-shadow 0.25s;
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .prodotto-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
-    }
-
-    .prodotto-icon {
-      background: linear-gradient(135deg, #3a0a0a, #8b1a1a);
-      height: 130px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.5rem;
-    }
-
-    .prodotto-body {
-      padding: 1.3rem 1.4rem 1.5rem;
-    }
-
-    .prodotto-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 0.4rem;
-    }
-
-    .prodotto-body p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .prodotto-tag {
-      display: inline-block;
-      margin-top: 0.8rem;
-      background: rgba(46,125,50,0.1);
-      color: var(--green);
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 0.2rem 0.6rem;
-      border-radius: 20px;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── GARANZIE ── */
-    #qualita {
-      background: linear-gradient(135deg, #1a0505 0%, #3a0a0a 100%);
-      color: #fff;
-    }
-
-    #qualita .section-title { color: #fff; }
-    #qualita .section-label { background: rgba(255,255,255,0.12); color: #e5a0a0; }
-
-    .qualita-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .qualita-header .section-sub { color: #c8bfb0; margin: 0 auto; }
-
-    .qualita-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .qualita-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: background 0.25s;
-    }
-
-    .qualita-card:hover { background: rgba(255,255,255,0.1); }
-
-    .qualita-icon {
-      font-size: 2.6rem;
+      color: var(--orange);
       margin-bottom: 1rem;
       display: block;
     }
 
-    .qualita-card h3 {
-      font-family: 'Playfair Display', serif;
+    #chi-sono h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 1.8rem;
+      max-width: 680px;
+    }
+
+    .chisono-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .chisono-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      border: 2px solid var(--orange);
+      display: block;
+    }
+
+    .chisono-text p {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .chisono-text p:last-child { margin-bottom: 0; }
+
+    .chisono-text strong { color: var(--black); font-weight: 700; }
+
+    .chisono-creds {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cred-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      background: var(--gray-light);
+      border-radius: 8px;
+      border-left: 3px solid var(--orange);
+    }
+
+    .cred-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--orange);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
       font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--gold);
+    }
+
+    .cred-body strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 0.15rem;
+    }
+    .cred-body span {
+      font-size: 0.82rem;
+      color: var(--gray-mid);
+    }
+
+    /* ── SERVIZI ── */
+    #servizi {
+      background: var(--black);
+      padding: 140px 5%;
+    }
+
+    #servizi .section-label { color: var(--orange); }
+
+    #servizi h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--white);
       margin-bottom: 0.6rem;
     }
 
-    .qualita-card p {
-      color: #c8bfb0;
-      font-size: 0.9rem;
-      line-height: 1.65;
+    #servizi .section-intro {
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      max-width: 520px;
     }
 
-    /* ── RECENSIONI ── */
-    #recensioni {
-      background: #fff;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
     }
 
-    .recensioni-header {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .rating-summary {
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 2rem 1.6rem;
+      transition: background 0.25s, border-color 0.25s, transform 0.2s;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 1.5rem auto 3rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
+      text-decoration: none;
+      cursor: default;
+    }
+    .service-card:hover {
+      background: rgba(255,107,0,0.07);
+      border-color: rgba(255,107,0,0.35);
+      transform: translateY(-3px);
     }
 
-    .rating-big {
-      text-align: center;
-    }
-
-    .rating-big .score {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--dark);
+    .service-card-icon {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--orange);
       line-height: 1;
+      letter-spacing: -0.02em;
     }
 
-    .rating-big .stars { color: var(--gold); font-size: 1.4rem; margin: 0.3rem 0; }
-    .rating-big .count { color: var(--muted); font-size: 0.85rem; }
-
-    .rating-divider {
-      width: 1px;
-      height: 70px;
-      background: var(--border);
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
     }
 
-    .rating-text {
-      max-width: 280px;
+    .service-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
     }
 
-    .rating-text p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.65;
-    }
-
-    .google-badge {
+    .service-card-arrow {
+      margin-top: auto;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
-      font-weight: 500;
+    }
+    .service-card-arrow::after { content: '→'; }
+
+    /* ── METODO ── */
+    #metodo {
+      background: var(--gray-light);
+      padding: 140px 5%;
     }
 
-    .recensioni-grid {
+    #metodo h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 1rem;
+      max-width: 640px;
+    }
+
+    .metodo-intro {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.8;
+      max-width: 620px;
+      margin-bottom: 3.5rem;
+    }
+
+    .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
     }
 
-    .recensione-card {
-      background: var(--cream);
-      border-radius: 12px;
-      padding: 1.6rem;
-      border: 1px solid var(--border);
-      transition: box-shadow 0.25s;
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 20px);
+      right: calc(12.5% + 20px);
+      height: 2px;
+      background: repeating-linear-gradient(
+        to right,
+        var(--orange) 0, var(--orange) 8px,
+        transparent 8px, transparent 16px
+      );
+      z-index: 0;
     }
 
-    .recensione-card:hover { box-shadow: 0 4px 20px rgba(176,26,26,0.08); }
-
-    .recensione-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.8rem; }
-
-    .recensione-text {
-      color: var(--charcoal);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-      font-style: italic;
-    }
-
-    .recensione-author {
+    .step {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.7rem;
+      text-align: center;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .author-avatar {
-      width: 38px; height: 38px;
+    .step-num {
+      width: 56px;
+      height: 56px;
+      background: var(--black);
       border-radius: 50%;
-      background: linear-gradient(135deg, #3a0a0a, #8b1a1a);
-      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--white);
+      border: 3px solid var(--orange);
+      margin-bottom: 1.2rem;
       flex-shrink: 0;
     }
 
-    .author-info strong {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--dark);
+    .step:first-child .step-num,
+    .step:last-child .step-num {
+      background: var(--orange);
     }
 
-    .author-info span {
-      font-size: 0.78rem;
-      color: var(--muted);
+    .step h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+
+    .step p {
+      font-size: 0.82rem;
+      color: var(--gray-mid);
+      line-height: 1.8;
+    }
+
+    /* ── TESTIMONIANZE ── */
+    #testimonianze {
+      background: var(--white);
+      padding: 140px 5%;
+    }
+
+    #testimonianze h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 0.6rem;
+    }
+
+    #testimonianze .section-intro {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      max-width: 480px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .review-card {
+      background: var(--gray-light);
+      border-radius: 10px;
+      padding: 1.8rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .review-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    }
+
+    .stars {
+      display: flex;
+      gap: 3px;
+      color: var(--orange);
+      font-size: 0.95rem;
+    }
+
+    .review-text {
+      font-size: 0.97rem;
+      color: #333;
+      line-height: 1.8;
+      font-style: italic;
+      flex: 1;
+    }
+    .review-text::before { content: '\201C'; }
+    .review-text::after  { content: '\201D'; }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .review-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .review-author-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .review-author-tag {
+      font-size: 0.75rem;
+      color: var(--gray-mid);
+    }
+
+    /* ── CTA FINALE ── */
+    #cta-finale {
+      background: var(--black);
+      padding: 20px 5% 140px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-finale::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(255,107,0,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      max-width: 620px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,107,0,0.15);
+      border: 1px solid rgba(255,107,0,0.3);
+      color: var(--orange);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.6rem;
+    }
+
+    #cta-finale h2 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    #cta-finale p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 2.2rem;
+    }
+
+    .btn-cta-final {
+      display: block;
+      width: 100%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(255,107,0,0.25);
+    }
+    .btn-cta-final:hover {
+      background: var(--orange-dark);
+      transform: scale(1.03) translateY(-2px);
+      box-shadow: 0 10px 32px rgba(255,107,0,0.38);
+    }
+
+    .cta-reassurance {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
     }
 
     /* ── CONTATTI ── */
     #contatti {
-      background: var(--cream);
+      background: var(--black);
+      padding: 140px 5%;
     }
 
-    .contatti-grid {
+    #contatti h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    #contatti .section-intro {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.95rem;
+      margin-bottom: 3rem;
+    }
+
+    .contatti-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
       align-items: start;
     }
 
-    .info-block {
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-    }
+    .contatti-info { display: flex; flex-direction: column; gap: 1.8rem; }
 
-    .info-item {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .info-icon {
-      width: 44px; height: 44px;
-      background: linear-gradient(135deg, #3a0a0a, #8b1a1a);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .info-detail strong {
+    .info-block strong {
       display: block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
+      color: var(--orange);
+      margin-bottom: 0.5rem;
     }
-
-    .info-detail a {
-      color: var(--red);
+    .info-block a {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--white);
       text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
     }
-
-    .info-detail a:hover { text-decoration: underline; }
-
-    .info-detail p {
-      color: var(--charcoal);
-      font-size: 1rem;
-    }
+    .info-block a:hover { color: var(--orange); }
 
     .orari-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.92rem;
+    }
+    .orari-table tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .orari-table tr:last-child { border-bottom: none; }
+    .orari-table td {
+      padding: 0.55rem 0;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .orari-table td:first-child { font-weight: 600; color: rgba(255,255,255,0.85); }
+    .orari-table td:last-child { text-align: right; color: var(--orange); font-weight: 600; }
+
+    /* form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-field label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .form-field input,
+    .form-field textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      resize: none;
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: rgba(255,255,255,0.2); }
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--orange);
+      background: rgba(255,107,0,0.04);
+    }
+    .form-field textarea { min-height: 110px; }
+
+    .form-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
+    .form-privacy input[type="checkbox"] {
+      margin-top: 2px;
+      accent-color: var(--orange);
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+    }
+
+    .btn-form-submit {
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      align-self: flex-start;
+    }
+    .btn-form-submit:hover {
+      background: var(--orange-dark);
+      transform: scale(1.03) translateY(-1px);
+      box-shadow: 0 8px 24px rgba(255,107,0,0.3);
+    }
+
+    /* ── URGENZA ── */
+    #urgenza {
+      background: #0d0d0d;
+      padding: 60px 5% 20px;
+      border-top: 1px solid rgba(255,107,0,0.4);
+      border-bottom: 1px solid rgba(255,107,0,0.4);
+    }
+
+    .urgenza-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.4rem;
+    }
+
+    .urgenza-tag {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+    }
+
+    .urgenza-text {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+    }
+    .urgenza-text strong { color: var(--white); font-weight: 700; }
+
+    /* ── FAQ ── */
+    #faq {
+      background: var(--gray-light);
+      padding: 140px 5%;
+    }
+
+    #faq h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 0.6rem;
+    }
+
+    #faq .section-intro {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      max-width: 520px;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.4rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .faq-trigger:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--black);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.3s;
+    }
+    .faq-icon svg { transition: transform 0.3s; }
+
+    .faq-item.open .faq-icon { background: var(--orange); }
+    .faq-item.open .faq-icon svg { transform: rotate(45deg); }
+
+    .faq-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s ease;
+    }
+    .faq-item.open .faq-body { grid-template-rows: 1fr; }
+
+    .faq-body-inner {
+      overflow: hidden;
+    }
+
+    .faq-answer {
+      font-size: 0.97rem;
+      color: #555;
+      line-height: 1.8;
+      padding-bottom: 1.4rem;
+    }
+    .faq-answer strong { color: var(--black); font-weight: 700; }
+
+    /* ── SPECIALITÀ ── */
+    #specialita {
+      background: var(--white);
+      padding: 140px 5%;
+    }
+
+    #specialita h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 3rem;
+    }
+
+    .specialita-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .specialita-card {
+      background: var(--white);
+      padding: 2rem 1.8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background 0.2s;
+    }
+    .specialita-card:hover { background: #fafafa; }
+
+    .specialita-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.08em;
+      padding-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .specialita-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.35;
+    }
+
+    @media (max-width: 900px) {
+      .specialita-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .specialita-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── COUNTER ── */
+    #counter {
+      background: var(--black);
+      padding: 60px 5%;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .counter-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .counter-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+
+    .counter-value {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .counter-suffix {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .counter-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       margin-top: 0.3rem;
     }
 
-    .orari-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .orari-table tr:last-child { border-bottom: none; }
-
-    .orari-table td {
-      padding: 0.45rem 0;
-      color: var(--charcoal);
+    @media (max-width: 640px) {
+      .counter-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
-    .orari-table td:last-child {
-      text-align: right;
-      font-weight: 500;
-    }
-
-    .orari-table tr.oggi td { color: var(--red); font-weight: 600; }
-
-    .map-wrap {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .map-wrap iframe {
-      width: 100%;
-      height: 380px;
-      border: none;
-      display: block;
-    }
-
-    /* ── FOOTER ── */
+    /* footer */
     footer {
-      background: var(--dark);
-      color: #c8bfb0;
+      background: #111;
       text-align: center;
       padding: 2.5rem 5%;
-      font-size: 0.88rem;
+      font-size: 0.75rem;
+      color: #666;
+      letter-spacing: 0.03em;
+      line-height: 1.8;
     }
-
-    footer a { color: var(--gold); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    footer .footer-logo {
-      height: 60px;
-      margin: 0 auto 1rem;
-      display: block;
-      background: white;
-      border-radius: 8px;
-      padding: 6px;
-    }
-
-    footer p { margin-top: 0.4rem; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .chisono-layout { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .chisono-photo { aspect-ratio: 4/3; }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .steps::before { display: none; }
+      .contatti-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
 
+    @media (max-width: 640px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; }
       .nav-links.open {
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 70px; left: 0; right: 0;
-        background: rgba(26,26,26,0.98);
+        top: 68px; left: 0; right: 0;
+        background: var(--black);
         padding: 1.5rem 5%;
+        border-bottom: 1px solid rgba(255,107,0,0.2);
         gap: 1.2rem;
-        border-bottom: 2px solid var(--red2);
       }
-
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-badge { bottom: -12px; right: -8px; width: 82px; height: 82px; font-size: 0.65rem; }
-      .about-badge strong { font-size: 1.2rem; }
-
-      .contatti-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .map-wrap iframe { height: 280px; }
-
-      .rating-divider { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-stats { gap: 1.5rem; }
+      .chisono-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .chisono-photo { aspect-ratio: 4/3; }
+      .form-row { grid-template-columns: 1fr; }
+      .btn-form-submit { width: 100%; }
+    }
+    /* ── SECTION POSITIONING ── */
+    #hero, #chi-sono, #servizi, #counter, #metodo,
+    #testimonianze, #faq, #urgenza, #cta-finale, #contatti {
+      position: relative;
     }
 
-    @media (max-width: 480px) {
-      .hero-btns { flex-direction: column; align-items: center; }
+    /* ── WHATSAPP BUTTON ── */
+    .wa-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+    }
+
+    /* ── PAGE LOAD FADE-IN ── */
+    @keyframes pageFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    body {
+      animation: pageFadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* stagger delays for grid children */
+    .reveal-group > * {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-group > *.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-group > *:nth-child(2) { transition-delay: 0.15s; }
+    .reveal-group > *:nth-child(3) { transition-delay: 0.30s; }
+    .reveal-group > *:nth-child(4) { transition-delay: 0.45s; }
+
+    /* hero items animate on load */
+    #hero h1,
+    #hero .hero-sub,
+    #hero .hero-actions {
+      animation: heroFadeUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    #hero h1            { animation-delay: 0.3s; }
+    #hero .hero-sub     { animation-delay: 0.6s; }
+    #hero .hero-actions { animation-delay: 0.85s; }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
+      .reveal, .reveal-group > * { transition: none; opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ══ NAVIGATION ══ -->
-  <nav id="navbar">
-    <a href="#home" class="nav-logo">
-      <img src="logo.svg" alt="Macelleria da Tommaso" onerror="this.style.display='none'"/>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-name">Davide <span>Cacciola</span></span>
+      <span class="nav-logo-sub">Dottore in Scienze Motorie</span>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#chi-siamo">Chi Siamo</a></li>
-      <li><a href="#prodotti">Prodotti</a></li>
-      <li><a href="#qualita">Qualità</a></li>
-      <li><a href="#recensioni">Recensioni</a></li>
-      <li><a href="#contatti" class="nav-cta">Contattaci</a></li>
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#metodo">Metodo</a></li>
+      <li><a href="#contatti" class="nav-cta">Valutazione gratuita</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </nav>
 
-  <!-- ══ HERO ══ -->
-  <section id="home">
-    <div class="hero-pattern"></div>
-    <div class="hero-content">
-      <div class="hero-badge">&#127822; Martano · Lecce · Puglia</div>
-      <img src="logo.svg" alt="Logo Macelleria da Tommaso" class="hero-logo" />
-      <h1>Sapori <span>Autentici</span>,<br/>Tradizione di Famiglia</h1>
-      <p>Carni fresche selezionate, preparati artigianali senza conservanti. Una realtà storica nel cuore del Salento.</p>
-      <div class="hero-stars">
-        ★★★★★
-        <span>4,9/5 · Google Reviews</span>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-inner">
+      <h1>Stai lavorando duro. Ma il tuo corpo non cambia.<br><em>È ora di cambiare metodo.</em></h1>
+
+      <p class="hero-sub">
+        Davide Cacciola, personal trainer a Roma con metodo scientifico e 20 anni di esperienza. Valutazione gratuita, zero impegno.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contatti" class="btn-primary">Voglio trasformarmi. Prenota gratis</a>
       </div>
-      <div class="hero-btns">
-        <a href="tel:3356940879" class="btn-primary">&#128222; Chiama Ora</a>
-        <a href="#prodotti" class="btn-outline">Scopri i Prodotti</a>
-      </div>
+
     </div>
   </section>
 
-  <!-- ══ CHI SIAMO ══ -->
-  <section id="chi-siamo">
-    <div class="about-grid">
-      <div class="about-img-wrap">
-        <div class="about-img-placeholder">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.2">
-            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-          <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:0.5rem">La nostra macelleria</span>
-        </div>
-        <div class="about-badge">
-          <strong>4,9</strong>
-          ★ Google
-        </div>
-      </div>
-      <div class="about-text">
-        <div class="section-label">Chi Siamo</div>
-        <h2 class="section-title">Una Realtà Storica nel Cuore del Salento</h2>
-        <p class="section-sub">
-          Da generazioni siamo il punto di riferimento per chi cerca qualità, genuinità e sapori autentici a Martano e in tutto il Salento. Selezioniamo con cura solo le migliori carni provenienti da allevamenti controllati, garantendo freschezza e rispetto delle tradizioni artigianali.
-        </p>
-        <blockquote class="about-quote">
-          "Nei nostri preparati non usiamo mai conservanti, coloranti o additivi, ma solo ingredienti naturali e tanta passione. Ogni giorno lavoriamo con dedizione per offrire prodotti sani e gustosi, portando sulle vostre tavole il sapore vero della carne di una volta."
-        </blockquote>
-      </div>
-    </div>
-  </section>
+  <!-- CHI SONO -->
+  <section id="chi-sono">
+    <div class="section-inner">
+      <p class="section-label reveal">Chi sono</p>
+      <h2 class="reveal">So esattamente come ti senti.</h2>
 
-  <!-- ══ PRODOTTI ══ -->
-  <section id="prodotti">
-    <div class="prodotti-header">
-      <div class="section-label">I Nostri Prodotti</div>
-      <h2 class="section-title">Specialità Artigianali</h2>
-      <p class="section-sub">Ogni preparato è realizzato a mano ogni giorno, con ingredienti freschi e naturali, senza conservanti né additivi.</p>
-    </div>
-    <div class="prodotti-grid">
-      <div class="prodotto-card">
-        <div class="prodotto-icon">🥩</div>
-        <div class="prodotto-body">
-          <h3>Carni Fresche</h3>
-          <p>Carni di alta qualità provenienti da allevamenti selezionati e controllati. Fresche ogni giorno, tagliate su misura.</p>
-          <span class="prodotto-tag">✓ Filiera Controllata</span>
-        </div>
-      </div>
-      <div class="prodotto-card">
-        <div class="prodotto-icon">🌿</div>
-        <div class="prodotto-body">
-          <h3>Salsicce</h3>
-          <p>Salsicce dolci e piccanti preparate artigianalmente con spezie naturali e carne fresca macinata al momento.</p>
-          <span class="prodotto-tag">✓ Senza Conservanti</span>
-        </div>
-      </div>
-      <div class="prodotto-card">
-        <div class="prodotto-icon">🍖</div>
-        <div class="prodotto-body">
-          <h3>Bombette</h3>
-          <p>Le celebri bombette pugliesi, ripiene di formaggio e spezie aromatiche, una delizia della tradizione salentina.</p>
-          <span class="prodotto-tag">✓ Ricetta Tradizionale</span>
-        </div>
-      </div>
-      <div class="prodotto-card">
-        <div class="prodotto-icon">🫕</div>
-        <div class="prodotto-body">
-          <h3>Involtini</h3>
-          <p>Involtini di carne farciti con ingredienti scelti, pronti da cuocere in padella o sulla brace.</p>
-          <span class="prodotto-tag">✓ Pronti da Cuocere</span>
-        </div>
-      </div>
-      <div class="prodotto-card">
-        <div class="prodotto-icon">🥓</div>
-        <div class="prodotto-body">
-          <h3>Preparati Speciali</h3>
-          <p>Un'ampia selezione di preparati artigianali: polpette, spiedini, burger e molto altro per ogni occasione.</p>
-          <span class="prodotto-tag">✓ Fatto a Mano</span>
-        </div>
-      </div>
-      <div class="prodotto-card">
-        <div class="prodotto-icon">🛒</div>
-        <div class="prodotto-body">
-          <h3>Su Ordinazione</h3>
-          <p>Realizziamo preparazioni personalizzate per eventi, grigliate e feste. Contattaci per un preventivo.</p>
-          <span class="prodotto-tag">✓ Servizio Personalizzato</span>
+      <div class="chisono-layout reveal">
+        <img src="IMG_1886.png" alt="Davide Cacciola personal trainer Roma" class="chisono-photo" />
+        <div class="chisono-text">
+          <p>
+            Hai provato palestre, diete, programmi online. Hai fatto sacrifici. Ma i risultati non arrivano, o arrivano e poi scompaiono. Non è colpa tua. È che nessuno ha mai costruito un percorso davvero su di te.
+          </p>
+          <p>
+            Mi chiamo <strong>Davide Cacciola</strong>, personal trainer a Roma da oltre 20 anni. Lavoro con <strong>Laurea in Scienze Motorie</strong>, <strong>Master in Posturologia alla Sapienza</strong> e strumenti professionali come il <strong>bioimpedenziometro Akern BIA 101</strong>.
+          </p>
+          <p>
+            Non vendo schede standard. Costruisco trasformazioni reali, basate sui tuoi dati, il tuo corpo, il tuo ritmo.
+          </p>
+          <a href="#contatti" class="btn-primary" style="margin-top:0.8rem; display:inline-block;">Prenota la valutazione gratuita</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ QUALITÀ ══ -->
-  <section id="qualita">
-    <div class="qualita-header">
-      <div class="section-label">Le Nostre Garanzie</div>
-      <h2 class="section-title">Perché Sceglierci</h2>
-      <p class="section-sub">Qualità, genuinità e tradizione artigianale sono i valori che ci guidano ogni giorno da generazioni.</p>
-    </div>
-    <div class="qualita-grid">
-      <div class="qualita-card">
-        <span class="qualita-icon">🚫</span>
-        <h3>Zero Conservanti</h3>
-        <p>Nessun conservante, colorante o additivo. Solo ingredienti naturali e freschi, come una volta.</p>
-      </div>
-      <div class="qualita-card">
-        <span class="qualita-icon">🌾</span>
-        <h3>Filiera Controllata</h3>
-        <p>Selezioniamo esclusivamente carni da allevamenti controllati, con piena tracciabilità della provenienza.</p>
-      </div>
-      <div class="qualita-card">
-        <span class="qualita-icon">👨‍🍳</span>
-        <h3>Artigianalità</h3>
-        <p>Ogni preparato è lavorato a mano con cura e dedizione, seguendo le ricette della tradizione salentina.</p>
-      </div>
-      <div class="qualita-card">
-        <span class="qualita-icon">📅</span>
-        <h3>Freschezza Quotidiana</h3>
-        <p>I nostri prodotti sono preparati ogni giorno. Freschezza garantita dal mattino fino alla sera.</p>
-      </div>
-      <div class="qualita-card">
-        <span class="qualita-icon">⭐</span>
-        <h3>4,9 su Google</h3>
-        <p>Oltre 4.900 recensioni confermano la nostra qualità. La fiducia dei clienti è la nostra ricompensa.</p>
-      </div>
-      <div class="qualita-card">
-        <span class="qualita-icon">🏆</span>
-        <h3>Tradizione di Famiglia</h3>
-        <p>Una realtà storica nata dalla passione per la buona carne, tramandata di generazione in generazione.</p>
+  <!-- SERVIZI -->
+  <section id="servizi">
+    <div class="section-inner">
+      <p class="section-label reveal">Servizi</p>
+      <h2 class="reveal">Personal training a Roma su misura per te.</h2>
+      <p class="section-intro reveal">Scegli la modalità più adatta al tuo stile di vita. Stessa qualità, stesso metodo.</p>
+
+      <div class="services-grid reveal-group">
+
+        <div class="service-card">
+          <div class="service-card-icon">01</div>
+          <h3>Personal trainer in palestra Roma</h3>
+          <p>Sessioni individuali a Garbatella, Monteverde, Battistini, Tuscolana.</p>
+          <span class="service-card-arrow">Scopri</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-icon">02</div>
+          <h3>Personal trainer a domicilio Roma</h3>
+          <p>Vengo da te con tutto il necessario, zero spostamenti.</p>
+          <span class="service-card-arrow">Scopri</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-icon">03</div>
+          <h3>Personal trainer online</h3>
+          <p>Programma personalizzato, dieta con nutrizionista, supporto WhatsApp.</p>
+          <span class="service-card-arrow">Scopri</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-icon">04</div>
+          <h3>Personal trainer in videocall</h3>
+          <p>Sessioni live, correzione postura in tempo reale.</p>
+          <span class="service-card-arrow">Scopri</span>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ══ RECENSIONI ══ -->
-  <section id="recensioni">
-    <div class="recensioni-header">
-      <div class="section-label">Recensioni</div>
-      <h2 class="section-title">Cosa Dicono i Clienti</h2>
+
+  <!-- SPECIALITÀ -->
+  <section id="specialita">
+    <div class="section-inner">
+      <p class="section-label reveal">Specialità</p>
+      <h2 class="reveal">Cosa puoi ottenere.</h2>
+
+      <div class="specialita-grid reveal-group">
+
+        <div class="specialita-card">
+          <span class="specialita-num">01</span>
+          <h3>Dimagrimento e tonificazione</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">02</span>
+          <h3>Aumento massa muscolare</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">03</span>
+          <h3>Riduzione cellulite</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">04</span>
+          <h3>Ginnastica posturale</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">05</span>
+          <h3>Allenamento funzionale</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">06</span>
+          <h3>Stretching e mobilità</h3>
+        </div>
+
+      </div>
     </div>
-    <div class="rating-summary">
-      <div class="rating-big">
-        <div class="score">4,9</div>
-        <div class="stars">★★★★★</div>
-        <div class="count">su 5 · Google</div>
-        <div class="google-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-          Google Reviews
+  </section>
+
+  <!-- COUNTER -->
+  <section id="counter">
+    <div class="counter-grid">
+
+      <div class="counter-item reveal">
+        <div style="display:flex;align-items:baseline;gap:0.1em;">
+          <span class="counter-value" data-target="20">0</span>
+          <span class="counter-suffix">+</span>
+        </div>
+        <span class="counter-label">Anni di esperienza</span>
+      </div>
+
+      <div class="counter-item reveal">
+        <div style="display:flex;align-items:baseline;gap:0.1em;">
+          <span class="counter-value" data-target="500">0</span>
+          <span class="counter-suffix">+</span>
+        </div>
+        <span class="counter-label">Clienti seguiti</span>
+      </div>
+
+      <div class="counter-item reveal">
+        <div style="display:flex;align-items:baseline;gap:0.1em;">
+          <span class="counter-value" data-target="100">0</span>
+          <span class="counter-suffix">%</span>
+        </div>
+        <span class="counter-label">Personalizzato</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section id="metodo">
+    <div class="section-inner">
+      <p class="section-label reveal">Il metodo</p>
+      <h2 class="reveal">Il metodo che fa la differenza.</h2>
+      <p class="metodo-intro reveal">
+        Niente pacchetti standard. Valutazione gratuita di un'ora con analisi Akern BIA 101 ed esame posturale. Solo dopo costruisco il programma su misura adattandolo nel tempo con dati oggettivi.
+      </p>
+
+      <div class="steps reveal-group">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Valutazione gratuita</h3>
+          <p>Un'ora dedicata a te, analisi BIA ed esame posturale.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Piano personalizzato</h3>
+          <p>Programma costruito sui tuoi dati reali.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Allenamento</h3>
+          <p>Sessioni mirate, tecnica corretta, progressione costante.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Risultati misurabili</h3>
+          <p>Monitoraggio periodico con dati oggettivi.</p>
         </div>
       </div>
-      <div class="rating-divider"></div>
-      <div class="rating-text">
-        <p>Più di <strong>4.900 recensioni</strong> di clienti soddisfatti confermano la qualità dei nostri prodotti e il calore del nostro servizio.</p>
-      </div>
     </div>
-    <div class="recensioni-grid">
-      <div class="recensione-card">
-        <div class="recensione-stars">★★★★★</div>
-        <p class="recensione-text">"Da buon gustaio della carne vi consiglio vivamente di assaggiare la carne e le loro lavorazioni – salsicce dolci e piccanti, bombette, involtini... Una vera delizia!"</p>
-        <div class="recensione-author">
-          <div class="author-avatar">DB</div>
-          <div class="author-info">
-            <strong>Donato Bianco</strong>
-            <span>Recensione Google · 3 anni fa</span>
+  </section>
+
+  <!-- TESTIMONIANZE -->
+  <section id="testimonianze">
+    <div class="section-inner">
+      <p class="section-label reveal">Testimonianze</p>
+      <h2 class="reveal">Risultati reali, persone reali.</h2>
+      <p class="section-intro reveal">Cosa dicono le persone che hanno scelto di allenarsi con Davide.</p>
+
+      <div class="reviews-grid reveal-group">
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">Ho perso 25 kg da maggio a gennaio. Non mi sono sbagliato, sono proprio 25 kg. Un vero professionista.</p>
+          <div class="review-author">
+            <div class="review-avatar">LG</div>
+            <div>
+              <div class="review-author-name">Leonardo Grasso</div>
+              <div class="review-author-tag">Cliente da 9 mesi</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="recensione-card">
-        <div class="recensione-stars">★★★★★</div>
-        <p class="recensione-text">"Tutti i preparati senza ombra di conservanti. Questa è già una garanzia! A parte tutto il resto impeccabile."</p>
-        <div class="recensione-author">
-          <div class="author-avatar">PD</div>
-          <div class="author-info">
-            <strong>Pasqualina Dimitri</strong>
-            <span>Recensione Google · 11 mesi fa</span>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">In 3 mesi ho perso 5 kg di massa grassa e il metabolismo è migliorato in modo impressionante.</p>
+          <div class="review-author">
+            <div class="review-avatar">RM</div>
+            <div>
+              <div class="review-author-name">Ray Music</div>
+              <div class="review-author-tag">Cliente da 3 mesi</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="recensione-card">
-        <div class="recensione-stars">★★★★☆</div>
-        <p class="recensione-text">"Carni di ottima qualità, servizio buono! Consiglio a tutti di passare da Tommaso per trovare prodotti freschi e genuini."</p>
-        <div class="recensione-author">
-          <div class="author-avatar">LV</div>
-          <div class="author-info">
-            <strong>Luigi Vitto</strong>
-            <span>Recensione Google · 1 anno fa</span>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">In un mese e mezzo ho perso 5 kg eliminando completamente la ritenzione idrica.</p>
+          <div class="review-author">
+            <div class="review-avatar">SR</div>
+            <div>
+              <div class="review-author-name">Simona Ragno</div>
+              <div class="review-author-tag">Cliente da 6 settimane</div>
+            </div>
           </div>
         </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">Altamente professionale, tecnico ed esperto. Risultati significativi senza mai rischiare infortuni.</p>
+          <div class="review-author">
+            <div class="review-avatar">JS</div>
+            <div>
+              <div class="review-author-name">Justin Steinberg</div>
+              <div class="review-author-tag">Cliente da 5 mesi</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ══ CONTATTI ══ -->
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="section-inner">
+      <p class="section-label reveal">FAQ</p>
+      <h2 class="reveal">Tutto quello che vuoi sapere prima di iniziare.</h2>
+
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Quanto costa una sessione con un personal trainer a Roma?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Il costo di una sessione con un <strong>personal trainer a Roma</strong> varia in base alla modalità scelta: palestra, domicilio, online o videocall. Con Davide Cacciola il prezzo è definito dopo la <strong>valutazione gratuita iniziale</strong>, perché ogni percorso è costruito su misura. Contattami per un preventivo personalizzato senza impegno.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">In quali zone di Roma lavori?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Come <strong>personal trainer a domicilio Roma</strong> raggiungo le zone di <strong>Garbatella, Monteverde, Battistini, Tuscolana</strong> e le aree limitrofe. Per le sessioni in palestra opero in strutture selezionate in diversi quartieri. Per chi è fuori Roma o preferisce la comodità di casa, sono disponibile anche in modalità <strong>online e videocall</strong>, senza limitazioni geografiche.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Il personal training online funziona davvero?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Sì, il <strong>personal trainer online</strong> funziona quando c'è un metodo serio dietro. Con me ottieni un <strong>programma personalizzato</strong> basato sulla tua valutazione iniziale, un piano alimentare elaborato con un nutrizionista e <strong>supporto continuo via WhatsApp</strong>. Il programma viene aggiornato periodicamente sulla base dei tuoi progressi reali, misurati con dati oggettivi.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Cosa include la valutazione gratuita?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">La <strong>valutazione gratuita</strong> dura circa un'ora e include: analisi della composizione corporea con <strong>bioimpedenziometro Akern BIA 101</strong> (massa grassa, massa muscolare, idratazione), <strong>esame posturale completo</strong>, raccolta della storia clinica e sportiva, definizione degli obiettivi. Solo dopo questa fase costruisco il tuo programma su misura. Zero impegno, zero costi nascosti.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Posso allenarmi a domicilio senza attrezzatura?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-body" role="region">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Assolutamente sì. Come <strong>personal trainer a domicilio Roma</strong> porto con me tutto il necessario per la sessione. Possiamo lavorare efficacemente anche con il solo peso corporeo, con elastici o con piccoli attrezzi. L'allenamento funzionale a corpo libero, se strutturato correttamente, produce <strong>risultati concreti e misurabili</strong>. Lo dimostrano i risultati dei miei clienti.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- URGENZA -->
+  <section id="urgenza">
+    <div class="urgenza-inner reveal">
+      <p class="urgenza-tag">Posti limitati</p>
+      <p class="urgenza-text">Davide segue un <strong>numero limitato di clienti</strong> per garantire la massima qualità. Ogni mese i posti disponibili sono limitati. <strong>Prenota subito la tua valutazione gratuita</strong> prima che si riempiano.</p>
+      <a href="#contatti" class="btn-primary">Prenota ora, è gratis</a>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section id="cta-finale">
+    <div class="cta-inner">
+      <span class="cta-badge reveal">Valutazione gratuita</span>
+      <h2 class="reveal">Pronto a iniziare il tuo percorso con un personal trainer a Roma?</h2>
+      <p class="reveal">Valutazione fisica gratuita, un'ora, zero impegno.</p>
+      <a href="#contatti" class="btn-cta-final">Prenota ora, è gratis</a>
+      <p class="cta-reassurance">Nessun vincolo. Nessun costo nascosto. Solo risultati.</p>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
   <section id="contatti">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <div class="section-label">Dove Siamo</div>
-      <h2 class="section-title">Vieni a Trovarci</h2>
-    </div>
-    <div class="contatti-grid">
-      <div class="info-block">
-        <div class="info-item">
-          <div class="info-icon">📍</div>
-          <div class="info-detail">
-            <strong>Indirizzo</strong>
-            <p>Via Alessandro Manzoni, 14<br/>73025 Martano (LE)</p>
-          </div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon">📞</div>
-          <div class="info-detail">
+    <div class="section-inner">
+      <p class="section-label reveal" style="color:var(--orange);">Contatti</p>
+      <h2 class="reveal">Contatta il tuo personal trainer a Roma</h2>
+      <p class="section-intro reveal">Per informazioni, prezzi o per prenotare la tua valutazione gratuita per il tuo allenamento personalizzato Roma.</p>
+
+      <div class="contatti-layout reveal">
+
+        <!-- Info -->
+        <div class="contatti-info">
+          <div class="info-block">
             <strong>Telefono</strong>
-            <a href="tel:3356940879">335 694 0879</a>
+            <a href="tel:+393282214522">328 221 4522</a>
           </div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon">🕐</div>
-          <div class="info-detail">
-            <strong>Orari di Apertura</strong>
+
+          <div class="info-block">
+            <strong>Orari di disponibilità</strong>
             <table class="orari-table">
-              <tr><td>Lunedì – Venerdì</td><td>08:00 – 13:00 / 16:00 – 20:00</td></tr>
-              <tr><td>Sabato</td><td>08:00 – 13:00 / 16:00 – 20:00</td></tr>
-              <tr><td>Domenica</td><td>08:00 – 13:00</td></tr>
+              <tr>
+                <td>Lunedì – Venerdì</td>
+                <td>7:00 – 21:30</td>
+              </tr>
+              <tr>
+                <td>Sabato</td>
+                <td>9:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Domenica</td>
+                <td>Chiuso</td>
+              </tr>
             </table>
           </div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon">⭐</div>
-          <div class="info-detail">
-            <strong>Valutazione Google</strong>
-            <p style="color:var(--gold);font-weight:600;font-size:1.05rem;">★★★★★ 4,9 / 5</p>
-            <p style="font-size:0.85rem;color:var(--muted);">Basato su oltre 4.900 recensioni</p>
+
+          <div class="info-block">
+            <strong>Zone servite</strong>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);line-height:1.6;margin-top:0.2rem;">
+              Personal trainer a domicilio Roma su tutto il territorio. Palestra, online e videocall ovunque.
+            </p>
           </div>
         </div>
-      </div>
-      <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2d18.2945!3d40.2075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMacelleria+da+Tommaso+Turi%2C+Via+Alessandro+Manzoni+14%2C+Martano+LE!5e0!3m2!1sit!2sit!4v1"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Mappa Macelleria da Tommaso Turi">
-        </iframe>
+
+        <!-- Form -->
+        <form class="contact-form" name="contatti" netlify>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Mario Rossi" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="mario@email.com" required />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="telefono">Numero di telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+39 333 000 0000" />
+          </div>
+
+          <div class="form-field">
+            <label for="messaggio">Messaggio</label>
+            <textarea id="messaggio" name="messaggio" placeholder="Raccontami il tuo obiettivo"></textarea>
+          </div>
+
+          <label class="form-privacy">
+            <input type="checkbox" name="privacy" required />
+            Ho letto e accetto la <a href="#" style="color:var(--orange);text-decoration:none;">Privacy Policy</a>. Acconsento al trattamento dei dati personali ai sensi del GDPR.
+          </label>
+
+          <button type="submit" class="btn-form-submit">Invia richiesta</button>
+        </form>
+
       </div>
     </div>
   </section>
 
-  <!-- ══ FOOTER ══ -->
   <footer>
-    <img src="logo.svg" alt="Macelleria da Tommaso" class="footer-logo" onerror="this.style.display='none'"/>
-    <p><strong style="color:#e5e0d8;">Macelleria da Tommaso Turi</strong></p>
-    <p>Via Alessandro Manzoni, 14 · 73025 Martano (LE) · <a href="tel:3356940879">335 694 0879</a></p>
-    <p style="margin-top:1.2rem;font-size:0.78rem;opacity:0.5;">&copy; 2025 Macelleria da Tommaso Turi · Tutti i diritti riservati</p>
+    <p>© 2025 Davide Cacciola &nbsp;·&nbsp; Stai in Forma SSD srl &nbsp;·&nbsp; P.IVA 15405501006</p>
+    <p>Roma, Via Don Umberto Terenzi 93</p>
   </footer>
 
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/393282214522" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Contattami su WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.148 1.535 5.9L0 24l6.29-1.51A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.213-3.733.897.933-3.616-.234-.372A9.818 9.818 0 1 1 12 21.818zM17.2 14.55c-.3-.15-1.77-.872-2.044-.972-.273-.1-.472-.15-.67.15-.2.3-.77.972-.944 1.172-.173.2-.347.225-.647.075-.3-.15-1.266-.466-2.412-1.485-.892-.794-1.494-1.774-1.67-2.073-.174-.3-.018-.462.132-.61.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.67-1.613-.917-2.213-.242-.58-.487-.5-.67-.51l-.57-.01c-.2 0-.525.075-.8.375s-1.05 1.025-1.05 2.5 1.075 2.9 1.225 3.1c.15.2 2.116 3.226 5.126 4.525.716.31 1.275.494 1.71.632.719.228 1.374.196 1.89.119.577-.086 1.773-.724 2.023-1.423.25-.7.25-1.3.175-1.424-.075-.124-.275-.2-.575-.35z"/>
+    </svg>
+  </a>
+
   <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('open');
-    }
+    /* ── HERO PARALLAX ── */
+    (function () {
+      var bg = document.getElementById('heroBg');
+      var hero = document.getElementById('hero');
+      if (!bg || !hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Close menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('navLinks').classList.remove('open');
+      var ticking = false;
+      var lastY = 0;
+
+      function update() {
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        if (heroBottom < 0) { ticking = false; return; }
+        bg.style.transform = 'translateY(' + (lastY * 0.35).toFixed(2) + 'px)';
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        lastY = window.scrollY;
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+    /* ── FAQ ACCORDION ── */
+    (function () {
+      document.querySelectorAll('.faq-trigger').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.faq-item');
+          var isOpen = item.classList.contains('open');
+          /* close all */
+          document.querySelectorAll('.faq-item').forEach(function (el) {
+            el.classList.remove('open');
+            el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+          /* open clicked if was closed */
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
       });
-    });
+    })();
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      nav.style.padding = window.scrollY > 50 ? '0.5rem 5%' : '0.7rem 5%';
-    });
+    /* ── COUNTER ANIMATION ── */
+    (function () {
+      function animateCounter(el) {
+        var target = parseInt(el.dataset.target, 10);
+        var duration = 1400;
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          /* ease-out cubic */
+          var ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(step);
+      }
+
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      document.querySelectorAll('.counter-value').forEach(function (el) {
+        counterObserver.observe(el);
+      });
+    })();
+
+    /* ── SCROLL ANIMATIONS ── */
+    (function () {
+      const io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.06 });
+
+      /* single reveal elements */
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        io.observe(el);
+      });
+
+      /* staggered children inside reveal-group */
+      document.querySelectorAll('.reveal-group > *').forEach(function (el) {
+        io.observe(el);
+      });
+    })();
   </script>
 </body>
 </html>
