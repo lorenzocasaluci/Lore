@@ -478,6 +478,126 @@
       }
     }
 
+    /* ── TESTIMONIANZE ── */
+    .testimonianze {
+      background: var(--white);
+      padding: 5rem 1.5rem;
+    }
+
+    .testimonianze-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .testimonianze-inner h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .testi-card {
+      background: var(--gray-light);
+      border-radius: 14px;
+      padding: 1.8rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+    }
+
+    .testi-stars span {
+      color: var(--accent);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .testi-quote {
+      font-size: 0.97rem;
+      color: var(--gray);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .testi-author {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      padding-top: 0.5rem;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    @media (max-width: 600px) {
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── URGENZA ── */
+    .urgenza {
+      background: var(--accent);
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .urgenza-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .urgenza h2 {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .urgenza p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--accent);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-white:active {
+      transform: translateY(0);
+    }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -507,6 +627,7 @@
       <a href="#chi-sono">Chi sono</a>
       <a href="#servizi">Servizi</a>
       <a href="#metodo">Metodo</a>
+      <a href="#testimonianze">Recensioni</a>
       <a href="#prenota" class="cta-nav">Prenota ora</a>
     </div>
   </nav>
@@ -516,6 +637,7 @@
     <a href="#chi-sono" onclick="closeMenu()">Chi sono</a>
     <a href="#servizi" onclick="closeMenu()">Servizi</a>
     <a href="#metodo" onclick="closeMenu()">Metodo</a>
+    <a href="#testimonianze" onclick="closeMenu()">Recensioni</a>
     <a href="#counter" onclick="closeMenu()">Risultati</a>
     <a href="#prenota" onclick="closeMenu()">Prenota la prova gratuita</a>
   </div>
@@ -620,6 +742,58 @@
           <span class="step-label">Risultati misurabili</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIANZE -->
+  <section class="testimonianze" id="testimonianze">
+    <div class="testimonianze-inner">
+      <span class="section-label">Testimonianze</span>
+      <h2>Risultati reali, persone reali.</h2>
+      <div class="testi-grid">
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="testi-quote">Molto bravo, il migliore di tutta Roma. Molto preparato e professionale.</p>
+          <span class="testi-author">Omituaye Yemaya Reina</span>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="testi-quote">Riuscire a farmi allenare, proprio io che sono proverbialmente pigra. Massimo è riuscito dove altri hanno fallito.</p>
+          <span class="testi-author">Alessandra Ciccarelli</span>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="testi-quote">Tornare ad allenarsi dopo un lungo periodo di fermo non era facile. Con Massimo siamo ripartiti verso nuovi traguardi.</p>
+          <span class="testi-author">Francesca Ciccarelli</span>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+          </div>
+          <p class="testi-quote">Professionalità, competenza e soprattutto passione per il proprio lavoro.</p>
+          <span class="testi-author">Fabiola Fraccascia</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- URGENZA -->
+  <section class="urgenza" id="urgenza">
+    <div class="urgenza-inner">
+      <h2>I posti disponibili ogni mese sono limitati.</h2>
+      <p>Prenota subito la tua valutazione gratuita prima che si riempiano.</p>
+      <a href="#prenota" class="btn-white">Prenota ora, &egrave; gratis</a>
     </div>
   </section>
 
