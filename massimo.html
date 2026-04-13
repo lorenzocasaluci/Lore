@@ -598,6 +598,175 @@
       transform: translateY(0);
     }
 
+    /* ── CTA FINALE ── */
+    .cta-finale {
+      background: var(--gray-light);
+      padding: 5rem 1.5rem;
+    }
+
+    .cta-finale-inner {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-finale h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .cta-finale p {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary-block {
+      display: block;
+      width: 100%;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 18px rgba(0, 191, 165, 0.3);
+      margin-bottom: 1.2rem;
+    }
+
+    .btn-primary-block:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 191, 165, 0.4);
+    }
+
+    .btn-primary-block:active {
+      transform: translateY(0);
+    }
+
+    .cta-note {
+      font-size: 0.85rem;
+      color: #999999;
+      line-height: 1.5;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      background: var(--white);
+      padding: 5rem 1.5rem;
+    }
+
+    .faq-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-inner h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s;
+    }
+
+    .faq-trigger:hover {
+      background: #fafafa;
+    }
+
+    .faq-trigger[aria-expanded="true"] {
+      background: #fafafa;
+    }
+
+    .faq-question {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-trigger[aria-expanded="true"] .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.28s ease;
+    }
+
+    .faq-body.open {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-body-inner {
+      overflow: hidden;
+    }
+
+    .faq-answer {
+      padding: 0 1.6rem 1.4rem;
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -797,6 +966,88 @@
     </div>
   </section>
 
+  <!-- CTA FINALE -->
+  <section class="cta-finale" id="cta-finale">
+    <div class="cta-finale-inner">
+      <span class="section-label">Inizia ora</span>
+      <h2>Pronto a cambiare metodo?</h2>
+      <p>La valutazione fisica iniziale &egrave; gratuita e senza impegno.</p>
+      <a href="#prenota" class="btn-primary-block">Prenota ora, &egrave; gratis</a>
+      <span class="cta-note">Nessun vincolo. Nessun costo nascosto. Solo risultati.</span>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq-inner">
+      <span class="section-label">FAQ</span>
+      <h2>Domande frequenti.</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Quanto costa una sessione con un personal trainer a Roma?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Il costo dipende dal tipo di percorso scelto: in palestra, a domicilio o online. La prima valutazione &egrave; sempre gratuita e senza impegno &mdash; &egrave; l&rsquo;occasione giusta per capire qual &egrave; il piano pi&ugrave; adatto a te e al tuo budget.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">In quali zone di Roma lavori?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Lavoro in diverse zone di Roma, sia in palestre convenzionate che a domicilio. Contattami indicando il tuo quartiere e verifico subito la disponibilit&agrave;.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Cosa include la valutazione gratuita?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Un colloquio per capire i tuoi obiettivi, una valutazione posturale e di mobilit&agrave;, e la definizione di un percorso su misura. Dura circa 45 minuti, &egrave; completamente gratuita e non ti vincola a nulla.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Posso allenarmi a domicilio senza attrezzatura?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p class="faq-answer">S&igrave;. Progetto programmi a corpo libero efficaci, calibrati sul tuo livello e sullo spazio che hai a disposizione. L&rsquo;attrezzatura non &egrave; un requisito per ottenere risultati.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Cosa fa un osteopata diversamente da un personal trainer?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              <p class="faq-answer">Il personal trainer lavora su performance, forza e composizione corporea. L&rsquo;osteopata interviene su dolori, blocchi articolari e squilibri posturali. Avere entrambe le competenze mi permette di costruire percorsi completi, sicuri e davvero personalizzati.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     &copy; 2026 Massimo Faraci · Personal Trainer &amp; Osteopata Roma
@@ -817,6 +1068,23 @@
       hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', false);
     }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        // close all
+        document.querySelectorAll('.faq-trigger').forEach(t => {
+          t.setAttribute('aria-expanded', 'false');
+          t.nextElementSibling.classList.remove('open');
+        });
+        // open clicked unless it was already open
+        if (!isOpen) {
+          trigger.setAttribute('aria-expanded', 'true');
+          trigger.nextElementSibling.classList.add('open');
+        }
+      });
+    });
   </script>
 
 </body>
