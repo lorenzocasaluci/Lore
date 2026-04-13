@@ -958,6 +958,63 @@
     }
     .faq-answer strong { color: var(--black); font-weight: 700; }
 
+    /* ── SPECIALITÀ ── */
+    #specialita {
+      background: var(--white);
+      padding: 140px 5%;
+    }
+
+    #specialita h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 3rem;
+    }
+
+    .specialita-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .specialita-card {
+      background: var(--white);
+      padding: 2rem 1.8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: background 0.2s;
+    }
+    .specialita-card:hover { background: #fafafa; }
+
+    .specialita-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.08em;
+      padding-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .specialita-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.35;
+    }
+
+    @media (max-width: 900px) {
+      .specialita-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .specialita-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── COUNTER ── */
     #counter {
       background: var(--black);
@@ -1233,6 +1290,48 @@
     </div>
   </section>
 
+
+  <!-- SPECIALITÀ -->
+  <section id="specialita">
+    <div class="section-inner">
+      <p class="section-label reveal">Specialità</p>
+      <h2 class="reveal">Cosa puoi ottenere.</h2>
+
+      <div class="specialita-grid reveal-group">
+
+        <div class="specialita-card">
+          <span class="specialita-num">01</span>
+          <h3>Dimagrimento e tonificazione</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">02</span>
+          <h3>Aumento massa muscolare</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">03</span>
+          <h3>Riduzione cellulite</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">04</span>
+          <h3>Ginnastica posturale</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">05</span>
+          <h3>Allenamento funzionale</h3>
+        </div>
+
+        <div class="specialita-card">
+          <span class="specialita-num">06</span>
+          <h3>Stretching e mobilità</h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- COUNTER -->
   <section id="counter">
