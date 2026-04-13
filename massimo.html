@@ -15,6 +15,29 @@
       padding: 0;
     }
 
+    /* ── PAGE LOAD FADE-IN ── */
+    @keyframes pageLoad {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    body {
+      animation: pageLoad 1.5s ease forwards;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .js-enabled .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+      transition-delay: var(--delay, 0s);
+    }
+
+    .js-enabled .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
     :root {
       --white:   #ffffff;
       --text:    #222222;
@@ -158,7 +181,7 @@
       background: var(--accent);
       color: var(--white);
       padding: 0.55rem 1.2rem;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 600;
       transition: opacity 0.2s;
     }
@@ -176,7 +199,7 @@
     /* ── HERO ── */
     .hero {
       background: var(--white);
-      padding: 5rem 1.5rem 4.5rem;
+      padding: 6.25rem 1.5rem;
       text-align: center;
       max-width: 780px;
       margin: 0 auto;
@@ -234,17 +257,19 @@
 
     /* ── DIVIDER ── */
     .divider {
-      height: 1px;
-      background: #eeeeee;
-      max-width: 900px;
+      height: 2px;
+      width: 64px;
+      background: var(--accent);
       margin: 0 auto;
+      border-radius: 2px;
+      opacity: 0.6;
     }
 
     /* ── CHI SONO ── */
     .chi-sono {
       max-width: 720px;
       margin: 0 auto;
-      padding: 5rem 1.5rem;
+      padding: 6.25rem 1.5rem;
     }
 
     .section-label {
@@ -279,7 +304,7 @@
     /* ── COUNTER ── */
     .counter {
       background: var(--accent-light);
-      padding: 4rem 1.5rem;
+      padding: 6.25rem 1.5rem;
     }
 
     .counter-grid {
@@ -326,7 +351,7 @@
     /* ── SERVIZI ── */
     .servizi {
       background: var(--white);
-      padding: 5rem 1.5rem;
+      padding: 6.25rem 1.5rem;
     }
 
     .servizi-inner {
@@ -387,7 +412,7 @@
     /* ── METODO ── */
     .metodo {
       background: var(--gray-light);
-      padding: 5rem 1.5rem;
+      padding: 6.25rem 1.5rem;
     }
 
     .metodo-inner {
@@ -482,7 +507,7 @@
     /* ── TESTIMONIANZE ── */
     .testimonianze {
       background: var(--white);
-      padding: 5rem 1.5rem;
+      padding: 6.25rem 1.5rem;
     }
 
     .testimonianze-inner {
@@ -549,7 +574,7 @@
     /* ── URGENZA ── */
     .urgenza {
       background: var(--accent);
-      padding: 5rem 1.5rem;
+      padding: 6.25rem 1.5rem;
       text-align: center;
     }
 
@@ -602,7 +627,7 @@
     /* ── CTA FINALE ── */
     .cta-finale {
       background: var(--gray-light);
-      padding: 5rem 1.5rem;
+      padding: 6.25rem 1.5rem;
     }
 
     .cta-finale-inner {
@@ -664,7 +689,7 @@
     /* ── FAQ ── */
     .faq {
       background: var(--white);
-      padding: 5rem 1.5rem;
+      padding: 6.25rem 1.5rem;
     }
 
     .faq-inner {
@@ -771,7 +796,7 @@
     /* ── CONTATTI ── */
     .contatti {
       background: var(--white);
-      padding: 5rem 1.5rem;
+      padding: 6.25rem 1.5rem;
     }
 
     .contatti-inner {
@@ -1056,9 +1081,9 @@
 
   <!-- CHI SONO -->
   <section class="chi-sono" id="chi-sono">
-    <span class="section-label">Chi sono</span>
-    <h2>Non sono il classico personal trainer a Roma.</h2>
-    <p>
+    <span class="section-label reveal">Chi sono</span>
+    <h2 class="reveal" style="--delay:.08s">Non sono il classico personal trainer a Roma.</h2>
+    <p class="reveal" style="--delay:.16s">
       Mi chiamo <strong>Massimo Faraci</strong>. Laureato in Scienze Motorie, osteopata diplomato
       e docente certificato dal 2018. Ho aiutato <strong>oltre 117 persone</strong> a raggiungere
       i loro obiettivi.<br /><br />
@@ -1071,40 +1096,42 @@
   <!-- COUNTER -->
   <section class="counter" id="counter">
     <div class="counter-grid">
-      <div class="counter-item">
+      <div class="counter-item reveal">
         <span class="number">15+</span>
         <span class="label">Anni di esperienza</span>
       </div>
-      <div class="counter-item">
+      <div class="counter-item reveal" style="--delay:.1s">
         <span class="number">117+</span>
         <span class="label">Clienti seguiti</span>
       </div>
-      <div class="counter-item">
+      <div class="counter-item reveal" style="--delay:.2s">
         <span class="number">100%</span>
         <span class="label">Personalizzato</span>
       </div>
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- SERVIZI -->
   <section class="servizi" id="servizi">
     <div class="servizi-inner">
-      <span class="section-label">Servizi</span>
-      <h2>Personal training a Roma su misura per te.</h2>
+      <span class="section-label reveal">Servizi</span>
+      <h2 class="reveal" style="--delay:.08s">Personal training a Roma su misura per te.</h2>
       <div class="servizi-grid">
-        <div class="servizi-card">
+        <div class="servizi-card reveal">
           <span class="card-num">01</span>
           <span class="card-title">Personal trainer in palestra Roma</span>
         </div>
-        <div class="servizi-card">
+        <div class="servizi-card reveal" style="--delay:.1s">
           <span class="card-num">02</span>
           <span class="card-title">Personal trainer a domicilio Roma</span>
         </div>
-        <div class="servizi-card">
+        <div class="servizi-card reveal" style="--delay:.2s">
           <span class="card-num">03</span>
           <span class="card-title">Personal trainer online e coaching</span>
         </div>
-        <div class="servizi-card">
+        <div class="servizi-card reveal" style="--delay:.3s">
           <span class="card-num">04</span>
           <span class="card-title">Osteopatia e ginnastica posturale</span>
         </div>
@@ -1112,29 +1139,31 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- METODO -->
   <section class="metodo" id="metodo">
     <div class="metodo-inner">
-      <span class="section-label">Metodo</span>
-      <h2>Il metodo che fa la differenza.</h2>
-      <p class="metodo-intro">
+      <span class="section-label reveal">Metodo</span>
+      <h2 class="reveal" style="--delay:.08s">Il metodo che fa la differenza.</h2>
+      <p class="metodo-intro reveal" style="--delay:.16s">
         Niente pacchetti standard. Partiamo da una valutazione gratuita per capire il tuo
         stato di forma e costruire il percorso giusto. Solo dopo definisco il piano su misura.
       </p>
       <div class="steps">
-        <div class="step">
+        <div class="step reveal">
           <div class="step-circle">1</div>
           <span class="step-label">Valutazione gratuita</span>
         </div>
-        <div class="step">
+        <div class="step reveal" style="--delay:.1s">
           <div class="step-circle">2</div>
           <span class="step-label">Piano personalizzato</span>
         </div>
-        <div class="step">
+        <div class="step reveal" style="--delay:.2s">
           <div class="step-circle">3</div>
           <span class="step-label">Allenamento mirato</span>
         </div>
-        <div class="step">
+        <div class="step reveal" style="--delay:.3s">
           <div class="step-circle">4</div>
           <span class="step-label">Risultati misurabili</span>
         </div>
@@ -1142,14 +1171,16 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- TESTIMONIANZE -->
   <section class="testimonianze" id="testimonianze">
     <div class="testimonianze-inner">
-      <span class="section-label">Testimonianze</span>
-      <h2>Risultati reali, persone reali.</h2>
+      <span class="section-label reveal">Testimonianze</span>
+      <h2 class="reveal" style="--delay:.08s">Risultati reali, persone reali.</h2>
       <div class="testi-grid">
 
-        <div class="testi-card">
+        <div class="testi-card reveal">
           <div class="testi-stars">
             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
           </div>
@@ -1157,7 +1188,7 @@
           <span class="testi-author">Omituaye Yemaya Reina</span>
         </div>
 
-        <div class="testi-card">
+        <div class="testi-card reveal" style="--delay:.1s">
           <div class="testi-stars">
             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
           </div>
@@ -1165,7 +1196,7 @@
           <span class="testi-author">Alessandra Ciccarelli</span>
         </div>
 
-        <div class="testi-card">
+        <div class="testi-card reveal" style="--delay:.2s">
           <div class="testi-stars">
             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
           </div>
@@ -1173,7 +1204,7 @@
           <span class="testi-author">Francesca Ciccarelli</span>
         </div>
 
-        <div class="testi-card">
+        <div class="testi-card reveal" style="--delay:.3s">
           <div class="testi-stars">
             <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
           </div>
@@ -1185,34 +1216,40 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- URGENZA -->
   <section class="urgenza" id="urgenza">
     <div class="urgenza-inner">
-      <h2>I posti disponibili ogni mese sono limitati.</h2>
-      <p>Prenota subito la tua valutazione gratuita prima che si riempiano.</p>
-      <a href="#prenota" class="btn-white">Prenota ora, &egrave; gratis</a>
+      <h2 class="reveal">I posti disponibili ogni mese sono limitati.</h2>
+      <p class="reveal" style="--delay:.1s">Prenota subito la tua valutazione gratuita prima che si riempiano.</p>
+      <a href="#contatti" class="btn-white reveal" style="--delay:.2s">Prenota ora, &egrave; gratis</a>
     </div>
   </section>
+
+  <div class="divider"></div>
 
   <!-- CTA FINALE -->
   <section class="cta-finale" id="cta-finale">
     <div class="cta-finale-inner">
-      <span class="section-label">Inizia ora</span>
-      <h2>Pronto a cambiare metodo?</h2>
-      <p>La valutazione fisica iniziale &egrave; gratuita e senza impegno.</p>
-      <a href="#prenota" class="btn-primary-block">Prenota ora, &egrave; gratis</a>
-      <span class="cta-note">Nessun vincolo. Nessun costo nascosto. Solo risultati.</span>
+      <span class="section-label reveal">Inizia ora</span>
+      <h2 class="reveal" style="--delay:.08s">Pronto a cambiare metodo?</h2>
+      <p class="reveal" style="--delay:.16s">La valutazione fisica iniziale &egrave; gratuita e senza impegno.</p>
+      <a href="#contatti" class="btn-primary-block reveal" style="--delay:.24s">Prenota ora, &egrave; gratis</a>
+      <span class="cta-note reveal" style="--delay:.32s">Nessun vincolo. Nessun costo nascosto. Solo risultati.</span>
     </div>
   </section>
+
+  <div class="divider"></div>
 
   <!-- FAQ -->
   <section class="faq" id="faq">
     <div class="faq-inner">
-      <span class="section-label">FAQ</span>
-      <h2>Domande frequenti.</h2>
+      <span class="section-label reveal">FAQ</span>
+      <h2 class="reveal" style="--delay:.08s">Domande frequenti.</h2>
       <div class="faq-list">
 
-        <div class="faq-item">
+        <div class="faq-item reveal">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">Quanto costa una sessione con un personal trainer a Roma?</span>
             <span class="faq-icon">+</span>
@@ -1224,7 +1261,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal" style="--delay:.07s">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">In quali zone di Roma lavori?</span>
             <span class="faq-icon">+</span>
@@ -1236,7 +1273,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal" style="--delay:.14s">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">Cosa include la valutazione gratuita?</span>
             <span class="faq-icon">+</span>
@@ -1248,7 +1285,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal" style="--delay:.21s">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">Posso allenarmi a domicilio senza attrezzatura?</span>
             <span class="faq-icon">+</span>
@@ -1260,7 +1297,7 @@
           </div>
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item reveal" style="--delay:.28s">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">Cosa fa un osteopata diversamente da un personal trainer?</span>
             <span class="faq-icon">+</span>
@@ -1276,12 +1313,14 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- CONTATTI -->
   <section class="contatti" id="contatti">
     <div class="contatti-inner">
-      <span class="section-label">Contatti</span>
-      <h2>Contatta il tuo personal trainer a Roma.</h2>
-      <p class="contatti-intro">
+      <span class="section-label reveal">Contatti</span>
+      <h2 class="reveal" style="--delay:.08s">Contatta il tuo personal trainer a Roma.</h2>
+      <p class="contatti-intro reveal" style="--delay:.16s">
         Chiama o scrivi su WhatsApp per prenotare la tua valutazione gratuita
         nel giorno e orario che preferisci.
       </p>
@@ -1289,7 +1328,7 @@
       <div class="contatti-grid">
 
         <!-- Info -->
-        <div class="contatti-info">
+        <div class="contatti-info reveal" style="--delay:.22s">
           <div>
             <span class="phone-label">Telefono &amp; WhatsApp</span>
             <a href="tel:+393924594400" class="phone-link">392 4594 400</a>
@@ -1308,7 +1347,7 @@
         </div>
 
         <!-- Form -->
-        <form class="contatti-form" action="#" method="post" novalidate>
+        <form class="contatti-form reveal" style="--delay:.3s" action="#" method="post" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="f-nome">Nome</label>
@@ -1355,6 +1394,7 @@
   </footer>
 
   <script>
+    // ── Hamburger ──
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -1370,22 +1410,34 @@
       hamburger.setAttribute('aria-expanded', false);
     }
 
-    // FAQ accordion
+    // ── FAQ accordion ──
     document.querySelectorAll('.faq-trigger').forEach(trigger => {
       trigger.addEventListener('click', () => {
         const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-        // close all
         document.querySelectorAll('.faq-trigger').forEach(t => {
           t.setAttribute('aria-expanded', 'false');
           t.nextElementSibling.classList.remove('open');
         });
-        // open clicked unless it was already open
         if (!isOpen) {
           trigger.setAttribute('aria-expanded', 'true');
           trigger.nextElementSibling.classList.add('open');
         }
       });
     });
+
+    // ── Scroll reveal (Intersection Observer) ──
+    document.body.classList.add('js-enabled');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
