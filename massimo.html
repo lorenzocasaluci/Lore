@@ -343,8 +343,17 @@
 
     @media (max-width: 540px) {
       .counter-grid {
-        grid-template-columns: 1fr;
-        max-width: 320px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+      }
+      .counter-item .number {
+        font-size: 1.5rem;
+      }
+      .counter-item .label {
+        font-size: 0.75rem;
+      }
+      .counter-item {
+        padding: 1.2rem 0.4rem;
       }
     }
 
@@ -1067,8 +1076,8 @@
   <!-- HERO -->
   <section class="hero">
     <h1>
-      Il tuo corpo non mente. Il tuo metodo sì.
-      <span class="accent-line">Cambia metodo. Cambia risultati.</span>
+      117 persone hanno già cambiato corpo. La prossima sei tu.
+      <span class="accent-line">Con metodo scientifico. Senza scuse.</span>
     </h1>
     <p class="hero-sub">
       Massimo Faraci, personal trainer e osteopata a Roma con oltre 15 anni di esperienza.
@@ -1082,7 +1091,7 @@
   <!-- CHI SONO -->
   <section class="chi-sono" id="chi-sono">
     <span class="section-label reveal">Chi sono</span>
-    <h2 class="reveal" style="--delay:.08s">Non sono il classico personal trainer a Roma.</h2>
+    <h2 class="reveal" style="--delay:.08s">Alleno corpi. Riparo corpi. Trasformo vite.</h2>
     <p class="reveal" style="--delay:.16s">
       Mi chiamo <strong>Massimo Faraci</strong>. Laureato in Scienze Motorie, osteopata diplomato
       e docente certificato dal 2018. Ho aiutato <strong>oltre 117 persone</strong> a raggiungere
