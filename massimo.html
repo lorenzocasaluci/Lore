@@ -322,6 +322,162 @@
       }
     }
 
+    /* ── SERVIZI ── */
+    .servizi {
+      background: var(--white);
+      padding: 5rem 1.5rem;
+    }
+
+    .servizi-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .servizi-inner h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+
+    .servizi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .servizi-card {
+      border: 1.5px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.8rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .servizi-card:hover {
+      box-shadow: 0 6px 20px rgba(0, 191, 165, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .servizi-card .card-num {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1.5px;
+    }
+
+    .servizi-card .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    @media (max-width: 580px) {
+      .servizi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── METODO ── */
+    .metodo {
+      background: var(--gray-light);
+      padding: 5rem 1.5rem;
+    }
+
+    .metodo-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .metodo-inner h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .metodo-intro {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      max-width: 620px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    /* connecting line */
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: calc(12.5% + 1px);
+      right: calc(12.5% + 1px);
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 3px 12px rgba(0, 191, 165, 0.3);
+      margin-bottom: 1rem;
+    }
+
+    .step-label {
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .steps {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2rem;
+      }
+      .steps::before { display: none; }
+    }
+
+    @media (max-width: 380px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -349,7 +505,8 @@
 
     <div class="nav-links">
       <a href="#chi-sono">Chi sono</a>
-      <a href="#counter">Risultati</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#metodo">Metodo</a>
       <a href="#prenota" class="cta-nav">Prenota ora</a>
     </div>
   </nav>
@@ -357,6 +514,8 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
     <a href="#chi-sono" onclick="closeMenu()">Chi sono</a>
+    <a href="#servizi" onclick="closeMenu()">Servizi</a>
+    <a href="#metodo" onclick="closeMenu()">Metodo</a>
     <a href="#counter" onclick="closeMenu()">Risultati</a>
     <a href="#prenota" onclick="closeMenu()">Prenota la prova gratuita</a>
   </div>
@@ -404,6 +563,62 @@
       <div class="counter-item">
         <span class="number">100%</span>
         <span class="label">Personalizzato</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section class="servizi" id="servizi">
+    <div class="servizi-inner">
+      <span class="section-label">Servizi</span>
+      <h2>Personal training a Roma su misura per te.</h2>
+      <div class="servizi-grid">
+        <div class="servizi-card">
+          <span class="card-num">01</span>
+          <span class="card-title">Personal trainer in palestra Roma</span>
+        </div>
+        <div class="servizi-card">
+          <span class="card-num">02</span>
+          <span class="card-title">Personal trainer a domicilio Roma</span>
+        </div>
+        <div class="servizi-card">
+          <span class="card-num">03</span>
+          <span class="card-title">Personal trainer online e coaching</span>
+        </div>
+        <div class="servizi-card">
+          <span class="card-num">04</span>
+          <span class="card-title">Osteopatia e ginnastica posturale</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section class="metodo" id="metodo">
+    <div class="metodo-inner">
+      <span class="section-label">Metodo</span>
+      <h2>Il metodo che fa la differenza.</h2>
+      <p class="metodo-intro">
+        Niente pacchetti standard. Partiamo da una valutazione gratuita per capire il tuo
+        stato di forma e costruire il percorso giusto. Solo dopo definisco il piano su misura.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-circle">1</div>
+          <span class="step-label">Valutazione gratuita</span>
+        </div>
+        <div class="step">
+          <div class="step-circle">2</div>
+          <span class="step-label">Piano personalizzato</span>
+        </div>
+        <div class="step">
+          <div class="step-circle">3</div>
+          <span class="step-label">Allenamento mirato</span>
+        </div>
+        <div class="step">
+          <div class="step-circle">4</div>
+          <span class="step-label">Risultati misurabili</span>
+        </div>
       </div>
     </div>
   </section>
