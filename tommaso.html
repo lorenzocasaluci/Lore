@@ -344,7 +344,157 @@
       max-width: 160px;
     }
 
+    /* ─── SERVIZI ─── */
+    .servizi {
+      background: #1a1a1a;
+      padding: 96px 24px;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 32px 28px;
+      background: #111111;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover {
+      border-color: #484848;
+    }
+
+    .card-number {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray-mid);
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+
+    /* ─── METODO ─── */
+    .metodo {
+      background: var(--bg);
+      padding: 96px 24px;
+    }
+
+    .metodo-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 0;
+    }
+
+    .metodo-left .section-header {
+      margin-bottom: 24px;
+    }
+
+    .metodo-desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.75;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-top: 8px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .step-circle {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid #3a3a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      background: transparent;
+    }
+
+    .step-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+      padding-top: 6px;
+      letter-spacing: -0.2px;
+    }
+
     /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metodo-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .servizi,
+      .metodo {
+        padding: 72px 20px;
+      }
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -484,6 +634,66 @@
       <div class="counter-item">
         <div class="counter-value">1</div>
         <div class="counter-label">Obiettivo: il tuo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVIZI ─── -->
+  <section class="servizi" id="servizi">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Cosa offro</div>
+        <h2 class="section-title">Allenamento su misura.<br>Solo per te.</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-number">01</div>
+          <div class="card-title">Personal training in studio privato Lecce</div>
+        </div>
+        <div class="card">
+          <div class="card-number">02</div>
+          <div class="card-title">Allenamenti personalizzati per obiettivi specifici</div>
+        </div>
+        <div class="card">
+          <div class="card-number">03</div>
+          <div class="card-title">Percorsi per principianti e atleti esperti</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── METODO ─── -->
+  <section class="metodo" id="metodo">
+    <div class="section-inner">
+      <div class="metodo-body">
+        <div class="metodo-left">
+          <div class="section-header">
+            <div class="section-label">Il mio approccio</div>
+            <h2 class="section-title">Zero improvvisazione.<br>Solo metodo.</h2>
+          </div>
+          <p class="metodo-desc">
+            Ogni sessione nasce da una valutazione reale. Capisco dove sei,
+            dove vuoi arrivare e costruisco il percorso più efficace.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-circle">1</div>
+            <div class="step-text">Valutazione gratuita</div>
+          </div>
+          <div class="step">
+            <div class="step-circle">2</div>
+            <div class="step-text">Piano su misura</div>
+          </div>
+          <div class="step">
+            <div class="step-circle">3</div>
+            <div class="step-text">Allenamento mirato</div>
+          </div>
+          <div class="step">
+            <div class="step-circle">4</div>
+            <div class="step-text">Risultati concreti</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
