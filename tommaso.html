@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Trainer Lecce Tommaso Pagliara</title>
+  <meta name="description" content="Personal trainer a Lecce studio privato. Prima sessione gratuita. 342 568 2598." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #111111;
+      --white: #ffffff;
+      --gray-light: #a0a0a0;
+      --gray-mid: #6b6b6b;
+      --gray-dark: #1e1e1e;
+      --gray-darker: #181818;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      animation: pageLoad 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes pageLoad {
+      to { opacity: 1; }
+    }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+    .reveal-d4 { transition-delay: 0.32s; }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background-color: var(--bg);
+      border-bottom: 1px solid #232323;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-brand-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.3px;
+      line-height: 1;
+    }
+
+    .nav-brand-sub {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--gray-mid);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-light);
+      text-decoration: none;
+      letter-spacing: 0.1px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--white);
+      color: var(--bg) !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      opacity: 0.88;
+    }
+
+    /* ─── HAMBURGER ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid #232323;
+      padding: 20px 24px 28px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--gray-light);
+      text-decoration: none;
+      padding: 10px 0;
+      border-bottom: 1px solid #222;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+      margin-top: 8px;
+      background: var(--white);
+      color: var(--bg);
+      text-align: center;
+      border-radius: 6px;
+      padding: 14px;
+      font-weight: 700;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background-color: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1c1c1c;
+      border: 1px solid #2e2e2e;
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-light);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 68px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: var(--gray-light);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 .hero-h1-bold {
+      display: block;
+      color: var(--white);
+    }
+
+    .hero-subtitle-main {
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(14px, 2vw, 17px);
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 44px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--bg);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s, transform 0.15s;
+      letter-spacing: -0.2px;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--gray-mid);
+      font-weight: 400;
+    }
+
+    /* ─── COUNTER ─── */
+    .counter {
+      background: var(--gray-dark);
+      border-top: 1px solid #272727;
+      border-bottom: 1px solid #272727;
+      padding: 56px 24px;
+    }
+
+    .counter-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .counter-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 16px;
+      position: relative;
+    }
+
+    .counter-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 60px;
+      width: 1px;
+      background: #2e2e2e;
+    }
+
+    .counter-value {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .counter-label {
+      font-size: clamp(12px, 1.8vw, 15px);
+      font-weight: 500;
+      color: var(--gray-light);
+      line-height: 1.4;
+      max-width: 160px;
+    }
+
+    /* ─── SERVIZI ─── */
+    .servizi {
+      background: #1a1a1a;
+      padding: 100px 24px;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 32px 28px;
+      background: #111111;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover {
+      border-color: #484848;
+    }
+
+    .card-number {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray-mid);
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+
+    /* ─── METODO ─── */
+    .metodo {
+      background: var(--bg);
+      padding: 100px 24px;
+    }
+
+    .metodo-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 0;
+    }
+
+    .metodo-left .section-header {
+      margin-bottom: 24px;
+    }
+
+    .metodo-desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.75;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-top: 8px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .step-circle {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid #3a3a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      background: transparent;
+    }
+
+    .step-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+      padding-top: 6px;
+      letter-spacing: -0.2px;
+    }
+
+    /* ─── TESTIMONIANZE ─── */
+    .testimonianze {
+      background: #1a1a1a;
+      padding: 100px 24px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .review-card {
+      background: #111111;
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .review-card:hover {
+      border-color: #484848;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 4px;
+    }
+
+    .review-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--white);
+      flex-shrink: 0;
+    }
+
+    .review-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .review-author {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.1px;
+    }
+
+    /* ─── CTA FINALE ─── */
+    .cta-finale {
+      background: var(--white);
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .cta-finale .section-label {
+      color: #888;
+    }
+
+    .cta-finale-title {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      color: var(--bg);
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .cta-finale-sub {
+      font-size: 17px;
+      font-weight: 400;
+      color: #444;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .btn-dark {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 32px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: -0.2px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-dark:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    /* ─── FAQ ─── */
+    .faq {
+      background: var(--bg);
+      padding: 100px 24px;
+    }
+
+    .faq-list {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid #1e1e1e;
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-question {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+      letter-spacing: -0.2px;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #3a3a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s;
+    }
+
+    .faq-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--white);
+      transition: transform 0.25s;
+    }
+
+    .faq-item.open .faq-icon svg {
+      transform: rotate(45deg);
+    }
+
+    .faq-body {
+      display: none;
+      padding: 0 0 24px;
+    }
+
+    .faq-item.open .faq-body {
+      display: block;
+    }
+
+    .faq-answer {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.75;
+    }
+
+    /* ─── CONTATTI ─── */
+    .contatti {
+      background: #1a1a1a;
+      padding: 100px 24px;
+    }
+
+    .contatti-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contatti-info {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contatti-phone {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .contatti-phone:hover {
+      opacity: 0.75;
+    }
+
+    .contatti-address {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.6;
+    }
+
+    .contatti-address strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-field {
+      background: #252525;
+      border: 1px solid #2e2e2e;
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--white);
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-field::placeholder {
+      color: var(--gray-mid);
+    }
+
+    .form-field:focus {
+      border-color: #555;
+    }
+
+    textarea.form-field {
+      min-height: 120px;
+    }
+
+    .form-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--gray-mid);
+      line-height: 1.5;
+    }
+
+    .form-privacy input[type="checkbox"] {
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--white);
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+
+    /* ─── WHATSAPP ─── */
+    .wa-button {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .wa-button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.45);
+    }
+
+    .wa-button svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid #1e1e1e;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gray-mid);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metodo-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .contatti-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .servizi,
+      .metodo,
+      .testimonianze,
+      .faq,
+      .contatti,
+      .cta-finale {
+        padding: 80px 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        padding: 100px 20px 60px;
+        text-align: left;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .counter-inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .counter-item:not(:last-child)::after {
+        right: auto;
+        bottom: 0;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 60px;
+      }
+
+      .counter-item {
+        padding: 32px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding: 96px 16px 56px;
+      }
+
+      .counter {
+        padding: 40px 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn-primary {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav>
+    <div class="nav-brand">
+      <span class="nav-brand-name">Tommaso Pagliara</span>
+      <span class="nav-brand-sub">Personal Trainer Lecce</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#recensioni">Recensioni</a></li>
+      <li><a href="#contatti" class="nav-cta">Prenota ora</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Apri menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ─── MOBILE MENU ─── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#chi-sono">Chi sono</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#recensioni">Recensioni</a>
+    <a href="#contatti">Prenota ora</a>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-badge reveal">Studio privato · Lecce</div>
+
+      <h1 class="reveal reveal-d1">
+        Hai provato mille volte. Ma il tuo corpo non cambia ancora.
+        <span class="hero-h1-bold">È ora di farlo nel modo giusto.</span>
+      </h1>
+
+      <p class="hero-subtitle reveal reveal-d3">
+        Tommaso Pagliara, personal trainer a Lecce con studio privato. Allenamenti personalizzati, risultati misurabili, prima sessione gratuita.
+      </p>
+
+      <div class="hero-actions reveal reveal-d4">
+        <a href="#contatti" class="btn-primary">
+          Prenota la prova gratuita
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <span class="hero-note">Nessun impegno. Prima sessione gratuita.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COUNTER ─── -->
+  <section class="counter">
+    <div class="counter-inner">
+      <div class="counter-item reveal">
+        <div class="counter-value">33+</div>
+        <div class="counter-label">Recensioni 5 stelle</div>
+      </div>
+      <div class="counter-item reveal reveal-d1">
+        <div class="counter-value">100%</div>
+        <div class="counter-label">Allenamenti personalizzati</div>
+      </div>
+      <div class="counter-item reveal reveal-d2">
+        <div class="counter-value">0</div>
+        <div class="counter-label">Scuse, solo risultati</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CHI SONO ─── -->
+  <section class="metodo" id="chi-sono">
+    <div class="section-inner">
+      <div class="metodo-body">
+        <div class="metodo-left reveal">
+          <div class="section-header">
+            <div class="section-label">Chi sono</div>
+            <h2 class="section-title">Non sono il personal trainer che ti urla contro.<br>Sono quello che ti porta ai risultati.</h2>
+          </div>
+          <p class="metodo-desc">
+            Mi chiamo Tommaso Pagliara. Studio privato a Lecce, ogni cliente seguito individualmente. Ho aiutato oltre 33 persone che avevano già provato tutto. Si sbagliavano.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-circle">1</div>
+            <div class="step-text">Valutazione gratuita</div>
+          </div>
+          <div class="step reveal reveal-d1">
+            <div class="step-circle">2</div>
+            <div class="step-text">Piano su misura</div>
+          </div>
+          <div class="step reveal reveal-d2">
+            <div class="step-circle">3</div>
+            <div class="step-text">Allenamento mirato</div>
+          </div>
+          <div class="step reveal reveal-d3">
+            <div class="step-circle">4</div>
+            <div class="step-text">Risultati concreti</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVIZI ─── -->
+  <section class="servizi" id="servizi">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-label">Cosa offro</div>
+        <h2 class="section-title">Allenamento su misura.<br>Solo per te.</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card-number">01</div>
+          <div class="card-title">Personal training in studio privato Lecce</div>
+        </div>
+        <div class="card reveal reveal-d1">
+          <div class="card-number">02</div>
+          <div class="card-title">Allenamenti personalizzati per obiettivi specifici</div>
+        </div>
+        <div class="card reveal reveal-d2">
+          <div class="card-number">03</div>
+          <div class="card-title">Percorsi per principianti e atleti esperti</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── METODO ─── -->
+  <section class="metodo" id="metodo">
+    <div class="section-inner">
+      <div class="metodo-body">
+        <div class="metodo-left reveal">
+          <div class="section-header">
+            <div class="section-label">Il mio approccio</div>
+            <h2 class="section-title">Il metodo che trasforma i corpi e le abitudini.</h2>
+          </div>
+          <p class="metodo-desc">
+            Non improvviso mai. Ogni sessione nasce da dati reali. La prima sessione è gratuita perché voglio capire da dove parti.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-circle">1</div>
+            <div class="step-text">Valutazione gratuita</div>
+          </div>
+          <div class="step reveal reveal-d1">
+            <div class="step-circle">2</div>
+            <div class="step-text">Piano su misura</div>
+          </div>
+          <div class="step reveal reveal-d2">
+            <div class="step-circle">3</div>
+            <div class="step-text">Allenamento mirato</div>
+          </div>
+          <div class="step reveal reveal-d3">
+            <div class="step-circle">4</div>
+            <div class="step-text">Risultati concreti</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIANZE ─── -->
+  <section class="testimonianze" id="recensioni">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-label">Testimonianze</div>
+        <h2 class="section-title">Oltre 33 persone hanno già cambiato corpo a Lecce.</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-stars">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text">Preparato, attento e concreto. Allenamenti mirati, zero perdite di tempo. Risultati reali.</p>
+          <div class="review-author">Nicco Levanto</div>
+        </div>
+        <div class="review-card reveal reveal-d1">
+          <div class="review-stars">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text">Allenarmi con Tommaso è stata una vera svolta. Ho ritrovato la motivazione e la fiducia in me stessa.</p>
+          <div class="review-author">Sara Santoro</div>
+        </div>
+        <div class="review-card reveal reveal-d2">
+          <div class="review-stars">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text">Tommaso è un professionista estremamente preparato, motivante e attento alle esigenze individuali.</p>
+          <div class="review-author">Pierandrea Conte</div>
+        </div>
+        <div class="review-card reveal reveal-d3">
+          <div class="review-stars">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text">Competenza, motivazione, con serenità e soddisfazione. Tom è un personal estremamente meticoloso.</p>
+          <div class="review-author">Marco Stabile</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── URGENZA ─── -->
+  <section style="background:#111;border-top:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;padding:28px 24px;text-align:center;">
+    <p class="reveal" style="font-size:15px;font-weight:600;color:var(--gray-light);letter-spacing:0.1px;">
+      I posti sono limitati. <a href="#contatti" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;">Prenota subito la prima sessione gratuita.</a>
+    </p>
+  </section>
+
+  <!-- ─── CTA FINALE ─── -->
+  <section class="cta-finale" id="contatti-cta">
+    <div class="section-inner">
+      <div class="section-label reveal" style="color:#888;margin-bottom:16px;">Inizia oggi</div>
+      <h2 class="cta-finale-title reveal reveal-d1">Pronto a smettere di aspettare?</h2>
+      <p class="cta-finale-sub reveal reveal-d2">Prima sessione gratuita. Zero impegno.</p>
+      <a href="#contatti" class="btn-dark reveal reveal-d3">Prenota ora, è gratis</a>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section class="faq" id="faq">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-label">Domande frequenti</div>
+        <h2 class="section-title">FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Come funziona la prima sessione gratuita?</span>
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">La prima sessione è un incontro conoscitivo gratuito e senza impegno. Parliamo dei tuoi obiettivi, valuto la tua condizione fisica attuale e ti illustro come potrebbe essere il tuo percorso personalizzato.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-d1">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Gli allenamenti sono adatti anche ai principianti?</span>
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Assolutamente sì. I percorsi vengono costruiti su misura indipendentemente dal livello di partenza. Che tu non abbia mai messo piede in palestra o sia un atleta con esperienza, il programma si adatta a te.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-d2">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Dove si trova lo studio?</span>
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Lo studio privato si trova in Viale Japigia 10f a Lecce. Uno spazio riservato, pensato per allenarsi con la massima concentrazione e privacy.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-d3">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Quanto dura ogni sessione?</span>
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Le sessioni durano in genere 60 minuti, pensati per massimizzare l'efficacia senza sprechi di tempo. La durata può variare in base al programma e agli obiettivi specifici.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTATTI ─── -->
+  <section class="contatti" id="contatti">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-label">Scrivimi</div>
+        <h2 class="section-title">Contatta il tuo personal trainer a Lecce.</h2>
+      </div>
+      <div class="contatti-body">
+        <div class="contatti-info reveal reveal-d1">
+          <a href="tel:+393425682598" class="contatti-phone">342 568 2598</a>
+          <div class="contatti-address">
+            <strong>Studio</strong>
+            Viale Japigia 10f<br>Lecce
+          </div>
+        </div>
+        <form class="contact-form reveal reveal-d2" onsubmit="return false;">
+          <input class="form-field" type="text" placeholder="Nome" autocomplete="name" />
+          <input class="form-field" type="email" placeholder="Email" autocomplete="email" />
+          <input class="form-field" type="tel" placeholder="Numero di telefono" autocomplete="tel" />
+          <textarea class="form-field" placeholder="Messaggio"></textarea>
+          <label class="form-privacy">
+            <input type="checkbox" />
+            Ho letto e accetto la Privacy Policy. I miei dati saranno trattati esclusivamente per rispondere alla mia richiesta.
+          </label>
+          <button type="submit" class="btn-primary" style="justify-content:center;">Invia messaggio</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHATSAPP ─── -->
+  <a class="wa-button" href="https://wa.me/393425682598" target="_blank" rel="noopener" aria-label="Contatta su WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p class="footer-text">Copyright 2025 Tommaso Pagliara — Personal Trainer Lecce</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        } else {
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
