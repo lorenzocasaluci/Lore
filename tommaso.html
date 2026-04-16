@@ -478,9 +478,67 @@
       letter-spacing: -0.2px;
     }
 
+    /* ─── TESTIMONIANZE ─── */
+    .testimonianze {
+      background: #1a1a1a;
+      padding: 96px 24px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .review-card {
+      background: #111111;
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .review-card:hover {
+      border-color: #484848;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 4px;
+    }
+
+    .review-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--white);
+      flex-shrink: 0;
+    }
+
+    .review-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .review-author {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.1px;
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-grid {
         grid-template-columns: 1fr;
       }
 
@@ -490,7 +548,8 @@
       }
 
       .servizi,
-      .metodo {
+      .metodo,
+      .testimonianze {
         padding: 72px 20px;
       }
     }
@@ -693,6 +752,62 @@
             <div class="step-circle">4</div>
             <div class="step-text">Risultati concreti</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIANZE ─── -->
+  <section class="testimonianze" id="recensioni">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Testimonianze</div>
+        <h2 class="section-title">Lo dicono i risultati.</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text">Preparato, attento e concreto. Allenamenti mirati, zero perdite di tempo. Risultati reali.</p>
+          <div class="review-author">Nicco Levanto</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text">Allenarmi con Tommaso è stata una vera svolta. Ho ritrovato la motivazione e la fiducia in me stessa.</p>
+          <div class="review-author">Sara Santoro</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text">Tommaso è un professionista estremamente preparato, motivante e attento alle esigenze individuali.</p>
+          <div class="review-author">Pierandrea Conte</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text">Competenza, motivazione, con serenità e soddisfazione. Tom è un personal estremamente meticoloso.</p>
+          <div class="review-author">Marco Stabile</div>
         </div>
       </div>
     </div>
