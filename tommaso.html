@@ -32,7 +32,31 @@
       color: var(--white);
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
+      animation: pageLoad 1.5s ease forwards;
+      opacity: 0;
     }
+
+    @keyframes pageLoad {
+      to { opacity: 1; }
+    }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.16s; }
+    .reveal-d3 { transition-delay: 0.24s; }
+    .reveal-d4 { transition-delay: 0.32s; }
 
     /* ─── NAVBAR ─── */
     nav {
@@ -174,7 +198,7 @@
       background: var(--white);
       color: var(--bg);
       text-align: center;
-      border-radius: 8px;
+      border-radius: 6px;
       padding: 14px;
       font-weight: 700;
     }
@@ -266,7 +290,7 @@
       font-weight: 700;
       padding: 16px 32px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       text-decoration: none;
       display: inline-flex;
@@ -348,7 +372,7 @@
     /* ─── SERVIZI ─── */
     .servizi {
       background: #1a1a1a;
-      padding: 96px 24px;
+      padding: 100px 24px;
     }
 
     .section-inner {
@@ -414,7 +438,7 @@
     /* ─── METODO ─── */
     .metodo {
       background: var(--bg);
-      padding: 96px 24px;
+      padding: 100px 24px;
     }
 
     .metodo-body {
@@ -482,7 +506,7 @@
     /* ─── TESTIMONIANZE ─── */
     .testimonianze {
       background: #1a1a1a;
-      padding: 96px 24px;
+      padding: 100px 24px;
     }
 
     .reviews-grid {
@@ -536,7 +560,7 @@
     /* ─── CTA FINALE ─── */
     .cta-finale {
       background: var(--white);
-      padding: 96px 24px;
+      padding: 100px 24px;
       text-align: center;
     }
 
@@ -573,7 +597,7 @@
       font-weight: 700;
       padding: 18px 32px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       text-decoration: none;
       letter-spacing: -0.2px;
@@ -588,7 +612,7 @@
     /* ─── FAQ ─── */
     .faq {
       background: var(--bg);
-      padding: 96px 24px;
+      padding: 100px 24px;
     }
 
     .faq-list {
@@ -668,7 +692,7 @@
     /* ─── CONTATTI ─── */
     .contatti {
       background: #1a1a1a;
-      padding: 96px 24px;
+      padding: 100px 24px;
     }
 
     .contatti-body {
@@ -836,7 +860,7 @@
       .faq,
       .contatti,
       .cta-finale {
-        padding: 72px 20px;
+        padding: 80px 20px;
       }
     }
 
@@ -937,23 +961,23 @@
   <!-- ─── HERO ─── -->
   <section class="hero" id="hero">
     <div class="hero-inner">
-      <div class="hero-badge">Studio privato · Lecce</div>
+      <div class="hero-badge reveal">Studio privato · Lecce</div>
 
-      <h1>
+      <h1 class="reveal reveal-d1">
         Il tuo corpo sa cosa vuole.
         <span class="hero-h1-bold">Tu sai come ottenerlo?</span>
       </h1>
 
-      <p class="hero-subtitle-main">
+      <p class="hero-subtitle-main reveal reveal-d2">
         Con Tommaso, ogni allenamento ha uno scopo.
       </p>
 
-      <p class="hero-subtitle">
+      <p class="hero-subtitle reveal reveal-d3">
         Personal trainer a Lecce con studio privato. Allenamenti personalizzati,
         risultati concreti, zero perdite di tempo.
       </p>
 
-      <div class="hero-actions">
+      <div class="hero-actions reveal reveal-d4">
         <a href="#contatti" class="btn-primary">
           Prenota la prova gratuita
           <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -968,15 +992,15 @@
   <!-- ─── COUNTER ─── -->
   <section class="counter">
     <div class="counter-inner">
-      <div class="counter-item">
+      <div class="counter-item reveal">
         <div class="counter-value">33+</div>
         <div class="counter-label">Recensioni 5 stelle</div>
       </div>
-      <div class="counter-item">
+      <div class="counter-item reveal reveal-d1">
         <div class="counter-value">100%</div>
         <div class="counter-label">Personalizzato</div>
       </div>
-      <div class="counter-item">
+      <div class="counter-item reveal reveal-d2">
         <div class="counter-value">1</div>
         <div class="counter-label">Obiettivo: il tuo</div>
       </div>
@@ -986,20 +1010,20 @@
   <!-- ─── SERVIZI ─── -->
   <section class="servizi" id="servizi">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="section-label">Cosa offro</div>
         <h2 class="section-title">Allenamento su misura.<br>Solo per te.</h2>
       </div>
       <div class="cards-grid">
-        <div class="card">
+        <div class="card reveal">
           <div class="card-number">01</div>
           <div class="card-title">Personal training in studio privato Lecce</div>
         </div>
-        <div class="card">
+        <div class="card reveal reveal-d1">
           <div class="card-number">02</div>
           <div class="card-title">Allenamenti personalizzati per obiettivi specifici</div>
         </div>
-        <div class="card">
+        <div class="card reveal reveal-d2">
           <div class="card-number">03</div>
           <div class="card-title">Percorsi per principianti e atleti esperti</div>
         </div>
@@ -1011,7 +1035,7 @@
   <section class="metodo" id="metodo">
     <div class="section-inner">
       <div class="metodo-body">
-        <div class="metodo-left">
+        <div class="metodo-left reveal">
           <div class="section-header">
             <div class="section-label">Il mio approccio</div>
             <h2 class="section-title">Zero improvvisazione.<br>Solo metodo.</h2>
@@ -1022,19 +1046,19 @@
           </p>
         </div>
         <div class="steps">
-          <div class="step">
+          <div class="step reveal">
             <div class="step-circle">1</div>
             <div class="step-text">Valutazione gratuita</div>
           </div>
-          <div class="step">
+          <div class="step reveal reveal-d1">
             <div class="step-circle">2</div>
             <div class="step-text">Piano su misura</div>
           </div>
-          <div class="step">
+          <div class="step reveal reveal-d2">
             <div class="step-circle">3</div>
             <div class="step-text">Allenamento mirato</div>
           </div>
-          <div class="step">
+          <div class="step reveal reveal-d3">
             <div class="step-circle">4</div>
             <div class="step-text">Risultati concreti</div>
           </div>
@@ -1046,12 +1070,12 @@
   <!-- ─── TESTIMONIANZE ─── -->
   <section class="testimonianze" id="recensioni">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="section-label">Testimonianze</div>
         <h2 class="section-title">Lo dicono i risultati.</h2>
       </div>
       <div class="reviews-grid">
-        <div class="review-card">
+        <div class="review-card reveal">
           <div class="review-stars">
             <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
             <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
@@ -1062,7 +1086,7 @@
           <p class="review-text">Preparato, attento e concreto. Allenamenti mirati, zero perdite di tempo. Risultati reali.</p>
           <div class="review-author">Nicco Levanto</div>
         </div>
-        <div class="review-card">
+        <div class="review-card reveal reveal-d1">
           <div class="review-stars">
             <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
             <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
@@ -1073,7 +1097,7 @@
           <p class="review-text">Allenarmi con Tommaso è stata una vera svolta. Ho ritrovato la motivazione e la fiducia in me stessa.</p>
           <div class="review-author">Sara Santoro</div>
         </div>
-        <div class="review-card">
+        <div class="review-card reveal reveal-d2">
           <div class="review-stars">
             <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
             <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
@@ -1084,7 +1108,7 @@
           <p class="review-text">Tommaso è un professionista estremamente preparato, motivante e attento alle esigenze individuali.</p>
           <div class="review-author">Pierandrea Conte</div>
         </div>
-        <div class="review-card">
+        <div class="review-card reveal reveal-d3">
           <div class="review-stars">
             <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
             <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
@@ -1102,22 +1126,22 @@
   <!-- ─── CTA FINALE ─── -->
   <section class="cta-finale" id="contatti-cta">
     <div class="section-inner">
-      <div class="section-label" style="color:#888;margin-bottom:16px;">Inizia oggi</div>
-      <h2 class="cta-finale-title">Pronto a iniziare?</h2>
-      <p class="cta-finale-sub">Prima sessione gratuita. Zero impegno. Solo risultati.</p>
-      <a href="#contatti" class="btn-dark">Prenota ora, è gratis</a>
+      <div class="section-label reveal" style="color:#888;margin-bottom:16px;">Inizia oggi</div>
+      <h2 class="cta-finale-title reveal reveal-d1">Pronto a iniziare?</h2>
+      <p class="cta-finale-sub reveal reveal-d2">Prima sessione gratuita. Zero impegno. Solo risultati.</p>
+      <a href="#contatti" class="btn-dark reveal reveal-d3">Prenota ora, è gratis</a>
     </div>
   </section>
 
   <!-- ─── FAQ ─── -->
   <section class="faq" id="faq">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="section-label">Domande frequenti</div>
         <h2 class="section-title">FAQ</h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item">
+        <div class="faq-item reveal">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">Come funziona la prima sessione gratuita?</span>
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
@@ -1126,7 +1150,7 @@
             <p class="faq-answer">La prima sessione è un incontro conoscitivo gratuito e senza impegno. Parliamo dei tuoi obiettivi, valuto la tua condizione fisica attuale e ti illustro come potrebbe essere il tuo percorso personalizzato.</p>
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal reveal-d1">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">Gli allenamenti sono adatti anche ai principianti?</span>
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
@@ -1135,7 +1159,7 @@
             <p class="faq-answer">Assolutamente sì. I percorsi vengono costruiti su misura indipendentemente dal livello di partenza. Che tu non abbia mai messo piede in palestra o sia un atleta con esperienza, il programma si adatta a te.</p>
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal reveal-d2">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">Dove si trova lo studio?</span>
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
@@ -1144,7 +1168,7 @@
             <p class="faq-answer">Lo studio privato si trova in Viale Japigia 10f a Lecce. Uno spazio riservato, pensato per allenarsi con la massima concentrazione e privacy.</p>
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item reveal reveal-d3">
           <button class="faq-trigger" aria-expanded="false">
             <span class="faq-question">Quanto dura ogni sessione?</span>
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
@@ -1160,19 +1184,19 @@
   <!-- ─── CONTATTI ─── -->
   <section class="contatti" id="contatti">
     <div class="section-inner">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="section-label">Scrivimi</div>
         <h2 class="section-title">Contattami.</h2>
       </div>
       <div class="contatti-body">
-        <div class="contatti-info">
+        <div class="contatti-info reveal reveal-d1">
           <a href="tel:+393425682598" class="contatti-phone">342 568 2598</a>
           <div class="contatti-address">
             <strong>Studio</strong>
             Viale Japigia 10f<br>Lecce
           </div>
         </div>
-        <form class="contact-form" onsubmit="return false;">
+        <form class="contact-form reveal reveal-d2" onsubmit="return false;">
           <input class="form-field" type="text" placeholder="Nome" autocomplete="name" />
           <input class="form-field" type="email" placeholder="Email" autocomplete="email" />
           <input class="form-field" type="tel" placeholder="Numero di telefono" autocomplete="tel" />
@@ -1213,6 +1237,17 @@
         hamburger.classList.remove('open');
       });
     });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     document.querySelectorAll('.faq-trigger').forEach(trigger => {
       trigger.addEventListener('click', () => {
