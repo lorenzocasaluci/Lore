@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tommaso Pagliara – Personal Trainer Lecce</title>
+  <title>Personal Trainer Lecce Tommaso Pagliara Allenamento Personalizzato</title>
+  <meta name="description" content="Personal trainer a Lecce con studio privato. Allenamenti personalizzati e mirati. Prima sessione gratuita. 342 568 2598." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
@@ -532,6 +533,283 @@
       letter-spacing: 0.1px;
     }
 
+    /* ─── CTA FINALE ─── */
+    .cta-finale {
+      background: var(--white);
+      padding: 96px 24px;
+      text-align: center;
+    }
+
+    .cta-finale .section-label {
+      color: #888;
+    }
+
+    .cta-finale-title {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      color: var(--bg);
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .cta-finale-sub {
+      font-size: 17px;
+      font-weight: 400;
+      color: #444;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .btn-dark {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 32px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: -0.2px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-dark:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    /* ─── FAQ ─── */
+    .faq {
+      background: var(--bg);
+      padding: 96px 24px;
+    }
+
+    .faq-list {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid #1e1e1e;
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-question {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+      letter-spacing: -0.2px;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #3a3a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s;
+    }
+
+    .faq-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--white);
+      transition: transform 0.25s;
+    }
+
+    .faq-item.open .faq-icon svg {
+      transform: rotate(45deg);
+    }
+
+    .faq-body {
+      display: none;
+      padding: 0 0 24px;
+    }
+
+    .faq-item.open .faq-body {
+      display: block;
+    }
+
+    .faq-answer {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.75;
+    }
+
+    /* ─── CONTATTI ─── */
+    .contatti {
+      background: #1a1a1a;
+      padding: 96px 24px;
+    }
+
+    .contatti-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contatti-info {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contatti-phone {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .contatti-phone:hover {
+      opacity: 0.75;
+    }
+
+    .contatti-address {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.6;
+    }
+
+    .contatti-address strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-field {
+      background: #252525;
+      border: 1px solid #2e2e2e;
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--white);
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-field::placeholder {
+      color: var(--gray-mid);
+    }
+
+    .form-field:focus {
+      border-color: #555;
+    }
+
+    textarea.form-field {
+      min-height: 120px;
+    }
+
+    .form-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--gray-mid);
+      line-height: 1.5;
+    }
+
+    .form-privacy input[type="checkbox"] {
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--white);
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+
+    /* ─── WHATSAPP ─── */
+    .wa-button {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .wa-button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.45);
+    }
+
+    .wa-button svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid #1e1e1e;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gray-mid);
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       .cards-grid {
@@ -547,9 +825,17 @@
         gap: 48px;
       }
 
+      .contatti-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
       .servizi,
       .metodo,
-      .testimonianze {
+      .testimonianze,
+      .faq,
+      .contatti,
+      .cta-finale {
         padding: 72px 20px;
       }
     }
@@ -813,6 +1099,104 @@
     </div>
   </section>
 
+  <!-- ─── CTA FINALE ─── -->
+  <section class="cta-finale" id="contatti-cta">
+    <div class="section-inner">
+      <div class="section-label" style="color:#888;margin-bottom:16px;">Inizia oggi</div>
+      <h2 class="cta-finale-title">Pronto a iniziare?</h2>
+      <p class="cta-finale-sub">Prima sessione gratuita. Zero impegno. Solo risultati.</p>
+      <a href="#contatti" class="btn-dark">Prenota ora, è gratis</a>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section class="faq" id="faq">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Domande frequenti</div>
+        <h2 class="section-title">FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Come funziona la prima sessione gratuita?</span>
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">La prima sessione è un incontro conoscitivo gratuito e senza impegno. Parliamo dei tuoi obiettivi, valuto la tua condizione fisica attuale e ti illustro come potrebbe essere il tuo percorso personalizzato.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Gli allenamenti sono adatti anche ai principianti?</span>
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Assolutamente sì. I percorsi vengono costruiti su misura indipendentemente dal livello di partenza. Che tu non abbia mai messo piede in palestra o sia un atleta con esperienza, il programma si adatta a te.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Dove si trova lo studio?</span>
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Lo studio privato si trova in Viale Japigia 10f a Lecce. Uno spazio riservato, pensato per allenarsi con la massima concentrazione e privacy.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-question">Quanto dura ogni sessione?</span>
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Le sessioni durano in genere 60 minuti, pensati per massimizzare l'efficacia senza sprechi di tempo. La durata può variare in base al programma e agli obiettivi specifici.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTATTI ─── -->
+  <section class="contatti" id="contatti">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Scrivimi</div>
+        <h2 class="section-title">Contattami.</h2>
+      </div>
+      <div class="contatti-body">
+        <div class="contatti-info">
+          <a href="tel:+393425682598" class="contatti-phone">342 568 2598</a>
+          <div class="contatti-address">
+            <strong>Studio</strong>
+            Viale Japigia 10f<br>Lecce
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+          <input class="form-field" type="text" placeholder="Nome" autocomplete="name" />
+          <input class="form-field" type="email" placeholder="Email" autocomplete="email" />
+          <input class="form-field" type="tel" placeholder="Numero di telefono" autocomplete="tel" />
+          <textarea class="form-field" placeholder="Messaggio"></textarea>
+          <label class="form-privacy">
+            <input type="checkbox" />
+            Ho letto e accetto la Privacy Policy. I miei dati saranno trattati esclusivamente per rispondere alla mia richiesta.
+          </label>
+          <button type="submit" class="btn-primary" style="justify-content:center;">Invia messaggio</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHATSAPP ─── -->
+  <a class="wa-button" href="https://wa.me/393425682598" target="_blank" rel="noopener" aria-label="Contatta su WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p class="footer-text">Copyright 2025 Tommaso Pagliara — Personal Trainer Lecce</p>
+  </footer>
+
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -827,6 +1211,20 @@
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
         hamburger.classList.remove('open');
+      });
+    });
+
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        } else {
+          trigger.setAttribute('aria-expanded', 'false');
+        }
       });
     });
   </script>
