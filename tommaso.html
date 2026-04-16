@@ -435,6 +435,61 @@
       letter-spacing: -0.3px;
     }
 
+    /* ─── GALLERIA CHI SONO ─── */
+    .chi-sono-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .chi-sono-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .chi-sono-text .section-header {
+      margin-bottom: 24px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 140px);
+      gap: 10px;
+    }
+
+    .gallery-main {
+      grid-column: 1;
+      grid-row: 1 / 4;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .chi-sono-body {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: 280px 180px 180px 180px;
+      }
+
+      .gallery-main {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+
     /* ─── METODO ─── */
     .metodo {
       background: var(--bg);
@@ -1005,8 +1060,8 @@
   <!-- ─── CHI SONO ─── -->
   <section class="metodo" id="chi-sono">
     <div class="section-inner">
-      <div class="metodo-body">
-        <div class="metodo-left reveal">
+      <div class="chi-sono-body">
+        <div class="chi-sono-text reveal">
           <div class="section-header">
             <div class="section-label">Chi sono</div>
             <h2 class="section-title">Non sono il personal trainer che ti urla contro.<br>Sono quello che ti porta ai risultati.</h2>
@@ -1015,22 +1070,18 @@
             Mi chiamo Tommaso Pagliara. Studio privato a Lecce, ogni cliente seguito individualmente. Ho aiutato oltre 33 persone che avevano già provato tutto. Si sbagliavano.
           </p>
         </div>
-        <div class="steps">
-          <div class="step reveal">
-            <div class="step-circle">1</div>
-            <div class="step-text">Valutazione gratuita</div>
+        <div class="gallery reveal reveal-d1">
+          <div class="gallery-main">
+            <img src="IMG_2020.jpeg" alt="Tommaso Pagliara personal trainer Lecce" loading="lazy" />
           </div>
-          <div class="step reveal reveal-d1">
-            <div class="step-circle">2</div>
-            <div class="step-text">Piano su misura</div>
+          <div style="grid-column:2;grid-row:1;">
+            <img src="IMG_2021.jpeg" alt="Studio privato Lecce" loading="lazy" />
           </div>
-          <div class="step reveal reveal-d2">
-            <div class="step-circle">3</div>
-            <div class="step-text">Allenamento mirato</div>
+          <div style="grid-column:2;grid-row:2;">
+            <img src="IMG_2022.jpeg" alt="Attrezzatura studio" loading="lazy" />
           </div>
-          <div class="step reveal reveal-d3">
-            <div class="step-circle">4</div>
-            <div class="step-text">Risultati concreti</div>
+          <div style="grid-column:2;grid-row:3;">
+            <img src="IMG_2027.jpeg" alt="Logo Tommaso Pagliara" loading="lazy" />
           </div>
         </div>
       </div>
