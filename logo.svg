@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 175" width="220" height="175">
+  <!-- Background -->
+  <rect width="220" height="175" fill="white"/>
+
+  <!-- Cow/Horse head silhouette in profile (facing right) -->
+  <g transform="translate(115,5) scale(0.88)">
+    <!-- Main head shape -->
+    <path d="
+      M 60,18
+      C 72,10 88,8 98,14
+      L 108,8
+      L 106,22
+      C 116,28 124,40 122,56
+      C 128,64 130,74 126,82
+      L 134,105
+      C 134,115 122,118 116,108
+      L 108,88
+      C 100,92 90,93 82,88
+      L 76,108
+      C 70,118 58,115 60,105
+      L 68,82
+      C 60,72 56,60 58,46
+      C 56,34 56,24 60,18 Z
+    " fill="none" stroke="#111" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Ear detail -->
+    <path d="M 98,14 C 105,5 115,4 118,12 C 112,15 106,20 106,22 Z" fill="#111"/>
+    <!-- Eye -->
+    <circle cx="96" cy="44" r="4" fill="#111"/>
+    <!-- Nostril -->
+    <ellipse cx="75" cy="80" rx="5" ry="3.5" fill="#111" transform="rotate(-15,75,80)"/>
+    <!-- Mane hint -->
+    <path d="M 108,22 C 115,30 118,45 116,58" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- T&M text -->
+  <text x="72" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="bold" font-style="italic" fill="#111" letter-spacing="1">T&amp;M</text>
+
+  <!-- Macelleria text in red -->
+  <text x="110" y="118" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" fill="#CC1111" letter-spacing="0.5">Macelleria</text>
+
+  <!-- "da Tommaso" text in gray -->
+  <text x="110" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#555" letter-spacing="1">da Tommaso</text>
+
+  <!-- Green swoosh arc -->
+  <path d="M 12,155 Q 110,135 208,155" fill="none" stroke="#3AAA35" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Registered trademark -->
+  <text x="196" y="115" font-family="Arial, sans-serif" font-size="10" fill="#CC1111">®</text>
+</svg>
