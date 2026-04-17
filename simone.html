@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movement Lab – Personal Trainer Surbo Lecce</title>
+  <title>Personal Trainer Surbo Lecce – Movement Lab</title>
+  <meta name="description" content="Personal trainer a Surbo Lecce con percorsi personalizzati. Prima sessione gratuita. 350 105 8888." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -451,6 +452,193 @@
       letter-spacing: 0.2px;
     }
 
+    /* ── CTA FINALE ── */
+    .cta-finale {
+      padding: 100px 24px;
+      text-align: center;
+      background-color: #1f1f1f;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .cta-finale h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .cta-finale p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    /* ── CONTATTI ── */
+    .contatti {
+      padding: 90px 24px 100px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contatti-header {
+      margin-bottom: 48px;
+    }
+
+    .contatti h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-top: 20px;
+    }
+
+    .contatti-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contatti-info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(45, 212, 191, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .info-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 0.97rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .info-value a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .info-value a:hover {
+      color: var(--accent);
+    }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.3px;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      background-color: #242424;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 13px 16px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-field textarea {
+      height: 120px;
+    }
+
+    .btn-submit {
+      background-color: var(--accent);
+      color: var(--dark-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 28px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .btn-submit:hover {
+      background-color: #25c0ac;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(45, 212, 191, 0.3);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       nav {
@@ -473,9 +661,23 @@
       }
 
       .chi-sono,
-      .servizi {
+      .servizi,
+      .contatti {
         padding-left: 18px;
         padding-right: 18px;
+      }
+
+      .contatti-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-submit {
+        width: 100%;
       }
     }
   </style>
@@ -600,6 +802,64 @@
       </div>
     </div>
   </section>
+
+  <!-- CTA FINALE -->
+  <section class="cta-finale">
+    <h2>Pronto a iniziare?</h2>
+    <p>La prima sessione è gratuita. Nessun impegno. Solo risultati.</p>
+    <a href="#contatti" class="btn-primary">Contattami ora</a>
+  </section>
+
+  <!-- CONTATTI -->
+  <section class="contatti" id="contatti">
+    <div class="contatti-header">
+      <p class="section-label">Contatti</p>
+      <h2>Scrivimi o chiamami</h2>
+    </div>
+    <div class="contatti-grid">
+      <div class="contatti-info">
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <p class="info-label">Telefono</p>
+            <p class="info-value"><a href="tel:+393501058888">350 105 8888</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <p class="info-label">Indirizzo</p>
+            <p class="info-value">Via Lecce 195<br />Surbo, Lecce</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" name="contatto" method="POST" action="#">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="La tua email" required />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="telefono">Numero di telefono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Il tuo numero" />
+        </div>
+        <div class="form-field">
+          <label for="messaggio">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" placeholder="Raccontami il tuo obiettivo…" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Invia messaggio</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Movement Lab · Personal Trainer Surbo Lecce · <a href="tel:+393501058888" style="color:inherit;text-decoration:none;">350 105 8888</a></p>
+  </footer>
 
   <script>
     const hamburger = document.getElementById('hamburger');
