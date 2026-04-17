@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Trainer Lecce Tommaso Pagliara</title>
-  <meta name="description" content="Personal trainer a Lecce studio privato. Prima sessione gratuita. 342 568 2598." />
+  <title>Personal Trainer Lecce Tommaso Pagliara Allenamento Personalizzato</title>
+  <meta name="description" content="Personal trainer a Lecce con allenamenti personalizzati e risultati concreti. Prima sessione gratuita. 342 568 2598." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
@@ -1066,6 +1066,177 @@
         padding: 80px 20px;
       }
     }
+
+    /* ─── TESTIMONIANZE NEW ─── */
+    .testimonianze-new {
+      background: var(--bg);
+      padding: 100px 24px;
+      border-top: 1px solid #1e1e1e;
+    }
+
+    .testimonianze-new .section-label {
+      color: var(--gray-mid);
+    }
+
+    .reviews-grid-new {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .review-card-new {
+      background: var(--white);
+      border: 1.5px solid var(--bg);
+      border-radius: 12px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .stars-black {
+      display: flex;
+      gap: 4px;
+    }
+
+    .stars-black svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--bg);
+      flex-shrink: 0;
+    }
+
+    .review-text-new {
+      font-size: 15px;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .review-author-new {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--bg);
+      letter-spacing: 0.1px;
+    }
+
+    /* ─── CTA NEW ─── */
+    .cta-new {
+      background: var(--white);
+      padding: 100px 24px;
+      text-align: center;
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .cta-new-title {
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 800;
+      color: var(--bg);
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .cta-new-sub {
+      font-size: 17px;
+      font-weight: 400;
+      color: #444;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .btn-black {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: -0.2px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-black:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    /* ─── CONTATTI NEW ─── */
+    .contatti-new {
+      background: var(--bg);
+      padding: 100px 24px;
+      border-top: 1px solid #1e1e1e;
+    }
+
+    .contatti-new-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contatti-new-info {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contatti-new-phone {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .contatti-new-phone:hover {
+      opacity: 0.75;
+    }
+
+    .contatti-new-address {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--gray-light);
+      line-height: 1.6;
+    }
+
+    .contatti-new-address strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-mid);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .reviews-grid-new {
+        grid-template-columns: 1fr;
+      }
+
+      .contatti-new-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .testimonianze-new,
+      .cta-new,
+      .contatti-new {
+        padding: 80px 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1163,6 +1334,90 @@
           <div class="card-white-title">Supporto costante</div>
           <p class="card-white-desc">Presente, preciso e sempre disponibile.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIANZE NEW ─── -->
+  <section class="testimonianze-new">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-label">Testimonianze</div>
+        <h2 class="section-title">Cosa dicono di me</h2>
+      </div>
+      <div class="reviews-grid-new">
+        <div class="review-card-new reveal">
+          <div class="stars-black">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text-new">Competenza, disponibilità e professionalità. Ascolta le tue esigenze e crea un percorso su misura.</p>
+          <div class="review-author-new">Anna Lucia De Matteis</div>
+        </div>
+        <div class="review-card-new reveal reveal-d1">
+          <div class="stars-black">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text-new">Allenamenti mirati e personalizzati. Consiglio vivamente a chi vuole partire da zero.</p>
+          <div class="review-author-new">Ester Fiorentino</div>
+        </div>
+        <div class="review-card-new reveal reveal-d2">
+          <div class="stars-black">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.26 6.62l5.35-.78z"/></svg>
+          </div>
+          <p class="review-text-new">Fin dal primo momento mi sono sentita seguita con grande professionalità.</p>
+          <div class="review-author-new">Valentina Vissicchio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA NEW ─── -->
+  <section class="cta-new">
+    <div class="section-inner">
+      <h2 class="cta-new-title reveal">Pronto a cambiare davvero?</h2>
+      <p class="cta-new-sub reveal reveal-d1">La prima sessione è gratuita. Nessun impegno. Solo risultati.</p>
+      <a href="#contatti-new" class="btn-black reveal reveal-d2">Contattami ora</a>
+    </div>
+  </section>
+
+  <!-- ─── CONTATTI NEW ─── -->
+  <section class="contatti-new" id="contatti-new">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-label">Contatti</div>
+        <h2 class="section-title">Scrivimi o chiamami.</h2>
+      </div>
+      <div class="contatti-new-body">
+        <div class="contatti-new-info reveal reveal-d1">
+          <a href="tel:+393425682598" class="contatti-new-phone">342 568 2598</a>
+          <div class="contatti-new-address">
+            <strong>Studio</strong>
+            Viale Japigia 10f<br>Lecce
+          </div>
+        </div>
+        <form class="contact-form reveal reveal-d2" onsubmit="return false;">
+          <input class="form-field" type="text" placeholder="Nome" autocomplete="name" />
+          <input class="form-field" type="email" placeholder="Email" autocomplete="email" />
+          <input class="form-field" type="tel" placeholder="Numero di telefono" autocomplete="tel" />
+          <textarea class="form-field" placeholder="Messaggio"></textarea>
+          <label class="form-privacy">
+            <input type="checkbox" />
+            Ho letto e accetto la Privacy Policy. I miei dati saranno trattati esclusivamente per rispondere alla mia richiesta.
+          </label>
+          <button type="submit" class="btn-primary" style="justify-content:center;">Invia messaggio</button>
+        </form>
       </div>
     </div>
   </section>
