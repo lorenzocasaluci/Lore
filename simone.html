@@ -286,6 +286,104 @@
       font-weight: 500;
     }
 
+    /* ── CHI SONO ── */
+    .chi-sono {
+      padding: 100px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .chi-sono h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .chi-sono p {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+    }
+
+    /* ── SERVIZI ── */
+    .servizi {
+      padding: 80px 24px 100px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .servizi-header {
+      margin-bottom: 48px;
+    }
+
+    .servizi h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-top: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #242424;
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      background-color: rgba(45, 212, 191, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.2px;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       nav {
@@ -305,6 +403,12 @@
         width: 100%;
         text-align: center;
         padding: 16px 24px;
+      }
+
+      .chi-sono,
+      .servizi {
+        padding-left: 18px;
+        padding-right: 18px;
       }
     }
   </style>
@@ -357,6 +461,38 @@
       <span class="star">★</span>
       <span class="star">★</span>
       <span class="stars-label">14 recensioni verificate</span>
+    </div>
+  </section>
+
+  <!-- CHI SONO -->
+  <section class="chi-sono" id="chi-sono">
+    <p class="section-label">Chi sono</p>
+    <h2>Ciao, sono Simone.</h2>
+    <p>Personal trainer a Surbo, Lecce. Mi occupo di percorsi di allenamento personalizzati cuciti sull'individualità di ogni persona e sui suoi obiettivi. Che tu voglia migliorare la tua forma fisica, perdere peso o sentirti meglio ogni giorno, costruiamo insieme il percorso giusto per te.</p>
+  </section>
+
+  <!-- SERVIZI -->
+  <section class="servizi" id="servizi">
+    <div class="servizi-header">
+      <p class="section-label">Servizi</p>
+      <h2>Come posso aiutarti</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Allenamento personalizzato</h3>
+        <p>Percorsi costruiti su misura per i tuoi obiettivi e la tua individualità.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Monitoraggio settimanale</h3>
+        <p>Controllo costante dei tuoi progressi per ottimizzare ogni allenamento.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <h3>Sempre disponibile</h3>
+        <p>Supporto continuo per motivarti e aiutarti a migliorare passo dopo passo.</p>
+      </div>
     </div>
   </section>
 
