@@ -203,6 +203,65 @@
       max-width: 460px;
     }
 
+    /* ── COUNTER ── */
+    .counter {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 64px 24px;
+    }
+
+    .counter-grid {
+      max-width: 880px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .counter-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 16px;
+      position: relative;
+    }
+
+    .counter-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 50%;
+      transform: translateY(-50%);
+      height: 56px; width: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .counter-value {
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .counter-label {
+      font-size: clamp(13px, 1.5vw, 15px);
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .counter-grid { grid-template-columns: 1fr; }
+      .counter-item:not(:last-child)::after {
+        right: auto; bottom: 0; top: auto;
+        left: 50%; transform: translateX(-50%);
+        height: 1px; width: 48px;
+      }
+    }
+
     /* ── CHI SONO ── */
     .chi-sono-text {
       font-size: clamp(16px, 2vw, 19px);
@@ -436,6 +495,24 @@
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COUNTER ── -->
+  <section class="counter">
+    <div class="counter-grid">
+      <div class="counter-item reveal">
+        <div class="counter-value">33+</div>
+        <div class="counter-label">Clienti soddisfatti</div>
+      </div>
+      <div class="counter-item reveal d1">
+        <div class="counter-value">5 ★</div>
+        <div class="counter-label">Media recensioni</div>
+      </div>
+      <div class="counter-item reveal d2">
+        <div class="counter-value">100%</div>
+        <div class="counter-label">Percorsi personalizzati</div>
       </div>
     </div>
   </section>
