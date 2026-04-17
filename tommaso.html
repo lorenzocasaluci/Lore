@@ -223,6 +223,23 @@
       line-height: 1.35; letter-spacing: -0.2px;
     }
 
+    .card-service {
+      border: 1.5px solid var(--black);
+      border-radius: 12px;
+      padding: 32px 24px;
+      background: var(--white);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+
+    .card-service .card-num { color: rgba(17,17,17,0.28); }
+    .card-service .card-title { color: var(--black); }
+
+    .card-desc {
+      font-size: 14px; font-weight: 400;
+      color: rgba(17,17,17,0.6);
+      line-height: 1.65;
+    }
+
     /* ── TESTIMONIANZE ── */
     .reviews-grid {
       display: grid;
@@ -418,17 +435,20 @@
       <div class="label reveal">Servizi</div>
       <h2 class="section-h2 reveal d1">Ecco come posso aiutarti</h2>
       <div class="cards-grid">
-        <div class="card-dark reveal">
+        <div class="card-service reveal">
           <div class="card-num">01</div>
-          <div class="card-title">Allenamento in palestra a Lecce presso Viale Japigia 10f</div>
+          <div class="card-title">Allenamento in palestra a Lecce</div>
+          <p class="card-desc">Ti seguo di persona presso TP Personal Trainer, Viale Japigia 10f.</p>
         </div>
-        <div class="card-dark reveal d1">
+        <div class="card-service reveal d1">
           <div class="card-num">02</div>
-          <div class="card-title">Programma su misura costruito insieme</div>
+          <div class="card-title">Programma su misura</div>
+          <p class="card-desc">Niente schede standard, costruiamo insieme il percorso giusto per te.</p>
         </div>
-        <div class="card-dark reveal d2">
+        <div class="card-service reveal d2">
           <div class="card-num">03</div>
-          <div class="card-title">Supporto sempre presente</div>
+          <div class="card-title">Sempre presente</div>
+          <p class="card-desc">Hai domande tra una sessione e l'altra? Sono qui.</p>
         </div>
       </div>
     </div>
