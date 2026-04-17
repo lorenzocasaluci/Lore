@@ -122,20 +122,12 @@
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      background: url('IMG_2027.jpeg') center/cover no-repeat;
+      background: var(--black);
       display: flex;
       align-items: center;
       padding: 120px 5% 80px;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.62);
-      pointer-events: none;
-      z-index: 0;
     }
 
     .hero-inner {
@@ -1207,7 +1199,6 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-bg" id="heroBg"></div>
     <div class="hero-inner">
       <h1>Il tuo corpo non mente.<br><em>Il tuo metodo sì.</em></h1>
 

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Trainer Surbo Lecce – Movement Lab</title>
+  <meta name="description" content="Personal trainer a Surbo Lecce con percorsi personalizzati. Prima sessione gratuita. 350 105 8888." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #1a1a1a;
+      --text: #ffffff;
+      --accent: #2DD4BF;
+      --dark-text: #0f1f1e;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      background-color: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.3px;
+      line-height: 1;
+    }
+
+    .nav-subtitle {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      aria-label: "Menu";
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu overlay */
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      position: fixed;
+      top: 65px;
+      left: 0;
+      right: 0;
+      background-color: #1a1a1a;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 0;
+      z-index: 99;
+    }
+
+    .nav-menu.open {
+      display: flex;
+    }
+
+    .nav-menu a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 14px 24px;
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(45, 212, 191, 0.12);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      max-width: 780px;
+      margin-bottom: 0;
+    }
+
+    .hero h1 .accent {
+      color: var(--accent);
+      display: block;
+      margin-top: 6px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin-top: 28px;
+      line-height: 1.7;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px 20px;
+      margin-top: 24px;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .hero-meta span .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      display: inline-block;
+    }
+
+    .hero-cta {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--dark-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: -0.1px;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.4);
+    }
+
+    .btn-primary:hover {
+      background-color: #25c0ac;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(45, 212, 191, 0.35);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .cta-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      font-weight: 400;
+    }
+
+    /* ── STARS ── */
+    .stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 52px;
+    }
+
+    .stars .star {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .stars-label {
+      margin-left: 8px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+    }
+
+    /* ── CHI SONO ── */
+    .chi-sono {
+      padding: 100px 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .chi-sono h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .chi-sono p {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+    }
+
+    /* ── SERVIZI ── */
+    .servizi {
+      padding: 80px 24px 100px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .servizi-header {
+      margin-bottom: 48px;
+    }
+
+    .servizi h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-top: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #242424;
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      background-color: rgba(45, 212, 191, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.2px;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    /* ── TESTIMONIANZE ── */
+    .testimonianze {
+      padding: 80px 24px 100px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .testimonianze-header {
+      margin-bottom: 48px;
+    }
+
+    .testimonianze h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-top: 20px;
+    }
+
+    .review-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .review-card {
+      background-color: #222222;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .review-card:hover {
+      border-color: rgba(45, 212, 191, 0.35);
+      transform: translateY(-3px);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 3px;
+    }
+
+    .review-stars span {
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+
+    .review-text {
+      font-size: 0.93rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .review-author {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.2px;
+    }
+
+    /* ── CTA FINALE ── */
+    .cta-finale {
+      padding: 100px 24px;
+      text-align: center;
+      background-color: #1f1f1f;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .cta-finale h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .cta-finale p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    /* ── CONTATTI ── */
+    .contatti {
+      padding: 90px 24px 100px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contatti-header {
+      margin-bottom: 48px;
+    }
+
+    .contatti h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-top: 20px;
+    }
+
+    .contatti-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contatti-info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(45, 212, 191, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .info-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 0.97rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .info-value a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .info-value a:hover {
+      color: var(--accent);
+    }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.3px;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      background-color: #242424;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 13px 16px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-field textarea {
+      height: 120px;
+    }
+
+    .btn-submit {
+      background-color: var(--accent);
+      color: var(--dark-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 28px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .btn-submit:hover {
+      background-color: #25c0ac;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(45, 212, 191, 0.3);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      nav {
+        padding: 16px 18px;
+      }
+
+      .hero {
+        padding: 100px 18px 60px;
+      }
+
+      .hero h1 {
+        font-size: 1.85rem;
+        letter-spacing: -0.5px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        text-align: center;
+        padding: 16px 24px;
+      }
+
+      .chi-sono,
+      .servizi,
+      .contatti {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .contatti-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-submit {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-brand">
+      <span class="nav-logo">Movement Lab</span>
+      <span class="nav-subtitle">Personal Trainer Surbo Lecce</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="nav-menu" id="navMenu" role="navigation">
+    <a href="#hero">Home</a>
+    <a href="#chi-sono">Chi sono</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#recensioni">Recensioni</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-badge">Personal Trainer · Surbo, Lecce</div>
+
+    <h1>
+      Vuoi davvero cambiare il tuo corpo?
+      <span class="accent">Il personal trainer a Surbo che costruisce percorsi su misura per te.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      14 recensioni a 5 stelle. Allenamento personalizzato.<br />Prima sessione gratuita.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#contatti" class="btn-primary">Inizia ora, è gratis</a>
+      <span class="cta-note">Nessun impegno. Solo risultati.</span>
+    </div>
+
+    <div class="stars">
+      <span class="star">★</span>
+      <span class="star">★</span>
+      <span class="star">★</span>
+      <span class="star">★</span>
+      <span class="star">★</span>
+      <span class="stars-label">14 recensioni verificate</span>
+    </div>
+  </section>
+
+  <!-- CHI SONO -->
+  <section class="chi-sono" id="chi-sono">
+    <p class="section-label">Chi sono</p>
+    <h2>Ciao, sono Simone.</h2>
+    <p>Personal trainer a Surbo Lecce. Percorsi di allenamento personalizzati cuciti sull'individualità di ogni persona. Che tu voglia migliorare la forma fisica, perdere peso o sentirti meglio ogni giorno, costruiamo insieme il percorso giusto per te.</p>
+  </section>
+
+  <!-- SERVIZI -->
+  <section class="servizi" id="servizi">
+    <div class="servizi-header">
+      <p class="section-label">Servizi</p>
+      <h2>Come posso aiutarti</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Allenamento personalizzato</h3>
+        <p>Percorsi costruiti su misura per i tuoi obiettivi e la tua individualità.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Monitoraggio settimanale</h3>
+        <p>Controllo costante dei tuoi progressi per ottimizzare ogni allenamento.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <h3>Sempre disponibile</h3>
+        <p>Supporto continuo per motivarti e aiutarti a migliorare passo dopo passo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIANZE -->
+  <section class="testimonianze" id="recensioni">
+    <div class="testimonianze-header">
+      <p class="section-label">Testimonianze</p>
+      <h2>Cosa dicono di me</h2>
+    </div>
+    <div class="review-cards">
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-text">Da circa 9 mesi sono seguito da Simone, molto serio e competente. Ho visto in poco tempo grandi risultati.</p>
+        <span class="review-author">Marco Albanese</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-text">Simone mi segue da qualche mese, ti motiva tantissimo ed è sempre disponibile. Sto ottenendo ottimi risultati.</p>
+        <span class="review-author">Simona</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-text">Sin dalla prima seduta mi sono definito entusiasta. Molto attento disponibile e motivante.</p>
+        <span class="review-author">Giancarlo Barletta</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="review-text">Una persona…</p>
+        <span class="review-author"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="cta-finale">
+    <h2>Pronto a iniziare?</h2>
+    <p>La prima sessione è gratuita. Nessun impegno. Solo risultati.</p>
+    <a href="#contatti" class="btn-primary">Contattami ora</a>
+  </section>
+
+  <!-- CONTATTI -->
+  <section class="contatti" id="contatti">
+    <div class="contatti-header">
+      <p class="section-label">Contatti</p>
+      <h2>Scrivimi o chiamami</h2>
+    </div>
+    <div class="contatti-grid">
+      <div class="contatti-info">
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <p class="info-label">Telefono</p>
+            <p class="info-value"><a href="tel:+393501058888">350 105 8888</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <p class="info-label">Indirizzo</p>
+            <p class="info-value">Via Lecce 195<br />Surbo, Lecce</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" name="contatto" method="POST" action="#">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="La tua email" required />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="telefono">Numero di telefono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Il tuo numero" />
+        </div>
+        <div class="form-field">
+          <label for="messaggio">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" placeholder="Raccontami il tuo obiettivo…" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Invia messaggio</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Movement Lab · Personal Trainer Surbo Lecce · <a href="tel:+393501058888" style="color:inherit;text-decoration:none;">350 105 8888</a></p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+
+</body>
+</html>
