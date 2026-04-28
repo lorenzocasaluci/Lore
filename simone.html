@@ -135,13 +135,22 @@
 
     /* ── HERO ── */
     .hero {
-      background: var(--bg);
+      position: relative;
+      background: url('IMG_2430.jpeg') center center / cover no-repeat;
       min-height: 100vh;
       display: flex; align-items: center;
       padding: 160px 24px 80px;
     }
 
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: var(--bg);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
     .hero-inner {
+      position: relative; z-index: 1;
       max-width: 760px; margin: 0 auto; width: 100%;
     }
 
@@ -372,7 +381,7 @@
   <!-- ── NAVBAR ── -->
   <nav>
     <div class="brand">
-      <img src="IMG_2430.jpeg" alt="Movement Lab" style="height:40px;object-fit:contain;display:block;" />
+      <span class="brand-name">Movement Lab</span>
       <span class="brand-sub">Personal Trainer Surbo Lecce</span>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Apri menu">
@@ -390,6 +399,7 @@
 
   <!-- ── HERO ── -->
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-inner">
       <h1 class="reveal">Il tuo corpo può cambiare. Hai solo bisogno del metodo giusto.</h1>
       <p class="hero-tagline reveal d1"><span>Movement Lab</span>, la palestra che trasforma le persone, non solo i fisici.</p>
