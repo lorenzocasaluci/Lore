@@ -30,7 +30,7 @@
     #page-loader {
       position: fixed; inset: 0; z-index: 9999;
       background: var(--black);
-      animation: loaderFade 1.5s cubic-bezier(0.4,0,0.2,1) forwards;
+      animation: loaderFade 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
       pointer-events: none;
     }
     @keyframes loaderFade {
@@ -43,32 +43,54 @@
       from { opacity: 0; transform: translateY(-14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    @keyframes heroScale {
+      from { transform: scale(0.98); }
+      to   { transform: scale(1); }
+    }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(50px); }
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes letterIn {
+      from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── HERO ANIMATIONS ── */
+    /* ── HERO ENTRANCE ── */
+    .hero-inner {
+      animation: heroScale 1.2s cubic-bezier(0.16,1,0.3,1) 0.1s both;
+    }
     .hero-anim {
       opacity: 0;
-      animation: fadeUp 1.2s cubic-bezier(0.16,1,0.3,1) both;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) both;
     }
-    .a1 { animation-delay: 0.3s; }
-    .a2 { animation-delay: 0.65s; }
-    .a3 { animation-delay: 1.0s; }
+    .a1 { animation-delay: 0.4s; }
+    .a2 { animation-delay: 0.85s; }
+    .a3 { animation-delay: 1.2s; }
+
+    /* ── LETTER ANIMATION ── */
+    .letter { display: inline-block; }
+    .hero-inner h1 .letter {
+      opacity: 0;
+      animation: letterIn 0.55s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .split-title .letter { opacity: 0; }
+    .split-title.visible .letter {
+      animation: letterIn 0.5s cubic-bezier(0.16,1,0.3,1) both;
+    }
 
     /* ── REVEAL (scroll) ── */
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s cubic-bezier(0.16,1,0.3,1),
-                  transform 1s cubic-bezier(0.16,1,0.3,1);
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.8s cubic-bezier(0.16,1,0.3,1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .d1 { transition-delay: 0.15s; }
-    .d2 { transition-delay: 0.30s; }
-    .d3 { transition-delay: 0.45s; }
-    .d4 { transition-delay: 0.60s; }
+    .d1 { transition-delay: 0.10s; }
+    .d2 { transition-delay: 0.20s; }
+    .d3 { transition-delay: 0.30s; }
+    .d4 { transition-delay: 0.40s; }
 
     /* ── NAVBAR ── */
     nav {
@@ -171,9 +193,9 @@
       font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
       padding: 16px 32px; border: none; border-radius: 6px;
       cursor: pointer; text-decoration: none; letter-spacing: -0.2px;
-      transition: opacity 0.2s, transform 0.15s;
+      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, opacity 0.25s;
     }
-    .btn-white:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-white:hover { transform: scale(1.03); box-shadow: 0 0 28px rgba(255,107,0,0.25); }
 
     .btn-black {
       display: inline-flex; align-items: center; gap: 8px;
@@ -181,9 +203,9 @@
       font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
       padding: 16px 32px; border: none; border-radius: 6px;
       cursor: pointer; text-decoration: none; letter-spacing: -0.2px;
-      transition: opacity 0.2s, transform 0.15s;
+      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, opacity 0.25s;
     }
-    .btn-black:hover { opacity: 0.82; transform: translateY(-1px); }
+    .btn-black:hover { transform: scale(1.03); box-shadow: 0 0 24px rgba(255,255,255,0.08); }
 
     .btn-orange {
       display: inline-flex; align-items: center; gap: 8px;
@@ -191,9 +213,9 @@
       font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
       padding: 16px 32px; border: none; border-radius: 6px;
       cursor: pointer; text-decoration: none; letter-spacing: -0.2px;
-      transition: opacity 0.2s, transform 0.15s;
+      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, opacity 0.25s;
     }
-    .btn-orange:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-orange:hover { transform: scale(1.03); box-shadow: 0 0 32px rgba(255,107,0,0.5); }
 
     /* ── HERO ── */
     .hero {
@@ -342,6 +364,11 @@
       padding: 32px 24px;
       background: var(--white);
       display: flex; flex-direction: column; gap: 12px;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+    .card-service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(255,107,0,0.13);
     }
 
     .card-service .card-num { color: rgba(17,17,17,0.28); }
@@ -366,6 +393,11 @@
       padding: 32px 24px;
       background: var(--white);
       display: flex; flex-direction: column; gap: 16px;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+    .card-light:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(255,107,0,0.10);
     }
 
     .stars {
@@ -526,7 +558,7 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-inner">
-      <h1 class="hero-anim a1">Il tuo corpo può fare molto di più. Hai solo bisogno del metodo giusto.<br><span style="color: var(--orange);">Studio Personal Lecce con 15 anni di esperienza.</span></h1>
+      <h1>Il tuo corpo può fare molto di più. Hai solo bisogno del metodo giusto.<br><span style="color: var(--orange);">Studio Personal Lecce con 15 anni di esperienza.</span></h1>
       <p class="hero-tagline hero-anim a2">20 recensioni a 5 stelle. Personal training in presenza e coaching online. Prima sessione gratuita.</p>
       <div class="hero-anim a3">
         <a href="#contatti" class="btn-white">
@@ -674,25 +706,46 @@
   </a>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    hamburger.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-      hamburger.setAttribute('aria-expanded', open);
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('open');
-      });
-    });
-
+    // Remove loader after fade
     const loader = document.getElementById('page-loader');
     if (loader) loader.addEventListener('animationend', () => loader.remove());
 
+    // Split element text into animated letter spans
+    function splitLetters(el, baseDelay, step) {
+      const counter = { n: 0 };
+      function walk(node) {
+        if (node.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          [...node.textContent].forEach(ch => {
+            const s = document.createElement('span');
+            s.className = 'letter';
+            s.textContent = ch;
+            if (ch.trim()) {
+              s.style.animationDelay = (baseDelay + counter.n * step).toFixed(3) + 's';
+              counter.n++;
+            }
+            frag.appendChild(s);
+          });
+          node.parentNode.replaceChild(frag, node);
+        } else if (node.nodeType === 1 && node.tagName !== 'BR') {
+          [...node.childNodes].forEach(walk);
+        }
+      }
+      walk(el);
+    }
+
+    // H1 letter animation on page load (0.3s base, 0.01s per letter)
+    const heroH1 = document.querySelector('.hero-inner h1');
+    if (heroH1) splitLetters(heroH1, 0.3, 0.010);
+
+    // H2 scroll letter animation
+    document.querySelectorAll('h2').forEach(h2 => {
+      h2.classList.remove('reveal');
+      h2.classList.add('split-title');
+      splitLetters(h2, 0, 0.025);
+    });
+
+    // Intersection Observer
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -702,7 +755,22 @@
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal, .split-title').forEach(el => observer.observe(el));
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
   </script>
 
 </body>
