@@ -716,16 +716,21 @@
       function walk(node) {
         if (node.nodeType === 3) {
           const frag = document.createDocumentFragment();
-          [...node.textContent].forEach(ch => {
-            if (!ch.trim()) {
-              frag.appendChild(document.createTextNode(ch));
+          node.textContent.split(/(\s+)/).forEach(part => {
+            if (/^\s+$/.test(part)) {
+              frag.appendChild(document.createTextNode(part));
             } else {
-              const s = document.createElement('span');
-              s.className = 'letter';
-              s.textContent = ch;
-              s.style.animationDelay = (baseDelay + counter.n * step).toFixed(3) + 's';
-              counter.n++;
-              frag.appendChild(s);
+              const word = document.createElement('span');
+              word.style.cssText = 'display:inline-block; white-space:nowrap;';
+              [...part].forEach(ch => {
+                const s = document.createElement('span');
+                s.className = 'letter';
+                s.textContent = ch;
+                s.style.animationDelay = (baseDelay + counter.n * step).toFixed(3) + 's';
+                counter.n++;
+                word.appendChild(s);
+              });
+              frag.appendChild(word);
             }
           });
           node.parentNode.replaceChild(frag, node);
