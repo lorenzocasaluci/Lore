@@ -390,24 +390,27 @@
     }
 
     .card-service {
-      border: 1.5px solid var(--orange);
-      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,107,0,0.3);
+      border-radius: 16px;
       padding: 32px 24px;
-      background: var(--white);
       display: flex; flex-direction: column; gap: 12px;
-      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s, border-color 0.35s;
     }
     .card-service:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(255,107,0,0.13);
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 16px 48px rgba(255,107,0,0.15);
+      border-color: rgba(255,107,0,0.6);
     }
 
-    .card-service .card-num { color: rgba(17,17,17,0.28); }
-    .card-service .card-title { color: var(--black); }
+    .card-service .card-num { color: rgba(255,107,0,0.5); }
+    .card-service .card-title { color: var(--white); }
 
     .card-desc {
       font-size: 15px; font-weight: 400;
-      color: rgba(17,17,17,0.6);
+      color: rgba(255,255,255,0.55);
       line-height: 1.65;
     }
 
@@ -419,16 +422,19 @@
     }
 
     .card-light {
-      border: 1.5px solid var(--orange);
-      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,107,0,0.3);
+      border-radius: 16px;
       padding: 32px 24px;
-      background: var(--white);
       display: flex; flex-direction: column; gap: 16px;
-      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s, border-color 0.35s;
     }
     .card-light:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(255,107,0,0.10);
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 16px 48px rgba(255,107,0,0.15);
+      border-color: rgba(255,107,0,0.6);
     }
 
     .stars {
@@ -439,12 +445,12 @@
 
     .review-text {
       font-size: 15px; font-weight: 400;
-      color: rgba(17,17,17,0.7);
+      color: rgba(255,255,255,0.65);
       line-height: 1.7; flex: 1;
     }
     .review-author {
       font-size: 13px; font-weight: 700;
-      color: var(--black);
+      color: rgba(255,255,255,0.4);
     }
 
     /* ── CTA ── */
