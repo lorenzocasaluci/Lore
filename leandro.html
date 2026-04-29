@@ -725,14 +725,16 @@
         if (node.nodeType === 3) {
           const frag = document.createDocumentFragment();
           [...node.textContent].forEach(ch => {
-            const s = document.createElement('span');
-            s.className = 'letter';
-            s.textContent = ch;
-            if (ch.trim()) {
+            if (!ch.trim()) {
+              frag.appendChild(document.createTextNode(ch));
+            } else {
+              const s = document.createElement('span');
+              s.className = 'letter';
+              s.textContent = ch;
               s.style.animationDelay = (baseDelay + counter.n * step).toFixed(3) + 's';
               counter.n++;
+              frag.appendChild(s);
             }
-            frag.appendChild(s);
           });
           node.parentNode.replaceChild(frag, node);
         } else if (node.nodeType === 1 && node.tagName !== 'BR') {
