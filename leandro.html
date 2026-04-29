@@ -319,7 +319,7 @@
     /* ── TESTIMONIANZE ── */
     .reviews-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(4,1fr);
       gap: 16px;
     }
 
@@ -443,8 +443,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .cards-grid,
-      .reviews-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: repeat(2,1fr); }
 
       .contatti-body { grid-template-columns: 1fr; gap: 48px; }
 
@@ -458,6 +458,7 @@
       .hero { padding: 90px 16px 60px; }
       .container { padding: 0 16px; }
       nav { padding: 0 16px; }
+      .reviews-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -558,22 +559,27 @@
   <section class="section-light" id="recensioni">
     <div class="container">
       <div class="label-dark reveal">Testimonianze</div>
-      <h2 class="section-h2-dark reveal d1">Loro hanno già iniziato. Tu cosa aspetti?</h2>
+      <h2 class="section-h2-dark reveal d1">Non fidarti di me. Fidati di chi ha già ottenuto risultati.</h2>
       <div class="reviews-grid">
         <div class="card-light reveal">
           <div class="stars">★★★★★</div>
-          <p class="review-text">Competenza, disponibilità e professionalità. Ascolta le tue esigenze e crea un percorso su misura.</p>
-          <div class="review-author">Anna Lucia De Matteis</div>
+          <p class="review-text">Quasi 3 anni con Leandro, attento e preparato.</p>
+          <div class="review-author">Alessandro Leo</div>
         </div>
         <div class="card-light reveal d1">
           <div class="stars">★★★★★</div>
-          <p class="review-text">Allenamenti mirati e personalizzati. Consiglio vivamente a chi vuole partire da zero.</p>
-          <div class="review-author">Ester Fiorentino</div>
+          <p class="review-text">Miglior studio a Lecce, mi sprona al massimo.</p>
+          <div class="review-author">Alessandra Santo</div>
         </div>
         <div class="card-light reveal d2">
           <div class="stars">★★★★★</div>
-          <p class="review-text">Fin dal primo momento mi sono sentita seguita con grande professionalità.</p>
-          <div class="review-author">Valentina Vissicchio</div>
+          <p class="review-text">Grandi miglioramenti, massima professionalità.</p>
+          <div class="review-author">Carola Petranca</div>
+        </div>
+        <div class="card-light reveal d3">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">Quasi un anno, non potrei essere più soddisfatta.</p>
+          <div class="review-author">Laura</div>
         </div>
       </div>
     </div>
