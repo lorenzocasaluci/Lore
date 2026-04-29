@@ -152,6 +152,16 @@
     }
     .btn-black:hover { opacity: 0.82; transform: translateY(-1px); }
 
+    .btn-orange {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
+      padding: 16px 32px; border: none; border-radius: 6px;
+      cursor: pointer; text-decoration: none; letter-spacing: -0.2px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-orange:hover { opacity: 0.88; transform: translateY(-1px); }
+
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -588,10 +598,10 @@
   <!-- ── CTA ── -->
   <section class="cta-section">
     <div class="container">
-      <h2 class="cta-h2 reveal">Pronto a iniziare?</h2>
+      <h2 class="cta-h2 reveal">Pronto a trasformarti davvero?</h2>
       <p class="cta-sub reveal d1">La prima sessione è gratuita. Nessun impegno. Solo risultati.</p>
       <div class="reveal d2">
-        <a href="#contatti" class="btn-black">
+        <a href="#contatti" class="btn-orange">
           Prenota la sessione gratuita
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
