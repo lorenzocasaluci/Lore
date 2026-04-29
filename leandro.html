@@ -117,6 +117,30 @@
       letter-spacing: 0.6px; text-transform: uppercase;
     }
 
+    /* ── NAV LINKS (desktop) ── */
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+    }
+    .nav-links a {
+      position: relative;
+      font-size: 13px; font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      padding-bottom: 3px;
+      transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--orange);
+      border-radius: 2px;
+      transition: width 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
       cursor: pointer; background: none; border: none; padding: 4px;
@@ -199,11 +223,12 @@
       font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
       padding: 16px 32px; border: none; border-radius: 6px;
       cursor: pointer; text-decoration: none; letter-spacing: -0.2px;
-      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, filter 0.3s;
       animation: btnPulse 2.2s ease-out infinite;
     }
     .btn-white:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
+      filter: brightness(1.1);
       box-shadow: 0 0 40px rgba(255,107,0,0.5);
       animation: none;
     }
@@ -214,9 +239,13 @@
       font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
       padding: 16px 32px; border: none; border-radius: 6px;
       cursor: pointer; text-decoration: none; letter-spacing: -0.2px;
-      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, opacity 0.25s;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, filter 0.3s;
     }
-    .btn-black:hover { transform: scale(1.03); box-shadow: 0 0 24px rgba(255,255,255,0.08); }
+    .btn-black:hover {
+      transform: scale(1.02);
+      filter: brightness(1.1);
+      box-shadow: 0 0 24px rgba(255,255,255,0.1);
+    }
 
     .btn-orange {
       display: inline-flex; align-items: center; gap: 8px;
@@ -224,9 +253,13 @@
       font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
       padding: 16px 32px; border: none; border-radius: 6px;
       cursor: pointer; text-decoration: none; letter-spacing: -0.2px;
-      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s, opacity 0.25s;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, filter 0.3s;
     }
-    .btn-orange:hover { transform: scale(1.03); box-shadow: 0 0 32px rgba(255,107,0,0.5); }
+    .btn-orange:hover {
+      transform: scale(1.02);
+      filter: brightness(1.1);
+      box-shadow: 0 0 40px rgba(255,107,0,0.5);
+    }
 
     /* ── HERO ── */
     .hero {
@@ -371,9 +404,13 @@
       border-radius: 12px;
       padding: 32px 24px;
       background: transparent;
-      transition: border-color 0.2s;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, border-color 0.3s;
     }
-    .card-dark:hover { border-color: var(--white); }
+    .card-dark:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 40px rgba(255,107,0,0.12);
+      border-color: rgba(255,107,0,0.5);
+    }
 
     .card-num {
       font-size: 11px; font-weight: 700;
@@ -394,12 +431,12 @@
       border-radius: 16px;
       padding: 32px 24px;
       display: flex; flex-direction: column; gap: 12px;
-      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s, border-color 0.35s;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, border-color 0.3s;
     }
     .card-service:hover {
       transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 16px 48px rgba(255,107,0,0.15);
-      border-color: rgba(255,107,0,0.6);
+      box-shadow: 0 16px 48px rgba(255,107,0,0.18);
+      border-color: rgba(255,107,0,0.65);
     }
 
     .card-service .card-num { color: rgba(255,107,0,0.5); }
@@ -426,12 +463,12 @@
       border-radius: 16px;
       padding: 32px 24px;
       display: flex; flex-direction: column; gap: 16px;
-      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s, border-color 0.35s;
+      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, border-color 0.3s;
     }
     .card-light:hover {
       transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 16px 48px rgba(255,107,0,0.15);
-      border-color: rgba(255,107,0,0.6);
+      box-shadow: 0 16px 48px rgba(255,107,0,0.18);
+      border-color: rgba(255,107,0,0.65);
     }
 
     .stars {
@@ -555,6 +592,7 @@
       .section-light { padding: 64px 16px; }
 
       .hamburger { display: flex; }
+      .nav-links { display: none; }
     }
 
     @media (max-width: 480px) {
@@ -574,6 +612,12 @@
     <div class="brand">
       <span class="brand-name">Leandro Catanese</span>
       <span class="brand-sub" style="color: var(--orange);">Studio Personal Lecce</span>
+    </div>
+    <div class="nav-links">
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#contatti">Contatti</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Apri menu">
       <span></span><span></span><span></span>
