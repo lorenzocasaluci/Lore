@@ -107,6 +107,13 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 24px;
       animation: navIn 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(17,17,17,0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom-color: rgba(255,107,0,0.15);
     }
 
     .brand { display: flex; flex-direction: column; gap: 2px; }
@@ -183,11 +190,12 @@
     .section-dark {
       background: var(--black);
       padding: 80px 24px;
-      border-top: 1px solid rgba(255,255,255,0.07);
+      border-top: 1px solid rgba(255,107,0,0.15);
     }
     .section-light {
       background: var(--white);
       padding: 80px 24px;
+      border-top: 1px solid rgba(255,107,0,0.15);
     }
 
     .label {
@@ -204,13 +212,13 @@
     }
 
     .section-h2 {
-      font-size: clamp(20px, 2.8vw, 28px);
+      font-size: clamp(24px, 3.5vw, 36px);
       font-weight: 800; color: var(--white);
       letter-spacing: -1.5px; line-height: 1.08;
       margin-bottom: 48px;
     }
     .section-h2-dark {
-      font-size: clamp(20px, 2.8vw, 28px);
+      font-size: clamp(24px, 3.5vw, 36px);
       font-weight: 800; color: var(--black);
       letter-spacing: -1.5px; line-height: 1.08;
       margin-bottom: 48px;
@@ -295,7 +303,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(36px, 6.5vw, 70px);
+      font-size: clamp(32px, 5vw, 52px);
       font-weight: 800;
       color: var(--white);
       letter-spacing: -2.5px;
@@ -305,7 +313,7 @@
     }
 
     .hero-tagline {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       color: rgba(255,255,255,0.6);
       line-height: 1.7;
@@ -315,7 +323,7 @@
     }
 
     .hero-sub {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       color: rgba(255,255,255,0.5);
       line-height: 1.7;
@@ -327,8 +335,8 @@
     /* ── COUNTER ── */
     .counter {
       background: var(--black);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,107,0,0.15);
+      border-bottom: 1px solid rgba(255,107,0,0.15);
       padding: 64px 24px;
     }
 
@@ -385,7 +393,7 @@
 
     /* ── CHI SONO ── */
     .chi-sono-text {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       color: rgba(17,17,17,0.75);
       line-height: 1.8;
@@ -443,7 +451,7 @@
     .card-service .card-title { color: var(--white); }
 
     .card-desc {
-      font-size: 15px; font-weight: 400;
+      font-size: 16px; font-weight: 400;
       color: rgba(255,255,255,0.55);
       line-height: 1.65;
     }
@@ -478,7 +486,7 @@
     }
 
     .review-text {
-      font-size: 15px; font-weight: 400;
+      font-size: 16px; font-weight: 400;
       color: rgba(255,255,255,0.65);
       line-height: 1.7; flex: 1;
     }
@@ -492,17 +500,18 @@
       background: var(--white);
       padding: 80px 24px;
       text-align: center;
+      border-top: 1px solid rgba(255,107,0,0.15);
     }
 
     .cta-h2 {
-      font-size: clamp(20px, 2.8vw, 28px);
+      font-size: clamp(24px, 3.5vw, 36px);
       font-weight: 800; color: var(--black);
       letter-spacing: -2px; line-height: 1.05;
       margin-bottom: 16px;
     }
 
     .cta-sub {
-      font-size: 15px; font-weight: 400;
+      font-size: 16px; font-weight: 400;
       color: rgba(17,17,17,0.5);
       margin-bottom: 40px; line-height: 1.6;
     }
@@ -653,15 +662,15 @@
   <section class="counter">
     <div class="counter-grid">
       <div class="counter-item reveal">
-        <div class="counter-value">33+</div>
+        <div class="counter-value" data-target="33" data-suffix="+">33+</div>
         <div class="counter-label">Clienti soddisfatti</div>
       </div>
-      <div class="counter-item reveal">>
+      <div class="counter-item reveal">
         <div class="counter-value">5 ★</div>
         <div class="counter-label">Media recensioni</div>
       </div>
-      <div class="counter-item reveal">>
-        <div class="counter-value">100%</div>
+      <div class="counter-item reveal">
+        <div class="counter-value" data-target="100" data-suffix="%">100%</div>
         <div class="counter-label">Percorsi personalizzati</div>
       </div>
     </div>
@@ -878,6 +887,34 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.split-title').forEach(el => titleObserver.observe(el));
+
+    // ── NAVBAR BACKDROP BLUR ON SCROLL ──────────────────────────────────
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // ── COUNT-UP ANIMATION ───────────────────────────────────────────────
+    const countEls = document.querySelectorAll('.counter-value[data-target]');
+    const countObserver = new IntersectionObserver(entries => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting) return;
+        countObserver.unobserve(target);
+        const end    = +target.dataset.target;
+        const suffix = target.dataset.suffix || '';
+        const duration = 1600; // ms
+        const start  = performance.now();
+        function tick(now) {
+          const elapsed  = Math.min(now - start, duration);
+          const progress = 1 - Math.pow(1 - elapsed / duration, 3); // ease-out cubic
+          const value    = Math.round(progress * end);
+          target.textContent = value + suffix;
+          if (elapsed < duration) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.5 });
+    countEls.forEach(el => countObserver.observe(el));
 
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
