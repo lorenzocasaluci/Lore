@@ -843,43 +843,26 @@
     });
 
     // ── SCROLL REVEAL ──────────────────────────────────────────────────
-    // Group every .reveal element by its parent section/counter block,
-    // assign progressive transition-delay (0.1 s per sibling),
-    // then fire the whole group together when the first element enters view.
-
-    const allReveals = [...document.querySelectorAll('.reveal')];
-
-    // Build section → [elements] map
-    const sectionMap = new Map();
-    allReveals.forEach(el => {
-      const bucket = el.closest('section, .counter') || document.body;
-      if (!sectionMap.has(bucket)) sectionMap.set(bucket, []);
-      sectionMap.get(bucket).push(el);
+    // Stagger: each .reveal gets a delay based on its index among
+    // direct .reveal siblings inside the same parent container.
+    document.querySelectorAll('.reveal').forEach(el => {
+      const siblings = [...el.parentElement.querySelectorAll(':scope > .reveal')];
+      const idx = siblings.indexOf(el);
+      if (idx > 0) el.style.transitionDelay = (idx * 0.12).toFixed(2) + 's';
     });
 
-    // Assign staggered delays (0 s, 0.1 s, 0.2 s …) within each group
-    sectionMap.forEach(els => {
-      els.forEach((el, i) => {
-        el.style.transitionDelay = (i * 0.1).toFixed(1) + 's';
-      });
-    });
-
-    // When the first element of a group enters view → reveal the whole group
-    const fired = new Set();
+    // Fire per-element as it enters the viewport.
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(({ target, isIntersecting }) => {
         if (!isIntersecting) return;
-        const bucket = target.closest('section, .counter') || document.body;
-        if (fired.has(bucket)) return;
-        fired.add(bucket);
-        (sectionMap.get(bucket) || [target]).forEach(el => el.classList.add('visible'));
+        target.classList.add('visible');
         revealObserver.unobserve(target);
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -56px 0px' });
 
-    allReveals.forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Separate observer for H2 letter animation (fired per-element)
+    // H2 split-title letter animation (per-element)
     const titleObserver = new IntersectionObserver(entries => {
       entries.forEach(({ target, isIntersecting }) => {
         if (isIntersecting) {
@@ -887,7 +870,7 @@
           titleObserver.unobserve(target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.split-title').forEach(el => titleObserver.observe(el));
 
