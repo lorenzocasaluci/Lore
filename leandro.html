@@ -60,9 +60,9 @@
       50%       { transform: scale(1.2); opacity: 0.7; }
     }
     @keyframes btnPulse {
-      0%   { box-shadow: 0 0 0 0   rgba(255,107,0,0.55); }
-      70%  { box-shadow: 0 0 0 18px rgba(255,107,0,0); }
-      100% { box-shadow: 0 0 0 0   rgba(255,107,0,0); }
+      0%   { box-shadow: 0 0 16px rgba(255,107,0,0.45), 0 0 0 0   rgba(255,107,0,0.5); }
+      70%  { box-shadow: 0 0 16px rgba(255,107,0,0.45), 0 0 0 20px rgba(255,107,0,0); }
+      100% { box-shadow: 0 0 16px rgba(255,107,0,0.45), 0 0 0 0   rgba(255,107,0,0); }
     }
 
     /* ── HERO ENTRANCE ── */
@@ -231,6 +231,7 @@
       font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
       padding: 16px 32px; border: none; border-radius: 6px;
       cursor: pointer; text-decoration: none; letter-spacing: -0.2px;
+      box-shadow: 0 0 16px rgba(255,107,0,0.45);
       transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, filter 0.3s;
       animation: btnPulse 2.2s ease-out infinite;
     }
