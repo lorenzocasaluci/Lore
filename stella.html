@@ -520,6 +520,40 @@ nav { top: 8px; width: calc(100% - 24px); padding: 12px 16px; border-radius: 16p
 .cta-glass { margin: 0 16px 60px; padding: 72px 24px; border-radius: 28px; }
 footer { flex-direction: column; gap: 8px; padding: 20px; text-align: center; }
 }
+
+/* ===== 1. NAV STICKY SCROLL ===== */
+nav.scrolled {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(52px) saturate(240%);
+  box-shadow: 0 2px 16px rgba(61,139,87,0.2), 0 1px 3px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,1);
+  border-color: rgba(200,230,212,0.55);
+}
+
+/* ===== 2. PARALLAX FLOAT hero-right ===== */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+.hero-right .spec-glass:nth-child(1) { animation: floatCard 5s ease-in-out infinite; animation-delay:  0.0s; }
+.hero-right .spec-glass:nth-child(2) { animation: floatCard 5s ease-in-out infinite; animation-delay: -1.0s; }
+.hero-right .spec-glass:nth-child(3) { animation: floatCard 5s ease-in-out infinite; animation-delay: -2.0s; }
+.hero-right .spec-glass:nth-child(4) { animation: floatCard 5s ease-in-out infinite; animation-delay: -3.0s; }
+.hero-right .spec-glass:nth-child(5) { animation: floatCard 5s ease-in-out infinite; animation-delay: -4.0s; }
+.hero-right .spec-glass:hover { animation-play-state: paused; }
+
+/* ===== 3. CARD DRAW SCROLL ===== */
+.draw-card {
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  opacity: 0;
+  transition: clip-path 0.75s cubic-bezier(0.76, 0, 0.24, 1),
+              opacity 0.4s ease 0.15s;
+}
+
+.draw-card.drawn {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  opacity: 1;
+}
 </style>
 
 </head>
@@ -615,32 +649,32 @@ footer { flex-direction: column; gap: 8px; padding: 20px; text-align: center; }
   <div class="pill fade">Aree di competenza</div>
   <h2 class="h2 fade">Il tuo problema<br>ha una <em>soluzione</em><br><span class="ghost">clinica e misurabile.</span></h2>
   <div class="comp-grid">
-    <div class="comp-glass fade"><span class="comp-emoji">⚖️</span><div class="comp-title">Dimagrimento e Peso</div><div class="comp-desc">Diete dimagranti, chetogeniche, gestione obesità e sovrappeso. Percorsi su misura senza sacrifici impossibili.</div></div>
-    <div class="comp-glass fade"><span class="comp-emoji">🏥</span><div class="comp-title">Nutrizione Clinica</div><div class="comp-desc">Diabete, colesterolo, ipertensione, tiroide, sindrome metabolica, malattie autoimmuni. Alimentazione come terapia.</div></div>
-    <div class="comp-glass fade"><span class="comp-emoji">🌿</span><div class="comp-title">Intestino e Digestione</div><div class="comp-desc">Colon irritabile, celiachia, intolleranze alimentari, gastrite, reflusso, gonfiore, disbiosi intestinale.</div></div>
-    <div class="comp-glass fade"><span class="comp-emoji">👶</span><div class="comp-title">Nutrizione Pediatrica</div><div class="comp-desc">Piani alimentari per bambini e adolescenti. Supporto nutrizionale durante gravidanza e allattamento.</div></div>
-    <div class="comp-glass fade"><span class="comp-emoji">🌸</span><div class="comp-title">Salute Femminile</div><div class="comp-desc">Menopausa, ovaio policistico, sindrome premestruale, osteoporosi. Nutrizione per ogni fase della vita.</div></div>
-    <div class="comp-glass fade"><span class="comp-emoji">📚</span><div class="comp-title">Educazione Alimentare</div><div class="comp-desc">Impara a fare scelte consapevoli ogni giorno. Un percorso che trasforma il tuo rapporto col cibo per sempre.</div></div>
+    <div class="comp-glass draw-card"><span class="comp-emoji">⚖️</span><div class="comp-title">Dimagrimento e Peso</div><div class="comp-desc">Diete dimagranti, chetogeniche, gestione obesità e sovrappeso. Percorsi su misura senza sacrifici impossibili.</div></div>
+    <div class="comp-glass draw-card"><span class="comp-emoji">🏥</span><div class="comp-title">Nutrizione Clinica</div><div class="comp-desc">Diabete, colesterolo, ipertensione, tiroide, sindrome metabolica, malattie autoimmuni. Alimentazione come terapia.</div></div>
+    <div class="comp-glass draw-card"><span class="comp-emoji">🌿</span><div class="comp-title">Intestino e Digestione</div><div class="comp-desc">Colon irritabile, celiachia, intolleranze alimentari, gastrite, reflusso, gonfiore, disbiosi intestinale.</div></div>
+    <div class="comp-glass draw-card"><span class="comp-emoji">👶</span><div class="comp-title">Nutrizione Pediatrica</div><div class="comp-desc">Piani alimentari per bambini e adolescenti. Supporto nutrizionale durante gravidanza e allattamento.</div></div>
+    <div class="comp-glass draw-card"><span class="comp-emoji">🌸</span><div class="comp-title">Salute Femminile</div><div class="comp-desc">Menopausa, ovaio policistico, sindrome premestruale, osteoporosi. Nutrizione per ogni fase della vita.</div></div>
+    <div class="comp-glass draw-card"><span class="comp-emoji">📚</span><div class="comp-title">Educazione Alimentare</div><div class="comp-desc">Impara a fare scelte consapevoli ogni giorno. Un percorso che trasforma il tuo rapporto col cibo per sempre.</div></div>
   </div>
 </div>
 
 <div class="sec" id="recensioni">
   <div class="pill fade">Testimonianze</div>
   <h2 class="h2 fade">Non fidarti di me.<br><em>Fidati di chi</em><br><span class="ghost">ha già ottenuto risultati.</span></h2>
-  <div class="rev-grid fade">
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"La dottoressa mi ha fornito una dieta completa e adatta al mio stile di vita. Sia io che il mio compagno ci siamo trovati super bene prima del matrimonio."</p><div class="rev-author"><div class="rev-avatar">M</div><div><div class="rev-name">Mariarita</div><div class="rev-date">Agosto 2023</div></div></div></div>
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"Mi sta seguendo durante la mia prima gravidanza. I benefici mi permettono di vivere questo viaggio con più consapevolezza e tranquillità."</p><div class="rev-author"><div class="rev-avatar">L</div><div><div class="rev-name">Lorena</div><div class="rev-date">Gennaio 2024</div></div></div></div>
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"Professionale, dolce, empatica. Ho imparato a mangiare bene senza sentirmi privata di nulla. Risultati visibili da subito."</p><div class="rev-author"><div class="rev-avatar">I</div><div><div class="rev-name">Iole</div><div class="rev-date">Luglio 2023</div></div></div></div>
+  <div class="rev-grid">
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"La dottoressa mi ha fornito una dieta completa e adatta al mio stile di vita. Sia io che il mio compagno ci siamo trovati super bene prima del matrimonio."</p><div class="rev-author"><div class="rev-avatar">M</div><div><div class="rev-name">Mariarita</div><div class="rev-date">Agosto 2023</div></div></div></div>
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Mi sta seguendo durante la mia prima gravidanza. I benefici mi permettono di vivere questo viaggio con più consapevolezza e tranquillità."</p><div class="rev-author"><div class="rev-avatar">L</div><div><div class="rev-name">Lorena</div><div class="rev-date">Gennaio 2024</div></div></div></div>
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Professionale, dolce, empatica. Ho imparato a mangiare bene senza sentirmi privata di nulla. Risultati visibili da subito."</p><div class="rev-author"><div class="rev-avatar">I</div><div><div class="rev-name">Iole</div><div class="rev-date">Luglio 2023</div></div></div></div>
   </div>
-  <div class="rev-grid fade">
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"Sto vedendo ottimi risultati. La disponibilità ad apportare modifiche al piano lo rende facilmente gestibile nella vita di tutti i giorni."</p><div class="rev-author"><div class="rev-avatar">A</div><div><div class="rev-name">Antonio</div><div class="rev-date">Maggio 2023</div></div></div></div>
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"Non propone rigide imposizioni. Non è stato difficile affrontare il cambiamento alimentare e vedere i risultati si è rivelato un vero piacere."</p><div class="rev-author"><div class="rev-avatar">F</div><div><div class="rev-name">Federico</div><div class="rev-date">Novembre 2023</div></div></div></div>
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"Professionalità e disponibilità sono le due parole chiave. Cordiale e sempre pronta per chiarire qualsiasi dubbio!"</p><div class="rev-author"><div class="rev-avatar">C</div><div><div class="rev-name">Chiara</div><div class="rev-date">Gennaio 2024</div></div></div></div>
+  <div class="rev-grid">
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Sto vedendo ottimi risultati. La disponibilità ad apportare modifiche al piano lo rende facilmente gestibile nella vita di tutti i giorni."</p><div class="rev-author"><div class="rev-avatar">A</div><div><div class="rev-name">Antonio</div><div class="rev-date">Maggio 2023</div></div></div></div>
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Non propone rigide imposizioni. Non è stato difficile affrontare il cambiamento alimentare e vedere i risultati si è rivelato un vero piacere."</p><div class="rev-author"><div class="rev-avatar">F</div><div><div class="rev-name">Federico</div><div class="rev-date">Novembre 2023</div></div></div></div>
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Professionalità e disponibilità sono le due parole chiave. Cordiale e sempre pronta per chiarire qualsiasi dubbio!"</p><div class="rev-author"><div class="rev-avatar">C</div><div><div class="rev-name">Chiara</div><div class="rev-date">Gennaio 2024</div></div></div></div>
   </div>
-  <div class="rev-grid fade">
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"Gentilezza, pazienza e competenza ne fanno una professionista assolutamente affidabile. Consigliatissima per chi vuole un percorso serio."</p><div class="rev-author"><div class="rev-avatar">R</div><div><div class="rev-name">Rosaria</div><div class="rev-date">Marzo 2025</div></div></div></div>
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"Una professionista altamente preparata. Empatica e attenta. Consigli utili che vanno oltre il semplice piano alimentare."</p><div class="rev-author"><div class="rev-avatar">F</div><div><div class="rev-name">Francesca</div><div class="rev-date">Maggio 2023</div></div></div></div>
-    <div class="rev-glass"><div class="rev-stars">★★★★★</div><p class="rev-text">"Abbiamo trovato una persona professionalmente molto preparata e disponibile. I risultati sono stati ottimi, sempre attenta alle esigenze del paziente."</p><div class="rev-author"><div class="rev-avatar">M</div><div><div class="rev-name">Maurizio</div><div class="rev-date">Febbraio 2025</div></div></div></div>
+  <div class="rev-grid">
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Gentilezza, pazienza e competenza ne fanno una professionista assolutamente affidabile. Consigliatissima per chi vuole un percorso serio."</p><div class="rev-author"><div class="rev-avatar">R</div><div><div class="rev-name">Rosaria</div><div class="rev-date">Marzo 2025</div></div></div></div>
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Una professionista altamente preparata. Empatica e attenta. Consigli utili che vanno oltre il semplice piano alimentare."</p><div class="rev-author"><div class="rev-avatar">F</div><div><div class="rev-name">Francesca</div><div class="rev-date">Maggio 2023</div></div></div></div>
+    <div class="rev-glass draw-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Abbiamo trovato una persona professionalmente molto preparata e disponibile. I risultati sono stati ottimi, sempre attenta alle esigenze del paziente."</p><div class="rev-author"><div class="rev-avatar">M</div><div><div class="rev-name">Maurizio</div><div class="rev-date">Febbraio 2025</div></div></div></div>
   </div>
 </div>
 
@@ -683,10 +717,31 @@ footer { flex-direction: column; gap: 8px; padding: 20px; text-align: center; }
 </a>
 
 <script>
+  // Fade observer (elementi generici)
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 80); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  // 1. Nav sticky scroll con blur
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  // 3. Card draw scroll con Intersection Observer
+  const drawObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const col = Math.round(e.target.getBoundingClientRect().left / 280);
+        setTimeout(() => {
+          e.target.classList.add('drawn');
+          drawObs.unobserve(e.target);
+        }, col * 120);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.draw-card').forEach(el => drawObs.observe(el));
 </script>
 
 </body>
