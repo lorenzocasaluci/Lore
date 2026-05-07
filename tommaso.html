@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Trainer Lecce | Tommaso Pagliara</title>
+<meta name="description" content="Personal trainer a Lecce con allenamenti personalizzati e risultati concreti. Prima sessione gratuita. 342 568 2598">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --black2: #0f0f0f;
+    --white: #f5f5f0;
+    --gray: #888;
+    --border: rgba(245,245,240,0.1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+  nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; transition: all 0.4s; }
+  nav.scrolled { background: rgba(8,8,8,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 48px; }
+  .nav-name { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 3px; color: var(--white); }
+  .nav-sub { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-top: 1px; }
+  .nav-cta { background: var(--white); color: var(--black); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 11px 28px; text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: transparent; color: var(--white); outline: 1px solid var(--white); }
+  .hero { min-height: 100vh; padding: 140px 48px 80px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+  .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(245,245,240,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(245,245,240,0.025) 1px, transparent 1px); background-size: 80px 80px; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(245,245,240,0.4); margin-bottom: 36px; position: relative; z-index: 2; }
+  .hero-tag-dot { width: 6px; height: 6px; background: var(--white); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(64px, 11vw, 140px); line-height: 0.92; letter-spacing: 2px; color: var(--white); position: relative; z-index: 2; margin-bottom: 40px; }
+  .hero-title .dim { color: rgba(245,245,240,0.18); }
+  .hero-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; align-items: end; position: relative; z-index: 2; border-top: 1px solid var(--border); padding-top: 40px; }
+  .hero-desc { font-size: 15px; color: rgba(245,245,240,0.5); line-height: 1.9; }
+  .hero-desc strong { color: var(--white); font-weight: 500; }
+  .hero-cta-block { text-align: center; }
+  .btn-primary { display: inline-block; background: var(--white); color: var(--black); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 18px 48px; text-decoration: none; transition: all 0.3s; }
+  .btn-primary:hover { background: transparent; color: var(--white); outline: 1px solid var(--white); }
+  .btn-note { font-size: 10px; letter-spacing: 1px; color: var(--gray); margin-top: 12px; }
+  .hero-stat-block { text-align: right; }
+  .hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1; color: var(--white); }
+  .hero-stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+  .marquee { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 0; overflow: hidden; background: var(--black2); }
+  .marquee-inner { display: inline-flex; animation: scroll 25s linear infinite; white-space: nowrap; }
+  .marquee-item { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: rgba(245,245,240,0.2); padding: 0 48px; }
+  .marquee-sep { color: rgba(245,245,240,0.1); padding: 0 4px; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
+  .stat { padding: 56px 48px; border-right: 1px solid var(--border); transition: background 0.3s; }
+  .stat:last-child { border-right: none; }
+  .stat:hover { background: rgba(245,245,240,0.02); }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 68px; line-height: 1; color: var(--white); margin-bottom: 6px; }
+  .stat-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); }
+  section { padding: 100px 48px; }
+  .label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(245,245,240,0.3); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+  .label::before { content: ''; width: 32px; height: 1px; background: rgba(245,245,240,0.2); }
+  .h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 72px); line-height: 1; letter-spacing: 1px; color: var(--white); margin-bottom: 48px; }
+  .h2 span { color: rgba(245,245,240,0.2); }
+  .chi-sono-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .chi-text { font-size: 17px; color: rgba(245,245,240,0.55); line-height: 1.9; }
+  .chi-text p { margin-bottom: 20px; }
+  .chi-text strong { color: var(--white); font-weight: 500; }
+  .chi-right { display: flex; flex-direction: column; }
+  .chi-row { background: var(--black2); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); transition: background 0.3s; }
+  .chi-row:hover { background: rgba(245,245,240,0.04); }
+  .chi-row-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+  .chi-row-value { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; color: var(--white); }
+  .servizi-section { background: var(--black2); border-top: 1px solid var(--border); }
+  .servizi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .servizio { background: var(--black2); padding: 48px 36px; position: relative; transition: background 0.4s; overflow: hidden; }
+  .servizio:hover { background: rgba(245,245,240,0.03); }
+  .servizio::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--white); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+  .servizio:hover::after { transform: scaleX(1); }
+  .srv-num { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: rgba(245,245,240,0.06); line-height: 1; margin-bottom: 24px; transition: color 0.3s; }
+  .servizio:hover .srv-num { color: rgba(245,245,240,0.12); }
+  .srv-title { font-weight: 600; font-size: 17px; color: var(--white); margin-bottom: 12px; }
+  .srv-desc { font-size: 14px; color: var(--gray); line-height: 1.8; }
+  .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .testi-card { border: 1px solid var(--border); padding: 40px; transition: border-color 0.3s, transform 0.3s; }
+  .testi-card:hover { border-color: rgba(245,245,240,0.25); transform: translateY(-4px); }
+  .testi-stars { font-size: 13px; letter-spacing: 3px; color: var(--white); margin-bottom: 20px; opacity: 0.8; }
+  .testi-text { font-size: 15px; color: rgba(245,245,240,0.55); line-height: 1.85; margin-bottom: 28px; font-style: italic; }
+  .testi-author { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,245,240,0.3); border-top: 1px solid var(--border); padding-top: 20px; }
+  .cta-section { text-align: center; padding: 140px 48px; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+  .cta-bg { position: absolute; font-family: 'Bebas Neue', sans-serif; font-size: 260px; color: rgba(245,245,240,0.025); top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none; }
+  .cta-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-bottom: 28px; position: relative; z-index: 1; }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 9vw, 120px); line-height: 0.92; letter-spacing: 2px; color: var(--white); margin-bottom: 32px; position: relative; z-index: 1; }
+  .cta-sub { font-size: 15px; color: rgba(245,245,240,0.4); margin-bottom: 52px; position: relative; z-index: 1; }
+  .contatti-section { border-top: 1px solid var(--border); }
+  .contatti-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .contact-items { display: flex; flex-direction: column; gap: 20px; }
+  .contact-item { border: 1px solid var(--border); padding: 24px 28px; transition: all 0.3s; }
+  .contact-item:hover { border-color: rgba(245,245,240,0.25); background: rgba(245,245,240,0.02); }
+  .c-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+  .c-value { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; color: var(--white); text-decoration: none; }
+  .c-value:hover { color: rgba(245,245,240,0.6); }
+  .form { display: flex; flex-direction: column; }
+  .f-field { border-bottom: 1px solid var(--border); padding: 20px 0; transition: border-color 0.3s; }
+  .f-field:focus-within { border-color: rgba(245,245,240,0.35); }
+  .f-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); display: block; margin-bottom: 8px; }
+  .f-input, .f-textarea { background: transparent; border: none; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 300; outline: none; width: 100%; resize: none; }
+  .f-textarea { height: 80px; padding-top: 4px; }
+  .f-submit { margin-top: 36px; align-self: flex-start; background: var(--white); color: var(--black); font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 16px 40px; border: none; cursor: pointer; transition: all 0.3s; }
+  .f-submit:hover { background: transparent; color: var(--white); outline: 1px solid var(--white); }
+  footer { border-top: 1px solid var(--border); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .f-logo { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; color: rgba(245,245,240,0.3); }
+  .f-copy { font-size: 11px; color: rgba(245,245,240,0.2); }
+  .fade { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade.in { opacity: 1; transform: translateY(0); }
+  @media (max-width: 768px) {
+    nav { padding: 18px 20px; }
+    nav.scrolled { padding: 12px 20px; }
+    .nav-cta { display: none; }
+    .hero { padding: 110px 20px 60px; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 32px; }
+    .hero-cta-block { text-align: left; }
+    .hero-stat-block { text-align: left; }
+    section { padding: 72px 20px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stats .stat:nth-child(3) { grid-column: 1 / -1; border-right: none; }
+    .chi-sono-grid { grid-template-columns: 1fr; }
+    .servizi-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .contatti-grid { grid-template-columns: 1fr; }
+    .cta-bg { display: none; }
+    footer { flex-direction: column; gap: 8px; padding: 20px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div>
+    <div class="nav-name">Tommaso Pagliara</div>
+    <div class="nav-sub">Personal Trainer · Lecce</div>
+  </div>
+  <a href="#contatti" class="nav-cta">Sessione gratuita</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-tag fade"><div class="hero-tag-dot"></div>Personal Trainer Lecce · 33 clienti soddisfatti</div>
+  <h1 class="hero-title fade">IL TUO FISICO<br><span class="dim">PUO CAMBIARE.</span><br>HAI SOLO<br>BISOGNO<br>DEL METODO.</h1>
+  <div class="hero-bottom fade">
+    <div class="hero-desc"><strong>Smetti di allenarti senza risultati.</strong> Con Tommaso costruisci un percorso su misura che funziona davvero. Prima sessione completamente gratuita.</div>
+    <div class="hero-cta-block">
+      <a href="#contatti" class="btn-primary">Voglio iniziare ora</a>
+      <div class="btn-note">Nessun impegno · Prima sessione gratis</div>
+    </div>
+    <div class="hero-stat-block">
+      <div class="hero-stat-num">33+</div>
+      <div class="hero-stat-label">Clienti trasformati</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="marquee-item">Personal Trainer Lecce</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Allenamento Su Misura</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Prima Sessione Gratuita</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">33 Clienti Soddisfatti</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Zero Compromessi</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Risultati Reali</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Personal Trainer Lecce</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Allenamento Su Misura</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Prima Sessione Gratuita</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">33 Clienti Soddisfatti</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Zero Compromessi</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Risultati Reali</span><span class="marquee-sep">·</span>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat fade"><div class="stat-num" data-target="33">0</div><div class="stat-label">Clienti soddisfatti</div></div>
+  <div class="stat fade"><div class="stat-num">5★</div><div class="stat-label">Media recensioni Google</div></div>
+  <div class="stat fade"><div class="stat-num">100%</div><div class="stat-label">Percorsi personalizzati</div></div>
+</div>
+
+<section>
+  <div class="label fade">Chi sono</div>
+  <h2 class="h2 fade">NON SONO<br>IL SOLITO<br><span>PERSONAL TRAINER.</span></h2>
+  <div class="chi-sono-grid">
+    <img src="IMG_2020.jpeg" alt="Tommaso Pagliara Personal Trainer Lecce" style="width:100%;height:500px;object-fit:cover;object-position:top;border-radius:8px;grid-column:1;">
+    <div class="chi-text fade">
+      <p>Ho visto troppe persone allenarsi per mesi senza ottenere nulla. Non per mancanza di impegno, ma per mancanza di metodo.</p>
+      <p><strong>Lavoro diversamente.</strong> Ogni percorso nasce da zero su di te, sulla tua storia, sui tuoi obiettivi e su come funziona il tuo corpo.</p>
+      <p>Il risultato? Persone che si trasformano davvero. 33 clienti soddisfatti. 5 stelle su Google. Zero compromessi.</p>
+    </div>
+    <div class="chi-right fade">
+      <div class="chi-row"><span class="chi-row-label">Specializzazione</span><span class="chi-row-value">Personal Training</span></div>
+      <div class="chi-row"><span class="chi-row-label">Location</span><span class="chi-row-value">Lecce, Italia</span></div>
+      <div class="chi-row"><span class="chi-row-label">Studio</span><span class="chi-row-value">Viale Japigia 10f</span></div>
+      <div class="chi-row"><span class="chi-row-label">Metodo</span><span class="chi-row-value">100% Su Misura</span></div>
+      <div class="chi-row"><span class="chi-row-label">Prima Sessione</span><span class="chi-row-value">Gratuita</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="servizi-section">
+  <div class="label fade">Servizi</div>
+  <h2 class="h2 fade">ECCO COME<br>TI AIUTO.</h2>
+  <div class="servizi-grid">
+    <div class="servizio fade"><div class="srv-num">01</div><div class="srv-title">Allenamento in palestra Lecce</div><div class="srv-desc">Sessioni individuali presso TP Personal Trainer, Viale Japigia 10f. Ti seguo di persona in ogni singola sessione.</div></div>
+    <div class="servizio fade"><div class="srv-num">02</div><div class="srv-title">Programma su misura</div><div class="srv-desc">Niente schede standard. Costruiamo insieme il percorso giusto per te dal primo giorno, basato sui tuoi obiettivi reali.</div></div>
+    <div class="servizio fade"><div class="srv-num">03</div><div class="srv-title">Supporto continuo</div><div class="srv-desc">Non sparisco dopo la sessione. Sono presente tra un allenamento e l'altro per motivarti e rispondere a ogni domanda.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="label fade">Testimonianze</div>
+  <h2 class="h2 fade">LORO HANNO<br>GIA INIZIATO.<br><span>TU COSA ASPETTI?</span></h2>
+  <div class="testi-grid">
+    <div class="testi-card fade"><div class="testi-stars">★★★★★</div><p class="testi-text">"Competenza, disponibilità e professionalità. Ascolta le tue esigenze e crea un percorso su misura che ti permette di esprimerti al meglio."</p><div class="testi-author">Anna Lucia De Matteis</div></div>
+    <div class="testi-card fade"><div class="testi-stars">★★★★★</div><p class="testi-text">"Allenamenti mirati e personalizzati. Consiglio vivamente a chi vuole partire da zero o migliorare la propria performance sportiva."</p><div class="testi-author">Ester Fiorentino</div></div>
+    <div class="testi-card fade"><div class="testi-stars">★★★★★</div><p class="testi-text">"Fin dal primo momento mi sono sentita seguita con grande professionalità, attenzione e meticolosità. Ogni esercizio viene spiegato e adattato."</p><div class="testi-author">Valentina Vissicchio</div></div>
+    <div class="testi-card fade"><div class="testi-stars">★★★★★</div><p class="testi-text">"Presente, preciso, competente e professionale. Impegno e motivazione, con serenità e soddisfazione."</p><div class="testi-author">Cliente soddisfatto</div></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-bg">INIZIA.</div>
+  <div class="cta-label fade">Prima sessione gratuita</div>
+  <h2 class="cta-title fade">PRONTO A<br>TRASFORMARTI<br>DAVVERO?</h2>
+  <p class="cta-sub fade">Nessun impegno. Nessun rischio. Solo risultati.</p>
+  <a href="#contatti" class="btn-primary fade">Prenota la sessione gratuita</a>
+</section>
+
+<section class="contatti-section" id="contatti">
+  <div class="label fade">Contatti</div>
+  <h2 class="h2 fade">SCRIVIMI<br>ORA.</h2>
+  <div class="contatti-grid">
+    <div class="contact-items fade">
+      <div class="contact-item"><div class="c-label">Telefono</div><a href="tel:3425682598" class="c-value">342 568 2598</a></div>
+      <div class="contact-item"><div class="c-label">Studio</div><span class="c-value" style="font-size:20px;">Viale Japigia 10f, Lecce</span></div>
+      <div class="contact-item"><div class="c-label">Prima sessione</div><span class="c-value" style="font-size:20px;">Completamente gratuita</span></div>
+    </div>
+    <div class="fade">
+      <form class="form">
+        <div class="f-field"><label class="f-label">Nome</label><input type="text" class="f-input" placeholder="Il tuo nome"></div>
+        <div class="f-field"><label class="f-label">Email</label><input type="email" class="f-input" placeholder="tua@email.com"></div>
+        <div class="f-field"><label class="f-label">Telefono</label><input type="tel" class="f-input" placeholder="+39 000 000 0000"></div>
+        <div class="f-field"><label class="f-label">Il tuo obiettivo</label><textarea class="f-textarea" placeholder="Raccontami cosa vuoi ottenere..."></textarea></div>
+        <button type="button" class="f-submit">Invia messaggio</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">Tommaso Pagliara</div>
+  <div class="f-copy">© 2025 · Personal Trainer Lecce · Viale Japigia 10f</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 80); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+  const cObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target; const target = parseInt(el.dataset.target); if (!target) return;
+        let n = 0; const t = setInterval(() => { n++; el.textContent = n; if (n >= target) { el.textContent = target + '+'; clearInterval(t); } }, 40);
+        cObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-target]').forEach(el => cObs.observe(el));
+</script>
+
+</body>
+</html>
