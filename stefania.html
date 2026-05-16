@@ -422,7 +422,7 @@ document.querySelectorAll('a,button,.comp-item,.rev-card,.spec-pill').forEach(el
 function animateCounter(el){
   const target=parseInt(el.dataset.target);
   const start=performance.now();
-  const duration=3500;
+  const duration=1800;
   function update(now){
     const p=Math.min((now-start)/duration,1);
     const e=1-Math.pow(1-p,3);
