@@ -199,7 +199,7 @@ footer{padding:22px 60px;display:flex;justify-content:space-between;align-items:
 .wa:hover{transform:scale(1.1)}
 .wa svg{width:23px;height:23px;fill:white}
 
-.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 1.4s cubic-bezier(0.16,1,0.3,1),transform 1.4s cubic-bezier(0.16,1,0.3,1)}
 .reveal.on{opacity:1;transform:translateY(0)}
 .d1{transition-delay:0.06s}.d2{transition-delay:0.12s}.d3{transition-delay:0.18s}
 .d4{transition-delay:0.24s}.d5{transition-delay:0.30s}.d6{transition-delay:0.36s}
@@ -422,7 +422,7 @@ document.querySelectorAll('a,button,.comp-item,.rev-card,.spec-pill').forEach(el
 function animateCounter(el){
   const target=parseInt(el.dataset.target);
   const start=performance.now();
-  const duration=2000;
+  const duration=3500;
   function update(now){
     const p=Math.min((now-start)/duration,1);
     const e=1-Math.pow(1-p,3);
