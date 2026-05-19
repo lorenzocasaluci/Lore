@@ -426,24 +426,25 @@ const ro = new IntersectionObserver((entries) => {
       const idx = siblings.indexOf(el);
       setTimeout(() => {
         el.classList.add('on');
-        el.querySelectorAll('.counter').forEach(c => animateCounter(c));
-        if (el.classList.contains('counter')) animateCounter(el);
+        el.querySelectorAll('.stat-n').forEach(c => animateCounter(c));
+        if (el.classList.contains('stat-n')) animateCounter(el);
       }, idx * 80);
       ro.unobserve(el);
     }
   });
 }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+document.querySelectorAll('.reveal, .comp-card').forEach(el => ro.observe(el));
 // COUNTER ANIMATION
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
   if (!target) return;
+  const suffix = el.dataset.suffix || '';
   const start = performance.now();
   const duration = 2000;
   function update(now) {
     const p = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - p, 4);
-    el.textContent = Math.round(ease * target);
+    el.textContent = Math.round(ease * target) + suffix;
     if (p < 1) requestAnimationFrame(update);
   }
   requestAnimationFrame(update);
@@ -451,7 +452,7 @@ function animateCounter(el) {
 const cro = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); cro.unobserve(e.target); } });
 }, { threshold: 0.5 });
-document.querySelectorAll('.counter').forEach(el => cro.observe(el));
+document.querySelectorAll('.stat-n').forEach(el => cro.observe(el));
 // PARALLAX SCROLL
 window.addEventListener('scroll', () => {
   const sy = window.scrollY;
