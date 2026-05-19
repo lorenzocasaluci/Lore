@@ -273,7 +273,7 @@ footer{flex-direction:column;gap:8px;padding:22px;text-align:center}
     <div class="hero-stats reveal">
       <div class="stat-c"><div class="stat-n counter" data-target="61" data-suffix="+">0+</div><div class="stat-l">Recensioni verificate</div></div>
       <div class="stat-c"><div class="stat-n counter" data-target="22" data-suffix="+">0+</div><div class="stat-l">Recensioni Google 5★</div></div>
-      <div class="stat-c"><div class="stat-n counter" data-target="39">0</div><div class="stat-l">MioDottore 5★</div></div>
+      <div class="stat-c"><div class="stat-n counter" data-target="100" data-suffix="%">0%</div><div class="stat-l">MioDottore 5★</div></div>
     </div>
   </div>
   <div class="hero-right reveal">
@@ -438,13 +438,12 @@ document.querySelectorAll('.reveal, .comp-card').forEach(el => ro.observe(el));
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
   if (!target) return;
-  const suffix = el.dataset.suffix || '';
   const start = performance.now();
   const duration = 1200;
   function update(now) {
     const p = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - p, 4);
-    el.textContent = Math.round(ease * target) + suffix;
+    el.textContent = Math.round(ease * target) + (el.dataset.suffix || '');
     if (p < 1) requestAnimationFrame(update);
   }
   requestAnimationFrame(update);
