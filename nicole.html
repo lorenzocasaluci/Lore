@@ -271,9 +271,9 @@ footer{flex-direction:column;gap:8px;padding:22px;text-align:center}
       <a href="#comp" class="btn-link">Scopri i servizi</a>
     </div>
     <div class="hero-stats reveal">
-      <div class="stat-c"><div class="stat-n" data-target="39" data-suffix="+">0+</div><div class="stat-l">Recensioni verificate</div></div>
+      <div class="stat-c"><div class="stat-n" data-target="61" data-suffix="+">0+</div><div class="stat-l">Recensioni verificate</div></div>
       <div class="stat-c"><div class="stat-n" data-target="22" data-suffix="+">0+</div><div class="stat-l">Recensioni Google 5★</div></div>
-      <div class="stat-c"><div class="stat-n" data-target="100" data-suffix="%">0%</div><div class="stat-l">Personalizzato</div></div>
+      <div class="stat-c"><div class="stat-n" data-target="39" data-suffix="%">0%</div><div class="stat-l">Personalizzato</div></div>
     </div>
   </div>
   <div class="hero-right reveal">
@@ -400,59 +400,110 @@ footer{flex-direction:column;gap:8px;padding:22px;text-align:center}
 </a>
 
 <script>
-  const cur  = document.getElementById('cur');
-  const cur2 = document.getElementById('cur2');
-  let mx = 0, my = 0, fx = 0, fy = 0;
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-  });
-  (function loop() {
-    fx += (mx - fx) * 0.12; fy += (my - fy) * 0.12;
-    cur2.style.left = fx + 'px'; cur2.style.top = fy + 'px';
-    requestAnimationFrame(loop);
-  })();
-
-  const ro = new IntersectionObserver(entries => {
-    const visible = entries.filter(e => e.isIntersecting);
-    visible.forEach((e, i) => {
-      e.target.style.transitionDelay = `${i * 0.12}s`;
-      e.target.classList.add('on');
-      ro.unobserve(e.target);
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal, .comp-card').forEach(el => ro.observe(el));
-
-  function runCounter(el) {
-    const numEl = el.querySelector('[data-target]');
-    if (!numEl) return;
-    const target = parseInt(numEl.dataset.target, 10);
-    const suffix = numEl.dataset.suffix || '';
-    const duration = 1600;
-    const t0 = performance.now();
-    function tick(now) {
-      const p = Math.min((now - t0) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      numEl.textContent = Math.round(eased * target) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
+// SCROLL PROGRESS BAR
+const prog = document.createElement('div');
+prog.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#1565C0,#42A5F5);z-index:9999;transition:width 0.1s;width:0%';
+document.body.appendChild(prog);
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  prog.style.width = (p * 100) + '%';
+});
+// CUSTOM CURSOR
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let mx=0,my=0,fx=0,fy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){fx+=(mx-fx)*0.1;fy+=(my-fy)*0.1;cur2.style.left=fx+'px';cur2.style.top=fy+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.comp-card,.rev-card,.spec-pill,.chi-row,.cont-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur2.style.transform='translate(-50%,-50%) scale(2.2)';cur2.style.borderColor='rgba(26,58,107,0.6)';cur2.style.background='rgba(26,58,107,0.04)'});
+  el.addEventListener('mouseleave',()=>{cur2.style.transform='translate(-50%,-50%) scale(1)';cur2.style.borderColor='rgba(61,111,212,0.4)';cur2.style.background='transparent'});
+});
+// STAGGER REVEAL
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const siblings = el.parentElement ? Array.from(el.parentElement.children) : [el];
+      const idx = siblings.indexOf(el);
+      setTimeout(() => {
+        el.classList.add('on');
+        el.querySelectorAll('.counter').forEach(c => animateCounter(c));
+        if (el.classList.contains('counter')) animateCounter(el);
+      }, idx * 80);
+      ro.unobserve(el);
     }
-    requestAnimationFrame(tick);
+  });
+}, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+// COUNTER ANIMATION
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  if (!target) return;
+  const start = performance.now();
+  const duration = 2000;
+  function update(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 4);
+    el.textContent = Math.round(ease * target);
+    if (p < 1) requestAnimationFrame(update);
   }
-
-  const statObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { runCounter(e.target); statObs.unobserve(e.target); }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.stat-c').forEach(el => statObs.observe(el));
-
-  window.addEventListener('scroll', () => {
-    const rows = document.querySelectorAll('.spec-pill');
-    const sy = window.scrollY;
-    rows.forEach((r, i) => { r.style.transform = `translateX(${i % 2 === 0 ? sy * 0.018 : -sy * 0.013}px)`; });
-  }, { passive: true });
+  requestAnimationFrame(update);
+}
+const cro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); cro.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => cro.observe(el));
+// PARALLAX SCROLL
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  document.querySelectorAll('.spec-pill').forEach((r, i) => {
+    r.style.transform = `translateX(${i % 2 === 0 ? sy * 0.015 : -sy * 0.012}px)`;
+  });
+  const heroLeft = document.querySelector('.hero-left');
+  if (heroLeft) heroLeft.style.transform = `translateY(${sy * 0.06}px)`;
+});
+// MAGNETIC BUTTONS
+document.querySelectorAll('.btn-dark, .nav-pill, .btn-white, .fb').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width / 2;
+    const y = e.clientY - r.top - r.height / 2;
+    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) translateY(-2px)`;
+  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+});
+// CARD TILT
+document.querySelectorAll('.comp-card, .rev-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `translateY(-12px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
+    card.style.transition = 'transform 0.1s ease';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'all 0.45s cubic-bezier(0.16,1,0.3,1)';
+  });
+});
+// NAV SHRINK
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.style.padding = '10px 22px';
+    nav.style.boxShadow = '0 8px 32px rgba(26,58,107,0.12)';
+  } else {
+    nav.style.padding = '14px 28px';
+    nav.style.boxShadow = '0 4px 24px rgba(26,58,107,0.08)';
+  }
+});
+// SMOOTH ANCHOR SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 </script>
 
 </body>
