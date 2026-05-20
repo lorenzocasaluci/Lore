@@ -256,6 +256,35 @@ body{cursor:auto}#cur,#cur2,#sdots{display:none}
 .cta-l,.cta-r{padding:52px 22px}
 .fi-inner{flex-direction:column;gap:8px;padding:0 20px;text-align:center}
 }
+html{scroll-behavior:smooth;scroll-padding-top:58px}
+*{will-change:auto}
+.hero-l{perspective:1200px}
+.hero-name{transform-style:preserve-3d;transition:transform 0.1s ease-out}
+.fc{transition:all 0.55s cubic-bezier(0.22,1,0.36,1)}
+.rev{transition:all 0.55s cubic-bezier(0.22,1,0.36,1)}
+.step{transition:all 0.55s cubic-bezier(0.22,1,0.36,1)}
+.num{transition:all 0.55s cubic-bezier(0.22,1,0.36,1)}
+.hero-name{font-size:clamp(38px,5vw,64px);letter-spacing:-1.5px;line-height:0.98}
+.hero-desc{font-size:17px;line-height:2.1;max-width:460px}
+.step-t{font-size:20px;letter-spacing:-0.3px}
+.step-d{font-size:14px;line-height:2}
+.chi-p{font-size:16px;line-height:2.1}
+.fc-t{font-size:14px;letter-spacing:-0.1px}
+.fc-s{font-size:12px;line-height:1.6}
+.rev-t{font-size:15px;line-height:1.9}
+.h2{font-size:clamp(28px,4vw,52px);letter-spacing:-1px;line-height:1.03}
+.num-n{font-size:52px;letter-spacing:-2px}
+.hs-n{font-size:42px;letter-spacing:-1.5px}
+.cta-h{font-size:clamp(30px,4vw,52px);letter-spacing:-1px}
+.nav-logo{font-size:17px;letter-spacing:-0.3px}
+@keyframes heroEntrance{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+.hero-kicker{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s both}
+.hero-name{animation:heroEntrance 1s cubic-bezier(0.22,1,0.36,1) 0.2s both}
+.hero-role{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s both}
+.hero-divider{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.35s both}
+.hero-desc{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.4s both}
+.hero-btns{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.5s both}
+.hero-stats{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.6s both}
 </style>
 </head>
 <body>
