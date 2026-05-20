@@ -14,7 +14,7 @@ html{scroll-behavior:smooth;scroll-padding-top:58px}a{color:inherit;text-decorat
 :root{
   --a:#00c8c5;--a2:#00a8a5;--ad:#006b69;
   --ap:#e4fafa;--am:#9ee8e7;
-  --w:#ffffff;--ink:#040f0f;--gray:#3d6060;
+  --w:#ffffff;--ink:#040f0f;--gray:#2d5050;
   --light:#f2fafa;--border:rgba(0,200,197,0.13);
   --gold:#c9a84c;--gold2:rgba(201,168,76,0.12);
 }
@@ -111,23 +111,23 @@ nav{position:fixed;top:0;width:100%;z-index:100;height:58px;background:rgba(255,
 
 /* LAYOUT */
 .wrap{max-width:1180px;margin:0 auto;padding:0 80px}
-.sec{padding:134px 0;background:var(--w)}
-.sec-alt{padding:134px 0;background:var(--light)}
-.sec-dark{padding:134px 0;background:var(--ink)}
+.sec{padding:160px 0;background:var(--w)}
+.sec-alt{padding:160px 0;background:var(--light)}
+.sec-dark{padding:160px 0;background:var(--ink)}
 
 /* SECTION HEADER */
 .sh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .sh-l{width:22px;height:1px;background:var(--a)}
 .sh-t{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--a);font-weight:500}
 
-.h2{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;line-height:1.05;color:var(--ink);margin-bottom:52px;letter-spacing:-0.6px}
+.h2{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;line-height:1.05;color:var(--ink);margin-bottom:68px;letter-spacing:-0.6px}
 .h2 .ac{color:var(--a)}
 .h2 .soft{color:rgba(6,20,20,0.09)}
-.h2-w{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;line-height:1.05;color:var(--w);margin-bottom:52px;letter-spacing:-0.6px}
+.h2-w{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;line-height:1.05;color:var(--w);margin-bottom:68px;letter-spacing:-0.6px}
 .h2-w .ac{color:var(--am)}
 
 /* CHI SONO */
-.chi-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:72px;align-items:start}
+.chi-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:88px;align-items:start}
 .chi-photo-w{position:relative}
 .chi-photo{aspect-ratio:3/4;background:linear-gradient(135deg,var(--ap),var(--am));overflow:hidden;border-radius:2px}
 .chi-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.9s cubic-bezier(0.22,1,0.36,1)}
@@ -206,7 +206,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;height:58px;background:rgba(255,
 .btn-cta:hover{background:var(--ink);color:var(--w);transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.18)}
 
 /* CONTATTI */
-.cont-g{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+.cont-g{display:grid;grid-template-columns:1fr 1fr;gap:88px}
 .cont-list{display:flex;flex-direction:column}
 .cont-row{padding:16px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:100px 1fr;gap:16px;align-items:center;transition:padding-left 0.22s}
 .cont-row:hover{padding-left:8px}
@@ -249,7 +249,7 @@ body{cursor:auto}#cur,#cur2,#sdots{display:none}
 .hero{grid-template-columns:1fr}.hero-l{padding:52px 20px}.hero-r{display:none}
 .hero-stats{grid-template-columns:1fr 1fr}.hs{min-width:50%;border-right:none;border-bottom:1px solid var(--border);margin:0;padding:14px 0}
 .wrap{padding:0 20px}
-.sec,.sec-alt,.sec-dark{padding:96px 0}
+.sec,.sec-alt,.sec-dark{padding:110px 0}
 .chi-grid,.cont-g{grid-template-columns:1fr;gap:44px}
 .steps-g{grid-template-columns:1fr}.nums-g{grid-template-columns:1fr 1fr}
 .rev-g{columns:1}.cta-g{grid-template-columns:1fr}
@@ -285,6 +285,22 @@ html{scroll-behavior:smooth;scroll-padding-top:58px}
 .hero-desc{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.4s both}
 .hero-btns{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.5s both}
 .hero-stats{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.6s both}
+
+/* THIN BORDERS — 0.5px */
+.fc,.fc-i,.rev,.fi,.ft{border-width:0.5px}
+.hero-stats,.rev-f,.cont-row,footer{border-top-width:0.5px}
+.hs{border-right-width:0.5px}
+.ctr,.ctr *[class]{border-width:0.5px}
+nav{border-bottom-width:0.5px}
+
+/* CARD HOVER — deeper shadow + gradient border */
+.fc:hover{box-shadow:0 24px 64px rgba(0,200,197,0.22),0 0 0 1.5px rgba(0,200,197,0.38);transform:translateX(9px)}
+.rev:hover{box-shadow:0 30px 72px rgba(0,200,197,0.18);border-color:transparent;background:linear-gradient(var(--w),var(--w)) padding-box,linear-gradient(135deg,var(--a),var(--am)) border-box;transform:translateY(-8px)}
+.num:hover{box-shadow:0 30px 72px rgba(0,200,197,0.2),0 0 0 1.5px rgba(0,200,197,0.28)}
+
+/* DIVIDER LINES — animated from left on scroll */
+.sh-l{width:0;opacity:0;height:1px;background:linear-gradient(90deg,var(--a),var(--am),transparent);transition:width 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s,opacity 0.4s}
+.sh.on .sh-l{width:22px;opacity:1}
 </style>
 </head>
 <body>
@@ -754,6 +770,12 @@ let isScrolling=false;
 window.addEventListener('wheel',(e)=>{
   if(isScrolling)return;
 },{passive:true});
+
+// DIVIDER LINES — animate .sh-l on scroll
+const shObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');shObs.unobserve(e.target);}});
+},{threshold:0.4});
+document.querySelectorAll('.sh').forEach(s=>shObs.observe(s));
 
 // SCROLL-TRIGGERED color change on sections
 const secObserver=new IntersectionObserver((entries)=>{
