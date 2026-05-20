@@ -677,7 +677,7 @@ const rvObs=new IntersectionObserver((entries)=>{
 document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s').forEach(el=>rvObs.observe(el));
 
 // SECTION background shift
-const sections=document.querySelectorAll('.sec,.sec-alt,.sec-dark');
+const bgSections=document.querySelectorAll('.sec,.sec-alt,.sec-dark');
 const sectionObs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -685,7 +685,7 @@ const sectionObs=new IntersectionObserver((entries)=>{
     }
   });
 },{threshold:0.3});
-sections.forEach(s=>sectionObs.observe(s));
+bgSections.forEach(s=>sectionObs.observe(s));
 
 // SMOOTH ANCHOR
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -730,14 +730,6 @@ const secObserver=new IntersectionObserver((entries)=>{
 },{threshold:0.4});
 document.querySelectorAll('.sec,.sec-alt').forEach((s,i)=>{s.dataset.sec=i;secObserver.observe(s);});
 
-// MOUSE PARALLAX on hero name
-const heroName=document.querySelector('.hero-name');
-document.addEventListener('mousemove',e=>{
-  if(!heroName)return;
-  const x=(e.clientX/window.innerWidth-.5)*8;
-  const y=(e.clientY/window.innerHeight-.5)*4;
-  heroName.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
-});
 </script>
 </body>
 </html>
