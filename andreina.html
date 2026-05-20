@@ -48,7 +48,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;height:58px;background:rgba(255,
 /* HERO */
 .hero{min-height:100vh;padding-top:58px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:var(--w)}
 #hero-canvas{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.65}
-.hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 70% 75% at 110% 40%,rgba(0,200,197,0.07) 0%,transparent 58%),radial-gradient(ellipse 50% 50% at -8% 100%,rgba(0,200,197,0.04) 0%,transparent 55%),radial-gradient(ellipse 30% 30% at 50% 0%,rgba(0,200,197,0.025) 0%,transparent 50%);pointer-events:none;z-index:0}
+.hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 115% 40%,rgba(0,200,197,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at -10% 100%,rgba(0,200,197,0.12) 0%,transparent 58%),radial-gradient(ellipse 40% 40% at 50% 0%,rgba(0,200,197,0.09) 0%,transparent 52%),radial-gradient(ellipse 30% 30% at 28% 55%,rgba(0,200,197,0.06) 0%,transparent 50%);pointer-events:none;z-index:0}
 
 .hero-l{padding:77px 53px 77px 96px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;perspective:1000px}
 .hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:28px}
@@ -277,7 +277,7 @@ html{scroll-behavior:smooth;scroll-padding-top:58px}
 .hs-n{font-size:48px;letter-spacing:-1.5px}
 .cta-h{font-size:clamp(35px,4.6vw,60px);letter-spacing:-1.5px}
 .nav-logo{font-size:17px;letter-spacing:-0.3px}
-@keyframes heroEntrance{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes heroEntrance{0%{opacity:0;transform:translateY(52px) scale(0.97)}60%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
 .hero-kicker{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s both}
 .hero-name{animation:heroEntrance 1s cubic-bezier(0.22,1,0.36,1) 0.2s both}
 .hero-role{animation:heroEntrance 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s both}
@@ -645,12 +645,26 @@ document.querySelectorAll('.fc').forEach(el=>{
 })();
 
 // MOUSE PARALLAX hero name
-const heroName=document.querySelector('.hero-name');
+// MOUSE PARALLAX hero — RAF smooth, multi-layer
+const _pEl={
+  name:document.querySelector('.hero-name'),
+  kicker:document.querySelector('.hero-kicker'),
+  desc:document.querySelector('.hero-desc'),
+  grad:document.querySelector('.hero-gradient')
+};
+let _ptx=0,_pty=0,_pcx=0,_pcy=0;
+(function _pLoop(){
+  _pcx+=(_ptx-_pcx)*0.06;
+  _pcy+=(_pty-_pcy)*0.06;
+  if(_pEl.name)  _pEl.name.style.transform  =`rotateY(${_pcx*10}deg) rotateX(${-_pcy*5}deg)`;
+  if(_pEl.kicker)_pEl.kicker.style.transform=`translateX(${_pcx*7}px) translateY(${_pcy*3}px)`;
+  if(_pEl.desc)  _pEl.desc.style.transform  =`translateX(${_pcx*4}px) translateY(${_pcy*2}px)`;
+  if(_pEl.grad)  _pEl.grad.style.transform  =`translateX(${_pcx*-24}px) translateY(${_pcy*-12}px)`;
+  requestAnimationFrame(_pLoop);
+})();
 document.addEventListener('mousemove',e=>{
-  if(!heroName)return;
-  const x=(e.clientX/window.innerWidth-.5)*10;
-  const y=(e.clientY/window.innerHeight-.5)*5;
-  heroName.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
+  _ptx=(e.clientX/window.innerWidth-.5);
+  _pty=(e.clientY/window.innerHeight-.5);
 });
 
 // SMOOTH SCROLL momentum
