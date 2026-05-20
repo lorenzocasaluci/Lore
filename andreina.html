@@ -646,6 +646,25 @@ let isScrolling=false;
 window.addEventListener('wheel',(e)=>{
   if(isScrolling)return;
 },{passive:true});
+
+// SCROLL-TRIGGERED color change on sections
+const secObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      document.documentElement.style.setProperty('--current-sec',e.target.dataset.sec||'0');
+    }
+  });
+},{threshold:0.4});
+document.querySelectorAll('.sec,.sec-alt').forEach((s,i)=>{s.dataset.sec=i;secObserver.observe(s);});
+
+// MOUSE PARALLAX on hero name
+const heroName=document.querySelector('.hero-name');
+document.addEventListener('mousemove',e=>{
+  if(!heroName)return;
+  const x=(e.clientX/window.innerWidth-.5)*8;
+  const y=(e.clientY/window.innerHeight-.5)*4;
+  heroName.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
+});
 </script>
 </body>
 </html>
