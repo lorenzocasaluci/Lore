@@ -254,16 +254,29 @@ footer{padding:20px 0;border-top:1px solid var(--border);background:var(--light)
 }
 @media(max-width:768px){
 body{cursor:auto}#cur,#cur2,#sdots{display:none}
-.nav-inner{padding:0 20px}.nav-links,.nav-cta{display:none}
-.hero{grid-template-columns:1fr}.hero-l{padding:52px 20px}.hero-r{display:none}
-.hero-stats{grid-template-columns:1fr 1fr}.hs{min-width:50%;border-right:none;border-bottom:1px solid var(--border);margin:0;padding:14px 0}
+.nav-inner,.nav-i{padding:0 20px}.nav-links,.nav-cta{display:none}
+.hero{grid-template-columns:1fr}.hero-l,.hero-content{padding:48px 20px}.hero-r{display:none}
+.hero-name,.hero-title{font-size:clamp(32px,9vw,52px);letter-spacing:-1px}
+.hero-stats,.hstats{grid-template-columns:1fr 1fr;gap:20px}
+.hs{min-width:50%;border-right:none;border-bottom:1px solid var(--border);margin:0;padding:14px 0}
+.hs:nth-child(3){grid-column:1/-1}
+.hs-n{font-size:40px}
 .wrap{padding:0 20px}
-.sec,.sec-alt,.sec-dark{padding:110px 0}
-.chi-grid,.cont-g{grid-template-columns:1fr;gap:44px}
-.steps-g{grid-template-columns:1fr}.nums-g{grid-template-columns:1fr 1fr}
-.rev-g{columns:1}.cta-g{grid-template-columns:1fr}
-.cta-l,.cta-r{padding:62px 26px}
-.fi-inner{flex-direction:column;gap:8px;padding:0 20px;text-align:center}
+.sec,.sec-alt,.sec-dark,.sec-cream,.sec-navy{padding:88px 0}
+.scroll-banner{padding:40px 0}
+.sb-t{font-size:clamp(36px,12vw,80px);letter-spacing:-2px}
+.h2{font-size:clamp(26px,7vw,40px);letter-spacing:-0.8px;margin-bottom:48px}
+.cta-h{font-size:clamp(26px,7vw,40px);letter-spacing:-0.8px}
+.chi-grid,.chi-g,.cont-g{grid-template-columns:1fr;gap:40px}
+.steps-g{grid-template-columns:1fr}
+.nums-g,.nums{grid-template-columns:1fr 1fr;gap:12px}
+.num-n{font-size:52px}
+.step{padding:32px 24px}
+.step-n{font-size:56px}
+.rev-g,.rev-mason{columns:1}.cta-g{grid-template-columns:1fr}
+.cta-l,.cta-r,.cta-block{padding:60px 20px}
+.cta-feats{flex-direction:column;gap:12px;align-items:flex-start}
+.fi-inner,.foot-i{flex-direction:column;gap:8px;padding:0 20px;text-align:center}
 }
 html{scroll-behavior:smooth;scroll-padding-top:58px}
 *{will-change:auto}
