@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Massofisioterapico Erica Fiorini | Lequile Lecce</title>
+<meta name="description" content="Studio massofisioterapico a Lequile Lecce. Onde d'urto, tecarterapia, linfodrenaggio, riabilitazione. 345 927 9067">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  a { color: inherit; text-decoration: none; }
+
+  body {
+    background-color: #ffffff;
+    color: #0a1628;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1100px;
+    z-index: 100;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    background: #0ABFBC;
+    box-shadow: 0 8px 32px rgba(10,191,188,0.3);
+  }
+
+  .nav-name { font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 2px; color: #ffffff; }
+  .nav-sub { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-top: 1px; }
+
+  .nav-pill {
+    background: #ffffff;
+    color: #0ABFBC;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 9px 22px;
+    border-radius: 100px;
+    transition: all 0.3s;
+  }
+
+  .nav-pill:hover { background: #0a1628; color: #ffffff; }
+
+  /* HERO */
+  .hero {
+    background-color: #ffffff;
+    min-height: 100vh;
+    padding: 140px 40px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #0ABFBC;
+    margin-bottom: 28px;
+    padding: 8px 20px;
+    border-radius: 100px;
+    background: #e8f7f7;
+    border: 1px solid rgba(10,191,188,0.2);
+  }
+
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: #0ABFBC;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(10,191,188,0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(10,191,188,0); }
+    100% { box-shadow: 0 0 0 0 rgba(10,191,188,0); }
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 120px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    color: #0a1628;
+    margin-bottom: 24px;
+  }
+
+  .hero-title .accent { color: #0ABFBC; }
+  .hero-title .ghost { color: rgba(10,27,42,0.12); }
+
+  .hero-sub {
+    font-size: 17px;
+    color: #64748b;
+    max-width: 540px;
+    line-height: 1.9;
+    margin-bottom: 44px;
+  }
+
+  .hero-sub strong { color: #0a1628; font-weight: 500; }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 72px; }
+
+  .btn-teal {
+    display: inline-block;
+    background: #0ABFBC;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 100px;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(10,191,188,0.3);
+  }
+
+  .btn-teal:hover { background: #0a1628; transform: translateY(-2px); }
+
+  .btn-outline {
+    display: inline-block;
+    color: #0a1628;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 100px;
+    border: 1px solid rgba(10,27,42,0.15);
+    transition: all 0.3s;
+    background: #ffffff;
+  }
+
+  .btn-outline:hover { border-color: #0ABFBC; color: #0ABFBC; }
+
+  /* HERO CARDS */
+  .hero-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+    max-width: 780px;
+  }
+
+  .hero-card {
+    padding: 28px 20px;
+    border-radius: 24px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid rgba(10,191,188,0.15);
+    box-shadow: 0 4px 20px rgba(10,191,188,0.08);
+    transition: all 0.4s;
+  }
+
+  .hero-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(10,191,188,0.15); border-color: rgba(10,191,188,0.3); }
+
+  .hcard-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; line-height: 1; color: #0ABFBC; margin-bottom: 4px; }
+  .hcard-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #64748b; }
+
+  /* MARQUEE */
+  .marquee {
+    padding: 18px 0;
+    overflow: hidden;
+    background: #e8f7f7;
+    border-top: 1px solid rgba(10,191,188,0.15);
+    border-bottom: 1px solid rgba(10,191,188,0.15);
+  }
+
+  .marquee-inner { display: inline-flex; animation: scroll 30s linear infinite; white-space: nowrap; }
+  .marquee-item { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 3px; color: rgba(10,191,188,0.7); padding: 0 40px; }
+  .marquee-sep { color: rgba(10,191,188,0.3); }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTIONS */
+  .section { padding: 100px 40px; background-color: #ffffff; }
+  .section-alt { padding: 100px 40px; background-color: #f8fafb; }
+
+  .pill-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #0ABFBC;
+    background: #e8f7f7;
+    border: 1px solid rgba(10,191,188,0.2);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  .h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 4.5vw, 64px);
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #0a1628;
+    margin-bottom: 48px;
+  }
+
+  .h2 .ghost { color: rgba(10,27,42,0.12); }
+
+  /* CHI SONO */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+  .body-text { font-size: 16px; color: #64748b; line-height: 1.9; }
+  .body-text p { margin-bottom: 20px; }
+  .body-text strong { color: #0a1628; font-weight: 500; }
+
+  .info-stack { display: flex; flex-direction: column; gap: 10px; }
+
+  .info-tile {
+    padding: 16px 20px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid rgba(10,191,188,0.15);
+    border-left: 3px solid transparent;
+    box-shadow: 0 2px 8px rgba(10,191,188,0.05);
+    transition: all 0.3s;
+  }
+
+  .info-tile:hover { border-left-color: #0ABFBC; background: #e8f7f7; transform: translateX(4px); }
+  .tile-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #64748b; }
+  .tile-value { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; color: #0a1628; }
+
+  /* SERVIZI */
+  .servizi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  .srv-tile {
+    padding: 36px 28px;
+    border-radius: 24px;
+    background: #ffffff;
+    border: 1px solid rgba(10,191,188,0.12);
+    box-shadow: 0 4px 16px rgba(10,191,188,0.06);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+
+  .srv-tile::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: #0ABFBC;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+
+  .srv-tile:hover { transform: translateY(-10px); box-shadow: 0 32px 64px rgba(10,191,188,0.12); border-color: rgba(10,191,188,0.25); }
+  .srv-tile:hover::before { transform: scaleX(1); }
+
+  .srv-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: rgba(10,191,188,0.12); line-height: 1; margin-bottom: 20px; transition: color 0.3s; }
+  .srv-tile:hover .srv-num { color: rgba(10,191,188,0.3); }
+  .srv-title { font-weight: 600; font-size: 16px; color: #0a1628; margin-bottom: 10px; }
+  .srv-desc { font-size: 13px; color: #64748b; line-height: 1.8; }
+
+  /* PERCHE NOI */
+  .perche-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .perche-tile {
+    padding: 22px 24px;
+    border-radius: 20px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: #ffffff;
+    border: 1px solid rgba(10,191,188,0.12);
+    box-shadow: 0 2px 12px rgba(10,191,188,0.05);
+    transition: all 0.3s;
+  }
+
+  .perche-tile:hover { transform: translateX(8px); border-color: #0ABFBC; box-shadow: 0 8px 24px rgba(10,191,188,0.1), -4px 0 0 #0ABFBC; }
+
+  .p-icon {
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    background: #0ABFBC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .p-title { font-weight: 600; font-size: 15px; color: #0a1628; margin-bottom: 4px; }
+  .p-desc { font-size: 13px; color: #64748b; line-height: 1.7; }
+  .big-tiles { display: flex; flex-direction: column; gap: 16px; }
+
+  .big-tile {
+    padding: 44px 32px;
+    border-radius: 28px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid rgba(10,191,188,0.15);
+    box-shadow: 0 8px 32px rgba(10,191,188,0.08);
+    transition: all 0.4s;
+  }
+
+  .big-tile:hover { transform: translateY(-8px); box-shadow: 0 32px 64px rgba(10,191,188,0.12); }
+  .big-num { font-family: 'Bebas Neue', sans-serif; font-size: 80px; line-height: 1; color: #0ABFBC; margin-bottom: 8px; }
+  .big-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #64748b; }
+
+  /* CTA */
+  .cta-wrap { padding: 0 40px 80px; }
+
+  .cta-block {
+    border-radius: 40px;
+    padding: 100px 48px;
+    text-align: center;
+    background: #0ABFBC;
+    box-shadow: 0 40px 100px rgba(10,191,188,0.25);
+  }
+
+  .cta-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 96px); line-height: 0.92; letter-spacing: 2px; color: #ffffff; margin-bottom: 20px; }
+  .cta-desc { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 44px; }
+
+  .btn-white {
+    display: inline-block;
+    background: #ffffff;
+    color: #0ABFBC;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 18px 52px;
+    border-radius: 100px;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .btn-white:hover { background: #0a1628; color: #ffffff; transform: translateY(-2px); }
+
+  /* CONTATTI */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  .contact-stack { display: flex; flex-direction: column; gap: 14px; }
+
+  .contact-tile {
+    padding: 20px 24px;
+    border-radius: 18px;
+    border-left: 4px solid #0ABFBC;
+    background: #ffffff;
+    border-top: 1px solid rgba(10,191,188,0.12);
+    border-right: 1px solid rgba(10,191,188,0.12);
+    border-bottom: 1px solid rgba(10,191,188,0.12);
+    box-shadow: 0 2px 12px rgba(10,191,188,0.05);
+    transition: all 0.3s;
+  }
+
+  .contact-tile:hover { background: #e8f7f7; transform: translateX(4px); }
+  .ct-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #0ABFBC; margin-bottom: 6px; }
+  .ct-value { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; color: #0a1628; }
+  .ct-value:hover { color: #0ABFBC; }
+
+  /* FORM */
+  .form-card {
+    padding: 40px;
+    border-radius: 32px;
+    background: #f8fafb;
+    border: 1px solid rgba(10,191,188,0.12);
+    box-shadow: 0 8px 32px rgba(10,191,188,0.06);
+  }
+
+  .f-group { margin-bottom: 20px; }
+  .f-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #0ABFBC; display: block; margin-bottom: 8px; }
+
+  .f-input, .f-textarea {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(10,191,188,0.15);
+    border-radius: 12px;
+    color: #0a1628;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    outline: none;
+    padding: 14px 18px;
+    transition: all 0.3s;
+    resize: none;
+  }
+
+  .f-input:focus, .f-textarea:focus { border-color: #0ABFBC; box-shadow: 0 0 0 3px rgba(10,191,188,0.1); }
+  .f-textarea { height: 100px; }
+  .f-input::placeholder, .f-textarea::placeholder { color: rgba(10,27,42,0.25); }
+
+  .f-btn {
+    width: 100%;
+    background: #0ABFBC;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(10,191,188,0.3);
+    margin-top: 8px;
+  }
+
+  .f-btn:hover { background: #0a1628; transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafb;
+    border-top: 1px solid rgba(10,191,188,0.12);
+  }
+
+  .f-logo { font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 3px; color: #64748b; }
+  .f-copy { font-size: 11px; color: #64748b; }
+
+  /* ANIMATIONS */
+  .fade { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade.in { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { top: 8px; width: calc(100% - 24px); padding: 12px 16px; border-radius: 16px; }
+    .nav-pill { display: none; }
+    .hero { padding: 120px 20px 80px; }
+    .hero-cards { grid-template-columns: 1fr 1fr; }
+    .hero-cards .hero-card:nth-child(3) { grid-column: 1 / -1; }
+    .section, .section-alt { padding: 72px 20px; }
+    .two-col, .servizi-grid, .contact-grid { grid-template-columns: 1fr; }
+    .cta-wrap { padding: 0 16px 60px; }
+    .cta-block { padding: 72px 24px; border-radius: 28px; }
+    footer { flex-direction: column; gap: 8px; padding: 20px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-name">Erica Fiorini</div>
+    <div class="nav-sub">Studio Massofisioterapico · Lequile</div>
+  </div>
+  <a href="#contatti" class="nav-pill">Prenota ora</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge fade"><div class="badge-dot"></div>Studio Massofisioterapico · Lequile Lecce</div>
+  <h1 class="hero-title fade">IL TUO DOLORE<br><span class="ghost">HA UNA</span><br><span class="accent">SOLUZIONE.</span></h1>
+  <p class="hero-sub fade"><strong>Smetti di convivere con il dolore.</strong> Onde d'urto, tecarterapia, linfodrenaggio e riabilitazione funzionale su misura per te.</p>
+  <div class="hero-actions fade">
+    <a href="#contatti" class="btn-teal">Prenota ora</a>
+    <a href="#servizi" class="btn-outline">Scopri i servizi</a>
+  </div>
+  <div class="hero-cards fade">
+    <div class="hero-card"><div class="hcard-num">8+</div><div class="hcard-label">Terapie specializzate</div></div>
+    <div class="hero-card"><div class="hcard-num">100%</div><div class="hcard-label">Personalizzato</div></div>
+    <div class="hero-card"><div class="hcard-num">★5</div><div class="hcard-label">Recensioni Facebook</div></div>
+  </div>
+</div>
+
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="marquee-item">Onde d'Urto Radiali</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Tecarterapia</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Laserterapia</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Linfodrenaggio Vodder</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Riabilitazione Motoria</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Ginnastica Posturale</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Massoterapia</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Elettroterapie</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Onde d'Urto Radiali</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Tecarterapia</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Laserterapia</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Linfodrenaggio Vodder</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Riabilitazione Motoria</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Ginnastica Posturale</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Massoterapia</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">Elettroterapie</span><span class="marquee-sep">·</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="pill-label fade">Chi siamo</div>
+  <h2 class="h2 fade">NON DEVI<br>CONVIVERE<br><span class="ghost">COL DOLORE.</span></h2>
+  <div class="two-col">
+    <div class="body-text fade">
+      <p>Troppe persone rinunciano a stare bene perché pensano che il dolore sia normale. Non lo è. Il dolore è un segnale che il tuo corpo ti manda per chiederti aiuto.</p>
+      <p><strong>Lo Studio Massofisioterapico di Erica Fiorini</strong> è nato per rispondere a quel segnale. Con terapie strumentali all'avanguardia e un approccio completamente personalizzato, trovi la soluzione al tuo problema — non un trattamento generico.</p>
+      <p>Onde d'urto, tecarterapia, linfodrenaggio metodo Vodder, riabilitazione funzionale. Tutto in un unico studio a Lequile, a pochi minuti da Lecce.</p>
+    </div>
+    <div class="info-stack fade">
+      <div class="info-tile"><span class="tile-label">Studio</span><span class="tile-value">Lequile, Lecce</span></div>
+      <div class="info-tile"><span class="tile-label">Indirizzo</span><span class="tile-value">Via Verona 25</span></div>
+      <div class="info-tile"><span class="tile-label">Specializzazione</span><span class="tile-value">Massofisioterapia</span></div>
+      <div class="info-tile"><span class="tile-label">Approccio</span><span class="tile-value">100% Personalizzato</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-alt" id="servizi">
+  <div class="pill-label fade">Servizi</div>
+  <h2 class="h2 fade">LE NOSTRE<br><span class="ghost">TERAPIE.</span></h2>
+  <div class="servizi-grid">
+    <div class="srv-tile fade"><div class="srv-num">01</div><div class="srv-title">Onde d'Urto Radiali</div><div class="srv-desc">Terapia non invasiva per tendiniti, calcificazioni e dolori cronici. Risultati rapidi e duraturi senza farmaci.</div></div>
+    <div class="srv-tile fade"><div class="srv-num">02</div><div class="srv-title">Tecarterapia</div><div class="srv-desc">Tecnologia avanzata per accelerare la guarigione dei tessuti. Indicata per infiammazioni, contratture e recupero post-infortunio.</div></div>
+    <div class="srv-tile fade"><div class="srv-num">03</div><div class="srv-title">Laserterapia</div><div class="srv-desc">Terapia antinfiammatoria e antalgica con laser medicale. Efficace su artriti, lesioni muscolari e problemi articolari.</div></div>
+    <div class="srv-tile fade"><div class="srv-num">04</div><div class="srv-title">Linfodrenaggio Vodder</div><div class="srv-desc">Metodo manuale certificato per ridurre gonfiori, ritenzione idrica e migliorare la circolazione linfatica.</div></div>
+    <div class="srv-tile fade"><div class="srv-num">05</div><div class="srv-title">Riabilitazione Funzionale</div><div class="srv-desc">Percorsi personalizzati di recupero motorio dopo interventi, infortuni o patologie ortopediche.</div></div>
+    <div class="srv-tile fade"><div class="srv-num">06</div><div class="srv-title">Ginnastica Posturale</div><div class="srv-desc">Sessioni individuali e di gruppo per correggere la postura, ridurre il mal di schiena e migliorare il benessere.</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="pill-label fade">Perche sceglierci</div>
+  <h2 class="h2 fade">LA DIFFERENZA<br><span class="ghost">CHE SENTI.</span></h2>
+  <div class="two-col">
+    <div class="perche-list fade">
+      <div class="perche-tile"><div class="p-icon">⚡</div><div><div class="p-title">Terapie strumentali avanzate</div><div class="p-desc">Utilizziamo tecnologie di ultima generazione per risultati più rapidi e duraturi.</div></div></div>
+      <div class="perche-tile"><div class="p-icon">🎯</div><div><div class="p-title">Percorso 100% su misura</div><div class="p-desc">Nessun protocollo standard. Ogni terapia viene costruita sulle tue esigenze specifiche.</div></div></div>
+      <div class="perche-tile"><div class="p-icon">📍</div><div><div class="p-title">Studio a Lequile, vicino Lecce</div><div class="p-desc">Tutto in un unico posto. Niente spostamenti, niente attese. Solo la tua terapia.</div></div></div>
+    </div>
+    <div class="big-tiles fade">
+      <div class="big-tile"><div class="big-num">8+</div><div class="big-label">Terapie specializzate</div></div>
+      <div class="big-tile"><div class="big-num">★5</div><div class="big-label">Recensioni Facebook</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-wrap">
+  <div class="cta-block">
+    <div class="cta-label fade">Studio Massofisioterapico Lequile</div>
+    <h2 class="cta-title fade">SMETTI DI<br>ASPETTARE.<br>INIZIA ORA.</h2>
+    <p class="cta-desc fade">Nessun impegno. Solo soluzioni concrete per il tuo benessere.</p>
+    <a href="#contatti" class="btn-white fade">Prenota ora</a>
+  </div>
+</div>
+
+<div class="section" id="contatti">
+  <div class="pill-label fade">Contatti</div>
+  <h2 class="h2 fade">SCRIVICI<br><span class="ghost">ORA.</span></h2>
+  <div class="contact-grid">
+    <div class="contact-stack fade">
+      <div class="contact-tile"><div class="ct-label">Telefono</div><a href="tel:+393459279067" class="ct-value">345 927 9067</a></div>
+      <div class="contact-tile"><div class="ct-label">Email</div><a href="mailto:erica.fiorini1985@libero.it" class="ct-value" style="font-size:14px;letter-spacing:0;">erica.fiorini1985@libero.it</a></div>
+      <div class="contact-tile"><div class="ct-label">Indirizzo</div><span class="ct-value" style="font-size:16px;">Via Verona 25, Lequile (LE)</span></div>
+    </div>
+    <div class="form-card fade">
+      <form>
+        <div class="f-group"><label class="f-label">Nome</label><input type="text" class="f-input" placeholder="Il tuo nome"></div>
+        <div class="f-group"><label class="f-label">Email</label><input type="email" class="f-input" placeholder="tua@email.com"></div>
+        <div class="f-group"><label class="f-label">Telefono</label><input type="tel" class="f-input" placeholder="+39 000 000 0000"></div>
+        <div class="f-group"><label class="f-label">Il tuo problema</label><textarea class="f-textarea" placeholder="Descrivi brevemente il tuo problema..."></textarea></div>
+        <button type="button" class="f-btn">Invia richiesta</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="f-logo">Studio Massofisioterapico Erica Fiorini</div>
+  <div class="f-copy">© 2025 · Via Verona 25, Lequile (LE) · 345 927 9067</div>
+</footer>
+
+<a href="https://wa.me/393459279067" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp" style="position:fixed;bottom:24px;right:24px;z-index:999;background:#25D366;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 80); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
