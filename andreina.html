@@ -2,82 +2,100 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dott.ssa Andreina Caputo | Biologa Nutrizionista Lecce Nardò</title>
-<meta name="description" content="Biologa nutrizionista a Lecce e Nardò. Piani alimentari personalizzati con BIA. Prima visita 70€. 389 964 7999">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nutrizionista Lecce Nardò | Dott.ssa Andreina Caputo · Dimagrimento</title>
+<meta name="description" content="Dimagrisci senza riprendere peso. Biologa Nutrizionista a Lecce e Nardò. Analisi BIA inclusa nella prima visita a 70€. 50 recensioni 5 stelle.">
+<meta name="keywords" content="nutrizionista lecce, nutrizionista nardò, biologa nutrizionista lecce, dimagrimento, dieta personalizzata, analisi bia, andreina caputo">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:58px}a{color:inherit;text-decoration:none}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+a{color:inherit;text-decoration:none}
+
 :root{
-  --a:#00c8c5;--a2:#00a8a5;--ad:#006b69;
-  --ap:#e4fafa;--am:#9ee8e7;
-  --w:#ffffff;--ink:#040f0f;--gray:#2d5050;
-  --light:#f2fafa;--border:rgba(0,200,197,0.13);
-  --gold:#c9a84c;--gold2:rgba(201,168,76,0.12);
+  --navy:#0a2342;
+  --navy2:#0d2f56;
+  --navy3:#152e4f;
+  --teal:#2ca6a4;
+  --teal2:#239593;
+  --teal-dark:#1a7472;
+  --teal-light:#7bc9c7;
+  --cream:#e0f5f1;
+  --w:#ffffff;
+  --gray:#6b8088;
+  --gray2:#8aa0a8;
+  --border:rgba(44,166,164,0.18);
 }
-body{background:var(--w);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.7;cursor:none}
 
-/* CURSOR */
-#cur{width:6px;height:6px;background:var(--a);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
-#cur2{width:36px;height:36px;border:1px solid rgba(10,191,188,0.45);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all 0.28s cubic-bezier(0.16,1,0.3,1)}
+body{background:var(--w);color:var(--navy);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.7;cursor:none}
 
-/* PROGRESS */
-#prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--ad),var(--a),var(--am),var(--a));background-size:200% 100%;animation:progShimmer 2s linear infinite;z-index:9999;width:0%;transition:width 0.12s}
+#cur{width:6px;height:6px;background:var(--teal);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:opacity 0.2s}
+#cur2{width:44px;height:44px;border:1px solid rgba(44,166,164,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all 0.35s cubic-bezier(0.22,1,0.36,1)}
 
 /* SCROLL DOTS */
 #sdots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:500;opacity:0;transition:opacity 0.7s}
 .sdot{width:5px;height:5px;border-radius:50%;background:rgba(10,191,188,0.2);cursor:pointer;transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1)}
 .sdot.active{background:var(--a);transform:scale(1.6)}
 
-/* NAV */
-nav{position:fixed;top:0;width:100%;z-index:100;height:58px;background:rgba(255,255,255,0.96);backdrop-filter:blur(28px);border-bottom:1px solid var(--border);transition:height 0.45s cubic-bezier(0.16,1,0.3,1),box-shadow 0.45s cubic-bezier(0.16,1,0.3,1)}
-.nav-inner{max-width:1180px;margin:0 auto;padding:0 56px;height:100%;display:flex;justify-content:space-between;align-items:center}
-.nav-logo{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;letter-spacing:-0.2px;color:var(--ink)}
-.nav-logo em{color:var(--a);font-style:normal}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);transition:color 0.25s;position:relative;padding-bottom:2px}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--a);transition:width 0.45s cubic-bezier(0.16,1,0.3,1)}
-.nav-links a:hover{color:var(--a)}
+#sdots{position:fixed;right:32px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:500;opacity:0;transition:opacity 0.6s}
+.sdot{width:7px;height:7px;border-radius:50%;background:rgba(44,166,164,0.25);cursor:pointer;transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1)}
+.sdot.active{background:var(--teal);transform:scale(1.7);box-shadow:0 0 16px rgba(44,166,164,0.6)}
+
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;opacity:0.022;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+nav{position:fixed;top:0;width:100%;z-index:100;height:72px;background:rgba(10,35,66,0.85);backdrop-filter:blur(28px) saturate(180%);border-bottom:1px solid rgba(255,255,255,0.06);transition:all 0.35s cubic-bezier(0.22,1,0.36,1)}
+nav.scrolled{height:58px;background:rgba(10,35,66,0.95);box-shadow:0 8px 32px rgba(10,35,66,0.15)}
+.nav-i{max-width:1320px;margin:0 auto;padding:0 64px;height:100%;display:flex;justify-content:space-between;align-items:center}
+.nav-l{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;letter-spacing:-0.3px;color:var(--w)}
+.nav-l em{font-style:normal;color:var(--teal);font-weight:700}
+.nav-links{display:flex;gap:40px;list-style:none}
+.nav-links a{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);transition:color 0.3s;position:relative;padding-bottom:3px;font-weight:500}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--teal);transition:width 0.4s cubic-bezier(0.22,1,0.36,1)}
+.nav-links a:hover{color:var(--w)}
 .nav-links a:hover::after{width:100%}
-.nav-cta{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--a);border:1px solid var(--a);padding:8px 22px;border-radius:2px;transition:all 0.45s cubic-bezier(0.16,1,0.3,1)}
-.nav-cta:hover{background:var(--a);color:var(--w);transform:translateY(-1px)}
+.nav-cta{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);background:var(--teal);padding:12px 28px;border-radius:2px;transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1)}
+.nav-cta:hover{background:var(--teal-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(44,166,164,0.4)}
 
-/* HERO */
-.hero{min-height:100vh;padding-top:58px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:var(--w)}
-#hero-canvas{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.65}
-.hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 115% 40%,rgba(0,200,197,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at -10% 100%,rgba(0,200,197,0.12) 0%,transparent 58%),radial-gradient(ellipse 40% 40% at 50% 0%,rgba(0,200,197,0.09) 0%,transparent 52%),radial-gradient(ellipse 30% 30% at 28% 55%,rgba(0,200,197,0.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+/* HERO - DARK CENTRATO */
+.hero{min-height:100vh;padding-top:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--navy);text-align:center}
+#hcanvas{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.5}
+.hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-bg::before{content:'';position:absolute;top:-25%;left:50%;transform:translateX(-50%);width:70%;height:90%;background:radial-gradient(ellipse,rgba(44,166,164,0.15) 0%,transparent 65%);animation:floatBg 14s ease-in-out infinite}
+.hero-bg::after{content:'';position:absolute;bottom:-15%;left:50%;transform:translateX(-50%);width:60%;height:60%;background:radial-gradient(ellipse,rgba(44,166,164,0.08) 0%,transparent 60%);animation:floatBg 16s ease-in-out infinite reverse}
+@keyframes floatBg{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-48%) scale(1.05)}}
 
-.hero-l{padding:77px 53px 77px 96px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;perspective:1000px}
-.hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:28px}
-.kicker-line{width:24px;height:1px;background:var(--a)}
-.kicker-txt{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--a);font-weight:500}
-.kicker-dot{width:4px;height:4px;background:var(--a);border-radius:50%;animation:kdot 2.5s ease-in-out infinite}
-@keyframes kdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.2;transform:scale(1.7)}}
-@keyframes progShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.hero-content{position:relative;z-index:2;max-width:1100px;padding:80px 40px}
 
-.hero-name{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;line-height:1.02;color:var(--ink);letter-spacing:-0.8px;margin-bottom:6px;transform-style:preserve-3d}
-.hero-name .teal{color:var(--a)}
-.hero-name .ghost{color:rgba(6,20,20,0.1);display:block}
+.hero-kick{display:inline-flex;align-items:center;gap:14px;padding:9px 22px;background:rgba(44,166,164,0.1);border:1px solid rgba(44,166,164,0.3);border-radius:100px;margin-bottom:40px;opacity:0;transform:translateY(20px);animation:fadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.2s forwards}
+.hk-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:dotPulse 2s ease-in-out infinite;box-shadow:0 0 12px rgba(44,166,164,0.6)}
+@keyframes dotPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.6)}}
+.hk-txt{font-family:'Syne',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal-light);font-weight:600}
 
-.hero-role{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gray);margin-bottom:30px}
+.hero-title{font-family:'Syne',sans-serif;font-size:clamp(48px,8vw,128px);font-weight:800;line-height:0.86;letter-spacing:-4px;color:var(--w);margin-bottom:32px;text-transform:uppercase}
+.ht-line{display:block;overflow:hidden}
+.ht-line span{display:block;opacity:0;transform:translateY(110%);transition:all 1.2s cubic-bezier(0.22,1,0.36,1)}
+.ht-line span.on{opacity:1;transform:translateY(0)}
+.hero-title .teal{color:var(--teal)}
+.hero-title .ghost{color:rgba(255,255,255,0.08)}
 
 .hero-divider{width:40px;height:2px;background:linear-gradient(90deg,var(--a),var(--am),transparent);margin-bottom:28px;animation:dividerGrow 1.1s cubic-bezier(0.16,1,0.3,1) forwards;transform-origin:left}
 @keyframes dividerGrow{from{width:0;opacity:0}to{width:40px;opacity:1}}
 
-.hero-desc{font-size:14px;color:var(--gray);line-height:1.9;max-width:430px;margin-bottom:40px}
-.hero-desc strong{color:var(--ink);font-weight:500}
+.hero-sub{font-size:18px;color:rgba(255,255,255,0.6);line-height:1.85;max-width:600px;margin:0 auto 48px;opacity:0;transform:translateY(20px);animation:fadeUp 1s cubic-bezier(0.22,1,0.36,1) 1.4s forwards}
+.hero-sub strong{color:var(--w);font-weight:500}
 
-.hero-btns{display:flex;gap:14px;align-items:center;margin-bottom:52px}
-.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--w);font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:13px 30px;border-radius:2px;transition:all 0.7s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden}
-.btn-p::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--a),var(--a2));transform:scaleX(0);transform-origin:right;transition:transform 0.7s cubic-bezier(0.16,1,0.3,1)}
-.btn-p:hover::after{transform:scaleX(1);transform-origin:left}
-.btn-p span{position:relative;z-index:1}
-.btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(6,20,20,0.14)}
-.btn-s{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);display:flex;align-items:center;gap:7px;border-bottom:1px solid transparent;padding-bottom:2px;transition:all 0.28s}
-.btn-s:hover{color:var(--a);border-color:var(--a);gap:12px}
+.hero-btns{display:flex;gap:16px;align-items:center;justify-content:center;margin-bottom:80px;opacity:0;transform:translateY(20px);animation:fadeUp 1s cubic-bezier(0.22,1,0.36,1) 1.6s forwards;flex-wrap:wrap}
+.btn-main{display:inline-flex;align-items:center;gap:12px;background:var(--teal);color:var(--navy);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:18px 38px;border-radius:2px;transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:hidden}
+.btn-main::after{content:'';position:absolute;inset:0;background:var(--teal-light);transform:scaleX(0);transform-origin:right;transition:transform 0.5s cubic-bezier(0.22,1,0.36,1)}
+.btn-main:hover::after{transform:scaleX(1);transform-origin:left}
+.btn-main span{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
+.btn-main:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(44,166,164,0.4)}
+.btn-arrow{transition:transform 0.3s cubic-bezier(0.16,1,0.3,1)}
+.btn-main:hover .btn-arrow{transform:translateX(4px)}
+.btn-sec{display:inline-flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);transition:all 0.3s;border-bottom:1px solid transparent;padding-bottom:3px}
+.btn-sec:hover{color:var(--teal);border-color:var(--teal);gap:14px}
 
 /* STATS */
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border);animation:fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.7s both}
@@ -87,66 +105,88 @@ nav{position:fixed;top:0;width:100%;z-index:100;height:58px;background:rgba(255,
 .hs:hover .hs-n{transform:scale(1.08)}
 .hs-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray)}
 
-/* HERO RIGHT */
-.hero-r{padding:77px 96px 77px 43px;display:flex;flex-direction:column;justify-content:center;gap:10px;position:relative;z-index:1;background:var(--light)}
-.hero-r-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-bottom:4px}
-.fc{display:flex;align-items:flex-start;gap:14px;padding:18px 22px;background:var(--w);border:1px solid var(--border);border-radius:2px;transition:all 0.45s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden;opacity:0;transform:translateX(36px);will-change:transform}
-.fc.loaded{opacity:1;transform:translateX(0)}
-.fc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--a);transform:scaleY(0);transition:transform 0.38s cubic-bezier(0.16,1,0.3,1);transform-origin:bottom}
-.fc:hover{transform:translateX(9px);box-shadow:0 8px 28px rgba(0,200,197,0.1),0 0 0 1px rgba(0,200,197,0.15)}
-.fc:hover::before{transform:scaleY(1);transform-origin:top}
-.fc-i{width:40px;height:40px;background:var(--ap);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;color:var(--a);border:1px solid var(--border)}
-.fc-t{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;letter-spacing:-0.1px}
-.fc-s{font-size:12px;color:var(--gray);line-height:1.45}
+.hstats{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:600px;margin:0 auto;padding-top:48px;border-top:1px solid rgba(255,255,255,0.1);opacity:0;transform:translateY(20px);animation:fadeUp 1s cubic-bezier(0.22,1,0.36,1) 1.8s forwards}
+.hs{text-align:center;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+.hs:hover{transform:translateY(-4px)}
+.hs-n{font-family:'Syne',sans-serif;font-size:64px;font-weight:800;color:var(--teal);line-height:1;margin-bottom:6px;letter-spacing:-3px;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);display:inline-block}
+.hs:hover .hs-n{color:var(--teal-light);transform:scale(1.1);text-shadow:0 0 32px rgba(44,166,164,0.5)}
+.hs-l{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600}
 
-/* TICKER */
-.ticker{padding:12px 0;overflow:hidden;background:linear-gradient(135deg,var(--ad) 0%,var(--a) 50%,var(--a2) 100%);position:relative}
-.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:1}
-.ticker::before{left:0;background:linear-gradient(90deg,var(--a),transparent)}
-.ticker::after{right:0;background:linear-gradient(-90deg,var(--a),transparent)}
-.ticker-wrap{display:inline-flex;animation:tick 52s linear infinite;white-space:nowrap}
-.ti{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:0 44px}
-.tsep{color:rgba(255,255,255,0.18);font-size:8px}
+/* SCROLL INDICATOR */
+.scroll-ind{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);width:24px;height:36px;border:1px solid rgba(255,255,255,0.3);border-radius:12px;display:flex;justify-content:center;padding-top:6px;opacity:0;animation:fadeUp 1s 2s forwards}
+.scroll-ind::before{content:'';width:2px;height:6px;background:var(--teal);border-radius:1px;animation:scrollDot 1.8s ease-in-out infinite}
+@keyframes scrollDot{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(12px);opacity:0.4}}
+
+/* BIG SCROLLING BANNER */
+.scroll-banner{padding:80px 0;overflow:hidden;background:var(--w);position:relative;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.sb-i{display:flex;animation:tick 35s linear infinite;white-space:nowrap;gap:60px}
+.sb-t{font-family:'Syne',sans-serif;font-size:clamp(60px,10vw,160px);font-weight:800;color:var(--navy);letter-spacing:-5px;line-height:1}
+.sb-t em{font-style:normal;color:var(--teal)}
+.sb-sep{font-family:'Syne',sans-serif;font-size:clamp(60px,10vw,160px);font-weight:300;color:var(--teal);line-height:1}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* TICKER */
+.ticker{padding:22px 0;overflow:hidden;background:var(--navy);position:relative}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:1}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--navy),transparent)}
+.ticker::after{right:0;background:linear-gradient(-90deg,var(--navy),transparent)}
+.tk-wrap{display:inline-flex;animation:tick 60s linear infinite;white-space:nowrap}
+.ti{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:0 56px}
+.tsep{color:var(--teal);font-size:12px;padding:0 8px}
+
 /* LAYOUT */
-.wrap{max-width:1180px;margin:0 auto;padding:0 80px}
-.sec{padding:160px 0;background:var(--w)}
-.sec-alt{padding:160px 0;background:var(--light)}
-.sec-dark{padding:160px 0;background:var(--ink)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 80px}
+.sec{padding:160px 0;background:var(--w);position:relative}
+.sec-cream{padding:160px 0;background:var(--cream);position:relative}
+.sec-navy{padding:160px 0;background:var(--navy);position:relative;overflow:hidden}
 
-/* SECTION HEADER */
-.sh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.sh-l{width:22px;height:1px;background:var(--a)}
-.sh-t{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--a);font-weight:500}
+.sh{display:inline-flex;align-items:center;gap:14px;margin-bottom:24px}
+.sh-line{width:32px;height:1px;background:var(--teal)}
+.sh-tag{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--teal);font-weight:700}
 
-.h2{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;line-height:1.05;color:var(--ink);margin-bottom:68px;letter-spacing:-0.6px}
-.h2 .ac{color:var(--a)}
-.h2 .soft{color:rgba(6,20,20,0.09)}
-.h2-w{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,42px);font-weight:800;line-height:1.05;color:var(--w);margin-bottom:68px;letter-spacing:-0.6px}
-.h2-w .ac{color:var(--am)}
+.h2{font-family:'Syne',sans-serif;font-size:clamp(40px,5.5vw,86px);font-weight:800;line-height:0.95;color:var(--navy);margin-bottom:80px;letter-spacing:-2.5px;text-transform:uppercase}
+.h2 .ac{color:var(--teal)}
+.h2 .soft{color:rgba(10,35,66,0.13)}
+.h2-w{font-family:'Syne',sans-serif;font-size:clamp(40px,5.5vw,86px);font-weight:800;line-height:0.95;color:var(--w);margin-bottom:80px;letter-spacing:-2.5px;text-transform:uppercase}
+.h2-w .ac{color:var(--teal)}
 
 /* CHI SONO */
-.chi-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:88px;align-items:start}
-.chi-photo-w{position:relative}
-.chi-photo{aspect-ratio:3/4;background:linear-gradient(135deg,var(--ap),var(--am));overflow:hidden;border-radius:2px}
-.chi-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.9s cubic-bezier(0.16,1,0.3,1)}
-.chi-photo:hover img{transform:scale(1.05)}
-.chi-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:50px;font-weight:800;color:rgba(10,191,188,0.13)}
-.chi-badge{position:absolute;bottom:0;right:0;background:var(--a);color:var(--w);padding:12px 18px;border-radius:2px;box-shadow:0 6px 20px rgba(10,191,188,0.25)}
-.cb-l{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2px}
-.cb-v{font-family:'Syne',sans-serif;font-size:13px;font-weight:700}
+.chi-g{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
+.chi-pw{position:relative}
+.chi-p-img{aspect-ratio:3/4;background:linear-gradient(135deg,var(--cream),var(--teal-light));overflow:hidden;border-radius:4px;position:relative;box-shadow:16px 16px 0 var(--cream)}
+.chi-p-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,35,66,0.25));z-index:1;pointer-events:none}
+.chi-p-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 1s cubic-bezier(0.22,1,0.36,1)}
+.chi-p-img:hover img{transform:scale(1.06)}
+.chi-ph-text{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:120px;font-weight:800;color:rgba(44,166,164,0.18);letter-spacing:-6px}
+.chi-badge{position:absolute;bottom:24px;left:24px;right:24px;background:rgba(10,35,66,0.9);backdrop-filter:blur(12px);padding:18px 24px;border-radius:4px;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.cb-l{font-family:'Syne',sans-serif;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;font-weight:600}
+.cb-v{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--w);letter-spacing:-0.1px}
+.cb-r{text-align:right}
+.cb-r .cb-v{color:var(--teal)}
 
-.chi-body{display:flex;flex-direction:column;gap:20px;padding-top:4px}
-.chi-p{font-size:15px;color:var(--gray);line-height:2}
-.chi-p strong{color:var(--ink);font-weight:500}
-.chi-quote{border-left:2px solid var(--a);padding:16px 22px;background:var(--ap);font-size:14px;font-weight:300;color:var(--ad);line-height:1.7;font-style:italic}
-.chi-table{border:1px solid var(--border);overflow:hidden}
-.ctr{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--border);transition:background 0.2s}
+.chi-body{display:flex;flex-direction:column;gap:24px;padding-top:8px}
+.chi-p{font-size:16px;color:var(--gray);line-height:2}
+.chi-p strong{color:var(--navy);font-weight:500}
+.chi-quote{padding:22px 28px;border-left:3px solid var(--teal);background:linear-gradient(135deg,var(--cream),rgba(44,166,164,0.04));font-family:'Syne',sans-serif;font-size:20px;font-weight:500;color:var(--teal-dark);line-height:1.5;letter-spacing:-0.4px;border-radius:0 6px 6px 0}
+.chi-tbl{border:1px solid var(--border);border-radius:6px;overflow:hidden;background:var(--w)}
+.ctr{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--border);transition:background 0.3s}
 .ctr:last-child{border-bottom:none}
-.ctr:hover{background:var(--ap)}
-.ctk{padding:12px 16px;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);border-right:1px solid var(--border);display:flex;align-items:center}
-.ctv{padding:12px 16px;font-size:13px;color:var(--ink)}
+.ctr:hover{background:var(--cream)}
+.ctk{padding:14px 20px;font-family:'Syne',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);border-right:1px solid var(--border);display:flex;align-items:center;font-weight:700}
+.ctv{padding:14px 20px;font-size:14px;color:var(--navy);font-weight:400}
+
+/* NUMERI - MEGA ANIMATI */
+.nums-block{position:relative}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative;z-index:2}
+.num{background:var(--w);padding:64px 32px;text-align:center;transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:hidden;border-radius:8px;border:1px solid var(--border)}
+.num::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal-dark),var(--teal),var(--teal-light));transform:scaleX(0);transition:transform 0.55s cubic-bezier(0.22,1,0.36,1)}
+.num::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(44,166,164,0.08),transparent 50%);opacity:0;transition:opacity 0.4s}
+.num:hover{transform:translateY(-12px);box-shadow:0 28px 60px rgba(44,166,164,0.18);border-color:rgba(44,166,164,0.3)}
+.num:hover::before{transform:scaleX(1)}
+.num:hover::after{opacity:1}
+.num-n{font-family:'Syne',sans-serif;font-size:88px;font-weight:800;background:linear-gradient(135deg,var(--teal),var(--teal-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:14px;letter-spacing:-4px;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);position:relative;z-index:1}
+.num:hover .num-n{transform:scale(1.12);filter:drop-shadow(0 0 24px rgba(44,166,164,0.4))}
+.num-l{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);font-weight:700;position:relative;z-index:1}
 
 /* STEPS */
 .steps-g{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
@@ -156,114 +196,92 @@ nav{position:fixed;top:0;width:100%;z-index:100;height:58px;background:rgba(255,
 .step::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--am));transform:scaleX(0);transition:transform 0.7s cubic-bezier(0.16,1,0.3,1)}
 .step:hover{background:linear-gradient(135deg,var(--ap),rgba(0,200,197,0.04))}
 .step:hover::after{transform:scaleX(1)}
-.step-n{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;background:linear-gradient(135deg,var(--a),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:14px;transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1);opacity:0.3}
-.step:hover .step-n{opacity:1;transform:scale(1.12) translateX(5px)}
-.step-t{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:9px;letter-spacing:-0.2px;transition:color 0.45s cubic-bezier(0.16,1,0.3,1)}
-.step-d{font-size:13px;color:var(--gray);line-height:1.9}
-.stags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
-.stag{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--a);background:var(--ap);padding:3px 9px;border:1px solid var(--border)}
-
-/* NUMBERS */
-.nums-g{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border)}
-.num{background:var(--w);padding:48px 29px;text-align:center;transition:all 0.45s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden;will-change:transform}
-.num::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ad),var(--a),var(--am));transform:scaleX(0);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1)}
-.num:hover{background:var(--ap);transform:translateY(-8px);z-index:1;box-shadow:0 24px 56px rgba(0,200,197,0.15),0 0 0 1px rgba(0,200,197,0.1)}
-.num:hover::before{transform:scaleX(1)}
-.num-n{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:var(--a);line-height:1;margin-bottom:7px;letter-spacing:-1px;transition:transform 0.7s cubic-bezier(0.16,1,0.3,1),color 0.45s cubic-bezier(0.16,1,0.3,1)}
-.num:hover .num-n{color:var(--ad);transform:scale(1.08)}
-.num-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray)}
+.step-n{font-family:'Syne',sans-serif;font-size:96px;font-weight:800;background:linear-gradient(135deg,var(--teal),var(--teal-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:0.85;margin-bottom:24px;letter-spacing:-5px;opacity:0.4;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1)}
+.step:hover .step-n{opacity:1;transform:scale(1.08) translateX(8px)}
+.step-t{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:12px;letter-spacing:-0.4px}
+.step-d{font-size:14px;color:var(--gray);line-height:1.9}
 
 /* REVIEWS */
-.rev-g{columns:3;gap:14px}
-.rev{break-inside:avoid;margin-bottom:14px;padding:31px;background:var(--w);border:1px solid var(--border);position:relative;overflow:hidden;transition:all 0.7s cubic-bezier(0.16,1,0.3,1);will-change:transform}
-.rev::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--am),var(--a));transform:scaleX(0);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);transform-origin:left}
-.rev:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,200,197,0.08);border-color:rgba(10,191,188,0.18)}
-.rev:hover::before{transform:scaleX(1)}
-.rev-s{color:var(--a);font-size:10px;letter-spacing:3px;margin-bottom:12px}
-.rev-t{font-size:14px;color:var(--gray);line-height:1.85;margin-bottom:16px;font-style:italic}
-.rev-f{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--border)}
-.rev-av{width:28px;height:28px;background:var(--a);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--w);flex-shrink:0;font-family:'Syne',sans-serif;border-radius:2px}
-.rev-nm{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--ink)}
-.rev-sr{font-size:9px;color:var(--gray)}
+.rev-mason{columns:3;gap:18px}
+.rev{break-inside:avoid;margin-bottom:18px;padding:32px;background:var(--w);border:1px solid var(--border);border-radius:6px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:all 0.55s cubic-bezier(0.22,1,0.36,1)}
+.rev::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--teal-light),var(--teal));background-size:200% 100%;transform:scaleX(0);transition:transform 0.5s cubic-bezier(0.22,1,0.36,1);transform-origin:left}
+.rev:hover{transform:translateY(-8px);box-shadow:0 24px 56px rgba(44,166,164,0.12);border-color:rgba(44,166,164,0.25)}
+.rev:hover::before{transform:scaleX(1);animation:shim 2s linear infinite}
+.rev-s{color:var(--teal);font-size:12px;letter-spacing:3px;margin-bottom:14px}
+.rev-t{font-family:'Inter',sans-serif;font-style:italic;font-size:15px;color:var(--gray);line-height:1.75;margin-bottom:18px;flex:1}
+.rev-f{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
+.rev-av{width:34px;height:34px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--w);flex-shrink:0;font-family:'Syne',sans-serif}
+.rev-nm{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:-0.1px}
+.rev-sr{font-size:9px;color:var(--gray);letter-spacing:0.5px}
 
-/* CTA */
-.cta-g{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
-.cta-l{padding:96px;display:flex;flex-direction:column;justify-content:center;position:relative}
-.cta-l::before{display:none}
-@keyframes ghostSlide{0%{transform:translateX(0)}100%{transform:translateX(-20px)}}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.cta-r{background:var(--a);padding:96px;display:flex;flex-direction:column;justify-content:center;gap:16px;position:relative;overflow:hidden}
-.cta-r::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border:1px solid rgba(255,255,255,0.08);border-radius:50%}
-.cta-r::after{content:'';position:absolute;top:-90px;right:-90px;width:320px;height:320px;border:1px solid rgba(255,255,255,0.05);border-radius:50%}
-.cta-ey{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;position:relative;z-index:1}
-.cta-h{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,40px);font-weight:800;line-height:1.04;color:var(--w);margin-bottom:16px;letter-spacing:-0.6px;position:relative;z-index:1}
-.cta-h .ac{color:var(--am)}
-.cta-p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.9;position:relative;z-index:1}
-.cta-feat{display:flex;align-items:flex-start;gap:11px;font-size:13px;color:rgba(255,255,255,0.85);position:relative;z-index:1}
-.cfd{width:4px;height:4px;background:rgba(255,255,255,0.4);flex-shrink:0;margin-top:8px;border-radius:50%}
-.btn-cta{display:inline-flex;align-items:center;gap:8px;background:var(--w);color:var(--ad);font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:13px 32px;border-radius:2px;transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);position:relative;z-index:1;align-self:flex-start;margin-top:4px}
-.btn-cta:hover{background:var(--ink);color:var(--w);transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.18)}
+/* CTA NAVY */
+.cta-block{position:relative;z-index:2;padding:120px 80px;border-radius:8px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);overflow:hidden;text-align:center}
+.cta-block::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border:1px solid rgba(44,166,164,0.1);border-radius:50%}
+.cta-block::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border:1px solid rgba(44,166,164,0.08);border-radius:50%}
+.cta-ey{display:inline-flex;align-items:center;gap:12px;font-family:'Syne',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:24px;font-weight:700;position:relative;z-index:1}
+.cta-ey::before,.cta-ey::after{content:'';width:32px;height:1px;background:var(--teal)}
+.cta-h{font-family:'Syne',sans-serif;font-size:clamp(40px,5.5vw,86px);font-weight:800;line-height:0.92;color:var(--w);margin-bottom:32px;letter-spacing:-2.5px;position:relative;z-index:1;text-transform:uppercase}
+.cta-h .ac{color:var(--teal)}
+.cta-p{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.85;position:relative;z-index:1;max-width:560px;margin:0 auto 40px}
+.cta-feats{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-bottom:40px;position:relative;z-index:1;max-width:760px;margin-left:auto;margin-right:auto}
+.cta-feat{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.7);font-weight:300}
+.cfd{width:5px;height:5px;background:var(--teal);border-radius:50%;flex-shrink:0}
+.btn-cta{display:inline-flex;align-items:center;gap:12px;background:var(--teal);color:var(--navy);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:18px 40px;border-radius:2px;transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1);position:relative;z-index:1}
+.btn-cta:hover{background:var(--teal-light);transform:translateY(-4px);box-shadow:0 16px 36px rgba(44,166,164,0.4)}
 
 /* CONTATTI */
-.cont-g{display:grid;grid-template-columns:1fr 1fr;gap:88px}
+.cont-g{display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .cont-list{display:flex;flex-direction:column}
-.cont-row{padding:16px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:100px 1fr;gap:16px;align-items:center;transition:padding-left 0.22s}
+.cont-row{padding:20px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;transition:all 0.3s}
 .cont-row:hover{padding-left:8px}
-.cont-k{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--a);font-weight:500}
-.cont-v{font-size:14px;color:var(--ink)}
-.form-b{background:var(--ap);padding:48px;border:1px solid var(--border)}
-.fg{margin-bottom:16px}
-.fl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ad);display:block;margin-bottom:7px;font-weight:500}
-.fi,.ft{width:100%;background:var(--w);border:1px solid var(--border);border-radius:0;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;outline:none;padding:12px 15px;transition:all 0.25s;resize:none}
-.fi:focus,.ft:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(10,191,188,0.1)}
-.ft{height:92px}
-.fi::placeholder,.ft::placeholder{color:rgba(6,20,20,0.2)}
-.fbtn{width:100%;background:var(--ink);color:var(--w);font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:13px;border:none;cursor:pointer;transition:all 0.28s;margin-top:8px}
-.fbtn:hover{background:var(--a);transform:translateY(-2px)}
+.cont-k{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);font-weight:700}
+.cont-v{font-size:14px;color:var(--navy)}
+.form-b{background:linear-gradient(135deg,var(--cream),var(--w));padding:48px;border-radius:6px;border:1px solid var(--border)}
+.fg{margin-bottom:20px}
+.fl{font-family:'Syne',sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal-dark);display:block;margin-bottom:10px;font-weight:700}
+.fi,.ft{width:100%;background:var(--w);border:1px solid var(--border);border-radius:2px;color:var(--navy);font-family:'Inter',sans-serif;font-size:14px;font-weight:300;outline:none;padding:14px 18px;transition:all 0.3s;resize:none}
+.fi:focus,.ft:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(44,166,164,0.1)}
+.ft{height:104px}
+.fi::placeholder,.ft::placeholder{color:rgba(10,35,66,0.25)}
+.fb{width:100%;background:var(--navy);color:var(--w);font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px;border:none;border-radius:2px;cursor:pointer;transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);margin-top:8px}
+.fb:hover{background:var(--teal);transform:translateY(-3px);box-shadow:0 14px 32px rgba(44,166,164,0.3)}
 
-footer{padding:20px 0;border-top:1px solid var(--border);background:var(--light)}
-.fi-inner{max-width:1180px;margin:0 auto;padding:0 80px;display:flex;justify-content:space-between;align-items:center}
-.flogo{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--gray);letter-spacing:-0.1px}
-.fcopy{font-size:9px;color:var(--gray)}
+footer{padding:32px 0;border-top:1px solid var(--border);background:var(--cream)}
+.foot-i{max-width:1320px;margin:0 auto;padding:0 80px;display:flex;justify-content:space-between;align-items:center}
+.foot-l{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--navy);letter-spacing:-0.1px}
+.foot-l em{font-style:normal;color:var(--teal)}
+.foot-c{font-size:11px;color:var(--gray)}
 
-.wa{position:fixed;bottom:26px;right:26px;z-index:999;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,0.32);transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1)}
-.wa:hover{transform:scale(1.1)}
-.wa svg{width:22px;height:22px;fill:white}
+.wa{position:fixed;bottom:32px;right:32px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 32px rgba(37,211,102,0.35);transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1)}
+.wa::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(37,211,102,0.3);animation:waRing 2s ease-out infinite}
+@keyframes waRing{0%{opacity:1;transform:scale(0.9)}100%{opacity:0;transform:scale(1.3)}}
+.wa:hover{transform:scale(1.12)}
+.wa svg{width:26px;height:26px;fill:white;position:relative;z-index:1}
 
-/* REVEAL */
-.rv{opacity:0;transform:translateY(44px);transition:opacity 1.1s cubic-bezier(0.16,1,0.3,1),transform 1.1s cubic-bezier(0.16,1,0.3,1);will-change:transform}
-.rv.on{opacity:1;transform:translateY(0)}
-.rv-l{opacity:0;transform:translateX(-44px);transition:opacity 1.1s cubic-bezier(0.16,1,0.3,1),transform 1.1s cubic-bezier(0.16,1,0.3,1);will-change:transform}
-.rv-l.on{opacity:1;transform:translateX(0)}
-.rv-r{opacity:0;transform:translateX(44px);transition:opacity 1.1s cubic-bezier(0.16,1,0.3,1),transform 1.1s cubic-bezier(0.16,1,0.3,1);will-change:transform}
-.rv-r.on{opacity:1;transform:translateX(0)}
-.rv-s{opacity:0;transform:scale(0.95);transition:opacity 1s cubic-bezier(0.16,1,0.3,1),transform 1s cubic-bezier(0.16,1,0.3,1);will-change:transform}
-.rv-s.on{opacity:1;transform:scale(1)}
-.d1{transition-delay:0.05s}.d2{transition-delay:0.1s}.d3{transition-delay:0.15s}
-.d4{transition-delay:0.2s}.d5{transition-delay:0.25s}.d6{transition-delay:0.3s}
+.rv{opacity:0;transform:translateY(56px);filter:blur(6px);transition:opacity 1.2s cubic-bezier(0.22,1,0.36,1),transform 1.2s cubic-bezier(0.22,1,0.36,1),filter 1s cubic-bezier(0.22,1,0.36,1)}
+.rv.on{opacity:1;transform:translateY(0);filter:blur(0)}
+.rv-l{opacity:0;transform:translateX(-56px);filter:blur(6px);transition:opacity 1.2s cubic-bezier(0.22,1,0.36,1),transform 1.2s cubic-bezier(0.22,1,0.36,1),filter 1s cubic-bezier(0.22,1,0.36,1)}
+.rv-l.on{opacity:1;transform:translateX(0);filter:blur(0)}
+.rv-r{opacity:0;transform:translateX(56px);filter:blur(6px);transition:opacity 1.2s cubic-bezier(0.22,1,0.36,1),transform 1.2s cubic-bezier(0.22,1,0.36,1),filter 1s cubic-bezier(0.22,1,0.36,1)}
+.rv-r.on{opacity:1;transform:translateX(0);filter:blur(0)}
+.rv-s{opacity:0;transform:scale(0.92);filter:blur(6px);transition:opacity 1.2s cubic-bezier(0.22,1,0.36,1),transform 1.2s cubic-bezier(0.22,1,0.36,1),filter 1s cubic-bezier(0.22,1,0.36,1)}
+.rv-s.on{opacity:1;transform:scale(1);filter:blur(0)}
 
-@media(max-width:1024px){
-.hero-l{padding:64px 40px 64px 60px}
-.hero-r{padding:64px 40px 64px 28px}
-.cta-l,.cta-r{padding:72px 56px}
-.chi-grid{gap:56px}
-.cont-g{gap:56px}
-.wrap{padding:0 52px}
-.sec,.sec-alt,.sec-dark{padding:120px 0}
-}
 @media(max-width:768px){
 body{cursor:auto}#cur,#cur2,#sdots{display:none}
-.nav-inner{padding:0 20px}.nav-links,.nav-cta{display:none}
-.hero{grid-template-columns:1fr}.hero-l{padding:52px 20px}.hero-r{display:none}
-.hero-stats{grid-template-columns:1fr 1fr}.hs{min-width:50%;border-right:none;border-bottom:1px solid var(--border);margin:0;padding:14px 0}
+.nav-i{padding:0 20px}.nav-links,.nav-cta{display:none}
+.hero-content{padding:60px 20px}
+.hstats{grid-template-columns:1fr 1fr;gap:24px}.hs:nth-child(3){grid-column:1/-1}
+.scroll-ind{display:none}
 .wrap{padding:0 20px}
-.sec,.sec-alt,.sec-dark{padding:110px 0}
-.chi-grid,.cont-g{grid-template-columns:1fr;gap:44px}
-.steps-g{grid-template-columns:1fr}.nums-g{grid-template-columns:1fr 1fr}
-.rev-g{columns:1}.cta-g{grid-template-columns:1fr}
-.cta-l,.cta-r{padding:62px 26px}
-.fi-inner{flex-direction:column;gap:8px;padding:0 20px;text-align:center}
+.sec,.sec-cream,.sec-navy{padding:100px 0}
+.chi-g,.cont-g{grid-template-columns:1fr;gap:48px}
+.steps{grid-template-columns:1fr}
+.nums{grid-template-columns:1fr 1fr;gap:16px}
+.rev-mason{columns:1}
+.cta-block{padding:80px 24px}
+.cta-feats{flex-direction:column;gap:14px;align-items:flex-start;text-align:left;max-width:300px}
+.foot-i{flex-direction:column;gap:10px;padding:0 20px;text-align:center}
 }
 html{scroll-behavior:smooth;scroll-padding-top:58px}
 *{will-change:auto}
@@ -326,8 +344,8 @@ nav{border-bottom-width:0.5px}
 </div>
 
 <nav id="nav">
-  <div class="nav-inner">
-    <div class="nav-logo">Andreina <em>Caputo</em></div>
+  <div class="nav-i">
+    <div class="nav-l">Andreina <em>Caputo</em></div>
     <ul class="nav-links">
       <li><a href="#chi">Chi sono</a></li>
       <li><a href="#visita">Prima visita</a></li>
@@ -339,43 +357,47 @@ nav{border-bottom-width:0.5px}
 </nav>
 
 <section class="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-gradient"></div>
-  <div class="hero-l">
-    <div class="hero-kicker rv"><div class="kicker-line"></div><div class="kicker-txt" id="kicker-txt">Biologa Nutrizionista · Lecce · Nardò</div><div class="kicker-dot"></div></div>
-    <h1 class="hero-name rv d1">
-      DOTT.SSA<br>
-      ANDREINA<br>
-      <span class="teal">CAPUTO</span><br>
-      <span class="ghost">NUTRIZIONISTA</span>
+  <canvas id="hcanvas"></canvas>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-kick"><div class="hk-dot"></div><div class="hk-txt">Nutrizionista Lecce · Nardò · 50 Recensioni</div></div>
+    <h1 class="hero-title">
+      <span class="ht-line"><span data-word="0">PERDI PESO</span></span>
+      <span class="ht-line"><span data-word="1">SENZA</span></span>
+      <span class="ht-line"><span data-word="2" class="teal">RIPRENDERE.</span></span>
+      <span class="ht-line"><span data-word="3" class="ghost">GARANTITO.</span></span>
     </h1>
-    <div class="hero-role rv d2">Biologa Nutrizionista · Lecce · Nardò</div>
-    <div class="hero-divider rv d2"></div>
-    <p class="hero-desc rv d2"><strong>La nutrizione non è uguale per tutti.</strong> È il risultato di ascolto, analisi scientifica e un piano costruito su di te. Non su un protocollo standard.</p>
-    <div class="hero-btns rv d3">
-      <a href="#cont" class="btn-p"><span>Prenota una visita</span></a>
-      <a href="#visita" class="btn-s">Come funziona →</a>
+    <div class="hero-divider"></div>
+    <p class="hero-sub"><strong>50 persone hanno già smesso di farsi del male con le diete.</strong> Niente piani copiati. Niente sacrifici inutili. Solo il tuo corpo analizzato con BIA e un piano costruito su misura. 70€ la prima visita. Se non funziona non paghi il controllo.</p>
+    <div class="hero-btns">
+      <a href="#cont" class="btn-main"><span>Prenota una visita <span class="btn-arrow">→</span></span></a>
+      <a href="#visita" class="btn-sec">Come funziona</a>
     </div>
-    <div class="hero-stats rv d4">
-      <div class="hs"><div class="hs-n counter" data-target="50">0</div><div class="hs-l">Recensioni verificate</div></div>
-      <div class="hs"><div class="hs-n">5★</div><div class="hs-l">Media stelle</div></div>
+    <div class="hstats">
+      <div class="hs"><div class="hs-n counter" data-target="50">0</div><div class="hs-l">Recensioni 5★</div></div>
+      <div class="hs"><div class="hs-n">2</div><div class="hs-l">Sedi · Lecce · Nardò</div></div>
       <div class="hs"><div class="hs-n">70€</div><div class="hs-l">Prima visita + BIA</div></div>
     </div>
   </div>
-  <div class="hero-r">
-    <div class="hero-r-label">Specializzazioni</div>
-    <div class="fc"><div class="fc-i">01</div><div><div class="fc-t">Dimagrimento personalizzato</div><div class="fc-s">Piani su misura con analisi BIA e stile di vita</div></div></div>
-    <div class="fc"><div class="fc-i">02</div><div><div class="fc-t">Nutrizione clinica</div><div class="fc-s">Diabete, intolleranze, patologie metaboliche</div></div></div>
-    <div class="fc"><div class="fc-i">03</div><div><div class="fc-t">Nutrizione per la donna</div><div class="fc-s">Gravidanza, menopausa, PCOS, allattamento</div></div></div>
-    <div class="fc"><div class="fc-i">04</div><div><div class="fc-t">Nutrizione sportiva</div><div class="fc-s">Performance e ricomposizione corporea</div></div></div>
-    <div class="fc"><div class="fc-i">05</div><div><div class="fc-t">Consulenze online</div><div class="fc-s">Disponibile da tutta Italia</div></div></div>
-  </div>
+  <div class="scroll-ind"></div>
 </section>
 
-<div class="ticker"><div class="ticker-wrap">
-  <span class="ti">DIMAGRIMENTO</span><span class="tsep">◆</span><span class="ti">NUTRIZIONE CLINICA</span><span class="tsep">◆</span><span class="ti">ANALISI BIA</span><span class="tsep">◆</span><span class="ti">NUTRIZIONE SPORTIVA</span><span class="tsep">◆</span><span class="ti">NUTRIZIONE FEMMINILE</span><span class="tsep">◆</span><span class="ti">INTOLLERANZE</span><span class="tsep">◆</span><span class="ti">ONLINE</span><span class="tsep">◆</span>
-  <span class="ti">DIMAGRIMENTO</span><span class="tsep">◆</span><span class="ti">NUTRIZIONE CLINICA</span><span class="tsep">◆</span><span class="ti">ANALISI BIA</span><span class="tsep">◆</span><span class="ti">NUTRIZIONE SPORTIVA</span><span class="tsep">◆</span><span class="ti">NUTRIZIONE FEMMINILE</span><span class="tsep">◆</span><span class="ti">INTOLLERANZE</span><span class="tsep">◆</span><span class="ti">ONLINE</span><span class="tsep">◆</span>
-</div></div>
+<div class="scroll-banner">
+  <div class="sb-i">
+    <span class="sb-t">DIMAGRIRE</span>
+    <span class="sb-sep">◆</span>
+    <span class="sb-t"><em>SENZA</em></span>
+    <span class="sb-sep">◆</span>
+    <span class="sb-t">RIPRENDERE</span>
+    <span class="sb-sep">◆</span>
+    <span class="sb-t">DIMAGRIRE</span>
+    <span class="sb-sep">◆</span>
+    <span class="sb-t"><em>SENZA</em></span>
+    <span class="sb-sep">◆</span>
+    <span class="sb-t">RIPRENDERE</span>
+    <span class="sb-sep">◆</span>
+  </div>
+</div>
 
 <section class="sec" id="chi">
   <div class="wrap">
@@ -387,15 +409,15 @@ nav{border-bottom-width:0.5px}
         <div class="chi-badge"><div class="cb-l">Biologa Nutrizionista</div><div class="cb-v">Lecce · Nardò</div></div>
       </div>
       <div class="chi-body rv-r">
-        <p class="chi-p">Sono la Dott.ssa Andreina Caputo, Biologa Nutrizionista con laurea magistrale in Scienze dell'Alimentazione e Nutrizione Umana presso l'Università degli Studi di Perugia. Esercito la libera professione a <strong>Lecce</strong> (Via C. A. Costadura 2C) e a <strong>Nardò</strong> (Via Beethoven 38).</p>
-        <p class="chi-p">Il mio obiettivo non è darti una dieta. È <strong>educarti a un'alimentazione sana e sostenibile</strong>, accompagnandoti passo dopo passo fino a diventare autonomo. Ogni piano include una valutazione completa con bioimpedenziometria BIA.</p>
-        <div class="chi-quote">"Il mio lavoro non finisce quando ti consegno il piano. Finisce quando non hai più bisogno di me."</div>
-        <div class="chi-table">
-          <div class="ctr"><div class="ctk">Lecce</div><div class="ctv">Via C. A. Costadura 2C</div></div>
-          <div class="ctr"><div class="ctk">Nardò</div><div class="ctv">Via Beethoven 38 (LE)</div></div>
+        <p class="chi-p">Mi chiamo Andreina Caputo. Sono Biologa Nutrizionista, laureata in Scienze dell'Alimentazione all'<strong>Università di Perugia</strong>. Ricevo a <strong>Lecce</strong> e a <strong>Nardò</strong>. E in 50 percorsi ho capito una cosa che nessuno ti dice: il problema non è mai il tuo corpo. È sempre il piano sbagliato.</p>
+        <p class="chi-p">Non ti dò una dieta. <strong>Ti insegno a mangiare per sempre.</strong> Analisi BIA inclusa — vedi com'è fatto il tuo corpo, non solo quanto pesi. Piano costruito su ogni dettaglio. Controllo mensile per aggiustare ogni volta che la vita cambia.</p>
+        <div class="chi-quote">"La bilancia non dice come stai. Dice solo quanto pesi. E quanto pesi non interessa a nessuno tranne a te."</div>
+        <div class="chi-tbl">
+          <div class="ctr"><div class="ctk">Sede Lecce</div><div class="ctv">Via C. A. Costadura 2C</div></div>
+          <div class="ctr"><div class="ctk">Sede Nardò</div><div class="ctv">Via Beethoven 38 (LE)</div></div>
           <div class="ctr"><div class="ctk">WhatsApp</div><div class="ctv">389 964 7999</div></div>
           <div class="ctr"><div class="ctk">Instagram</div><div class="ctv">@caputo.nutrizionista</div></div>
-          <div class="ctr"><div class="ctk">Prima visita</div><div class="ctv">70€ · BIA inclusa · Controllo mensile</div></div>
+          <div class="ctr"><div class="ctk">Prima visita</div><div class="ctv">70€ · BIA inclusa</div></div>
           <div class="ctr"><div class="ctk">Online</div><div class="ctv">Disponibile da tutta Italia</div></div>
         </div>
       </div>
@@ -403,79 +425,91 @@ nav{border-bottom-width:0.5px}
   </div>
 </section>
 
-<section class="sec-alt">
+<section class="sec-cream">
   <div class="wrap">
-    <div class="sh rv"><div class="sh-l"></div><div class="sh-t">I numeri</div></div>
-    <h2 class="h2 rv">I RISULTATI<br><span class="ac">PARLANO DA SOLI.</span></h2>
-    <div class="nums-g rv-s">
-      <div class="num"><div class="num-n counter" data-target="50">0</div><div class="num-l">Recensioni verificate</div></div>
-      <div class="num"><div class="num-n">5★</div><div class="num-l">Media stelle</div></div>
+    <div class="sh rv"><div class="sh-line"></div><div class="sh-tag">I numeri</div></div>
+    <h2 class="h2 rv">NON DEVI<br>CREDERMI.<br><span class="ac">FALLI PARLARE.</span></h2>
+    <div class="nums rv-s">
+      <div class="num"><div class="num-n counter" data-target="50">0</div><div class="num-l">Recensioni 5★</div></div>
+      <div class="num"><div class="num-n">5</div><div class="num-l">Stelle Google</div></div>
       <div class="num"><div class="num-n">2</div><div class="num-l">Sedi · Lecce · Nardò</div></div>
-      <div class="num"><div class="num-n">70€</div><div class="num-l">Prima visita + BIA</div></div>
+      <div class="num"><div class="num-n">70€</div><div class="num-l">Prima visita</div></div>
     </div>
   </div>
 </section>
+
+<div class="ticker"><div class="tk-wrap">
+  <span class="ti">DIMAGRIMENTO</span><span class="tsep">◆</span>
+  <span class="ti">NUTRIZIONE CLINICA</span><span class="tsep">◆</span>
+  <span class="ti">ANALISI BIA</span><span class="tsep">◆</span>
+  <span class="ti">NUTRIZIONE SPORTIVA</span><span class="tsep">◆</span>
+  <span class="ti">NUTRIZIONE FEMMINILE</span><span class="tsep">◆</span>
+  <span class="ti">INTOLLERANZE</span><span class="tsep">◆</span>
+  <span class="ti">ONLINE</span><span class="tsep">◆</span>
+  <span class="ti">DIMAGRIMENTO</span><span class="tsep">◆</span>
+  <span class="ti">NUTRIZIONE CLINICA</span><span class="tsep">◆</span>
+  <span class="ti">ANALISI BIA</span><span class="tsep">◆</span>
+  <span class="ti">NUTRIZIONE SPORTIVA</span><span class="tsep">◆</span>
+  <span class="ti">NUTRIZIONE FEMMINILE</span><span class="tsep">◆</span>
+</div></div>
 
 <section class="sec" id="visita">
   <div class="wrap">
-    <div class="sh rv"><div class="sh-l"></div><div class="sh-t">Come funziona</div></div>
-    <h2 class="h2 rv">LA PRIMA VISITA:<br><span class="ac">UN'ORA</span> CHE<br>CAMBIA TUTTO.</h2>
-    <div class="steps-g">
-      <div class="step rv d1"><div class="step-n">01</div><div class="step-t">Parametri antropometrici</div><p class="step-d">Peso, altezza, circonferenze e plicometria. La base scientifica su cui costruire il tuo piano nutrizionale preciso e personalizzato.</p></div>
-      <div class="step rv d2"><div class="step-n">02</div><div class="step-t">Bioimpedenziometria BIA</div><p class="step-d">Analisi avanzata e non invasiva della composizione corporea. Massa magra, grassa, muscolare, ritenzione idrica e metabolismo basale.</p><div class="stags"><span class="stag">Massa magra</span><span class="stag">Metabolismo basale</span></div></div>
-      <div class="step rv d3"><div class="step-n">03</div><div class="step-t">Anamnesi approfondita</div><p class="step-d">Il momento più importante. Ascolto delle tue abitudini, dello stile di vita, delle patologie, delle intolleranze e degli obiettivi reali.</p></div>
-      <div class="step rv d4"><div class="step-n">04</div><div class="step-t">Piano alimentare su misura</div><p class="step-d">Il tuo piano nutrizionale, costruito su ogni dettaglio emerso. Bilanciato, sostenibile e aggiornato ogni mese in base ai tuoi progressi.</p><div class="stags"><span class="stag">Controllo mensile</span><span class="stag">Sempre aggiornato</span></div></div>
+    <div class="sh rv"><div class="sh-line"></div><div class="sh-tag">Come funziona</div></div>
+    <h2 class="h2 rv">60 MINUTI.<br><span class="ac">4 STEP.</span><br>UN PIANO TUO.</h2>
+    <div class="steps">
+      <div class="step rv"><div class="step-n">01</div><div class="step-t">Foto del tuo corpo</div><p class="step-d">Peso, altezza, circonferenze, plicometria. La fotografia scientifica di dove sei oggi. Senza questa, qualsiasi piano è cieco.</p></div>
+      <div class="step rv"><div class="step-n">02</div><div class="step-t">Analisi BIA (inclusa)</div><p class="step-d">Massa grassa, magra, muscoli, acqua, metabolismo basale. Niente bilance bugiarde. Solo dati reali da cui partire — inclusi nei 70€.</p></div>
+      <div class="step rv"><div class="step-n">03</div><div class="step-t">Ti faccio parlare</div><p class="step-d">Cosa mangi davvero. Come dormi. Quanto ti muovi. Quello che ti piace. Quello che odi. Senza giudizio. Senza fretta. Solo verità.</p></div>
+      <div class="step rv"><div class="step-n">04</div><div class="step-t">Il tuo piano</div><p class="step-d">Costruito su tutto ciò che hai detto. Mangi cibi che ti piacciono. Niente fame. Niente liste vietate. Aggiornato ogni mese.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec-alt" id="rev">
+<section class="sec-cream" id="rev">
   <div class="wrap">
-    <div class="sh rv"><div class="sh-l"></div><div class="sh-t">Testimonianze</div></div>
-    <h2 class="h2 rv">NON FIDARTI DI ME.<br>FIDATI DI CHI<br><span class="ac">È GIÀ CAMBIATO.</span></h2>
-    <div class="rev-g rv">
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Dopo aver girato diversi nutrizionisti senza risultati, finalmente con la Dott.ssa Andreina sto raggiungendo i risultati che cercavo."</p><div class="rev-f"><div class="rev-av">P</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Fin dalla prima visita mi ha messo a mio agio e personalizzato il percorso sulla base di tutte le mie necessità. Risultati concreti."</p><div class="rev-f"><div class="rev-av">M</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Non è solo una specialista. Ti ascolta, ti supporta e trova il percorso giusto insieme a te. Non me l'aspettavo."</p><div class="rev-f"><div class="rev-av">A</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Professionale, competente e attenta ad ogni dettaglio. L'empatia e la sensibilità che la distinguono sono rare."</p><div class="rev-f"><div class="rev-av">G</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Sin da subito mi ha dato un'energia che non avevo da tanto. Motivazione e risultati in poche settimane."</p><div class="rev-f"><div class="rev-av">L</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Sempre disponibile, trasmette serenità e fiducia. Non mi ha mai fatto sentire giudicata, solo supportata."</p><div class="rev-f"><div class="rev-av">F</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Mi ha sorpresa con ciò che posso continuare a mangiare. Nessun sacrificio estremo, solo scelte consapevoli."</p><div class="rev-f"><div class="rev-av">V</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Impeccabile in tutto. Ha capito dove sbagliavo senza farmi sentire in colpa. Questo fa la differenza."</p><div class="rev-f"><div class="rev-av">C</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
-      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Dopo tanti tentativi falliti, ho finalmente trovato la professionista giusta. Competenza e chiarezza rare."</p><div class="rev-f"><div class="rev-av">R</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+    <div class="sh rv"><div class="sh-line"></div><div class="sh-tag">Testimonianze</div></div>
+    <h2 class="h2 rv">NON HO TEMPO<br>DI <span class="ac">CONVINCERTI.</span><br><span class="soft">LEGGI LORO.</span></h2>
+    <div class="rev-mason rv">
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Dopo aver girato diversi nutrizionisti senza risultati, finalmente con la Dott.ssa Andreina sto raggiungendo i risultati voluti."</p><div class="rev-f"><div class="rev-av">P</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Fin dalla prima visita mi ha messo a mio agio e personalizzato il mio percorso sulla base di tutte le mie necessità."</p><div class="rev-f"><div class="rev-av">M</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Non è solo una specialista. Ti ascolta, ti supporta e insieme alle tue esigenze trova il percorso giusto per te."</p><div class="rev-f"><div class="rev-av">A</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Andreina è super professionale, competente e presta attenzione ad ogni dettaglio. Empatica e sensibile, mai giudicante."</p><div class="rev-f"><div class="rev-av">G</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Sin da subito mi ha dato un'energia che non avevo da tanto. Mi ha ricaricata e motivata. Risultati fantastici."</p><div class="rev-f"><div class="rev-av">L</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Dottoressa empatica e gentilissima. Sempre attenta a soddisfare le richieste e pronta a chiarire ogni dubbio."</p><div class="rev-f"><div class="rev-av">F</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Mi ha sorpresa con ciò che posso continuare a mangiare — nessun sacrificio estremo, solo scelte consapevoli."</p><div class="rev-f"><div class="rev-av">V</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Impeccabile in tutto. Professionalità, disponibilità, puntualità. Mi ha fatto capire dove sbagliavo senza giudizio."</p><div class="rev-f"><div class="rev-av">C</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
+      <div class="rev"><div class="rev-s">★★★★★</div><p class="rev-t">"Competenza, chiarezza e professionalità. Ho trovato finalmente la professionista giusta dopo tanto cercare."</p><div class="rev-f"><div class="rev-av">R</div><div><div class="rev-nm">Paziente verificata</div><div class="rev-sr">MioDottore</div></div></div></div>
     </div>
   </div>
 </section>
 
-<section class="sec-dark">
+<section class="sec">
   <div class="wrap">
-    <div class="cta-g rv-s">
-      <div class="cta-l">
-        <div class="cta-ey">Dott.ssa Andreina Caputo · Biologa Nutrizionista</div>
-        <h2 class="cta-h">SMETTI DI<br>FARE DIETE.<br><span class="ac">INIZIA IL TUO</span><br>PERCORSO.</h2>
-        <p class="cta-p">Non esiste una dieta uguale per tutti. Esiste il tuo piano — costruito su di te, sulla tua fisiologia, le tue abitudini e i tuoi obiettivi. Prima visita con BIA inclusa a 70€.</p>
+    <div class="cta-block rv-s">
+      <div class="cta-ey">L'offerta</div>
+      <h2 class="cta-h">70€.<br>UNA VOLTA.<br><span class="ac">POI VEDIAMO</span><br>SE FUNZIONA.</h2>
+      <p class="cta-p">Prima visita con BIA inclusa. Se dopo un mese non vedi differenze, non fissiamo il controllo. Niente abbonamenti. Niente pacchetti. Solo risultati o nessun rinnovo.</p>
+      <div class="cta-feats">
+        <div class="cta-feat"><div class="cfd"></div>BIA inclusa</div>
+        <div class="cta-feat"><div class="cfd"></div>Piano personalizzato</div>
+        <div class="cta-feat"><div class="cfd"></div>Controllo mensile</div>
+        <div class="cta-feat"><div class="cfd"></div>Lecce · Nardò · Online</div>
+        <div class="cta-feat"><div class="cfd"></div>Zero abbonamenti</div>
       </div>
-      <div class="cta-r">
-        <div class="cta-feat"><div class="cfd"></div>Prima visita con BIA inclusa — 70€</div>
-        <div class="cta-feat"><div class="cfd"></div>Piano nutrizionale completamente personalizzato</div>
-        <div class="cta-feat"><div class="cfd"></div>Nutrizione clinica, sportiva e femminile</div>
-        <div class="cta-feat"><div class="cfd"></div>Consulenze in studio e online da tutta Italia</div>
-        <div class="cta-feat"><div class="cfd"></div>Controllo mensile e aggiornamento continuo</div>
-        <div class="cta-feat"><div class="cfd"></div>Lecce e Nardò · Online disponibile</div>
-        <a href="#cont" class="btn-cta">PRENOTA ORA</a>
-      </div>
+      <a href="#cont" class="btn-cta">PRENOTA ORA →</a>
     </div>
   </div>
 </section>
 
-<section class="sec" id="cont">
+<section class="sec-cream" id="cont">
   <div class="wrap">
-    <div class="sh rv"><div class="sh-l"></div><div class="sh-t">Contatti</div></div>
-    <h2 class="h2 rv">PRENOTA<br>LA TUA <span class="ac">VISITA.</span></h2>
+    <div class="sh rv"><div class="sh-line"></div><div class="sh-tag">Contatti</div></div>
+    <h2 class="h2 rv">BASTA DIETE.<br><span class="ac">SCRIVIMI ORA.</span></h2>
     <div class="cont-g">
       <div class="cont-list rv-l">
-        <div class="cont-row"><span class="cont-k">Lecce</span><span class="cont-v">Via C. A. Costadura 2C</span></div>
-        <div class="cont-row"><span class="cont-k">Nardò</span><span class="cont-v">Via Beethoven 38 (LE)</span></div>
+        <div class="cont-row"><span class="cont-k">Sede Lecce</span><span class="cont-v">Via C. A. Costadura 2C</span></div>
+        <div class="cont-row"><span class="cont-k">Sede Nardò</span><span class="cont-v">Via Beethoven 38 (LE)</span></div>
         <div class="cont-row"><span class="cont-k">WhatsApp</span><a href="tel:+393899647999" class="cont-v">389 964 7999</a></div>
         <div class="cont-row"><span class="cont-k">Instagram</span><a href="https://www.instagram.com/caputo.nutrizionista/" target="_blank" class="cont-v">@caputo.nutrizionista</a></div>
         <div class="cont-row"><span class="cont-k">Facebook</span><div class="cont-v">Dott.ssa Andreina Caputo</div></div>
@@ -487,64 +521,57 @@ nav{border-bottom-width:0.5px}
           <div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="tua@email.com"></div>
           <div class="fg"><label class="fl">Telefono</label><input type="tel" class="fi" placeholder="+39 000 000 0000"></div>
           <div class="fg"><label class="fl">Il tuo obiettivo</label><textarea class="ft" placeholder="Raccontami cosa vuoi ottenere..."></textarea></div>
-          <button type="button" class="fbtn">INVIA RICHIESTA</button>
+          <button type="button" class="fb">INVIA RICHIESTA</button>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<footer><div class="fi-inner">
-  <div class="flogo">DOTT.SSA ANDREINA CAPUTO</div>
-  <div class="fcopy">© 2025 · Biologa Nutrizionista · Lecce · Nardò (LE) · @caputo.nutrizionista</div>
-</div></footer>
+<footer>
+  <div class="foot-i">
+    <div class="foot-l">DOTT.SSA ANDREINA <em>CAPUTO</em></div>
+    <div class="foot-c">© 2025 · Biologa Nutrizionista · Lecce · Nardò (LE)</div>
+  </div>
+</footer>
 
 <a href="https://wa.me/393899647999" target="_blank" class="wa">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-document.documentElement.style.scrollBehavior='smooth';
-// PROGRESS BAR
 const prog=document.getElementById('prog');
-window.addEventListener('scroll',()=>{prog.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';});
+window.addEventListener('scroll',()=>{prog.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';},{passive:true});
 
-// CURSOR
 const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
 let mx=0,my=0,fx=0,fy=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function loop(){fx+=(mx-fx)*0.07;fy+=(my-fy)*0.07;cur2.style.left=fx+'px';cur2.style.top=fy+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('a,button,.fc,.step,.rev,.num,.cont-row').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur2.style.transform='translate(-50%,-50%) scale(2.4)';cur2.style.borderColor='rgba(10,191,188,0.65)';cur2.style.background='rgba(10,191,188,0.03)'});
-  el.addEventListener('mouseleave',()=>{cur2.style.transform='translate(-50%,-50%) scale(1)';cur2.style.borderColor='rgba(10,191,188,0.45)';cur2.style.background='transparent'});
+(function loop(){fx+=(mx-fx)*0.08;fy+=(my-fy)*0.08;cur2.style.left=fx+'px';cur2.style.top=fy+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.step,.rev,.num,.cont-row,.hs').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur2.style.transform='translate(-50%,-50%) scale(2.6)';cur2.style.borderColor='rgba(44,166,164,0.7)';cur2.style.background='rgba(44,166,164,0.05)'});
+  el.addEventListener('mouseleave',()=>{cur2.style.transform='translate(-50%,-50%) scale(1)';cur2.style.borderColor='rgba(44,166,164,0.5)';cur2.style.background='transparent'});
 });
 
-// SCROLL DOTS
 const sdots=document.getElementById('sdots');
-setTimeout(()=>sdots.style.opacity='1',1500);
+setTimeout(()=>sdots.style.opacity='1',2000);
 const sections=['chi','visita','rev','cont'];
 sdots.querySelectorAll('.sdot').forEach((dot,i)=>{
   dot.addEventListener('click',()=>document.getElementById(sections[i]).scrollIntoView({behavior:'smooth'}));
 });
 function updateDots(){
   sections.forEach((id,i)=>{
-    const el=document.getElementById(id);
-    if(!el)return;
+    const el=document.getElementById(id);if(!el)return;
     const r=el.getBoundingClientRect();
-    const dot=sdots.children[i];
-    const active=r.top<=window.innerHeight*0.5&&r.bottom>=window.innerHeight*0.5;
-    dot.classList.toggle('active',active);
+    sdots.children[i].classList.toggle('active',r.top<=window.innerHeight*0.5&&r.bottom>=window.innerHeight*0.5);
   });
 }
 window.addEventListener('scroll',updateDots,{passive:true});
 
-// PARTICLE CANVAS
-const canvas=document.getElementById('hero-canvas');
+const canvas=document.getElementById('hcanvas');
 const ctx=canvas.getContext('2d');
-function resizeCanvas(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
-resizeCanvas();
-window.addEventListener('resize',resizeCanvas,{passive:true});
-const pts=Array.from({length:22},()=>({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0003,vy:(Math.random()-.5)*.0003,r:Math.random()*1.5+.5,a:Math.random()*Math.PI*2,as:(Math.random()-.5)*.005}));
+function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
+resize();window.addEventListener('resize',resize,{passive:true});
+const pts=Array.from({length:30},()=>({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0004,vy:(Math.random()-.5)*.0004,r:Math.random()*1.8+.4,a:Math.random()*Math.PI*2,as:(Math.random()-.5)*.005}));
 (function anim(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   const w=canvas.width,h=canvas.height;
@@ -553,203 +580,87 @@ const pts=Array.from({length:22},()=>({x:Math.random(),y:Math.random(),vx:(Math.
     if(p.x<0)p.x=1;if(p.x>1)p.x=0;
     if(p.y<0)p.y=1;if(p.y>1)p.y=0;
     ctx.beginPath();
-    ctx.arc(p.x*w+Math.sin(p.a)*4,p.y*h+Math.cos(p.a)*4,p.r,0,Math.PI*2);
-    const opacity=0.35+Math.sin(p.a)*0.2;ctx.fillStyle=`rgba(0,200,197,${opacity})`;ctx.fill();
+    ctx.arc(p.x*w+Math.sin(p.a)*5,p.y*h+Math.cos(p.a)*5,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(44,166,164,${0.45+Math.sin(p.a)*0.25})`;ctx.fill();
   });
   pts.forEach((p,i)=>pts.slice(i+1).forEach(q=>{
     const dx=(p.x-q.x)*w,dy=(p.y-q.y)*h,d=Math.sqrt(dx*dx+dy*dy);
-    if(d<140){ctx.beginPath();ctx.moveTo(p.x*w,p.y*h);ctx.lineTo(q.x*w,q.y*h);ctx.strokeStyle=`rgba(0,200,197,${0.09*(1-d/140)})`;ctx.lineWidth=.7;ctx.stroke();}
+    if(d<160){ctx.beginPath();ctx.moveTo(p.x*w,p.y*h);ctx.lineTo(q.x*w,q.y*h);ctx.strokeStyle=`rgba(44,166,164,${0.12*(1-d/160)})`;ctx.lineWidth=.8;ctx.stroke();}
   }));
   requestAnimationFrame(anim);
 })();
 
-// COUNTER - premium with flip effect
+// COUNTER with micro bounce
 function animCounter(el){
   const t=parseInt(el.dataset.target);if(!t||el._done)return;el._done=true;
-  el.style.transition='transform 0.25s cubic-bezier(0.34,1.8,0.64,1),color 0.15s';
   const s=performance.now(),d=2800;
   let prev=0;
   (function u(n){
     const p=Math.min((n-s)/d,1);
     const e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
-    const val=Math.round(e*t);
-    if(val!==prev){
-      el.style.transform='translateY(-7px) scale(1.14)';
-      el.style.color='var(--a)';
-      setTimeout(()=>{el.style.transform='translateY(0) scale(1)';el.style.color='';},130);
-      prev=val;
+    const v=Math.round(e*t);
+    if(v!==prev){
+      el.style.transform='translateY(-4px) scale(1.05)';
+      setTimeout(()=>{el.style.transform='';},90);
+      prev=v;
     }
-    el.textContent=val;
+    el.textContent=v;
     if(p<1)requestAnimationFrame(u);
-    else{el.style.transform='translateY(-4px) scale(1.1)';setTimeout(()=>{el.style.transform='';},220);}
   })(s);
 }
-new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.counter').forEach(animCounter);if(e.target.classList.contains('counter'))animCounter(e.target);}}),{threshold:.1}).observe(document.querySelector('.hero-stats'));
-document.querySelectorAll('.num-n.counter').forEach(el=>new IntersectionObserver(([e])=>{if(e.isIntersecting)animCounter(el)},{threshold:.5}).observe(el));
 
-// STAGGER REVEAL
+setTimeout(()=>{
+  document.querySelectorAll('.ht-line span').forEach((s,i)=>{
+    setTimeout(()=>s.classList.add('on'),350+i*150);
+  });
+},100);
+
 const ro=new IntersectionObserver((entries)=>{
-  entries.forEach((entry,i)=>{
+  entries.forEach((entry)=>{
     if(entry.isIntersecting){
       const el=entry.target;
       const siblings=Array.from(el.parentElement.children);
-      setTimeout(()=>{el.classList.add('on');},siblings.indexOf(el)*80);
+      const idx=siblings.indexOf(el);
+      setTimeout(()=>{
+        el.classList.add('on');
+        el.querySelectorAll('.counter').forEach(animCounter);
+        if(el.classList.contains('counter'))animCounter(el);
+      },idx*100);
       ro.unobserve(el);
     }
   });
-},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s').forEach(el=>ro.observe(el));
 
-// FLOAT CARDS STAGGER ENTRANCE
-setTimeout(()=>{
-  document.querySelectorAll('.fc').forEach((c,i)=>setTimeout(()=>c.classList.add('loaded'),250+i*80));
-},200);
+document.querySelectorAll('.counter').forEach(el=>new IntersectionObserver(([e])=>{if(e.isIntersecting)animCounter(el)},{threshold:0.5}).observe(el));
+setTimeout(()=>{document.querySelectorAll('.hstats .counter').forEach(animCounter);},2000);
 
-// PARALLAX
-let lastSy=0;
-window.addEventListener('scroll',()=>{
-  const sy=window.scrollY;
-  if(Math.abs(sy-lastSy)<2)return;lastSy=sy;
-  document.querySelectorAll('.fc.loaded').forEach((c,i)=>{c.style.transform=`translateX(${i%2===0?sy*.007:-sy*.005}px)`;});
-},{passive:true});
-
-// NAV SHRINK
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{
-  if(window.scrollY>80){nav.style.height='46px';nav.style.boxShadow='0 4px 20px rgba(10,191,188,0.07)';}
-  else{nav.style.height='58px';nav.style.boxShadow='none';}
-},{passive:true});
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80),{passive:true});
 
-// MAGNETIC BUTTONS — enhanced
-document.querySelectorAll('.btn-p,.nav-cta,.btn-cta,.fbtn').forEach(btn=>{
-  btn.addEventListener('mousemove',e=>{
-    const r=btn.getBoundingClientRect();
-    const x=(e.clientX-r.left-r.width/2)*.32;
-    const y=(e.clientY-r.top-r.height/2)*.32;
-    btn.style.transform=`translate(${x}px,${y}px) scale(1.05) translateY(-4px)`;
-    btn.style.transition='transform 0.1s cubic-bezier(0.16,1,0.3,1)';
-  });
-  btn.addEventListener('mouseleave',()=>{
-    btn.style.transform='';
-    btn.style.transition='transform 0.7s cubic-bezier(0.16,1,0.3,1)';
-  });
+document.querySelectorAll('.btn-main,.nav-cta,.btn-cta,.fb').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*0.2}px,${(e.clientY-r.top-r.height/2)*0.2}px) translateY(-3px)`;});
+  btn.addEventListener('mouseleave',()=>{btn.style.transform='';});
 });
 
-// STEP NUMBER COUNTER ANIMATION
-document.querySelectorAll('.step').forEach((step, i) => {
-  new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) {
-      setTimeout(() => {
-        const n = step.querySelector('.step-n');
-        if (n) {
-          n.style.animation = 'none';
-          n.offsetHeight;
-          n.style.animation = 'numPop 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards';
-        }
-        step.querySelector('.step-t') && (step.querySelector('.step-t').style.color = 'var(--ink)');
-      }, i * 100);
-    }
-  }, { threshold: 0.3 }).observe(step);
-});
-
-// CARD TILT 3D — enhanced
 document.querySelectorAll('.rev,.step,.num').forEach(card=>{
   card.style.transformStyle='preserve-3d';
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-    card.style.transform=`translateY(-14px) rotateX(${-y*14}deg) rotateY(${x*14}deg) scale(1.02)`;
-    card.style.boxShadow=`${x*-20}px ${y*-20}px 48px rgba(0,200,197,0.16)`;
-    card.style.transition='transform 0.08s,box-shadow 0.08s';
+    const x=(e.clientX-r.left)/r.width-0.5,y=(e.clientY-r.top)/r.height-0.5;
+    card.style.transform=`translateY(-10px) rotateX(${-y*4}deg) rotateY(${x*4}deg) perspective(800px)`;
+    card.style.transition='transform 0.1s';
+    card.style.setProperty('--mx',(x*100+50)+'%');
+    card.style.setProperty('--my',(y*100+50)+'%');
   });
-  card.addEventListener('mouseleave',()=>{
-    card.style.transform='';
-    card.style.boxShadow='';
-    card.style.transition='all 0.75s cubic-bezier(0.16,1,0.3,1)';
-  });
+  card.addEventListener('mouseleave',()=>{card.style.transform='';card.style.transition='all 0.55s cubic-bezier(0.22,1,0.36,1)';});
 });
 
-// HOVER GLOW on float cards
-document.querySelectorAll('.fc').forEach(el=>{
-  el.addEventListener('mousemove',e=>{
-    const r=el.getBoundingClientRect();
-    const x=((e.clientX-r.left)/r.width*100).toFixed(1),y=((e.clientY-r.top)/r.height*100).toFixed(1);
-    el.style.background=`radial-gradient(circle at ${x}% ${y}%,rgba(10,191,188,0.07) 0%,var(--w) 65%)`;
-  });
-  el.addEventListener('mouseleave',()=>{el.style.background='';});
+// Number scroll animation
+document.querySelectorAll('.num-n').forEach(el=>{
+  el.style.display='inline-block';
 });
 
-// TYPEWRITER on kicker
-(()=>{
-  const el=document.getElementById('kicker-txt');
-  if(!el)return;
-  const txt=el.textContent;el.textContent='';let i=0;
-  setTimeout(()=>{const t=setInterval(()=>{el.textContent=txt.slice(0,++i);if(i>=txt.length)clearInterval(t);},38);},800);
-})();
-
-// MOUSE PARALLAX hero name
-// MOUSE PARALLAX hero — RAF smooth, multi-layer
-const _pEl={
-  name:document.querySelector('.hero-name'),
-  kicker:document.querySelector('.hero-kicker'),
-  desc:document.querySelector('.hero-desc'),
-  grad:document.querySelector('.hero-gradient')
-};
-let _ptx=0,_pty=0,_pcx=0,_pcy=0;
-(function _pLoop(){
-  _pcx+=(_ptx-_pcx)*0.06;
-  _pcy+=(_pty-_pcy)*0.06;
-  if(_pEl.name)  _pEl.name.style.transform  =`rotateY(${_pcx*10}deg) rotateX(${-_pcy*5}deg)`;
-  if(_pEl.kicker)_pEl.kicker.style.transform=`translateX(${_pcx*7}px) translateY(${_pcy*3}px)`;
-  if(_pEl.desc)  _pEl.desc.style.transform  =`translateX(${_pcx*4}px) translateY(${_pcy*2}px)`;
-  if(_pEl.grad)  _pEl.grad.style.transform  =`translateX(${_pcx*-24}px) translateY(${_pcy*-12}px)`;
-  requestAnimationFrame(_pLoop);
-})();
-document.addEventListener('mousemove',e=>{
-  _ptx=(e.clientX/window.innerWidth-.5);
-  _pty=(e.clientY/window.innerHeight-.5);
-});
-
-// SMOOTH SCROLL momentum — lerp drives CSS var for parallax effects
-let scrollTarget=window.scrollY,currentScroll=window.scrollY;
-function smoothScrollLoop(){
-  currentScroll+=(scrollTarget-currentScroll)*0.08;
-  document.documentElement.style.setProperty('--scroll-lerp',currentScroll.toFixed(1));
-  requestAnimationFrame(smoothScrollLoop);
-}
-window.addEventListener('scroll',()=>{scrollTarget=window.scrollY;},{passive:true});
-smoothScrollLoop();
-
-// REVEAL with blur — enhanced 8px dissolve
-document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s').forEach(el=>{
-  el.style.filter='blur(8px)';
-  el.style.transition=(el.style.transition||'')+',filter 1.1s cubic-bezier(0.16,1,0.3,1)';
-});
-const rvObs=new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.style.filter='blur(0px)';
-      rvObs.unobserve(entry.target);
-    }
-  });
-},{threshold:0.05});
-document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s').forEach(el=>rvObs.observe(el));
-
-// SECTION background shift — actually changes body bg color
-const bgSections=document.querySelectorAll('.sec,.sec-alt,.sec-dark');
-const sectionObs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      document.body.style.transition='background-color 0.9s cubic-bezier(0.16,1,0.3,1)';
-      if(e.target.classList.contains('sec-dark'))      document.body.style.backgroundColor='#040f0f';
-      else if(e.target.classList.contains('sec-alt'))  document.body.style.backgroundColor='#f2fafa';
-      else                                             document.body.style.backgroundColor='#ffffff';
-    }
-  });
-},{threshold:0.4});
-bgSections.forEach(s=>sectionObs.observe(s));
-
-// SMOOTH ANCHOR
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     e.preventDefault();
@@ -757,47 +668,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
   });
 });
-
-// STATS hover bounce + glow
-document.querySelectorAll('.hs').forEach(hs=>{
-  const n=hs.querySelector('.hs-n');
-  hs.addEventListener('mouseenter',()=>{
-    n.style.transform='scale(1.12) translateY(-3px)';
-    n.style.textShadow='0 0 24px rgba(10,191,188,0.35)';
-    n.style.color='var(--ad)';
-  });
-  hs.addEventListener('mouseleave',()=>{n.style.transform='';n.style.textShadow='';n.style.color='';});
-});
-
-// NUMBER PULSE on counter finish
-function pulseEl(el){
-  el.style.transform='scale(1.15)';
-  el.style.textShadow='0 0 30px rgba(10,191,188,0.4)';
-  setTimeout(()=>{el.style.transform='';el.style.textShadow='';},300);
-}
-
-// SMOOTH SCROLL - intercept and add momentum
-let isScrolling=false;
-window.addEventListener('wheel',(e)=>{
-  if(isScrolling)return;
-},{passive:true});
-
-// DIVIDER LINES — animate .sh-l on scroll
-const shObs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');shObs.unobserve(e.target);}});
-},{threshold:0.4});
-document.querySelectorAll('.sh').forEach(s=>shObs.observe(s));
-
-// SCROLL-TRIGGERED color change on sections
-const secObserver=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      document.documentElement.style.setProperty('--current-sec',e.target.dataset.sec||'0');
-    }
-  });
-},{threshold:0.4});
-document.querySelectorAll('.sec,.sec-alt').forEach((s,i)=>{s.dataset.sec=i;secObserver.observe(s);});
-
 </script>
 </body>
 </html>
