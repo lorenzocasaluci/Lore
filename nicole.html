@@ -102,7 +102,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% 
 
 .h2{font-family:'DM Serif Display',serif;font-size:clamp(34px,4vw,56px);line-height:1.12;color:var(--ink);margin-bottom:56px}
 .h2 em{font-style:italic;color:var(--blue2)}
-.h2 .ghost{color:rgba(13,31,60,0.08)}
+.h2 .ghost{color:var(--ink)}
 
 /* CHI SONO */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
@@ -139,26 +139,23 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% 
   position:relative;
   overflow:hidden;
   box-shadow:0 4px 20px rgba(26,58,107,0.04),inset 0 1px 0 rgba(255,255,255,1);
-  /* stato iniziale premium */
   opacity:0;
   transform:translateY(60px) scale(0.96) rotateX(8deg);
   transform-origin:center bottom;
   transition:
-    opacity 1s cubic-bezier(0.16,1,0.3,1),
-    transform 1s cubic-bezier(0.16,1,0.3,1),
+    opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+    transform 0.7s cubic-bezier(0.16,1,0.3,1),
     box-shadow 0.45s ease;
   transform-style:preserve-3d;
   will-change:opacity,transform;
 }
 .comp-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue3));transform:scaleX(0);transform-origin:left;transition:transform 0.45s cubic-bezier(0.16,1,0.3,1)}
-/* stato finale ingresso */
 .comp-card.on{opacity:1;transform:translateY(0) scale(1) rotateX(0deg)}
-/* hover 3D — attivo solo dopo ingresso */
 .comp-card.on:hover{transform:perspective(800px) rotateY(4deg) scale(1.03);box-shadow:0 36px 72px rgba(26,58,107,0.12),0 0 0 1px rgba(26,58,107,0.08)}
 .comp-card.on:hover::after{transform:scaleX(1)}
 
-.comp-n{font-family:'DM Serif Display',serif;font-size:52px;color:rgba(26,58,107,0.08);line-height:1;margin-bottom:18px;transition:color 0.3s}
-.comp-card.on:hover .comp-n{color:rgba(26,58,107,0.15)}
+.comp-n{font-family:'DM Serif Display',serif;font-size:52px;color:var(--blue2);line-height:1;margin-bottom:18px;transition:color 0.3s}
+.comp-card.on:hover .comp-n{color:var(--blue)}
 .comp-title{font-family:'DM Serif Display',serif;font-size:21px;color:var(--ink);margin-bottom:10px}
 .comp-desc{font-size:13px;color:var(--mist);line-height:1.85}
 
@@ -216,17 +213,13 @@ footer{padding:26px 56px;display:flex;justify-content:space-between;align-items:
 .wa:hover{transform:scale(1.12)}
 .wa svg{width:26px;height:26px;fill:white}
 
-/* ═══════════════════════════════════════════
-   PREMIUM ANIMATION SYSTEM
-   opacity 0→1 · translateY 60→0 · scale 0.96→1 · rotateX 8→0
-   duration 1s · cubic-bezier(0.16,1,0.3,1) · stagger 0.12s
-═══════════════════════════════════════════ */
+/* PREMIUM ANIMATION SYSTEM */
 .reveal{
   opacity:0;
   transform:translateY(60px) scale(0.96) rotateX(8deg);
   transition:
-    opacity  1s cubic-bezier(0.16,1,0.3,1),
-    transform 1s cubic-bezier(0.16,1,0.3,1);
+    opacity  0.7s cubic-bezier(0.16,1,0.3,1),
+    transform 0.7s cubic-bezier(0.16,1,0.3,1);
   transform-style:preserve-3d;
   will-change:opacity,transform;
 }
@@ -269,7 +262,7 @@ footer{flex-direction:column;gap:8px;padding:22px;text-align:center}
       Il cibo che mangi<br>
       ogni giorno <em>decide</em><br>
       la tua salute.<br>
-      <span class="ghost">Sei sicuro</span> di<br>
+      <em>Sei sicuro di</em><br>
       mangiare bene?
     </h1>
     <p class="hero-sub reveal"><strong>La nutrizione clinica non è una dieta.</strong> È una terapia basata sulla tua fisiologia, le tue patologie e i tuoi obiettivi. Come Biologa Nutrizionista certificata, costruisco percorsi scientifici su misura. Risultati misurabili, non promesse.</p>
@@ -278,9 +271,9 @@ footer{flex-direction:column;gap:8px;padding:22px;text-align:center}
       <a href="#comp" class="btn-link">Scopri i servizi</a>
     </div>
     <div class="hero-stats reveal">
-      <div class="stat-c"><div class="stat-n" data-target="39" data-suffix="+">0+</div><div class="stat-l">Recensioni verificate</div></div>
-      <div class="stat-c"><div class="stat-n" data-target="22" data-suffix="+">0+</div><div class="stat-l">Recensioni Google 5★</div></div>
-      <div class="stat-c"><div class="stat-n" data-target="100" data-suffix="%">0%</div><div class="stat-l">Personalizzato</div></div>
+      <div class="stat-c"><div class="stat-n counter" data-target="61" data-suffix="+">0+</div><div class="stat-l">Recensioni verificate</div></div>
+      <div class="stat-c"><div class="stat-n counter" data-target="22" data-suffix="+">0+</div><div class="stat-l">Recensioni Google 5★</div></div>
+      <div class="stat-c"><div class="stat-n counter" data-target="100" data-suffix="%">0%</div><div class="stat-l">100% Personalizzato</div></div>
     </div>
   </div>
   <div class="hero-right reveal">
@@ -299,7 +292,7 @@ footer{flex-direction:column;gap:8px;padding:22px;text-align:center}
 
 <div class="sec" id="chi">
   <div class="sec-tag reveal">Chi sono</div>
-  <h2 class="h2 reveal">Scienza applicata.<br><em>Risultati reali.</em><br><span class="ghost">Nessun compromesso.</span></h2>
+  <h2 class="h2 reveal"><span style="color:var(--blue2)">Non esistono diete standard.</span><br><em>Esiste il tuo</em><br><span class="ghost">percorso.</span></h2>
   <div class="two-col">
     <div class="chi-img reveal">
       <img src="IMG_2503.jpeg" alt="Dott.ssa Nicole Acquaviva Biologa Nutrizionista Martano" style="width:100%;height:100%;object-fit:cover;object-position:top;">
@@ -407,63 +400,110 @@ footer{flex-direction:column;gap:8px;padding:22px;text-align:center}
 </a>
 
 <script>
-  // ── CUSTOM CURSOR ──
-  const cur  = document.getElementById('cur');
-  const cur2 = document.getElementById('cur2');
-  let mx = 0, my = 0, fx = 0, fy = 0;
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-  });
-  (function loop() {
-    fx += (mx - fx) * 0.12; fy += (my - fy) * 0.12;
-    cur2.style.left = fx + 'px'; cur2.style.top = fy + 'px';
-    requestAnimationFrame(loop);
-  })();
-
-  // ── PREMIUM REVEAL: opacity+translateY+scale+rotateX, stagger 0.12s ──
-  const ro = new IntersectionObserver(entries => {
-    const visible = entries.filter(e => e.isIntersecting);
-    visible.forEach((e, i) => {
-      e.target.style.transitionDelay = `${i * 0.12}s`;
-      e.target.classList.add('on');
-      ro.unobserve(e.target);
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal, .comp-card').forEach(el => ro.observe(el));
-
-  // ── COUNTER ANIMATION su .stat-c ──
-  function runCounter(el) {
-    const numEl = el.querySelector('[data-target]');
-    if (!numEl) return;
-    const target   = parseInt(numEl.dataset.target, 10);
-    const suffix   = numEl.dataset.suffix || '';
-    const duration = 1600;
-    const t0       = performance.now();
-    function tick(now) {
-      const p     = Math.min((now - t0) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-      numEl.textContent = Math.round(eased * target) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
+// SCROLL PROGRESS BAR
+const prog = document.createElement('div');
+prog.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#1565C0,#42A5F5);z-index:9999;transition:width 0.1s;width:0%';
+document.body.appendChild(prog);
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  prog.style.width = (p * 100) + '%';
+});
+// CUSTOM CURSOR
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+let mx=0,my=0,fx=0,fy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){fx+=(mx-fx)*0.1;fy+=(my-fy)*0.1;cur2.style.left=fx+'px';cur2.style.top=fy+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.comp-card,.rev-card,.spec-pill,.chi-row,.cont-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur2.style.transform='translate(-50%,-50%) scale(2.2)';cur2.style.borderColor='rgba(26,58,107,0.6)';cur2.style.background='rgba(26,58,107,0.04)'});
+  el.addEventListener('mouseleave',()=>{cur2.style.transform='translate(-50%,-50%) scale(1)';cur2.style.borderColor='rgba(61,111,212,0.4)';cur2.style.background='transparent'});
+});
+// STAGGER REVEAL
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const siblings = el.parentElement ? Array.from(el.parentElement.children) : [el];
+      const idx = siblings.indexOf(el);
+      setTimeout(() => {
+        el.classList.add('on');
+        el.querySelectorAll('.stat-n').forEach(c => animateCounter(c));
+        if (el.classList.contains('stat-n')) animateCounter(el);
+      }, idx * 50);
+      ro.unobserve(el);
     }
-    requestAnimationFrame(tick);
+  });
+}, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal, .comp-card').forEach(el => ro.observe(el));
+// COUNTER ANIMATION
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  if (!target) return;
+  const start = performance.now();
+  const duration = 1200;
+  function update(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 4);
+    el.textContent = Math.round(ease * target) + (el.dataset.suffix || '');
+    if (p < 1) requestAnimationFrame(update);
   }
-
-  const statObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { runCounter(e.target); statObs.unobserve(e.target); }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.stat-c').forEach(el => statObs.observe(el));
-
-  // ── PARALLAX spec-pill ──
-  window.addEventListener('scroll', () => {
-    const rows = document.querySelectorAll('.spec-pill');
-    const sy   = window.scrollY;
-    rows.forEach((r, i) => { r.style.transform = `translateX(${i % 2 === 0 ? sy * 0.018 : -sy * 0.013}px)`; });
-  }, { passive: true });
+  requestAnimationFrame(update);
+}
+const cro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); cro.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-n').forEach(el => cro.observe(el));
+// PARALLAX SCROLL
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  document.querySelectorAll('.spec-pill').forEach((r, i) => {
+    r.style.transform = `translateX(${i % 2 === 0 ? sy * 0.015 : -sy * 0.012}px)`;
+  });
+  const heroLeft = document.querySelector('.hero-left');
+  if (heroLeft) heroLeft.style.transform = `translateY(${sy * 0.06}px)`;
+});
+// MAGNETIC BUTTONS
+document.querySelectorAll('.btn-dark, .nav-pill, .btn-white, .fb').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width / 2;
+    const y = e.clientY - r.top - r.height / 2;
+    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) translateY(-2px)`;
+  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+});
+// CARD TILT
+document.querySelectorAll('.comp-card, .rev-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    card.style.transform = `translateY(-12px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
+    card.style.transition = 'transform 0.1s ease';
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'all 0.45s cubic-bezier(0.16,1,0.3,1)';
+  });
+});
+// NAV SHRINK
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.style.padding = '10px 22px';
+    nav.style.boxShadow = '0 8px 32px rgba(26,58,107,0.12)';
+  } else {
+    nav.style.padding = '14px 28px';
+    nav.style.boxShadow = '0 4px 24px rgba(26,58,107,0.08)';
+  }
+});
+// SMOOTH ANCHOR SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 </script>
 
 </body>

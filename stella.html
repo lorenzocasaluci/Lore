@@ -518,7 +518,7 @@ transition: all 0.3s;
 .wa-btn:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.5); }
 .wa-btn svg { width: 28px; height: 28px; fill: white; }
 
-.fade { opacity: 0; transform: translateY(40px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+.fade { opacity: 0; transform: translateY(40px); transition: opacity 1.4s cubic-bezier(0.16,1,0.3,1), transform 1.4s cubic-bezier(0.16,1,0.3,1); }
 .fade.in { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 768px) {
@@ -549,7 +549,7 @@ nav.scrolled {
 .draw-card {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+  transition: opacity 1.4s cubic-bezier(0.16,1,0.3,1), transform 1.4s cubic-bezier(0.16,1,0.3,1);
 }
 
 .draw-card.drawn {
@@ -756,7 +756,7 @@ nav.scrolled {
       const el = e.target;
       const target = +el.dataset.target;
       const suffix = el.dataset.suffix || '';
-      const duration = 2000;
+      const duration = 200;
       const start = performance.now();
       const update = (now) => {
         const elapsed = now - start;
