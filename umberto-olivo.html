@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dott. Umberto Olivo | Nutrizionista e Personal Trainer Lecce</title>
+<meta name="description" content="Biologo Nutrizionista e Personal Trainer a Lecce. Dieta personalizzata, nutrizione sportiva e dimagrimento in un percorso su misura, in studio e online. Prenota la tua visita.">
+<meta name="keywords" content="nutrizionista Lecce, biologo nutrizionista Lecce, personal trainer Lecce, dieta personalizzata Lecce, analisi BIA Lecce, dimagrire Lecce, mental coach Lecce">
+<meta name="author" content="Dott. Umberto Olivo">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="IT-75">
+<meta name="geo.placename" content="Lecce">
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Dott. Umberto Olivo | Nutrizionista e Personal Trainer Lecce">
+<meta property="og:description" content="Piano alimentare e allenamento personalizzati in un unico percorso, costruito sui tuoi dati. Prenota la tua prima consulenza a Lecce o online.">
+<meta property="og:image" content="images/logo.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dott. Umberto Olivo | Nutrizionista e Personal Trainer Lecce">
+<meta name="twitter:description" content="Nutrizione, allenamento e coaching mentale in un unico percorso. Prenota la tua visita a Lecce o online.">
+<!-- Schema.org: professionista sanitario -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "#umberto-olivo",
+      "name": "Dott. Umberto Olivo",
+      "jobTitle": "Biologo Nutrizionista, Personal Trainer e Mental Coach",
+      "hasCredential": "Master in Scienza dell'Alimentazione e Dietetica Applicata",
+      "image": "images/umberto.jpg",
+      "telephone": "+39-327-251-2752",
+      "areaServed": "Italia",
+      "knowsAbout": ["Nutrizione clinica", "Nutrizione sportiva", "Personal Training", "Mental Coaching", "Analisi BIA"],
+      "memberOf": { "@type": "Organization", "name": "Ordine Nazionale dei Biologi", "identifier": "PuB_A4888" },
+      "worksFor": { "@id": "#studio" }
+    },
+    {
+      "@type": ["LocalBusiness", "MedicalBusiness", "HealthAndBeautyBusiness"],
+      "@id": "#studio",
+      "name": "Dott. Umberto Olivo — Nutrizionista e Personal Trainer Lecce",
+      "description": "Biologo Nutrizionista e Personal Trainer a Lecce. Piano alimentare e allenamento personalizzati in un unico percorso.",
+      "image": "images/logo.jpg",
+      "logo": "images/logo.jpg",
+      "telephone": "+39-327-251-2752",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Paoloni 10",
+        "addressLocality": "Lecce",
+        "addressRegion": "LE",
+        "postalCode": "73100",
+        "addressCountry": "IT"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Provincia di Lecce" },
+        { "@type": "Country", "name": "Italia" }
+      ],
+      "availableService": [
+        { "@type": "MedicalTherapy", "name": "Nutrizione clinica e sportiva" },
+        { "@type": "Service", "name": "Personal Training" },
+        { "@type": "Service", "name": "Mental Coaching e Counseling" }
+      ],
+      "founder": { "@id": "#umberto-olivo" }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ===== PALETTE BRAND — Dott. Umberto Olivo ===== */
+  --brand: #0A9408;          /* verde principale (logo) */
+  --brand-hover: #087006;    /* verde hover */
+  --petrol: #0C6F8C;         /* blu petrolio secondario */
+  --petrol-hover: #095A70;   /* blu petrolio hover */
+  --bg: #FAFCFA;             /* sfondo principale */
+  --bg-alt: #EEF8EE;         /* sfondo sezioni alternate */
+  --text: #2C2C2C;           /* testo principale */
+  --text-2: #6B7280;         /* testo secondario */
+  --border: #DDE8DD;         /* bordi e separatori */
+  --white: #ffffff;          /* card e testo su sfondi scuri */
+  /* ── alias semantici (mappati alla palette) ── */
+  --ink: var(--text);
+  --ink-2: var(--text-2);
+  --ink-3: #9CA3AF;
+  --accent: var(--brand);
+  --accent-2: rgba(10,148,8,0.28);
+  --hair: var(--border);
+  --hair-2: #E8F1E8;
+  --tint: var(--bg-alt);
+  --chip: rgba(10,148,8,0.08);
+  --e: cubic-bezier(0.22, 1, 0.36, 1);
+  --pad: clamp(22px, 5vw, 64px);
+  --max: 1240px;
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', system-ui, sans-serif; font-weight: 300;
+  background: var(--bg); color: var(--ink);
+  overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+::selection { background: var(--accent); color: #fff; }
+img, svg { display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+.ico { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.5; fill: none;
+  stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+/* ── LAYOUT ── */
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+.sec { padding-top: clamp(80px, 12vh, 150px); padding-bottom: clamp(80px, 12vh, 150px); }
+.sec-tint { background: var(--tint); border-top: 1px solid var(--hair-2); border-bottom: 1px solid var(--hair-2); }
+
+/* labels & headings */
+.eyebrow { display: inline-flex; align-items: center; gap: 12px;
+  font: 500 11.5px/1 'Inter'; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+.eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--accent); }
+.eyebrow .n { color: var(--accent); font-weight: 600; }
+h2.head { font: 800 clamp(28px, 3.7vw, 54px)/1.05 'Syne'; letter-spacing: -.025em; margin-top: 22px; }
+/* titoli di sezione → blu petrolio */
+h1, h2, h3, h4, .head, .cine-text { color: var(--petrol); }
+.lead { font-size: clamp(15.5px, 1.2vw, 18px); line-height: 1.75; color: var(--ink-2); font-weight: 300; }
+.sec-intro { max-width: 640px; }
+.sec-intro .lead { margin-top: 22px; }
+
+/* ── SCROLL PROGRESS ── */
+#prog { position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 1000;
+  background: linear-gradient(90deg, var(--petrol), var(--accent)); }
+
+/* ── TOP UTILITY BAR ── */
+.util { border-bottom: 1px solid var(--hair); font-size: 12px; color: var(--ink-2); background: var(--white); }
+.util .wrap { display: flex; align-items: center; justify-content: space-between; height: 40px; gap: 20px; }
+.util .group { display: flex; align-items: center; gap: 22px; }
+.util .item { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.util .item svg { width: 14px; height: 14px; stroke: var(--petrol); stroke-width: 1.6; fill: none; }
+.util .r { color: var(--ink-3); }
+@media (max-width: 860px){ .util .hideS { display: none; } .util .wrap { justify-content: center; } }
+
+/* ── NAV ── */
+nav.bar { position: sticky; top: 0; z-index: 900; background: rgba(255,255,255,.86);
+  backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--hair); }
+nav.bar .wrap { display: flex; align-items: center; height: 76px; gap: 40px; }
+.brand { display: flex; flex-direction: column; gap: 3px; flex-shrink: 0; }
+.brand b { font: 800 18px/1 'Syne'; letter-spacing: -.02em; color: var(--petrol); }
+.brand span { font: 400 10.5px/1 'Inter'; letter-spacing: .04em; color: var(--ink-3); text-transform: uppercase; }
+.nlinks { display: flex; gap: 34px; list-style: none; margin-left: auto; }
+.nlinks a { position: relative; font-size: 14px; color: var(--ink-2); padding: 6px 0; transition: color .3s var(--e); }
+.nlinks a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
+  background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform .4s var(--e); }
+.nlinks a:hover { color: var(--accent); }
+.nlinks a:hover::after { transform: scaleX(1); transform-origin: left; }
+.btn { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  border-radius: 100px; font: 500 14px/1 'Inter'; white-space: nowrap; transition: transform .4s var(--e); border: 1.5px solid transparent; }
+.btn span { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 9px; transition: color .4s var(--e); }
+.btn svg { width: 17px; height: 17px; }
+.btn.primary { background: var(--accent); color: #fff; padding: 13px 26px; }
+.btn.primary::before { content: ''; position: absolute; inset: 0; background: var(--brand-hover);
+  transform: translateY(101%); transition: transform .45s var(--e); }
+.btn.primary:hover::before { transform: translateY(0); }
+.btn.primary:hover { transform: translateY(-2px); }
+.btn.ghost { border-color: var(--hair); color: var(--ink); padding: 13px 26px; background: transparent; }
+.btn.ghost:hover { border-color: var(--accent); transform: translateY(-2px); }
+.btn.lg { padding: 17px 34px; font-size: 15px; }
+.btn.sm { padding: 11px 22px; font-size: 13px; }
+.nav-cta { margin-left: 26px; }
+.menu-btn { display: none; margin-left: auto; width: 44px; height: 44px; border: 1px solid var(--hair);
+  border-radius: 12px; background: #fff; align-items: center; justify-content: center; }
+.menu-btn svg { width: 20px; height: 20px; stroke: var(--petrol); stroke-width: 1.6; fill: none; }
+
+/* mobile menu */
+.mmenu { position: fixed; inset: 0; z-index: 950; background: #fff; padding: 90px var(--pad) 40px;
+  display: flex; flex-direction: column; gap: 4px; transform: translateY(-12px); opacity: 0; pointer-events: none;
+  transition: opacity .35s var(--e), transform .35s var(--e); }
+.mmenu.open { opacity: 1; transform: none; pointer-events: auto; }
+.mmenu a { font: 800 26px/1.3 'Syne'; letter-spacing: -.02em; padding: 12px 0; border-bottom: 1px solid var(--hair-2); }
+.mmenu .btn { margin-top: 24px; }
+.mclose { position: absolute; top: 22px; right: var(--pad); width: 44px; height: 44px; border: 1px solid var(--hair);
+  border-radius: 12px; background: #fff; display: flex; align-items: center; justify-content: center; }
+.mclose svg { width: 20px; height: 20px; stroke: var(--petrol); stroke-width: 1.6; }
+
+/* ── HERO ── */
+.hero { padding-top: clamp(48px, 8vh, 96px); padding-bottom: clamp(56px, 8vh, 100px); }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+.h-eyebrow { color: var(--ink-2); }
+.hero h1 { font: 800 clamp(38px, 5.1vw, 78px)/1.02 'Syne'; letter-spacing: -.035em; margin: 26px 0 28px; }
+.hero h1 em { font-weight: 600; font-style: italic; color: var(--accent); }
+.hero .hsub { max-width: 500px; font-size: clamp(15.5px, 1.2vw, 18px); line-height: 1.75; color: var(--ink-2); }
+.hero-cta { display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 38px; padding-top: 30px; border-top: 1px solid var(--hair); }
+.hero-trust .t { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; color: var(--ink-2); }
+.hero-trust .t svg { width: 17px; height: 17px; stroke: var(--petrol); stroke-width: 1.8; fill: none; }
+
+/* portrait frame */
+.portrait { position: relative; }
+.logo-panel { position: relative; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--accent-2); display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(158deg, rgba(1,128,0,.16), rgba(0,108,131,.12) 52%, rgba(1,128,0,.07)); }
+.logo-panel img { position: relative; z-index: 2; width: 82%; height: auto; mix-blend-mode: multiply; }
+.logo-panel .corner { position: absolute; z-index: 3; width: 26px; height: 26px; border: 2px solid var(--accent); }
+.logo-panel .corner.tl { top: 16px; left: 16px; border-right: 0; border-bottom: 0; }
+.logo-panel .corner.br { bottom: 16px; right: 16px; border-left: 0; border-top: 0; }
+.pframe { position: relative; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--hair); background:
+    linear-gradient(160deg, rgba(157,189,170,.16), rgba(46,105,126,.05)); }
+.pframe .photo, .bio-photo .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
+.pframe .mono { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+.pframe .mono b { font: 800 clamp(56px, 7vw, 96px)/1 'Syne'; letter-spacing: -.04em; color: var(--ink); opacity: .9; }
+.pframe .mono small { font: 500 11px/1.5 'Inter'; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); text-align: center; }
+.pframe .corner { position: absolute; z-index: 3; width: 26px; height: 26px; border: 2px solid var(--accent); }
+.pframe .corner.tl { top: 16px; left: 16px; border-right: 0; border-bottom: 0; }
+.pframe .corner.br { bottom: 16px; right: 16px; border-left: 0; border-top: 0; }
+.cred-card { position: absolute; left: -8px; bottom: 26px; background: #fff; border: 1px solid var(--hair);
+  border-radius: 14px; padding: 16px 20px; box-shadow: 0 24px 50px rgba(46,105,126,.12);
+  display: flex; align-items: center; gap: 14px; max-width: 280px; }
+.cred-card .seal { width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; border: 1px solid var(--accent-2);
+  display: flex; align-items: center; justify-content: center; background: var(--chip); }
+.cred-card .seal svg { width: 22px; height: 22px; stroke: var(--petrol); stroke-width: 1.5; fill: none; }
+.cred-card label { display: block; font: 500 10px/1 'Inter'; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 5px; }
+.cred-card p { font: 500 13.5px/1.35 'Inter'; color: var(--ink); }
+
+/* ── CREDENTIALS STRIP ── */
+.strip { border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+.strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.strip .cell { padding: 30px 24px; display: flex; align-items: center; gap: 14px; border-right: 1px solid var(--hair); }
+.strip .cell:last-child { border-right: 0; }
+.strip .cell svg { width: 26px; height: 26px; stroke: var(--petrol); stroke-width: 1.4; fill: none; }
+.strip .cell label { display: block; font: 500 10px/1 'Inter'; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 5px; }
+.strip .cell p { font: 500 14px/1.3 'Inter'; }
+@media (max-width: 880px){ .strip .wrap { grid-template-columns: 1fr 1fr; }
+  .strip .cell:nth-child(2){ border-right: 0; } .strip .cell:nth-child(1),.strip .cell:nth-child(2){ border-bottom: 1px solid var(--hair); } }
+@media (max-width: 520px){ .strip .wrap { grid-template-columns: 1fr; } .strip .cell { border-right: 0; border-bottom: 1px solid var(--hair); } .strip .cell:last-child{ border-bottom: 0; } }
+
+/* ── METODO (pillars) ── */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 64px; }
+.pillar { position: relative; padding: 34px 30px; border: 1px solid var(--hair); border-radius: 16px; background: #fff;
+  transition: border-color .4s var(--e), transform .4s var(--e); }
+.pillar:hover { border-color: var(--accent); transform: translateY(-4px); }
+.pillar .pn { font: 500 12px/1 'Inter'; letter-spacing: .16em; color: var(--accent); }
+.pillar h3 { font: 700 21px/1.2 'Syne'; letter-spacing: -.01em; margin: 18px 0 12px; }
+.pillar p { font-size: 14.5px; line-height: 1.7; color: var(--ink-2); }
+.converge { margin-top: 26px; padding: 24px 28px; border: 1px dashed var(--accent); border-radius: 16px;
+  display: flex; align-items: center; gap: 16px; background: var(--chip); }
+.converge svg { width: 26px; height: 26px; stroke: var(--petrol); stroke-width: 1.5; fill: none; flex-shrink: 0; }
+.converge p { font-size: 15px; line-height: 1.6; color: var(--ink); }
+.converge b { font-weight: 500; }
+
+/* ── SERVIZI ── */
+.svc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 60px; }
+.scard { display: flex; flex-direction: column; padding: 38px 34px; border: 1px solid var(--hair); border-radius: 18px;
+  background: #fff; transition: box-shadow .5s var(--e), transform .5s var(--e); }
+.scard:hover { box-shadow: 0 30px 64px rgba(46,105,126,.09); transform: translateY(-4px); }
+.scard .sico { width: 56px; height: 56px; border-radius: 14px; border: 1px solid var(--accent-2); background: var(--chip);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 26px; }
+.scard .sico svg { width: 26px; height: 26px; stroke: var(--petrol); stroke-width: 1.5; fill: none; }
+.scard h3 { font: 700 22px/1.15 'Syne'; letter-spacing: -.01em; margin-bottom: 14px; }
+.scard p { font-size: 14.5px; line-height: 1.72; color: var(--ink-2); margin-bottom: 24px; }
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+.tag { font-size: 12.5px; padding: 6px 14px; border: 1px solid var(--hair); border-radius: 100px; color: var(--ink-2);
+  transition: background .3s var(--e), color .3s var(--e), border-color .3s var(--e); }
+.tag:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ── BIA / DIFFERENZIATORE ── */
+.bia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+.bia-list { margin-top: 34px; display: flex; flex-direction: column; gap: 4px; }
+.bia-item { display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid var(--hair); }
+.bia-item:last-child { border-bottom: 1px solid var(--hair); }
+.bia-item .ck { width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--accent-2);
+  display: flex; align-items: center; justify-content: center; }
+.bia-item .ck svg { width: 14px; height: 14px; stroke: var(--petrol); stroke-width: 2; fill: none; }
+.bia-item h4 { font: 500 16px/1.3 'Inter'; margin-bottom: 5px; }
+.bia-item p { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+.bia-panel { border: 1px solid var(--hair); border-radius: 20px; padding: clamp(30px, 4vw, 48px); background: var(--tint); }
+.bia-panel .label { font: 500 11px/1 'Inter'; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+.bia-metric { display: flex; align-items: baseline; gap: 10px; margin: 14px 0 8px; }
+.bia-metric b { font: 800 clamp(40px, 5vw, 62px)/1 'Syne'; letter-spacing: -.03em; color: var(--accent); }
+.bia-metric span { font-size: 14px; color: var(--ink-2); }
+.bia-panel .desc { font-size: 14px; line-height: 1.65; color: var(--ink-2); }
+.bia-bars { margin-top: 30px; display: flex; flex-direction: column; gap: 18px; }
+.bia-bar label { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-2); margin-bottom: 8px; }
+.bia-bar .track { height: 6px; border-radius: 6px; background: var(--hair); overflow: hidden; }
+.bia-bar .fill { height: 100%; width: 0; border-radius: 6px; background: linear-gradient(90deg, var(--accent), var(--ink)); }
+
+/* ── PERCORSO ── */
+.tl { position: relative; max-width: 780px; margin: 64px auto 0; padding-left: 64px; }
+.tl-line { position: absolute; left: 19px; top: 6px; bottom: 6px; width: 2px; background: var(--hair); }
+.tl-fill { position: absolute; left: 0; top: 0; width: 100%; height: 0; background: var(--accent); }
+.tl-item { position: relative; padding-bottom: 52px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot { position: absolute; left: -64px; top: 0; width: 40px; height: 40px; border-radius: 50%;
+  background: #fff; border: 1.5px solid var(--hair); display: flex; align-items: center; justify-content: center;
+  font: 800 13px/1 'Syne'; color: var(--accent); transition: border-color .4s var(--e), color .4s var(--e), background .4s var(--e); }
+.tl-item.act .tl-dot { border-color: var(--accent); background: var(--accent); color: #fff; }
+.tl-item h4 { font: 700 clamp(19px, 2vw, 24px)/1.15 'Syne'; letter-spacing: -.01em; margin-bottom: 9px; }
+.tl-item p { font-size: 14.5px; line-height: 1.7; color: var(--ink-2); max-width: 540px; }
+
+/* ── NUMERI ── */
+.nums { display: grid; grid-template-columns: repeat(3, 1fr); }
+.num { padding: clamp(40px, 6vh, 72px) 24px; text-align: center; border-right: 1px solid var(--hair); }
+.num:last-child { border-right: 0; }
+.num b { display: block; font: 800 clamp(48px, 6vw, 88px)/.95 'Syne'; letter-spacing: -.04em; color: var(--accent); }
+.num b sup { font-size: .4em; vertical-align: super; color: var(--accent); }
+.num p { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin-top: 12px; }
+@media (max-width: 760px){ .nums { grid-template-columns: 1fr; } .num { border-right: 0; border-bottom: 1px solid var(--hair); } .num:last-child{ border-bottom: 0; } }
+
+/* ── CHI SONO ── */
+.bio-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
+.bio-photo { position: relative; aspect-ratio: 4/5; border-radius: 18px; overflow: hidden; border: 1px solid var(--hair);
+  background: linear-gradient(160deg, rgba(46,105,126,.06), rgba(157,189,170,.16));
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+.bio-photo b { font: 800 clamp(48px, 6vw, 84px)/1 'Syne'; letter-spacing: -.04em; color: var(--ink); opacity: .9; }
+.bio-photo small { font: 500 11px/1.5 'Inter'; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.bio h2 { margin-top: 22px; }
+.bio .lead { margin-top: 22px; }
+.bio .lead + .lead { margin-top: 16px; }
+.creds { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px 32px; }
+.cred-row { display: flex; gap: 14px; padding: 18px 0; border-top: 1px solid var(--hair); }
+.cred-row svg { width: 22px; height: 22px; stroke: var(--petrol); stroke-width: 1.6; fill: none; flex-shrink: 0; margin-top: 2px; }
+.cred-row label { display: block; font: 500 10.5px/1 'Inter'; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+.cred-row p { font-size: 14.5px; line-height: 1.45; }
+@media (max-width: 620px){ .creds { grid-template-columns: 1fr; } }
+
+/* ── RECENSIONI ── */
+.revs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 56px; }
+.rev { display: flex; flex-direction: column; padding: 34px 32px; border: 1px solid var(--hair); border-radius: 18px; background: #fff; }
+.stars { display: flex; gap: 3px; margin-bottom: 22px; }
+.stars svg { width: 17px; height: 17px; fill: var(--accent); }
+.rev blockquote { font-size: 15px; line-height: 1.75; color: var(--ink); margin-bottom: 26px; }
+.rfoot { display: flex; align-items: center; gap: 13px; margin-top: auto; padding-top: 22px; border-top: 1px solid var(--hair); }
+.av { width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0; background: var(--tint); border: 1px solid var(--hair);
+  font: 800 14px/1 'Syne'; color: var(--ink); display: flex; align-items: center; justify-content: center; }
+.rname { font-size: 14px; font-weight: 500; }
+.rsrc { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-3); margin-top: 3px; }
+.rsrc svg { width: 12px; height: 12px; stroke: var(--petrol); stroke-width: 2; fill: none; }
+
+/* ── FAQ ── */
+.faq { max-width: 820px; margin: 48px auto 0; }
+.qa { border-top: 1px solid var(--hair); }
+.qa:last-child { border-bottom: 1px solid var(--hair); }
+.qa button { width: 100%; background: none; border: 0; text-align: left; padding: 26px 4px; display: flex;
+  align-items: center; justify-content: space-between; gap: 24px; color: var(--ink); }
+.qa button h4 { font: 700 clamp(16px, 1.6vw, 20px)/1.35 'Syne'; letter-spacing: -.01em; }
+.qa .pm { position: relative; width: 22px; height: 22px; flex-shrink: 0; }
+.qa .pm::before, .qa .pm::after { content: ''; position: absolute; background: var(--petrol); transition: transform .4s var(--e); }
+.qa .pm::before { top: 10px; left: 0; width: 22px; height: 2px; }
+.qa .pm::after { left: 10px; top: 0; width: 2px; height: 22px; }
+.qa.open .pm::after { transform: scaleY(0); }
+.qa .ans { overflow: hidden; height: 0; }
+.qa .ans p { font-size: 14.5px; line-height: 1.75; color: var(--ink-2); padding: 0 4px 28px; max-width: 680px; }
+
+/* ── CTA ── */
+.cta { border: 1px solid var(--hair); border-radius: 24px; padding: clamp(48px, 7vw, 88px); text-align: center;
+  background: var(--tint); position: relative; overflow: hidden; }
+.cta h2 { font: 800 clamp(30px, 4.6vw, 64px)/1.04 'Syne'; letter-spacing: -.03em; }
+.cta h2 em { font-style: italic; font-weight: 600; color: var(--accent); }
+.cta p { font-size: clamp(15px, 1.3vw, 18px); color: var(--ink-2); margin: 22px auto 0; max-width: 560px; }
+.cta-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin: 34px 0 40px; }
+.cta-pill { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--hair);
+  color: var(--ink-2); padding: 9px 18px; border-radius: 100px; font-size: 13px; }
+.cta-pill svg { width: 15px; height: 15px; stroke: var(--petrol); stroke-width: 2; fill: none; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ── CONTATTI ── */
+.con-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(44px, 6vw, 96px); align-items: start; }
+.con-info h3 { font: 800 clamp(26px, 3vw, 42px)/1.08 'Syne'; letter-spacing: -.025em; margin-bottom: 12px; }
+.con-info .lead { margin-bottom: 34px; }
+.ci { display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid var(--hair); }
+.ci:last-of-type { border-bottom: 1px solid var(--hair); }
+.ci .ic { width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0; background: var(--chip); border: 1px solid var(--accent-2);
+  display: flex; align-items: center; justify-content: center; }
+.ci .ic svg { width: 21px; height: 21px; stroke: var(--petrol); stroke-width: 1.5; fill: none; }
+.ci label { display: block; font: 500 10.5px/1 'Inter'; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+.ci p, .ci a { font-size: 15px; line-height: 1.5; }
+.ci a:hover { color: var(--accent); }
+.form { display: flex; flex-direction: column; gap: 18px; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.fl { display: flex; flex-direction: column; gap: 8px; }
+.fl label { font: 500 11px/1 'Inter'; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-3); }
+.fl input, .fl textarea, .fl select { border: none; border-bottom: 1.5px solid var(--hair); background: transparent;
+  padding: 12px 2px; font: 300 15px/1.4 'Inter'; color: var(--ink); outline: none; border-radius: 0;
+  transition: border-color .4s var(--e); -webkit-appearance: none; }
+.fl input::placeholder, .fl textarea::placeholder { color: var(--ink-3); }
+.fl input:focus, .fl textarea:focus, .fl select:focus { border-color: var(--accent); }
+.fl textarea { min-height: 96px; resize: vertical; }
+.fnote { font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+.fbtn { position: relative; overflow: hidden; margin-top: 6px; background: var(--accent); color: #fff; border: none;
+  padding: 17px; border-radius: 100px; font: 500 14.5px/1 'Inter'; transition: transform .4s var(--e); }
+.fbtn span { position: relative; z-index: 2; }
+.fbtn::before { content: ''; position: absolute; inset: 0; background: var(--brand-hover); transform: translateY(101%); transition: transform .45s var(--e); }
+.fbtn:hover::before { transform: translateY(0); }
+.fbtn:hover { transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer { background: var(--petrol); color: var(--white); border-radius: 20px; margin-bottom: clamp(16px, 3vw, 32px);
+  padding: clamp(48px, 7vh, 76px) clamp(28px, 5vw, 56px) 32px; }
+.ftop { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 42px; border-bottom: 1px solid rgba(255,255,255,0.18); }
+.flogo { font: 800 19px/1 'Syne'; letter-spacing: -.02em; margin-bottom: 12px; }
+.flogo-img { width: 132px; height: auto; border-radius: 12px; margin-bottom: 16px; }
+.fdesc { font-size: 13.5px; color: rgba(255,255,255,0.70); line-height: 1.7; max-width: 320px; }
+.fcol h5 { font: 500 11px/1 'Inter'; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,0.60); margin-bottom: 18px; }
+.fcol a, .fcol p { display: block; font-size: 14px; color: rgba(255,255,255,0.85); margin-bottom: 11px; }
+.fcol a:hover { color: var(--white); }
+.fbot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 26px; font-size: 12px; color: rgba(255,255,255,0.55); }
+@media (max-width: 760px){ .ftop { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ── WHATSAPP FLOAT ── */
+.wa { position: fixed; bottom: 24px; right: 24px; z-index: 800; display: inline-flex; align-items: center; gap: 10px;
+  background: #fff; border: 1px solid var(--hair); padding: 11px 18px 11px 12px; border-radius: 100px;
+  box-shadow: 0 14px 40px rgba(46,105,126,.16); transition: transform .4s var(--e); font-size: 14px; font-weight: 500; color: var(--ink); }
+.wa:hover { transform: translateY(-3px); }
+.wa .dot { width: 34px; height: 34px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; }
+.wa .dot svg { width: 19px; height: 19px; fill: #fff; }
+@media (max-width: 560px){ .wa .lab { display: none; } .wa { padding: 8px; } }
+
+/* ── REVEAL ── */
+[data-reveal] { opacity: 0; transform: translateY(26px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 980px){
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .portrait { max-width: 420px; }
+  .pillars, .svc, .revs { grid-template-columns: 1fr; }
+  .bia-grid, .bio-grid, .con-grid { grid-template-columns: 1fr; }
+  .bio-photo { max-width: 360px; }
+  .nlinks, .nav-cta { display: none; }
+  .menu-btn { display: flex; }
+}
+@media (max-width: 560px){
+  .frow { grid-template-columns: 1fr; }
+  .tl { padding-left: 52px; } .tl-dot { left: -52px; }
+  .hero-cta .btn, .cta-btns .btn { flex: 1 1 auto; }
+}
+@media (prefers-reduced-motion: reduce){
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  * { scroll-behavior: auto !important; }
+}
+
+/* ═══════════ CINEMATIC + 3D LAYER ═══════════ */
+@media (pointer:fine){
+  html.has-cursor, html.has-cursor a, html.has-cursor button, html.has-cursor .btn,
+  html.has-cursor .tag, html.has-cursor [data-tilt], html.has-cursor .qa button{ cursor:none; }
+  html.has-cursor input, html.has-cursor textarea, html.has-cursor select{ cursor:text; }
+}
+#cur-dot, #cur-ring{ position:fixed; top:0; left:0; pointer-events:none; border-radius:50%;
+  transform:translate(-50%,-50%); will-change:transform; }
+#cur-dot{ z-index:9999; width:6px; height:6px; background:var(--accent); }
+#cur-ring{ z-index:9998; width:34px; height:34px; border:1.5px solid var(--accent-2);
+  transition:width .3s var(--e), height .3s var(--e), background-color .3s var(--e), border-color .3s var(--e); }
+#cur-ring.hot{ width:58px; height:58px; background:rgba(10,148,8,.06); border-color:var(--accent); }
+#cur-ring.down{ width:26px; height:26px; }
+@media (pointer:coarse){ #cur-dot, #cur-ring{ display:none; } }
+
+/* aurora animated background */
+.hero{ position:relative; isolation:isolate; }
+.hero-grid{ position:relative; z-index:1; }
+.aurora{ position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; border-radius:20px; }
+.aurora span{ position:absolute; border-radius:50%; filter:blur(60px); mix-blend-mode:multiply; will-change:transform; }
+.aurora span:nth-child(1){ width:46vw; height:46vw; max-width:600px; max-height:600px; left:30%; top:-14%;
+  background:radial-gradient(circle at 35% 35%, rgba(10,148,8,.28), transparent 68%); animation:drift1 19s ease-in-out infinite alternate; }
+.aurora span:nth-child(2){ width:40vw; height:40vw; max-width:520px; max-height:520px; right:-8%; top:10%;
+  background:radial-gradient(circle at 50% 50%, rgba(12,111,140,.18), transparent 68%); animation:drift2 23s ease-in-out infinite alternate; }
+.aurora span:nth-child(3){ width:34vw; height:34vw; max-width:440px; max-height:440px; left:22%; bottom:-20%;
+  background:radial-gradient(circle at 50% 50%, rgba(10,148,8,.18), transparent 68%); animation:drift3 27s ease-in-out infinite alternate; }
+@keyframes drift1{ to{ transform:translate(-9%,7%) scale(1.16);} }
+@keyframes drift2{ to{ transform:translate(7%,-6%) scale(1.12);} }
+@keyframes drift3{ to{ transform:translate(5%,-9%) scale(1.2);} }
+
+/* hero headline word mask */
+.hero h1 .w{ display:inline-block; overflow:hidden; vertical-align:top; padding:.04em .2em .1em .04em; margin:-.04em -.16em -.1em -.04em; }
+.hero h1 .wi{ display:inline-block; will-change:transform; }
+
+/* 3D tilt + depth */
+.portrait{ perspective:1100px; }
+[data-tilt]{ transform-style:preserve-3d; will-change:transform; }
+.logo-panel{ transform-style:preserve-3d; }
+.logo-panel img{ transform:translateZ(34px); }
+.logo-panel .corner{ transform:translateZ(60px); }
+.scard, .rev, .pillar{ position:relative; }
+.tilt-glare{ position:absolute; inset:0; border-radius:inherit; pointer-events:none; z-index:6; opacity:0;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,50%), rgba(255,255,255,.4), transparent 42%);
+  mix-blend-mode:soft-light; }
+
+/* cinematic statement */
+.cine{ padding:clamp(80px,15vh,180px) 0; }
+.cine-text{ font:800 clamp(28px,4.7vw,66px)/1.16 'Syne'; letter-spacing:-.025em; max-width:1040px; }
+.cine-text em{ font-style:italic; font-weight:600; color:var(--accent); }
+.cine-text .cw{ display:inline-block; opacity:.12; will-change:opacity; }
+
+@media (prefers-reduced-motion: reduce){
+  .aurora span{ animation:none; }
+  .cine-text .cw{ opacity:1 !important; }
+  .hero h1 .wi{ transform:none !important; }
+  #cur-dot, #cur-ring{ display:none; }
+}
+
+/* ═══════════ TEMA PETROLIO — card bianche flottanti ═══════════ */
+body{ background: var(--petrol); }
+
+/* pannelli bianchi che "galleggiano" sul petrolio */
+.psheet{
+  background: var(--white);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: clamp(20px, 2.6vw, 32px);
+  max-width: var(--max);
+  margin: clamp(14px, 2.4vw, 26px) auto;
+  padding: clamp(46px, 7vh, 92px) clamp(26px, 5vw, 60px);
+  box-shadow: 0 26px 60px rgba(0,0,0,0.12);
+}
+/* neutralizza le vecchie bande, così i pannelli galleggiano sul petrolio */
+.sec-tint{ background: transparent; border: 0; padding-top: 0; padding-bottom: 0; }
+.strip{ background: transparent; border: 0; }
+
+/* HERO su petrolio → testo bianco + verde chiaro */
+.hero{ background: transparent; }
+.hero h1{ color: var(--white); }
+.hero h1 em{ color: #86E082; }
+.hero .h-eyebrow{ color: #C3EFC2; }
+.hero .h-eyebrow::before{ background: #86E082; }
+.hero .hsub{ color: rgba(255,255,255,0.86); }
+.hero-trust{ border-top-color: rgba(255,255,255,0.22); }
+.hero-trust .t{ color: rgba(255,255,255,0.90); }
+.hero-trust .t svg{ stroke: #86E082; }
+.hero .btn.ghost{ border-color: rgba(255,255,255,0.40); color: var(--white); }
+.hero .btn.ghost:hover{ border-color: var(--white); }
+.aurora span{ mix-blend-mode: screen; }
+
+/* FRASE CINEMATOGRAFICA su petrolio → bianco + verde */
+.cine-text{ color: var(--white); }
+.cine-text em{ color: #86E082; }
+.cine-text .cw{ opacity: 0.20; }
+
+/* CTA → card bianca flottante */
+.cta{ background: var(--white); }
+
+/* ═══════════ TEMA "TUTTO PETROLIO" — un solo blu su tutta la pagina ═══════════ */
+:root{
+  --ink: #ffffff;
+  --ink-2: rgba(255,255,255,0.88);
+  --ink-3: rgba(255,255,255,0.66);
+  --hair: rgba(255,255,255,0.16);
+  --hair-2: rgba(255,255,255,0.10);
+  --tint: rgba(255,255,255,0.05);
+  --chip: rgba(255,255,255,0.10);
+}
+body{ background: var(--petrol); color: var(--ink); }
+
+/* niente più pannelli bianchi: tutto petrolio */
+.psheet{ background: transparent; border: 0; box-shadow: none; }
+
+/* titoli → bianco */
+h1, h2, h3, h4, .head, .con-info h3, .cine-text, .brand b{ color: #fff; }
+
+/* superfici (card, cta, pannelli) → vetro leggero sul petrolio */
+.scard, .rev, .pillar, .cred-card, .cta{ background: rgba(255,255,255,0.06); }
+.cta-pill{ background: rgba(255,255,255,0.09); }
+
+/* icone (erano petrolio, invisibili) → verde chiaro */
+.util .item svg, .strip .cell svg, .scard .sico svg, .ci .ic svg, .cred-card .seal svg,
+.bia-item .ck svg, .converge svg, .hero-trust .t svg, .cred-row svg, .rsrc svg,
+.cta-pill svg, .menu-btn svg, .mclose svg{ stroke: #86E082; }
+.qa .pm::before, .qa .pm::after{ background: #86E082; }
+
+/* accenti testo → verde chiaro per contrasto su petrolio */
+.eyebrow, .eyebrow .n{ color: #86E082; }
+.eyebrow::before{ background: #86E082; }
+h1 em, h2 em, .cine-text em, .hero h1 em, .cta h2 em{ color: #86E082; }
+.num b, .bia-metric b{ color: #86E082; }
+
+/* barre nav / utility / menu mobile → petrolio */
+.util{ background: var(--petrol); }
+nav.bar{ background: rgba(12,111,140,0.82); }
+.mmenu{ background: var(--petrol); }
+.menu-btn, .mclose{ background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.22); }
+
+/* il pulsante WhatsApp resta chiaro → testo petrolio */
+.wa{ color: var(--petrol); }
+
+/* sfondo cinematografico (Higgsfield) dietro lo statement — PROVA via URL */
+.cine{ position: relative; overflow: hidden; }
+.cine::before{ content:''; position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(180deg, rgba(12,111,140,0.80), rgba(12,111,140,0.74)),
+    url("https://d8j0ntlcm91z4.cloudfront.net/user_3D4fbBPkfs2dZLWW3IYQ9S9W3QK/hf_20260603_181503_ffa183e0-d477-43d6-a69a-5ccce488ac3e.png") center/cover no-repeat; }
+.cine > .wrap{ position: relative; z-index: 1; }
+
+/* foto "Chi sono": più piccola, con cornice bianca */
+.bio-photo{
+  width: min(230px, 70%);
+  aspect-ratio: 4/5;
+  margin: 6px auto 0;
+  padding: 9px;
+  background: #ffffff;
+  border: 1px solid #DDE8DD;
+  border-radius: 14px;
+  box-shadow: 0 20px 46px rgba(0,0,0,0.24);
+  overflow: visible;
+}
+.bio-photo .photo{
+  position: absolute; inset: 9px;
+  width: auto; height: auto;
+  border-radius: 7px;
+}
+.bio-photo b{ font-size: clamp(30px, 3.4vw, 44px); }
+.bio-photo small{ color: #6B7280; }
+
+/* ─── PRELOADER: sipario d'ingresso cinematografico ─── */
+#preloader{ position: fixed; inset: 0; z-index: 10001; background: var(--petrol);
+  display: flex; align-items: center; justify-content: center; will-change: transform;
+  animation: plFail 0s linear 6s forwards; }
+@keyframes plFail{ to{ opacity: 0; visibility: hidden; pointer-events: none; } }
+.pl-inner{ display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.pl-logo{ width: 108px; height: auto; border-radius: 14px; box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  opacity: 0; transform: translateY(14px) scale(0.96); }
+.pl-bar{ width: 168px; height: 2px; background: rgba(255,255,255,0.18); border-radius: 2px; overflow: hidden; }
+.pl-bar span{ display: block; height: 100%; width: 0; background: #86E082; }
+@media (prefers-reduced-motion: reduce){ #preloader{ display: none; } }
+
+/* ─── sheen luminoso sui pulsanti principali ─── */
+.btn.primary::after, .fbtn::after{ content: ''; position: absolute; top: 0; left: -75%; width: 45%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-18deg); z-index: 1; pointer-events: none; }
+.btn.primary:hover::after, .fbtn:hover::after{ animation: btnSheen .85s ease; }
+@keyframes btnSheen{ from{ left: -75%; } to{ left: 130%; } }
+
+/* ─── canvas "campo vivo" (particelle in flusso) dietro a tutto ─── */
+#fx{ position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+@media (pointer:coarse){ #fx{ display: none; } }
+
+/* ─── rail di navigazione laterale ─── */
+#rail{ position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 700;
+  display: flex; flex-direction: column; gap: 13px; }
+#rail a{ width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.28);
+  transition: background .35s var(--e), transform .35s var(--e), box-shadow .35s var(--e); cursor: pointer; }
+#rail a:hover{ transform: scale(1.3); background: rgba(255,255,255,0.6); }
+#rail a.on{ background: #86E082; transform: scale(1.35); box-shadow: 0 0 0 4px rgba(134,224,130,0.18); }
+@media (max-width: 980px){ #rail{ display: none; } }
+
+/* ─── vignettatura cinematografica ─── */
+#vignette{ position: fixed; inset: 0; z-index: 599; pointer-events: none;
+  background: radial-gradient(125% 120% at 50% 42%, transparent 56%, rgba(0,0,0,0.30) 100%); }
+
+/* ─── grana pellicola animata ─── */
+#grain{ position: fixed; inset: 0; z-index: 600; pointer-events: none; opacity: 0.06; mix-blend-mode: overlay;
+  background-repeat: repeat; background-size: 130px 130px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1s steps(5) infinite; }
+@keyframes grain{
+  0%{ background-position: 0 0; } 20%{ background-position: -26px 13px; } 40%{ background-position: 13px -26px; }
+  60%{ background-position: -13px 26px; } 80%{ background-position: 26px -13px; } 100%{ background-position: 0 0; }
+}
+@media (prefers-reduced-motion: reduce){ #grain{ animation: none; opacity: 0.04; } }
+
+/* bagliore sui pallini attivi del percorso */
+.tl-item .tl-dot{ box-shadow: 0 0 0 0 rgba(134,224,130,0); transition: border-color .4s var(--e), color .4s var(--e), background .4s var(--e), box-shadow .5s var(--e); }
+.tl-item.act .tl-dot{ box-shadow: 0 0 0 6px rgba(134,224,130,0.16); }
+
+/* ── alternanza titoli: bianco / verde lungo la pagina ── */
+#servizi .head, #percorso .head, #recensioni .head, #contatti .con-info h3{ color: #86E082; }
+
+/* verde dei titoli più leggibile sul petrolio (lettere ben staccate) */
+.hero h1 em, #servizi .head, #percorso .head, #recensioni .head, #contatti .con-info h3,
+.cine-text em{ color: #A6F0A0; text-shadow: 0 2px 18px rgba(0,0,0,0.22); }
+
+/* ── alcuni riquadri: sfondo bianco soft (non acceso) con testo scuro ── */
+.scard, .rev{ background: #EEF8EE; border-color: #DDE8DD; box-shadow: 0 22px 50px rgba(0,0,0,0.16); }
+.scard h3, .rev .rname{ color: var(--petrol); }
+.scard p, .rev blockquote{ color: #3A4250; }
+.scard .tag{ color: #5A6472; border-color: #D2DED2; }
+.scard .sico{ background: rgba(12,111,140,0.08); border-color: rgba(12,111,140,0.18); }
+.scard .sico svg{ stroke: var(--petrol); }
+.rev .stars svg{ fill: var(--brand); }
+.rev .rsrc{ color: #6B7280; }
+.rev .rsrc svg{ stroke: var(--brand); }
+.rev .av{ background: rgba(12,111,140,0.08); border-color: #DDE8DD; color: var(--petrol); }
+.rev .rfoot{ border-top-color: #DDE8DD; }
+</style>
+</head>
+<body>
+
+<div id="preloader" aria-hidden="true">
+  <div class="pl-inner">
+    <img src="images/logo.jpg" alt="" class="pl-logo" width="800" height="800">
+    <div class="pl-bar"><span></span></div>
+  </div>
+</div>
+<div id="prog"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<nav id="rail" aria-hidden="true"></nav>
+<div id="vignette" aria-hidden="true"></div>
+<div id="grain" aria-hidden="true"></div>
+<div id="cur-ring" aria-hidden="true"></div><div id="cur-dot" aria-hidden="true"></div>
+
+<!-- UTILITY BAR -->
+<div class="util"><div class="wrap">
+  <div class="group">
+    <span class="item"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Via Paoloni 10, Lecce</span>
+    <span class="item hideS"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg> Online in tutta Italia</span>
+  </div>
+  <div class="group">
+    <span class="item hideS r">Ordine Naz. Biologi · PuB_A4888</span>
+    <span class="item r">Risposta entro 24h</span>
+  </div>
+</div></div>
+
+<!-- NAV -->
+<nav class="bar"><div class="wrap">
+  <a href="#top" class="brand"><b>Dott. Umberto Olivo</b><span>Nutrizionista · Personal Trainer · Mental Coach</span></a>
+  <ul class="nlinks">
+    <li><a href="#metodo">Metodo</a></li>
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#analisi">Analisi BIA</a></li>
+    <li><a href="#percorso">Percorso</a></li>
+    <li><a href="#chi-sono">Chi sono</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
+  <a href="https://wa.me/393272512752" class="btn primary nav-cta" target="_blank" rel="noopener" data-mag><span>Prenota la consulenza</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Apri menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></nav>
+
+<!-- MOBILE MENU -->
+<div class="mmenu" id="mmenu">
+  <button class="mclose" id="mclose" aria-label="Chiudi menu"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <a href="#metodo">Metodo</a>
+  <a href="#servizi">Servizi</a>
+  <a href="#analisi">Analisi BIA</a>
+  <a href="#percorso">Percorso</a>
+  <a href="#chi-sono">Chi sono</a>
+  <a href="#contatti">Contatti</a>
+  <a href="https://wa.me/393272512752" class="btn primary lg" target="_blank" rel="noopener"><span>Prenota la consulenza</span></a>
+</div>
+
+<!-- HERO -->
+<header id="top" class="wrap hero">
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow h-eyebrow" data-reveal>Biologo Nutrizionista · Personal Trainer · Lecce</span>
+      <h1 data-reveal>Raggiungi la tua forma ideale, <em>con un metodo costruito su di te.</em></h1>
+      <p class="hsub" data-reveal>Sono Umberto Olivo, biologo nutrizionista e personal trainer a Lecce. Unisco dieta personalizzata, allenamento e supporto mentale in un unico percorso su misura, costruito sui tuoi dati reali. Niente diete standard: un metodo che porta risultati e dura nel tempo.</p>
+      <div class="hero-cta" data-reveal>
+        <a href="https://wa.me/393272512752" class="btn primary lg" target="_blank" rel="noopener" data-mag>
+          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.34Z"/></svg> Consulenza gratuita</span>
+        </a>
+        <a href="#metodo" class="btn ghost lg"><span>Scopri il metodo</span></a>
+      </div>
+      <div class="hero-trust" data-reveal>
+        <span class="t"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg> Biologo iscritto all'ONB</span>
+        <span class="t"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg> Personal Trainer & Counselor CSEN</span>
+        <span class="t"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg> Analisi BIA inclusa</span>
+      </div>
+    </div>
+    <div class="portrait" data-reveal>
+      <div class="logo-panel" data-tilt data-tilt-strong>
+        <span class="corner tl"></span><span class="corner br"></span>
+        <img src="images/logo.jpg" width="800" height="800" decoding="async" fetchpriority="high" alt="Logo Dott. Umberto Olivo, Biologo Nutrizionista e Personal Trainer a Lecce">
+      </div>
+      <div class="cred-card">
+        <div class="seal"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><label>Ordine Naz. Biologi</label><p>Iscrizione n. PuB_A4888</p></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CREDENTIALS STRIP -->
+<div class="strip"><div class="wrap psheet">
+  <div class="cell"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8c2-2 5-2 7 0 2-2 5-2 7 0"/><path d="M5 8v8c2-2 5-2 7 0 2-2 5-2 7 0V8"/></svg><div><label>Disciplina 1</label><p>Nutrizione clinica</p></div></div>
+  <div class="cell"><svg viewBox="0 0 24 24"><path d="M6 9v6M18 9v6M4 10v4M20 10v4M6 12h12"/></svg><div><label>Disciplina 2</label><p>Personal Training</p></div></div>
+  <div class="cell"><svg viewBox="0 0 24 24"><path d="M9 18c0-2-3-3-3-7a6 6 0 0 1 12 0c0 4-3 5-3 7"/><path d="M9 18h6M10 21h4"/></svg><div><label>Disciplina 3</label><p>Mental Coaching</p></div></div>
+  <div class="cell"><svg viewBox="0 0 24 24"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg><div><label>Strumento</label><p>Analisi BIA</p></div></div>
+</div></div>
+
+<!-- METODO -->
+<section id="metodo" class="wrap sec psheet">
+  <div class="sec-intro">
+    <span class="eyebrow" data-reveal><span class="n">01</span> Il metodo</span>
+    <h2 class="head" data-reveal>Una dieta, da sola, non basta mai.</h2>
+    <p class="lead" data-reveal>Di solito dieta, allenamento e motivazione finiscono in mani diverse che non si parlano: il piano alimentare ignora la palestra, l'allenamento ignora la dieta, e alla prima difficoltà molli. Come biologo nutrizionista e personal trainer a Lecce faccio l'opposto: un'unica regia che coordina nutrizione, allenamento e testa in un percorso su misura, pensato per durare.</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar" data-reveal data-tilt>
+      <span class="pn">01</span>
+      <h3>Nutrizione</h3>
+      <p>Dieta personalizzata costruita sulla tua composizione corporea reale, misurata con l'analisi BIA. Niente tabelle uguali per tutti.</p>
+    </div>
+    <div class="pillar" data-reveal data-tilt>
+      <span class="pn">02</span>
+      <h3>Allenamento</h3>
+      <p>Calibrato sul piano alimentare e sull'obiettivo: dimagrire, mettere massa o ricomporre il fisico. Ogni seduta ha uno scopo.</p>
+    </div>
+    <div class="pillar" data-reveal data-tilt>
+      <span class="pn">03</span>
+      <h3>Mente</h3>
+      <p>Motivazione, stress e rapporto con il cibo. È la parte che quasi tutti ignorano, ed è proprio quella che fa restare i risultati.</p>
+    </div>
+  </div>
+  <div class="converge" data-reveal>
+    <svg viewBox="0 0 24 24"><path d="M4 6h7M4 12h16M4 18h7"/><path d="M14 6l3 3-3 3"/></svg>
+    <p><b>Tre discipline, una sola regia.</b> A Lecce e nel Salento sono l'unico professionista a seguire nutrizione, allenamento e coaching di persona: nessun rimbalzo tra studi diversi, nessun piano che ne contraddice un altro.</p>
+  </div>
+</section>
+
+<!-- CINEMATIC STATEMENT -->
+<section class="cine"><div class="wrap">
+  <p class="cine-text" data-cine>Un corpo che cambia. Una mente che regge. <em>Un metodo solo.</em></p>
+</div></section>
+
+<!-- SERVIZI -->
+<section id="servizi" class="sec sec-tint"><div class="wrap psheet">
+  <div class="sec-intro">
+    <span class="eyebrow" data-reveal><span class="n">02</span> Servizi</span>
+    <h2 class="head" data-reveal>Nutrizione, allenamento e mente, in un solo studio a Lecce</h2>
+  </div>
+  <div class="svc">
+    <article class="scard" data-reveal data-tilt>
+      <div class="sico"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8c2-2 5-2 7 0 2-2 5-2 7 0"/><path d="M5 8v8c2-2 5-2 7 0 2-2 5-2 7 0V8"/></svg></div>
+      <h3>Nutrizione clinica<br>e sportiva</h3>
+      <p>Dieta personalizzata cucita su di te a partire dall'analisi della composizione corporea (BIA): massa, metabolismo e idratazione alla mano. Per dimagrimento, aumento di massa, nutrizione sportiva o gestione di condizioni patologiche.</p>
+      <div class="tags"><span class="tag">Piano personalizzato</span><span class="tag">Analisi BIA</span><span class="tag">Nutrizione sportiva</span><span class="tag">Dimagrimento</span><span class="tag">Massa muscolare</span></div>
+    </article>
+    <article class="scard" data-reveal data-tilt>
+      <div class="sico"><svg viewBox="0 0 24 24"><path d="M6 9v6M18 9v6M4 10v4M20 10v4M6 12h12"/></svg></div>
+      <h3>Personal Training<br>su misura</h3>
+      <p>Bodybuilding, fitness funzionale e rieducazione posturale, in studio o a domicilio in provincia di Lecce. La scheda nasce insieme al piano alimentare, così ogni allenamento spinge nella stessa direzione e non sprechi nemmeno una seduta.</p>
+      <div class="tags"><span class="tag">Bodybuilding</span><span class="tag">Fitness funzionale</span><span class="tag">Rieducazione posturale</span><span class="tag">Domicilio Lecce</span></div>
+    </article>
+    <article class="scard" data-reveal data-tilt>
+      <div class="sico"><svg viewBox="0 0 24 24"><path d="M9 18c0-2-3-3-3-7a6 6 0 0 1 12 0c0 4-3 5-3 7"/><path d="M9 18h6M10 21h4"/></svg></div>
+      <h3>Mental Coaching<br>& Counseling</h3>
+      <p>Il cambiamento vero parte dalla testa. Come Counselor certificato CSEN lavoro con te su motivazione, gestione dello stress e i blocchi che ti legano al cibo e alle vecchie abitudini.</p>
+      <div class="tags"><span class="tag">Motivazione</span><span class="tag">Gestione stress</span><span class="tag">Abitudini alimentari</span><span class="tag">Professional Counselor</span></div>
+    </article>
+  </div>
+</div></section>
+
+<!-- ANALISI BIA -->
+<section id="analisi" class="wrap sec psheet">
+  <div class="bia-grid">
+    <div>
+      <span class="eyebrow" data-reveal><span class="n">03</span> Analisi della composizione corporea</span>
+      <h2 class="head" data-reveal>La tua dieta parte dai dati, non da una stima.</h2>
+      <p class="lead" data-reveal>Ogni percorso parte dall'analisi della composizione corporea con bioimpedenziometria (BIA): una fotografia oggettiva di com'è fatto il tuo corpo. Da lì costruisco la dieta personalizzata sui dati reali e la aggiorno strada facendo, misurando ogni progresso.</p>
+      <div class="bia-list">
+        <div class="bia-item" data-reveal><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4>Massa magra e massa grassa</h4><p>Sappiamo di cosa è fatto davvero il tuo peso, ben oltre il numero sulla bilancia.</p></div></div>
+        <div class="bia-item" data-reveal><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4>Metabolismo basale</h4><p>Tariamo le calorie sul tuo fabbisogno reale, senza tagli inutili e insostenibili.</p></div></div>
+        <div class="bia-item" data-reveal><span class="ck"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><div><h4>Idratazione e ritenzione</h4><p>Teniamo d'occhio i liquidi per scelte mirate e risultati più stabili nel tempo.</p></div></div>
+      </div>
+    </div>
+    <div class="bia-panel" data-reveal>
+      <span class="label">Report di esempio</span>
+      <div class="bia-metric"><b id="biaNum">0</b><span>di precisione in più rispetto a una dieta standard</span></div>
+      <p class="desc">Un piano costruito sui dati BIA segue la tua biologia, non una tabella valida per chiunque.</p>
+      <div class="bia-bars">
+        <div class="bia-bar"><label><span>Massa magra</span><span>monitorata</span></label><div class="track"><div class="fill" data-w="78"></div></div></div>
+        <div class="bia-bar"><label><span>Massa grassa</span><span>monitorata</span></label><div class="track"><div class="fill" data-w="64"></div></div></div>
+        <div class="bia-bar"><label><span>Idratazione</span><span>monitorata</span></label><div class="track"><div class="fill" data-w="86"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERCORSO -->
+<section id="percorso" class="sec sec-tint"><div class="wrap psheet">
+  <div class="sec-intro">
+    <span class="eyebrow" data-reveal><span class="n">04</span> Il percorso</span>
+    <h2 class="head" data-reveal>Dalla prima visita<br>ai risultati che durano</h2>
+  </div>
+  <div class="tl">
+    <div class="tl-line"><div class="tl-fill" id="tlfill"></div></div>
+    <div class="tl-item" data-reveal><div class="tl-dot">01</div><h4>Consulenza gratuita</h4><p>Ci sentiamo per conoscerci: i tuoi obiettivi, la tua storia, cosa hai già provato. Senza impegno e senza costi.</p></div>
+    <div class="tl-item" data-reveal><div class="tl-dot">02</div><h4>Analisi completa</h4><p>Analisi BIA, valutazione posturale e un primo colloquio di coaching: fissiamo il punto di partenza con numeri reali.</p></div>
+    <div class="tl-item" data-reveal><div class="tl-dot">03</div><h4>Piano integrato su misura</h4><p>Alimentazione, allenamento e obiettivi mentali costruiti insieme e pensati solo per te.</p></div>
+    <div class="tl-item" data-reveal><div class="tl-dot">04</div><h4>Monitoraggio continuo</h4><p>Controlli periodici, aggiustamenti e supporto costante: i risultati si consolidano e non tornano indietro.</p></div>
+  </div>
+</div></section>
+
+<!-- NUMERI -->
+<div class="strip"><div class="wrap nums psheet">
+  <div class="num" data-reveal><b data-n="3">0</b><p>Specializzazioni certificate<br>in un'unica persona</p></div>
+  <div class="num" data-reveal><b data-n="100"><span class="cnt">0</span><sup>%</sup></b><p>Dei piani parte<br>dall'analisi BIA</p></div>
+  <div class="num" data-reveal><b>1</b><p>Metodo integrato<br>unico nel Salento</p></div>
+</div></div>
+
+<!-- CHI SONO -->
+<section id="chi-sono" class="wrap sec psheet">
+  <div class="bio-grid">
+    <div class="portrait" data-reveal>
+      <div class="bio-photo"><b>UO</b><small>Foto del Dott. Olivo</small><img class="photo" src="images/umberto.jpg" width="364" height="364" loading="lazy" decoding="async" alt="Dott. Umberto Olivo, Biologo Nutrizionista e Personal Trainer a Lecce" onerror="this.remove()"></div>
+    </div>
+    <div class="bio">
+      <span class="eyebrow" data-reveal><span class="n">05</span> Chi sono</span>
+      <h2 class="head" data-reveal>Dott. Umberto Olivo</h2>
+      <p class="lead" data-reveal>Sono il Dott. Umberto Olivo, Biologo Nutrizionista esperto in ambito clinico e sportivo, con un Master in Scienza dell'Alimentazione e Dietetica Applicata. Mi occupo di nutrizione clinica e sportiva, dimagrimento e gestione nutrizionale di condizioni patologiche, sempre con un approccio integrato che unisce alimentazione, allenamento e supporto motivazionale.</p>
+      <p class="lead" data-reveal>Ogni percorso è costruito su misura: nessuna dieta standard, ma un piano disegnato sui tuoi dati, sui tuoi obiettivi e sulla tua vita reale. Ricevo nel mio studio a Lecce, vado a domicilio in provincia e seguo online persone in tutta Italia, al tuo fianco passo dopo passo.</p>
+      <div class="creds">
+        <div class="cred-row" data-reveal><svg viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11v5c0 1 3 2 6 2s6-1 6-2v-5"/></svg><div><label>Formazione</label><p>Master in Scienza dell'Alimentazione e Dietetica Applicata</p></div></div>
+        <div class="cred-row" data-reveal><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg><div><label>Albo professionale</label><p>Ordine Nazionale dei Biologi · n. PuB_A4888</p></div></div>
+        <div class="cred-row" data-reveal><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg><div><label>Certificazioni</label><p>Personal Trainer e Counselor · CSEN</p></div></div>
+        <div class="cred-row" data-reveal><svg viewBox="0 0 24 24"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg><div><label>Strumentazione</label><p>Analisi BIA impedenziometrica</p></div></div>
+        <div class="cred-row" data-reveal><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><div><label>Aree cliniche</label><p>Nutrizione clinica, sportiva, dimagrimento e patologie</p></div></div>
+        <div class="cred-row" data-reveal><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><div><label>Dove lavoro</label><p>Studio Lecce · domicilio · online Italia</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENSIONI -->
+<section id="recensioni" class="sec sec-tint"><div class="wrap psheet">
+  <div class="sec-intro" style="margin:0 auto; text-align:center;">
+    <span class="eyebrow" style="justify-content:center;" data-reveal><span class="n">06</span> Recensioni</span>
+    <h2 class="head" data-reveal>Chi ha già iniziato</h2>
+  </div>
+  <div class="revs">
+    <article class="rev" data-reveal data-tilt>
+      <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg></div>
+      <blockquote>"Piano alimentare personalizzato molto efficace che mi ha permesso di raggiungere un benessere generale. Grande professionalità, disponibilità ed empatia."</blockquote>
+      <div class="rfoot"><div class="av">M</div><div><div class="rname">MioDottore</div><div class="rsrc"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg> Recensione verificata</div></div></div>
+    </article>
+    <article class="rev" data-reveal data-tilt>
+      <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg></div>
+      <blockquote>"Esperienza super positiva. Ottima predisposizione ad ascoltare le esigenze alimentari. Dettagliato nelle spiegazioni, puntuale e sempre disponibile."</blockquote>
+      <div class="rfoot"><div class="av">M</div><div><div class="rname">MioDottore</div><div class="rsrc"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg> Recensione verificata</div></div></div>
+    </article>
+    <article class="rev" data-reveal data-tilt>
+      <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg></div>
+      <blockquote>"Fin dal primo incontro estremamente professionale e attento. Competenza percepita in ogni consiglio. Sto raggiungendo risultati concreti e duraturi, senza mai sentirmi sotto pressione."</blockquote>
+      <div class="rfoot"><div class="av">N</div><div><div class="rname">NutriDoc</div><div class="rsrc"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg> Recensione verificata</div></div></div>
+    </article>
+    <article class="rev" data-reveal data-tilt>
+      <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 21.4l1.5-6.8L2.2 9.9l6.9-.7L12 2Z"/></svg></div>
+      <blockquote>"Professionisti simili ce ne sono pochi. Capace di metterti a proprio agio e supportarti nel raggiungimento degli obiettivi."</blockquote>
+      <div class="rfoot"><div class="av">N</div><div><div class="rname">NutriDoc</div><div class="rsrc"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg> Recensione verificata</div></div></div>
+    </article>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section id="faq" class="wrap sec psheet">
+  <div class="sec-intro" style="margin:0 auto; text-align:center;">
+    <span class="eyebrow" style="justify-content:center;" data-reveal><span class="n">07</span> Domande frequenti</span>
+    <h2 class="head" data-reveal>Le domande che mi fanno<br>più spesso</h2>
+  </div>
+  <div class="faq">
+    <div class="qa" data-reveal><button><h4>La dieta personalizzata è restrittiva? Devo rinunciare a tutto?</h4><span class="pm"></span></button><div class="ans"><p>No. Il piano nasce dai tuoi dati e dalle tue abitudini, pensato per durare. Grazie all'analisi della composizione corporea taro le calorie sul tuo fabbisogno reale: niente privazioni estreme che ti farebbero solo mollare dopo due settimane.</p></div></div>
+    <div class="qa" data-reveal><button><h4>Quanto costa la prima visita dal nutrizionista a Lecce?</h4><span class="pm"></span></button><div class="ans"><p>La prima consulenza conoscitiva è gratuita e senza impegno. Il costo della visita nutrizionale e del percorso dipende dagli obiettivi e dalla durata: te lo indico con chiarezza prima di iniziare, senza sorprese.</p></div></div>
+    <div class="qa" data-reveal><button><h4>Posso seguire la dieta online o a domicilio in provincia di Lecce?</h4><span class="pm"></span></button><div class="ans"><p>Sì. Seguo persone in tutta Italia da remoto, con consulenze e controlli online. In provincia di Lecce vengo anche a domicilio, oltre a ricevere nello studio in Via Paoloni 10, a Lecce.</p></div></div>
+    <div class="qa" data-reveal><button><h4>Che cos'è l'analisi della composizione corporea (BIA)?</h4><span class="pm"></span></button><div class="ans"><p>È un'analisi impedenziometrica della composizione corporea: misura massa magra, massa grassa, idratazione e metabolismo basale. Mi dà una base oggettiva, così la dieta poggia su dati reali e non su stime, e la riaggiorno strada facendo.</p></div></div>
+    <div class="qa" data-reveal><button><h4>Meglio un nutrizionista o un dietologo?</h4><span class="pm"></span></button><div class="ans"><p>Come Biologo Nutrizionista iscritto all'ONB elaboro piani alimentari personalizzati per esigenze fisiologiche e per molte condizioni patologiche. Il dietologo è un medico: per la maggior parte dei percorsi di dimagrimento, nutrizione sportiva e benessere il biologo nutrizionista è la figura giusta, e in caso di necessità cliniche specifiche ti indirizzo allo specialista corretto.</p></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="wrap" style="padding-bottom: clamp(80px,12vh,150px);">
+  <div class="cta" data-reveal>
+    <h2>Il primo passo<br>è <em>gratis.</em></h2>
+    <p>Ogni mese seguo di persona un numero limitato di nuovi percorsi, per dare a ciascuno il tempo che merita. Prenota ora la tua consulenza nutrizionale gratuita: in studio a Lecce, a domicilio o online.</p>
+    <div class="cta-pills">
+      <span class="cta-pill"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg> Piano nutrizionale personalizzato</span>
+      <span class="cta-pill"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg> Allenamento incluso</span>
+      <span class="cta-pill"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg> Coaching mentale</span>
+      <span class="cta-pill"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg> Analisi BIA inclusa</span>
+    </div>
+    <div class="cta-btns">
+      <a href="https://wa.me/393272512752" class="btn primary lg" target="_blank" rel="noopener" data-mag>
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.34Z"/></svg> Scrivimi su WhatsApp</span>
+      </a>
+      <a href="#contatti" class="btn ghost lg"><span>Compila il modulo</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" class="sec sec-tint"><div class="wrap psheet">
+  <div class="con-grid">
+    <div class="con-info">
+      <span class="eyebrow" data-reveal><span class="n">08</span> Contatti</span>
+      <h3 data-reveal>Parliamone.</h3>
+      <p class="lead" data-reveal>Scrivimi su WhatsApp per la tua consulenza nutrizionale gratuita a Lecce, o lascia i dati nel modulo: ti rispondo entro 24 ore, di persona.</p>
+      <div class="ci" data-reveal><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><label>Studio</label><p>Via Paoloni 10, Lecce (LE)</p></div></div>
+      <div class="ci" data-reveal><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 18l-1 4a16 16 0 0 1-15-14Z"/></svg></div><div><label>WhatsApp / Telefono</label><a href="https://wa.me/393272512752" target="_blank" rel="noopener">327 251 2752</a></div></div>
+      <div class="ci" data-reveal><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><div><label>Disponibilità</label><p>Online in tutta Italia · domicilio provincia di Lecce</p></div></div>
+      <div class="ci" data-reveal><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></div><div><label>Ordine professionale</label><p>Ordine Nazionale dei Biologi · PuB_A4888 · Certificazioni CSEN</p></div></div>
+    </div>
+    <form class="form" data-reveal onsubmit="handleForm(event)">
+      <div class="frow"><div class="fl"><label>Nome</label><input type="text" placeholder="Mario" required></div><div class="fl"><label>Cognome</label><input type="text" placeholder="Rossi" required></div></div>
+      <div class="fl"><label>Email</label><input type="email" placeholder="mario@email.com" required></div>
+      <div class="fl"><label>Telefono</label><input type="tel" placeholder="+39 333 000 0000"></div>
+      <div class="fl"><label>Servizio di interesse</label><select><option value="">Seleziona…</option><option>Nutrizione clinica e sportiva</option><option>Personal Training</option><option>Mental Coaching</option><option>Percorso completo integrato</option></select></div>
+      <div class="fl"><label>Messaggio</label><textarea placeholder="Raccontami i tuoi obiettivi…"></textarea></div>
+      <button type="submit" class="fbtn"><span>Invia richiesta di consulenza</span></button>
+      <p class="fnote">Inviando accetti di essere ricontattato. I dati sono trattati nel rispetto del GDPR e non saranno condivisi con terzi.</p>
+    </form>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="wrap">
+  <div class="ftop">
+    <div>
+      <img src="images/logo.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Logo Dott. Umberto Olivo, Nutrizionista e Personal Trainer a Lecce" class="flogo-img" onerror="this.remove()">
+      <p class="fdesc">Biologo Nutrizionista e Personal Trainer a Lecce. Dieta personalizzata, nutrizione sportiva e allenamento in un unico percorso su misura: in studio, a domicilio e online in tutta Italia.</p>
+    </div>
+    <div class="fcol">
+      <h5>Esplora</h5>
+      <a href="#metodo">Metodo</a><a href="#servizi">Servizi</a><a href="#analisi">Analisi BIA</a><a href="#percorso">Percorso</a><a href="#chi-sono">Chi sono</a>
+    </div>
+    <div class="fcol">
+      <h5>Contatti</h5>
+      <p>Via Paoloni 10, Lecce</p><a href="https://wa.me/393272512752" target="_blank" rel="noopener">327 251 2752</a><p>Online · tutta Italia</p><p>ONB PuB_A4888 · CSEN</p>
+    </div>
+  </div>
+  <div class="fbot"><span>© 2026 Dott. Umberto Olivo · P. IVA da inserire · Via Paoloni 10, Lecce</span><span>Privacy Policy · Cookie Policy</span></div>
+</footer>
+
+<a href="https://wa.me/393272512752" class="wa" target="_blank" rel="noopener" title="Scrivimi su WhatsApp" data-mag>
+  <span class="dot"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51-.16-.01-.35-.01-.54-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.34Z"/><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7L7 20.5A10 10 0 1 0 12 2Z" fill="none" stroke="#fff" stroke-width="1.4"/></svg></span>
+  <span class="lab">WhatsApp</span>
+</a>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* ── LENIS smooth scroll ── */
+let lenis;
+if (window.Lenis && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  lenis = new Lenis({ duration: 1.1, easing: t => Math.min(1, 1.001 - Math.pow(2, -10*t)), smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t*1000));
+  gsap.ticker.lagSmoothing(0);
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href'); if (id.length > 1) { e.preventDefault(); closeMenu();
+    const el = document.querySelector(id); if (!el) return;
+    lenis ? lenis.scrollTo(el, { offset: -70 }) : el.scrollIntoView({ behavior: 'smooth' });
+  }
+}));
+
+/* ── SCROLL PROGRESS ── */
+gsap.to('#prog', { width: '100%', ease: 'none',
+  scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: .3 } });
+
+/* ── REVEALS (cinematic 3D tilt-in) ── */
+(function(){
+  const h1 = document.querySelector('.hero h1'); if (h1) h1.removeAttribute('data-reveal');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+    gsap.set('[data-reveal]:not(.pillar)', { opacity: 0, y: 36, rotationX: 7, transformPerspective: 900, transformOrigin: '50% 100%' });
+  ScrollTrigger.batch('[data-reveal]:not(.pillar)', {
+    start: 'top 90%',
+    onEnter: els => gsap.to(els, { opacity: 1, y: 0, rotationX: 0, duration: 1.15, ease: 'expo.out', stagger: .1, overwrite: true })
+  });
+})();
+
+/* ── COUNTERS ── */
+document.querySelectorAll('[data-n]').forEach(el => {
+  const end = +el.dataset.n;
+  const target = el.querySelector('.cnt') || el.firstChild;
+  ScrollTrigger.create({ trigger: el, start: 'top 88%', once: true, onEnter: () => {
+    const o = { v: 0 }; gsap.to(o, { v: end, duration: 1.8, ease: 'power2.out',
+      onUpdate: () => { const val = Math.round(o.v);
+        if (el.querySelector('.cnt')) el.querySelector('.cnt').textContent = val;
+        else el.childNodes[0].nodeValue = val; } });
+  }});
+});
+/* BIA headline metric */
+(function(){ const el = document.getElementById('biaNum'); if(!el) return;
+  ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => {
+    const o = { v: 0 }; gsap.to(o, { v: 100, duration: 1.8, ease: 'power2.out',
+      onUpdate: () => el.textContent = Math.round(o.v) + '%' }); }});
+})();
+
+/* ── BIA bars ── */
+document.querySelectorAll('.bia-bar .fill').forEach(f => {
+  ScrollTrigger.create({ trigger: f, start: 'top 92%', once: true,
+    onEnter: () => gsap.to(f, { width: f.dataset.w + '%', duration: 1.3, ease: 'power3.out' }) });
+});
+
+/* ── PERCORSO: timeline + step attivi (scrollytelling con pin su desktop) ── */
+(function(){
+  const items = gsap.utils.toArray('.tl-item'); const fill = document.getElementById('tlfill');
+  if (!items.length || !fill) return;
+  if (window.innerWidth > 980 && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    gsap.timeline({ scrollTrigger: { trigger: '#percorso', start: 'top top',
+      end: '+=' + (items.length * 230), pin: true, pinSpacing: true, scrub: .6, invalidateOnRefresh: true,
+      onUpdate: self => { const idx = Math.min(items.length - 1, Math.floor(self.progress * items.length + 1e-4));
+        items.forEach((it, i) => it.classList.toggle('act', i <= idx)); } } })
+      .to(fill, { height: '100%', ease: 'none' }, 0);
+  } else {
+    gsap.to(fill, { height: '100%', ease: 'none',
+      scrollTrigger: { trigger: '.tl', start: 'top 62%', end: 'bottom 72%', scrub: .5 } });
+    items.forEach(it => ScrollTrigger.create({ trigger: it, start: 'top 66%', end: 'bottom 66%',
+      onToggle: s => it.classList.toggle('act', s.isActive) }));
+  }
+})();
+
+/* ── MAGNETIC (primary CTAs only, gentle) ── */
+if (!matchMedia('(pointer: coarse)').matches) {
+  document.querySelectorAll('[data-mag]').forEach(b => {
+    const qx = gsap.quickTo(b, 'x', { duration: .5, ease: 'power3.out' });
+    const qy = gsap.quickTo(b, 'y', { duration: .5, ease: 'power3.out' });
+    b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect();
+      qx((e.clientX - r.left - r.width/2) * .18); qy((e.clientY - r.top - r.height/2) * .28); });
+    b.addEventListener('mouseleave', () => gsap.to(b, { x: 0, y: 0, duration: .6, ease: 'elastic.out(1,.5)' }));
+  });
+}
+
+/* ── FAQ accordion ── */
+document.querySelectorAll('.qa').forEach(qa => {
+  const btn = qa.querySelector('button'), ans = qa.querySelector('.ans');
+  btn.addEventListener('click', () => {
+    const open = qa.classList.contains('open');
+    document.querySelectorAll('.qa.open').forEach(o => { if (o !== qa) { o.classList.remove('open'); gsap.to(o.querySelector('.ans'), { height: 0, duration: .4, ease: 'power2.inOut' }); } });
+    qa.classList.toggle('open', !open);
+    gsap.to(ans, { height: open ? 0 : ans.scrollHeight, duration: .45, ease: 'power2.inOut',
+      onComplete: () => { if (!open) ans.style.height = 'auto'; ScrollTrigger.refresh(); } });
+  });
+});
+
+/* ── MOBILE MENU ── */
+const mmenu = document.getElementById('mmenu');
+function closeMenu(){ mmenu.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('menuBtn').addEventListener('click', () => { mmenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
+document.getElementById('mclose').addEventListener('click', closeMenu);
+
+/* ── FORM ── */
+function handleForm(e){ e.preventDefault();
+  const btn = e.target.querySelector('.fbtn span');
+  gsap.fromTo(e.target.querySelector('.fbtn'), { scale: 1 }, { scale: .98, yoyo: true, repeat: 1, duration: .15 });
+  btn.textContent = '✓ Richiesta inviata, ti ricontatto entro 24h';
+  setTimeout(() => { btn.textContent = 'Invia richiesta di consulenza'; e.target.reset(); }, 4500);
+}
+
+/* ═══════════ CINEMATIC + 3D LAYER ═══════════ */
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(pointer:fine)').matches;
+
+/* word splitter — preserves <br> and <em> */
+function splitWords(root, make){
+  const frag = document.createDocumentFragment();
+  [...root.childNodes].forEach(node => {
+    if (node.nodeType === 3) {
+      node.textContent.split(/(\s+)/).forEach(tok => {
+        if (tok.trim()) frag.appendChild(make(tok));
+        else if (tok.length) frag.appendChild(document.createTextNode(' '));
+      });
+    } else if (node.nodeName === 'BR') { frag.appendChild(document.createElement('br')); }
+    else if (node.nodeType === 1) { const c = node.cloneNode(false); c.appendChild(splitWords(node, make)); frag.appendChild(c); }
+  });
+  return frag;
+}
+
+/* HERO headline — word mask reveal */
+(function(){
+  const h1 = document.querySelector('.hero h1'); if (!h1) return;
+  const frag = splitWords(h1, t => { const w=document.createElement('span'); w.className='w';
+    const i=document.createElement('span'); i.className='wi'; i.textContent=t; w.appendChild(i); return w; });
+  h1.textContent=''; h1.appendChild(frag); h1.style.opacity=1;
+  if (!RM){ gsap.set('.hero h1 .wi', { yPercent: 120 });
+    window.__playHero = () => gsap.to('.hero h1 .wi', { yPercent: 0, duration: 1.2, ease: 'expo.out', stagger: .055 });
+  } else { window.__playHero = () => {}; }
+})();
+
+/* CINEMATIC statement — scrub word highlight */
+(function(){
+  const p = document.querySelector('.cine-text'); if (!p) return;
+  const frag = splitWords(p, t => { const s=document.createElement('span'); s.className='cw'; s.textContent=t; return s; });
+  p.textContent=''; p.appendChild(frag);
+  if (!RM) gsap.to(p.querySelectorAll('.cw'), { opacity: 1, stagger: .06, ease: 'none',
+    scrollTrigger: { trigger: p, start: 'top 82%', end: 'bottom 58%', scrub: 1 } });
+  else p.querySelectorAll('.cw').forEach(s => s.style.opacity = 1);
+})();
+
+/* 3D TILT + glare */
+if (FINE && !RM){
+  document.querySelectorAll('[data-tilt]').forEach(el => {
+    const glare = document.createElement('span'); glare.className='tilt-glare'; el.appendChild(glare);
+    const max = el.hasAttribute('data-tilt-strong') ? 13 : 7;
+    gsap.set(el, { transformPerspective: 1000 });
+    const rx = gsap.quickTo(el, 'rotationX', { duration: .5, ease: 'power3.out' });
+    const ry = gsap.quickTo(el, 'rotationY', { duration: .5, ease: 'power3.out' });
+    const go = gsap.quickTo(glare, 'opacity', { duration: .3, ease: 'power2.out' });
+    let hovering = false;
+    el.addEventListener('mousemove', e => { const r = el.getBoundingClientRect();
+      const px = (e.clientX-r.left)/r.width, py = (e.clientY-r.top)/r.height;
+      ry((px-.5)*max*2); rx(-(py-.5)*max*2);
+      glare.style.setProperty('--gx',(px*100)+'%'); glare.style.setProperty('--gy',(py*100)+'%');
+      if (!hovering){ hovering = true; go(1); }
+    });
+    el.addEventListener('mouseleave', () => { hovering = false;
+      gsap.to(el, { rotationX:0, rotationY:0, duration:.8, ease:'elastic.out(1,.45)' }); go(0); });
+  });
+}
+
+/* PARALLAX depth */
+if (!RM){
+  gsap.utils.toArray('.portrait').forEach(el => gsap.to(el, { yPercent:-7, ease:'none',
+    scrollTrigger: { trigger: el, start:'top bottom', end:'bottom top', scrub: true } }));
+}
+
+/* CUSTOM CURSOR */
+if (FINE && !RM){
+  const dot = document.getElementById('cur-dot'), ring = document.getElementById('cur-ring');
+  if (dot && ring){
+    document.documentElement.classList.add('has-cursor');
+    let mx=innerWidth/2, my=innerHeight/2, rx=mx, ry=my;
+    addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY;
+      dot.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`; });
+    (function loop(){ rx+=(mx-rx)*.2; ry+=(my-ry)*.2;
+      ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a, button, .btn, .tag, .qa button, [data-tilt]').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('hot'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('hot'));
+    });
+    addEventListener('mousedown', () => ring.classList.add('down'));
+    addEventListener('mouseup', () => ring.classList.remove('down'));
+  }
+}
+
+/* ═══════════ INTRO — sipario cinematografico ═══════════ */
+(function(){
+  const pl = document.getElementById('preloader');
+  const play = () => { if (typeof window.__playHero === 'function') window.__playHero(); };
+  if (!pl){ play(); return; }
+  if (RM){ pl.style.display = 'none'; play(); return; }
+  const logo = pl.querySelector('.pl-logo'), bar = pl.querySelector('.pl-bar span');
+  document.body.style.overflow = 'hidden';
+  if (typeof lenis !== 'undefined' && lenis) lenis.stop();
+  let done = false;
+  const finish = () => { pl.style.display = 'none'; document.body.style.overflow = '';
+    if (typeof lenis !== 'undefined' && lenis) lenis.start(); ScrollTrigger.refresh(); };
+  const exit = () => { if (done) return; done = true;
+    gsap.timeline()
+      .to(bar, { width: '100%', duration: .35, ease: 'power2.out' })
+      .to(pl, { yPercent: -100, duration: .95, ease: 'expo.inOut', onStart: play, onComplete: finish }, '+=.05');
+  };
+  gsap.timeline()
+    .to(logo, { opacity: 1, y: 0, scale: 1, duration: .7, ease: 'power3.out' })
+    .to(bar, { width: '70%', duration: .9, ease: 'power1.inOut' }, '-=.45')
+    .add(exit, '+=.15');
+  setTimeout(() => { if (!done) exit(); }, 3400); // rete di sicurezza
+})();
+
+/* ═══════════ Clip-reveal media + micro-movimenti ═══════════ */
+if (!RM){
+  gsap.utils.toArray('.bio-photo').forEach(el => {
+    gsap.from(el, { clipPath: 'inset(0 0 100% 0)', y: 28, duration: 1.2, ease: 'expo.out',
+      scrollTrigger: { trigger: el, start: 'top 82%' } });
+  });
+  if (document.querySelector('.cred-card'))
+    gsap.to('.cred-card', { y: '+=9', duration: 3.2, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 1.6 });
+}
+
+/* ═══════════ CAMPO VIVO — particelle in flusso reattive al mouse ═══════════ */
+(function(){
+  if (RM || matchMedia('(pointer:coarse)').matches) return;
+  const c = document.getElementById('fx'); if (!c) return;
+  const ctx = c.getContext('2d');
+  let w, h, dpr, parts = [], mx = -9999, my = -9999, t = 0, raf;
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = c.width = innerWidth * dpr; h = c.height = innerHeight * dpr;
+    c.style.width = innerWidth + 'px'; c.style.height = innerHeight + 'px';
+  }
+  resize(); addEventListener('resize', resize);
+  const N = Math.max(40, Math.min(90, Math.floor(innerWidth * innerHeight / 17000)));
+  for (let i = 0; i < N; i++) parts.push({
+    x: Math.random() * w, y: Math.random() * h, vx: 0, vy: 0,
+    r: (Math.random() * 1.5 + 0.6) * dpr, g: Math.random() < 0.34
+  });
+  addEventListener('mousemove', e => { mx = e.clientX * dpr; my = e.clientY * dpr; });
+  addEventListener('mouseout', () => { mx = my = -9999; });
+  const flow = (x, y) => Math.sin(x * 0.0012 + t) * 1.25 + Math.cos(y * 0.0014 - t * 0.8) * 1.25;
+  const maxL = 108;
+  function frame(){
+    t += 0.0022;
+    const b = (window.__scrollBoost = (window.__scrollBoost || 0) * 0.95);
+    ctx.clearRect(0, 0, w, h);
+    const ml = maxL * dpr, mr = 165 * dpr;
+    for (let i = 0; i < parts.length; i++){
+      const p = parts[i], a = flow(p.x, p.y);
+      p.vx += Math.cos(a) * (0.035 + b * 0.05) + (Math.random() - 0.5) * b * 0.7;
+      p.vy += Math.sin(a) * (0.035 + b * 0.05) + (Math.random() - 0.5) * b * 0.7;
+      const dx = mx - p.x, dy = my - p.y, d2 = dx*dx + dy*dy;
+      if (d2 < mr*mr){ const d = Math.sqrt(d2) || 1; p.vx += dx/d * 0.22; p.vy += dy/d * 0.22; }
+      p.vx *= 0.94; p.vy *= 0.94; p.x += p.vx; p.y += p.vy;
+      if (p.x < -20) p.x = w+20; else if (p.x > w+20) p.x = -20;
+      if (p.y < -20) p.y = h+20; else if (p.y > h+20) p.y = -20;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
+      ctx.fillStyle = p.g ? 'rgba(134,224,130,0.6)' : 'rgba(255,255,255,0.5)';
+      ctx.fill();
+    }
+    for (let i = 0; i < parts.length; i++){
+      for (let j = i + 1; j < parts.length; j++){
+        const a = parts[i], b = parts[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx*dx + dy*dy;
+        if (d2 < ml*ml){ const al = (1 - Math.sqrt(d2)/ml) * 0.13;
+          ctx.strokeStyle = 'rgba(255,255,255,' + al + ')'; ctx.lineWidth = dpr * 0.55;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      }
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  frame();
+  document.addEventListener('visibilitychange', () => {
+    cancelAnimationFrame(raf); if (!document.hidden) frame();
+  });
+})();
+
+/* ═══════════ Parallasse di profondità nell'hero (mouse) ═══════════ */
+if (FINE && !RM && document.querySelector('.aurora')){
+  const auX = gsap.quickTo('.aurora', 'x', { duration: 0.9, ease: 'power2.out' });
+  const auY = gsap.quickTo('.aurora', 'y', { duration: 0.9, ease: 'power2.out' });
+  const ccX = document.querySelector('.cred-card') ? gsap.quickTo('.cred-card', 'x', { duration: 0.9, ease: 'power2.out' }) : null;
+  addEventListener('mousemove', e => {
+    const px = e.clientX / innerWidth - 0.5, py = e.clientY / innerHeight - 0.5;
+    auX(px * -34); auY(py * -22); if (ccX) ccX(px * 22);
+  });
+}
+
+/* ═══════════ RAIL — navigazione laterale con sezione attiva ═══════════ */
+(function(){
+  const rail = document.getElementById('rail'); if (!rail) return;
+  const ids = ['top','metodo','servizi','analisi','percorso','chi-sono','recensioni','faq','contatti'];
+  ids.forEach(id => {
+    const el = document.getElementById(id); if (!el) return;
+    const dot = document.createElement('a'); dot.title = id; rail.appendChild(dot);
+    dot.addEventListener('click', () => { lenis ? lenis.scrollTo(el, { offset: -70 }) : el.scrollIntoView({ behavior: 'smooth' }); });
+    ScrollTrigger.create({ trigger: el, start: 'top 55%', end: 'bottom 55%',
+      onToggle: s => { if (s.isActive){ rail.querySelectorAll('a').forEach(a => a.classList.remove('on')); dot.classList.add('on'); } } });
+  });
+})();
+
+/* ═══════════ Scroll → particelle reattive + skew d'inerzia ═══════════ */
+if (typeof lenis !== 'undefined' && lenis && !RM){
+  let sk = 0;
+  lenis.on('scroll', ({ velocity }) => {
+    window.__scrollBoost = Math.min(2.4, Math.abs(velocity) * 0.012);
+    sk = gsap.utils.clamp(-2, 2, velocity * 0.045);
+  });
+  const skewEls = gsap.utils.toArray('.psheet, .cine, .hero-grid').filter(el => !el.closest('#percorso'));
+  let lastSk = 999;
+  gsap.ticker.add(() => { sk *= 0.9; if (Math.abs(sk) < 0.01) sk = 0;
+    if (sk !== lastSk){ gsap.set(skewEls, { skewY: sk }); lastSk = sk; } });
+}
+
+/* ═══════════ Uscita parallasse dell'hero (sale e sfuma allo scroll) ═══════════ */
+if (!RM && document.querySelector('.hero-grid')){
+  gsap.to('.hero-grid', { yPercent: -9, opacity: 0.5, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom 22%', scrub: true } });
+}
+
+/* ═══════════ Metodo: i 3 pilastri si assemblano in 3D (scrollytelling) ═══════════ */
+if (!RM){
+  const pills = gsap.utils.toArray('#metodo .pillar');
+  if (pills.length){
+    if (innerWidth > 980){
+      gsap.set(pills, { opacity: 0, y: 90, rotationX: 34, rotationY: (i) => (i - 1) * 14,
+        transformPerspective: 1000, transformOrigin: 'center' });
+      gsap.to(pills, { opacity: 1, y: 0, rotationX: 0, rotationY: 0, ease: 'power3.out', stagger: 0.5,
+        scrollTrigger: { trigger: '#metodo .pillars', start: 'top 85%', end: 'top 32%', scrub: 0.7 } });
+    } else {
+      gsap.set(pills, { opacity: 0, y: 36 });
+      ScrollTrigger.batch(pills, { start: 'top 88%',
+        onEnter: els => gsap.to(els, { opacity: 1, y: 0, duration: 1, ease: 'expo.out', stagger: .12 }) });
+    }
+  }
+}
+</script>
+</body>
+</html>
